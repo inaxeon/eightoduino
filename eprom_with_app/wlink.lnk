@@ -1,0 +1,85 @@
+option quiet
+
+libpath %WATCOM%/lib286
+libpath %WATCOM%/lib286/dos
+
+system begin eod
+option nodefaultlibs
+format dos
+end
+
+system eod
+
+output hex offset=0x80000
+option map=epromapp.map
+option stack=24K
+
+file clibs.lib(strcpy)
+file clibs.lib(strncpy)
+file clibs.lib(strlen)
+file clibs.lib(strcat)
+file clibs.lib(strtok)
+file clibs.lib(strtok_s)
+file clibs.lib(strstr)
+file clibs.lib(strchr)
+file clibs.lib(strncmp)
+file clibs.lib(strnicmp)
+file clibs.lib(stricmp)
+file clibs.lib(sscanf)
+file clibs.lib(isspace)
+file clibs.lib(isalpha)
+file clibs.lib(memcpy)
+file clibs.lib(memset)
+file clibs.lib(printf)
+file clibs.lib(sprintf)
+file clibs.lib(vsprintf)
+file clibs.lib(fprtf)
+file clibs.lib(scnf)
+file clibs.lib(prtf)
+file clibs.lib(wctomb)
+file clibs.lib(mbtowc)
+file clibs.lib(itoa)
+file clibs.lib(strupr)
+file clibs.lib(ltoa)
+file clibs.lib(lltoa)
+file clibs.lib(tolower)
+file clibs.lib(bits)
+file clibs.lib(mbisdbcs)
+file clibs.lib(mbislead)
+file clibs.lib(mbinit)
+file clibs.lib(noefgfmt)
+file clibs.lib(alphabet)
+file clibs.lib(initfile)
+file clibs.lib(ioalloc)
+file clibs.lib(nmalloc)
+file clibs.lib(nfree)
+file clibs.lib(nmemneed)
+file clibs.lib(heapinit)
+file clibs.lib(mem)
+file clibs.lib(rtcswrap)
+file clibs.lib(grownear)
+file clibs.lib(amblksiz)
+file clibs.lib(heapen)
+file clibs.lib(istable)
+file clibs.lib(i4m)
+file clibs.lib(i4d)
+file clibs.lib(iob)
+file clibs.lib(i8m086)
+file clibs.lib(fdfs086)
+
+order
+	clname DATA NOEMIT segaddr=0x7000
+		segment _DATA
+	clname BSS
+		segment _BSS
+	clname STACK segaddr=0x7200
+		segment STACK
+	clname ROMDATA 
+		segment ROMDATA COPY DATA segaddr=0xE000
+	clname ROMDATAE
+	clname CODE
+		segment BEGTEXT segment _TEXT segaddr=0xF000
+		segment ENDTEXT
+	clname START segaddr=0xFFFF
+
+

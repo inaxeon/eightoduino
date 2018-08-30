@@ -1,0 +1,37 @@
+SYS = ..\sys
+PGM_APP = programmer
+CFLAGS = -q -0 -fpc -s -d0 -od -ms -zm -i=$(SYS) -d_EPROM_
+ASMFLAGS = -q -0 -fpc -s -d0
+
+SYSCOBJS = stubs.obj uart.obj mid.obj eod_io.obj
+SYSASMOBJS = util.obj
+
+.c.obj:
+    wcc $(CFLAGS) $<
+
+.asm.obj:
+    wasm $(ASMFLAGS) $<
+
+emu8086.bin: bootrom.eprom.hex
+	Eod.IHex\Eod.IHex.exe -MakeSystemImage -InputFile bootrom.eprom.hex -OutputFile emu8086.bin
+
+bootrom.eprom.hex: loader.hex programmer.hex
+	copy programmer.hex bootrom.eprom.hex
+	type loader.hex >> bootrom.eprom.hex
+
+programmer.hex: $(PGM_APP)\*.c $(PGM_APP)\*.h $(SYS)\*.c $(SYS)\*.h
+	cd $(PGM_APP) && wmake -f makefile.eprom programmer.hex
+	copy $(PGM_APP)\programmer.hex .
+
+loader.hex: cstrt086.obj xiploader.obj spiloader.obj appentry.obj cmain086.obj negotiate.obj loadandboot.obj $(SYSCOBJS) $(SYSASMOBJS)
+    wlink name loader.hex file { $< }
+
+$(SYSCOBJS): $(SYS)\*.c $(SYS)\*.h
+    wcc $(CFLAGS) $(SYS)\$*.c
+
+$(SYSASMOBJS): $(SYS)\*.asm
+    wasm $(ASMFLAGS) $(SYS)\$*.asm
+
+clean: .symbolic
+	cd $(PGM_APP) && wmake -f makefile.eprom clean
+    rm -f *.obj *.hex *.err *.map *.bin

@@ -1,0 +1,87 @@
+option quiet
+
+libpath %WATCOM%/lib286
+libpath %WATCOM%/lib286/dos
+
+system begin app
+option nodefaultlibs
+format dos
+end
+
+system app
+
+output hex
+option map=app.map
+option stack=24K
+option eliminate
+
+file clibs.lib(strcpy)
+file clibs.lib(strncpy)
+file clibs.lib(strlen)
+file clibs.lib(strcat)
+file clibs.lib(strtok)
+file clibs.lib(strtok_s)
+file clibs.lib(strstr)
+file clibs.lib(strchr)
+file clibs.lib(strncmp)
+file clibs.lib(strnicmp)
+file clibs.lib(stricmp)
+file clibs.lib(sscanf)
+file clibs.lib(isspace)
+file clibs.lib(isalpha)
+file clibs.lib(memcpy)
+file clibs.lib(memset)
+file clibs.lib(printf)
+file clibs.lib(sprintf)
+file clibs.lib(vsprintf)
+file clibs.lib(fprtf)
+file clibs.lib(scnf)
+file clibs.lib(prtf)
+file clibs.lib(wctomb)
+file clibs.lib(mbtowc)
+file clibs.lib(itoa)
+file clibs.lib(strupr)
+file clibs.lib(ltoa)
+file clibs.lib(lltoa)
+file clibs.lib(tolower)
+file clibs.lib(bits)
+file clibs.lib(mbisdbcs)
+file clibs.lib(mbislead)
+file clibs.lib(mbinit)
+file clibs.lib(noefgfmt)
+file clibs.lib(alphabet)
+file clibs.lib(initfile)
+file clibs.lib(ioalloc)
+file clibs.lib(nmalloc)
+file clibs.lib(nfree)
+file clibs.lib(nmemneed)
+file clibs.lib(heapinit)
+file clibs.lib(mem)
+file clibs.lib(rtcswrap)
+file clibs.lib(grownear)
+file clibs.lib(amblksiz)
+file clibs.lib(heapen)
+file clibs.lib(istable)
+file clibs.lib(i4m)
+file clibs.lib(i4d)
+file clibs.lib(iob)
+file clibs.lib(i8m086)
+file clibs.lib(fdfs086)
+
+order
+	clname VECTORS segaddr=0x0000
+		segment VECTORS
+	clname START segaddr=0x1000
+		segment START
+	clname CODE
+		segment BEGTEXT segment _TEXT segaddr=0x1008
+		segment ENDTEXT
+	clname BEGDATA NOEMIT segaddr=0x2000
+		segment _NULL
+	clname DATA
+		segment _DATA
+	clname BSS
+		segment _BSS
+	clname STACK segaddr=0x2200
+		segment STACK
+

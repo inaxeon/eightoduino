@@ -1,0 +1,36 @@
+option quiet
+
+libpath %WATCOM%/lib286
+libpath %WATCOM%/lib286/dos
+
+system begin app
+option nodefaultlibs
+format dos
+end
+
+system app
+
+output hex
+option map=app.map
+option stack=24K
+option eliminate
+
+file clibs.lib(i4d)
+
+order
+	clname VECTORS segaddr=0x0000
+		segment VECTORS
+	clname START segaddr=0x1000
+		segment START
+	clname CODE
+		segment BEGTEXT segment _TEXT segaddr=0x1008
+		segment ENDTEXT
+	clname BEGDATA NOEMIT segaddr=0x2000
+		segment _NULL
+	clname DATA
+		segment _DATA
+	clname BSS
+		segment _BSS
+	clname STACK segaddr=0x2200
+		segment STACK
+

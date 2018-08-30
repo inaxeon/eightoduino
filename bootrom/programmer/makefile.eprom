@@ -1,0 +1,30 @@
+SYS = ..\..\sys
+EODIHEX = ..\Eod.IHex
+CFLAGS = -q -0 -fpc -s -d0 -od -ms -zm -i=$(SYS) -d_EPROM_
+ASMFLAGS = -q -0 -fpc -s -d0
+SYSCOBJS = stubs.obj uart.obj mid.obj norflash.obj spiflash.obj adc.obj eod_io.obj
+SYSASMOBJS = cstrt086.obj util.obj
+
+.c.obj: *.h
+    wcc $(CFLAGS) $<
+
+.asm.obj:
+    wasm $(ASMFLAGS) $<
+
+app.hex: pgm.obj cmain086.obj crc8.obj $(SYSCOBJS) $(SYSASMOBJS)
+    wlink name app.hex file { $< }
+
+programmer.bin: app.hex
+	$(EODIHEX)\Eod.IHex.exe -MakeEodExecutable -InputFile app.hex -OutputFile programmer.bin
+
+programmer.hex: programmer.bin
+	$(EODIHEX)\Eod.IHex.exe -MakeHexFile -OmitEof -HexAddress 7C000 -InputFile programmer.bin -OutputFile programmer.hex
+
+$(SYSCOBJS): $(SYS)\*.c $(SYS)\*.h
+    wcc $(CFLAGS) $(SYS)\$*.c
+
+$(SYSASMOBJS): $(SYS)\*.asm
+    wasm $(ASMFLAGS) $(SYS)\$*.asm
+
+clean: .symbolic
+    rm -f *.obj *.hex *.err *.map *.bin

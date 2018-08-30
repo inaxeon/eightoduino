@@ -1,0 +1,36 @@
+option quiet
+
+libpath %WATCOM%/lib286
+libpath %WATCOM%/lib286/dos
+
+system begin eod
+option nodefaultlibs
+format dos
+end
+
+system eod
+
+output hex offset=0x80000
+option map=eod.map
+option stack=24K
+option eliminate
+
+file clibs.lib(i4d)
+
+order
+	clname DATA NOEMIT segaddr=0x7000
+		segment _DATA
+	clname BSS
+		segment _BSS
+	clname STACK segaddr=0x7200
+		segment STACK
+	clname ROMDATA 
+		segment ROMDATA COPY DATA segaddr=0xFF00
+	clname ROMDATAE
+	clname CODE
+		segment BEGTEXT segment _TEXT segaddr=0xFF10
+		segment ENDTEXT
+	clname APPENTRY segaddr=0xFFF8
+	clname START segaddr=0xFFFF
+
+
