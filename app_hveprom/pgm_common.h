@@ -1,0 +1,59 @@
+/*
+ *   8OD - Arduino form factor i8086 based SBC
+ *   Matthew Millman (tech.mattmillman.com/8od)
+ *
+ *   1702A/2704/2708/MCM68764/MCM68766 EPROM Programmer
+ *
+ *   This is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 2 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This software is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this software.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#ifndef _PGM_COMMON_H
+#define _PGM_COMMON_H
+
+#define CMD_START_WRITE          0x10
+#define CMD_WRITE_CHUNK          0x11
+#define CMD_START_READ           0x12
+#define CMD_READ_CHUNK           0x13
+#define CMD_BLANK_CHECK          0x14
+#define CMD_DEV_RESET            0x15
+
+#define DEV_1702A                0x00
+#define DEV_C2704                0x01
+#define DEV_C2708                0x02
+#define DEV_MCM6876X             0x03
+
+#define ERR_OK                   0x00
+#define ERR_COMPLETE             0x01
+#define ERR_INVALID_CMD          0x02
+#define ERR_NOT_SUPPORTED        0x03
+#define ERR_NO_DEV               0x04
+#define ERR_INCORRECT_HW         0x05
+#define ERR_NOT_BLANK            0x06
+#define ERR_MAX_RETRIES          0x07
+
+#define READ_CHUNK_SIZE          8
+#define WRITE_CHUNK_SIZE         16
+#define MCM6876X_MAX_RETRIES     25
+#define C270X_MAX_RETRIES        100
+
+void pgm_process_command(uint8_t cmd);
+void pgm_write_address(uint16_t address);
+void pgm_write_data(uint8_t data);
+uint8_t pgm_read_data(void);
+void pgm_dir_out(void);
+void pgm_dir_in(void);
+void pgm_init(uint8_t type);
+void pgm_power_on(void);
+
+#endif /* _PGM_COMMON_H */
