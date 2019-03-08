@@ -12,7 +12,7 @@ COREUTILS  = C:/Projects/coreutils/bin/
 DEVICE     = atmega2560
 CLOCK      = 16000000
 PROGRAMMER = -p m2560 -c stk500v2 -P COM15 -b 115200
-SRCS       = main.c pgm_common.c pgm_270x_mcm6876x.c pgm_1702a.c usart_buffered.c util.c
+SRCS       = main.c pgm_common.c pgm_270x_mcm6876x.c pgm_1702a.c usart_buffered.c adc.c util.c
 OBJS       = $(SRCS:.c=.o)
 FUSES      = -U lfuse:w:0x4F:m -U hfuse:w:0xC1:m -U efuse:w:0xff:m
 DEPDIR     = deps
@@ -53,6 +53,7 @@ install: flash
 
 clean:
 	$(RM) -f hveprom.hex hveprom.elf $(OBJS)
+	$(RM) -rf deps/
 
 hveprom.elf: $(OBJS)
 	$(COMPILE) -o hveprom.elf $(OBJS)

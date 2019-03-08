@@ -24,7 +24,7 @@
 //#define _DEBUG
 
 #define HOST_UART   UARTB
-#define DEBUG_UART  UARTA
+#define DEBUG_UART  UARTC
 
 #define SHIELD_TYPE_UNKNOWN         0x00
 #define SHIELD_TYPE_1702A           0x01

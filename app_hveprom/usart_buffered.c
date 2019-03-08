@@ -19,7 +19,7 @@
 #ifdef _USART0_
 
 #define UART0_TX_BUFFER_SIZE 16
-#define UART0_RX_BUFFER_SIZE 32
+#define UART0_RX_BUFFER_SIZE 16
 
 /* size of RX/TX buffers */
 #define UART0_RX_BUFFER_MASK (UART0_RX_BUFFER_SIZE - 1)
@@ -180,7 +180,7 @@ uint8_t usart0_get_last_rx_error(void)
 #ifdef _USART1_
 
 #define UART1_TX_BUFFER_SIZE 16
-#define UART1_RX_BUFFER_SIZE 32
+#define UART1_RX_BUFFER_SIZE 16
 
 /* size of RX/TX buffers */
 #define UART1_RX_BUFFER_MASK (UART1_RX_BUFFER_SIZE - 1)

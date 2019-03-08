@@ -1,9 +1,9 @@
 SYS = ..\sys
 BASE = ..\
 OBJ = .\obj
-CFLAGS = -q -0 -fpc -s -d0 -od -ms -zm -i=$(BASE) -d_M8OD -dNO_MID -dNO_I2C -dNO_SPIFLASH -dNO_ADC
+CFLAGS = -q -0 -fpc -s -d0 -od -ms -zm -i=$(BASE) -d_M8OD -dNO_I2C -dNO_SPIFLASH
 ASMFLAGS = -q -0 -fpc -s -d0
-SYSCOBJS = stubs.obj uart.obj eod_io.obj cmain086.obj
+SYSCOBJS = stubs.obj uart.obj eod_io.obj mid.obj adc.obj cmain086.obj
 SYSASMOBJS = cstrt086.obj util.obj
 
 .c.obj: *.h
@@ -12,8 +12,8 @@ SYSASMOBJS = cstrt086.obj util.obj
 .asm.obj:
     wasm $(ASMFLAGS) $<
 
-app.hex: main.obj pgm_common.obj pgm_270x_mcm6876x.obj pgm_1702a.obj $(SYSCOBJS) $(SYSASMOBJS)
-    wlink name app.hex file { $< }
+hveprom_8od.hex: main.obj pgm_common.obj pgm_270x_mcm6876x.obj pgm_1702a.obj dummy.obj $(SYSCOBJS) $(SYSASMOBJS)
+    wlink name hveprom_8od.hex file { $< }
 
 $(SYSCOBJS): $(SYS)\*.c $(SYS)\*.h
     wcc $(CFLAGS) $(SYS)\$*.c

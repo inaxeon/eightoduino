@@ -48,7 +48,7 @@
 
 #ifdef _M8OD
 
-#define pgm_1702a_delay_read()
+#define pgm_1702a_delay_read() delay_ncycles(5)
 #define pgm_1702a_delay_ad_setup() delay_ncycles(1)
 #define pgm_1702a_delay_ad_hold() delay_ncycles(5)
 #define pgm_1702a_delay_ad_hold_post_vdd() delay_ncycles(81)
@@ -99,28 +99,44 @@ void pgm_1702a_set_params(void)
 
 static void pgm_1702a_read_power_on()
 {
+#ifdef _M8OD 
+    if ((cpld_read(CTRL_PORT) & C1702A_READPWREN) == 0)
+#endif /* _M8OD */
+#ifdef _MDUINO
+    if ((C1702A_PGMPWREN_PIN & _BV(C1702A_READPWREN)) == 0)
+#endif /* _MDUINO */
+    {
 #ifdef _M8OD
-    cpld_write(CTRL_PORT, C1702A_READPWREN, C1702A_READPWREN);
-    delay_ncycles(0xFFFF);
+        cpld_write(CTRL_PORT, C1702A_READPWREN, C1702A_READPWREN);
+        delay_ncycles(0xFFFF);
 #endif /* _M8OD */
 
 #ifdef _MDUINO
-    C1702A_READPWREN_PORT |= _BV(C1702A_READPWREN);
-    _delay_ms(100);
+        C1702A_READPWREN_PORT |= _BV(C1702A_READPWREN);
+        _delay_ms(100);
 #endif /* _MDUINO */
+    }
 }
 
 static void pgm_1702a_write_power_on()
 {
+#ifdef _M8OD 
+    if ((cpld_read(CTRL_PORT) & C1702A_PGMPWREN) == 0)
+#endif /* _M8OD */
+#ifdef _MDUINO
+    if ((C1702A_PGMPWREN_PIN & _BV(C1702A_PGMPWREN)) == 0)
+#endif /* _MDUINO */
+    {
 #ifdef _M8OD
-    cpld_write(CTRL_PORT, C1702A_PGMPWREN, C1702A_PGMPWREN);
-    delay_ncycles(0xFFFF);
+        cpld_write(CTRL_PORT, C1702A_PGMPWREN, C1702A_PGMPWREN);
+        delay_ncycles(0xFFFF);
 #endif /* _M8OD */
 
 #ifdef _MDUINO
-    C1702A_PGMPWREN_PORT |= _BV(C1702A_PGMPWREN);
-    _delay_ms(100);
+        C1702A_PGMPWREN_PORT |= _BV(C1702A_PGMPWREN);
+        _delay_ms(100);
 #endif /* _MDUINO */
+    }
 }
 
 void pgm_1702a_init(void)
@@ -163,10 +179,10 @@ void pgm_1702a_init(void)
 #endif /* _DEBUG */
 }
 
-void pgm_1702a_reset(void)
+static void pgm_1702a_do_reset(void)
 {
 #ifdef _DEBUG
-    printf("pgm_1702a_reset()\r\n");
+    printf("pgm_1702a_do_reset()\r\n");
 #endif /* _DEBUG */
 
 #ifdef _M8OD 
@@ -237,6 +253,7 @@ void pgm_1702a_write_chunk(void)
     printf("pgm_1702a_write_chunk() thisChunk=%d remaining=%d _g_1702a_offset=%d\r\n", thisChunk, remaining, _g_1702a_offset);
 #endif /* _DEBUG */
 
+    pgm_1702a_write_power_on();
     pgm_1702a_pen_enable();
     pgm_1702a_delay_read();
 
@@ -301,6 +318,7 @@ void pgm_1702a_read_chunk(void)
     printf("pgm_1702a_read_chunk() thisChunk=%d remaining=%d _g_1702a_offset=%d\r\n", thisChunk, remaining, _g_1702a_offset);
 #endif /* _DEBUG */
 
+    pgm_1702a_read_power_on();
     pgm_1702a_ren_enable();
     pgm_1702a_delay_read();
 
@@ -312,8 +330,6 @@ void pgm_1702a_read_chunk(void)
         pgm_1702a_cs_enable();
         pgm_1702a_delay_read();
         host_write8(pgm_read_data());
-
-
         pgm_1702a_cs_disable();
         pgm_1702a_delay_read();
     }
@@ -365,26 +381,52 @@ void pgm_1702a_blank_check(void)
 
 void pgm_1702a_start_write(void)
 {
-    pgm_1702a_reset();
+    host_read8(); // Unused - HTS byte
+    host_read8(); // Unused - extra writes byte
+
+    pgm_1702a_do_reset();
     
 #ifdef _DEBUG
     printf("pgm_1702a_start_write()\r\n");
 #endif /* _DEBUG */
 
-    pgm_1702a_write_power_on();
-
+    // Programmers with seperate read/write sockets should return ERR_PROCEED_DUALSOCKET.
+    // The UI will prompt the user to move the device to the appropriate socket.
     cmd_respond(CMD_START_WRITE, ERR_OK);
 }
 
 void pgm_1702a_start_read(void)
 {
-    pgm_1702a_reset();
+    pgm_1702a_do_reset();
 
 #ifdef _DEBUG
     printf("pgm_1702a_start_read()\r\n");
 #endif /* _DEBUG */
 
-    pgm_1702a_read_power_on();
-
+    // Programmers with seperate read/write sockets should return ERR_PROCEED_DUALSOCKET.
+    // The UI will prompt the user to move the device to the appropriate socket.
     cmd_respond(CMD_START_READ, ERR_OK);
+}
+
+void pgm_1702a_start_blank_check(void)
+{
+    pgm_1702a_do_reset();
+
+#ifdef _DEBUG
+    printf("pgm_1702a_start_blank_check()\r\n");
+#endif /* _DEBUG */
+
+    // Programmers with seperate read/write sockets should return ERR_PROCEED_DUALSOCKET.
+    // The UI will prompt the user to move the device to the appropriate socket.
+    cmd_respond(CMD_START_BLANK_CHECK, ERR_OK);
+}
+
+void pgm_1702a_reset(void)
+{
+#ifdef _DEBUG
+    printf("pgm_1702a_reset()\r\n");
+#endif /* _DEBUG */
+
+    pgm_1702a_do_reset();
+    cmd_respond(CMD_DEV_RESET, ERR_OK);
 }

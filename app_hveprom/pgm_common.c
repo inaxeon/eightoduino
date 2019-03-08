@@ -29,6 +29,7 @@
 #ifdef _M8OD
 #include "sys/eod_io.h"
 #include "sys/uart.h"
+#include "sys/adc.h"
 #include "sys/util.h"
 #endif /* _M8OD */
 
@@ -36,6 +37,7 @@
 #include <avr/io.h>
 #include <avr/pgmspace.h>
 #include <util/delay.h>
+#include "adc.h"
 #endif /* _MDUINO */
 
 #include "iopins.h"
@@ -50,8 +52,10 @@ static void pgm_start_write(void);
 static void pgm_start_read(void);
 static void pgm_write_chunk(void);
 static void pgm_read_chunk(void);
+static void pgm_start_blank_check(void);
 static void pgm_blank_check(void);
 static void pgm_reset(void);
+static void pgm_measure_12v(void);
 
 uint8_t _g_shieldType;
 
@@ -71,12 +75,17 @@ void pgm_process_command(uint8_t cmd)
     case CMD_READ_CHUNK:
         pgm_read_chunk();
         break;
+    case CMD_START_BLANK_CHECK:
+        pgm_start_blank_check();
+        break;
     case CMD_BLANK_CHECK:
         pgm_blank_check();
         break;
+    case CMD_MEASURE_12V:
+        pgm_measure_12v();
+        break;
     case CMD_DEV_RESET:
         pgm_reset();
-        cmd_respond(CMD_DEV_RESET, ERR_OK);
         break;
     default:
         break;
@@ -87,10 +96,10 @@ void pgm_init(uint8_t shieldType)
 {
     _g_shieldType = shieldType;
 
-#ifdef _M8OD
-    cpld_direct_write(PORTD, 0x0000);
-#endif /* _M8OD */
+    pgm_write_address(0x0);
 
+    // PORTD is output only on 8OD
+    
 #ifdef _MDUINO
     ADDRESS_0_DDR |= _BV(ADDRESS_0);
     ADDRESS_1_DDR |= _BV(ADDRESS_1);
@@ -154,11 +163,19 @@ static void pgm_read_chunk(void)
         pgm_270x_mcm6876x_read_chunk();
 }
 
-static void pgm_blank_check(void)
+static void pgm_start_blank_check(void)
 {
-    if (pgm_setup_dev_type(CMD_BLANK_CHECK) < 0)
+    if (pgm_setup_dev_type(CMD_START_BLANK_CHECK) < 0)
         return;
 
+    if (_g_shieldType == SHIELD_TYPE_1702A)
+        pgm_1702a_start_blank_check();
+    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+        pgm_270x_mcm6876x_start_blank_check();
+}
+
+static void pgm_blank_check(void)
+{
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_blank_check();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
@@ -171,6 +188,42 @@ static void pgm_reset(void)
         pgm_1702a_reset();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_reset();
+}
+
+static void pgm_measure_12v(void)
+{
+    uint32_t reading;
+
+#ifdef _DEBUG
+    printf("pgm_measure_12v()\r\n");
+#endif /* _DEBUG */
+
+    cmd_respond(CMD_MEASURE_12V, ERR_OK);
+
+#ifdef _M8OD
+    /*
+     * 4096 (0xFFF) = Vref = 3.3v
+     * 3.3 / 4096 = 0.0008056640625
+     * 
+     * R1 = 10K
+     * R2 = 2.2K
+     * R2 / (R1+R2) = 0.180327868852459
+     * 
+     * 0.0008056640625 * 1000000 = 805.6640625
+     * 0.180327868852459 * 10000 = 1803.27868852459
+     * 1000000 / 10000 = 100
+     * Therefore: Result = Vin * 100
+     */
+    reading = adc_read_channel(0);
+    reading *= 806;
+    reading /= 1803;
+#endif /* _M8OD */
+
+#ifdef _MDUINO
+    reading = adc_read_12v();
+#endif /* _MDUINO */
+
+    host_write16((uint16_t)reading);
 }
 
 static int8_t pgm_setup_dev_type(uint8_t cmd)
@@ -187,16 +240,22 @@ static int8_t pgm_setup_dev_type(uint8_t cmd)
     case DEV_C2704:
         if (_g_shieldType != SHIELD_TYPE_270X_MCM6876X)
             goto err_wrongshield;
+        if (!pgm_270x_mcm6876x_check_switch(DEV_C2704))
+            goto err_wrongswitch;
         pgm_270x_mcm6876x_set_params(DEV_C2704, 0x200, C270X_MAX_RETRIES);
         break;
     case DEV_C2708:
         if (_g_shieldType != SHIELD_TYPE_270X_MCM6876X)
             goto err_wrongshield;
+        if (!pgm_270x_mcm6876x_check_switch(DEV_C2708))
+            goto err_wrongswitch;
         pgm_270x_mcm6876x_set_params(DEV_C2708, 0x400, C270X_MAX_RETRIES);
         break;
     case DEV_MCM6876X:
         if (_g_shieldType != SHIELD_TYPE_270X_MCM6876X)
             goto err_wrongshield;
+        if (!pgm_270x_mcm6876x_check_switch(DEV_MCM6876X))
+            goto err_wrongswitch;
         pgm_270x_mcm6876x_set_params(DEV_MCM6876X, 0x2000, MCM6876X_MAX_RETRIES);
         break;
     default:
@@ -218,6 +277,12 @@ err_wrongshield:
         printf("Invalid shield type: %d dev: %d\r\n", _g_shieldType, devtype);
 #endif /* _DEBUG */
     cmd_respond(cmd, ERR_INCORRECT_HW);
+    return -1;
+err_wrongswitch:
+#ifdef _DEBUG
+        printf("Switch in wrong position: %d\r\n", devtype);
+#endif /* _DEBUG */
+    cmd_respond(cmd, ERR_INCORRECT_SWITCH_POS);
     return -1;
 }
 

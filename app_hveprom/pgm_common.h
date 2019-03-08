@@ -25,8 +25,10 @@
 #define CMD_WRITE_CHUNK          0x11
 #define CMD_START_READ           0x12
 #define CMD_READ_CHUNK           0x13
-#define CMD_BLANK_CHECK          0x14
-#define CMD_DEV_RESET            0x15
+#define CMD_START_BLANK_CHECK    0x14
+#define CMD_BLANK_CHECK          0x15
+#define CMD_DEV_RESET            0x16
+#define CMD_MEASURE_12V          0x17
 
 #define DEV_1702A                0x00
 #define DEV_C2704                0x01
@@ -34,16 +36,19 @@
 #define DEV_MCM6876X             0x03
 
 #define ERR_OK                   0x00
-#define ERR_COMPLETE             0x01
-#define ERR_INVALID_CMD          0x02
-#define ERR_NOT_SUPPORTED        0x03
-#define ERR_NO_DEV               0x04
-#define ERR_INCORRECT_HW         0x05
-#define ERR_NOT_BLANK            0x06
-#define ERR_MAX_RETRIES          0x07
+#define ERR_PROCEED_DUALSOCKET   0x01
+#define ERR_COMPLETE             0x02
+#define ERR_INVALID_CMD          0x03
+#define ERR_NOT_SUPPORTED        0x04
+#define ERR_NO_DEV               0x05
+#define ERR_INCORRECT_HW         0x06
+#define ERR_INCORRECT_SWITCH_POS 0x07
+#define ERR_OVERCURRENT          0x08
+#define ERR_NOT_BLANK            0x09
+#define ERR_MAX_RETRIES          0x0A
 
 #define READ_CHUNK_SIZE          8
-#define WRITE_CHUNK_SIZE         16
+#define WRITE_CHUNK_SIZE         8
 #define MCM6876X_MAX_RETRIES     25
 #define C270X_MAX_RETRIES        100
 

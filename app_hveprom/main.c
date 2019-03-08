@@ -39,6 +39,7 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 #include "usart_buffered.h"
+#include "adc.h"
 #endif /* _MDUINO */
 
 #include "util.h"
@@ -76,6 +77,7 @@ int main(void)
     stdout = &uart_str;
 #endif /* _DEBUG */
     g_irq_enable();
+    adc_init();
 #endif /* _MDUINO */
 
 #ifdef _DEBUG
@@ -126,7 +128,7 @@ static uint8_t detect_shield(void)
     bit_1 = (SHIELD_ID_1_PIN & _BV(SHIELD_ID_1)) == _BV(SHIELD_ID_1);
 #endif /* _MDUINO */
 
-    if (bit_0 && !bit_1)
+    if (!bit_0 && bit_1)
     {
 #ifdef _DEBUG
         printf("Shield type: Detected SHIELD_TYPE_270X_MCM6876X\r\n");
@@ -134,7 +136,7 @@ static uint8_t detect_shield(void)
         return SHIELD_TYPE_270X_MCM6876X;
     }
 
-    if (!bit_0 && bit_1)
+    if (bit_0 && !bit_1)
     {
 #ifdef _DEBUG
         printf("Shield type: Detected SHIELD_TYPE_1702A\r\n");
@@ -168,8 +170,10 @@ static int8_t cmd_get_next(void)
                     case CMD_WRITE_CHUNK:
                     case CMD_START_READ:
                     case CMD_READ_CHUNK:
+                    case CMD_START_BLANK_CHECK:
                     case CMD_BLANK_CHECK:
                     case CMD_DEV_RESET:
+                    case CMD_MEASURE_12V:
                         return c;
                     default:
                         return -1;

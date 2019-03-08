@@ -47,11 +47,11 @@
 
 #ifdef _M8OD
 
-#define pgm_270x_mcm6876x_delay_read()
+#define pgm_270x_mcm6876x_delay_read() delay_ncycles(1)
 #define pgm_270x_mcm6876x_delay_ad_setup() delay_ncycles(1)
 #define pgm_270x_mcm6876x_delay_ad_hold() delay_ncycles(1)
 #define pgm_270x_mcm6876x_delay_write_mcm6876x() delay_ncycles(870)
-#define pgm_270x_mcm6876x_delay_write_270x() delay_ncycles(530)
+#define pgm_270x_mcm6876x_delay_write_270x() delay_ncycles(535)
 #define pgm_270x_mcm6876x_wr_enable() cpld_write(CTRL_PORT, MCMX_270X_WR, MCMX_270X_WR)
 #define pgm_270x_mcm6876x_wr_disable() cpld_write(CTRL_PORT, MCMX_270X_WR, 0)
 #define pgm_270x_mcm6876x_rd_enable() cpld_write(CTRL_PORT, MCMX_270X_RD, MCMX_270X_RD)
@@ -143,6 +143,37 @@ void pgm_270x_mcm6876x_set_params(uint8_t dev_type, uint16_t dev_size, uint8_t m
 #endif /* _DEBUG */
 }
 
+bool pgm_270x_mcm6876x_check_switch(uint8_t dev_type)
+{
+#ifdef _M8OD
+    if ((cpld_read(CTRL_PORT) & MCMX_270X_DEVSEL) == 0)
+    {
+        if (dev_type == DEV_C2704 || dev_type == DEV_C2708)
+            return true;
+    }
+    if ((cpld_read(CTRL_PORT) & MCMX_270X_DEVSEL) == MCMX_270X_DEVSEL)
+    {
+        if (dev_type == DEV_MCM6876X)
+            return true;
+    }
+#endif /* _M8OD */
+
+#ifdef _MDUINO
+    if ((MCMX_270X_DEVSEL_PIN & _BV(MCMX_270X_DEVSEL)) == 0)
+    {
+        if (dev_type == DEV_C2704 || dev_type == DEV_C2708)
+            return true;
+    }
+    if ((MCMX_270X_DEVSEL_PIN & _BV(MCMX_270X_DEVSEL)) == _BV(MCMX_270X_DEVSEL))
+    {
+        if (dev_type == DEV_MCM6876X)
+            return true;
+    }
+#endif /* _MDUINO */
+
+    return false;
+}
+
 void pgm_270x_mcm6876x_power_on()
 {
 #ifdef _M8OD
@@ -173,6 +204,7 @@ void pgm_270x_mcm6876x_reset(void)
 #endif /* _MDUINO */
 
     pgm_dir_in();
+    cmd_respond(CMD_DEV_RESET, ERR_OK);
 }
 
 void pgm_270x_mcm6876x_write_chunk(void)
@@ -220,7 +252,6 @@ void pgm_270x_mcm6876x_write_chunk(void)
                 pgm_270x_mcm6876x_delay_write_270x(); /* 1ms */
 
             pgm_270x_mcm6876x_wr_disable();
-
             pgm_270x_mcm6876x_delay_ad_hold();
 
             pgm_dir_in();
@@ -311,13 +342,10 @@ void pgm_270x_mcm6876x_blank_check(void)
     uint16_t offset = 0;
     uint8_t data;
 
-    pgm_270x_mcm6876x_power_on();
-
     while (offset < _g_devSize)
     {
         pgm_write_address(offset); /* Output address */
         pgm_270x_mcm6876x_delay_read();
-
         pgm_270x_mcm6876x_rd_enable();
         pgm_270x_mcm6876x_delay_read();
         data = pgm_read_data();
@@ -365,4 +393,15 @@ void pgm_270x_mcm6876x_start_read(void)
     pgm_270x_mcm6876x_power_on();
 
     cmd_respond(CMD_START_READ, ERR_OK);
+}
+
+void pgm_270x_mcm6876x_start_blank_check(void)
+{
+#ifdef _DEBUG
+    printf("pgm_270x_mcm6876x_start_blank_check()\r\n");
+#endif /* _DEBUG */
+
+    pgm_270x_mcm6876x_power_on();
+
+    cmd_respond(CMD_START_BLANK_CHECK, ERR_OK);
 }

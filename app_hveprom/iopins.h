@@ -56,13 +56,13 @@
 
 #ifdef _MDUINO
 
-#define SHIELD_ID_0               PG5
-#define SHIELD_ID_0_DDR           DDRG
-#define SHIELD_ID_0_PIN           PING
+#define SHIELD_ID_0               PE5
+#define SHIELD_ID_0_DDR           DDRE
+#define SHIELD_ID_0_PIN           PINE
 
-#define SHIELD_ID_1               PE5
-#define SHIELD_ID_1_DDR           DDRE
-#define SHIELD_ID_1_PIN           PINE
+#define SHIELD_ID_1               PG5
+#define SHIELD_ID_1_DDR           DDRG
+#define SHIELD_ID_1_PIN           PING
 
 #define MCMX_270X_DEVSEL          PE4
 #define MCMX_270X_DEVSEL_DDR      DDRE
