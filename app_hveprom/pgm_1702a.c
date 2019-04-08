@@ -55,10 +55,10 @@
 #define pgm_1702a_delay_write() delay_ncycles(1495)
 #define pgm_1702a_delay_post_write() delay_ncycles(6684)
 
-#define pgm_1702a_pen_enable()  cpld_write(CTRL_PORT, C1702A_PEN, 0)
-#define pgm_1702a_pen_disable() cpld_write(CTRL_PORT, C1702A_PEN, C1702A_PEN)
-#define pgm_1702a_ren_enable()  cpld_write(CTRL_PORT, C1702A_REN, 0)
-#define pgm_1702a_ren_disable() cpld_write(CTRL_PORT, C1702A_REN, C1702A_REN)
+#define pgm_1702a_pen_enable()  cpld_write(CTRL_PORT, C1702A_PEN, C1702A_PEN)
+#define pgm_1702a_pen_disable() cpld_write(CTRL_PORT, C1702A_PEN, 0)
+#define pgm_1702a_ren_enable()  cpld_write(CTRL_PORT, C1702A_REN, C1702A_REN)
+#define pgm_1702a_ren_disable() cpld_write(CTRL_PORT, C1702A_REN, 0)
 #define pgm_1702a_vdd_enable()  cpld_write(CTRL_PORT, C1702A_PGMVDD, C1702A_PGMVDD)
 #define pgm_1702a_vdd_disable() cpld_write(CTRL_PORT, C1702A_PGMVDD, 0)
 #define pgm_1702a_cs_enable()   cpld_write(CTRL_PORT, C1702A_CSEN, C1702A_CSEN)
@@ -77,10 +77,10 @@
 #define pgm_1702a_delay_write() _delay_us(2700)
 #define pgm_1702a_delay_post_write() _delay_ms(12)
 
-#define pgm_1702a_pen_enable()  C1702A_PEN_PORT &= ~_BV(C1702A_PEN)
-#define pgm_1702a_pen_disable() C1702A_PEN_PORT |= _BV(C1702A_PEN)
-#define pgm_1702a_ren_enable()  C1702A_REN_PORT &= ~_BV(C1702A_REN)
-#define pgm_1702a_ren_disable() C1702A_REN_PORT |= _BV(C1702A_REN)
+#define pgm_1702a_pen_enable()  C1702A_PEN_PORT |= _BV(C1702A_PEN)
+#define pgm_1702a_pen_disable() C1702A_PEN_PORT &= ~_BV(C1702A_PEN)
+#define pgm_1702a_ren_enable()  C1702A_REN_PORT |= _BV(C1702A_REN)
+#define pgm_1702a_ren_disable() C1702A_REN_PORT &= ~_BV(C1702A_REN)
 #define pgm_1702a_vdd_enable()  C1702A_PGMVDD_PORT |= _BV(C1702A_PGMVDD)
 #define pgm_1702a_vdd_disable() C1702A_PGMVDD_PORT &= ~_BV(C1702A_PGMVDD)
 #define pgm_1702a_cs_enable()   C1702A_CSEN_PORT |= _BV(C1702A_CSEN)
@@ -193,7 +193,8 @@ static void pgm_1702a_do_reset(void)
 #endif /* _MDUINO */
     {
 #ifdef _M8OD
-        cpld_write(CTRL_PORT, (C1702A_PEN | C1702A_PGMPWREN), (C1702A_PEN /* inv */));
+        pgm_1702a_pen_disable();
+        cpld_write(CTRL_PORT, (C1702A_PGMPWREN), 0);
         // Wait for high voltage supplies to discharge
         delay_ncycles(0xFFFF);
         delay_ncycles(0xFFFF);
@@ -201,7 +202,7 @@ static void pgm_1702a_do_reset(void)
 #endif /* _M8OD */
 
 #ifdef _MDUINO
-        C1702A_PEN_PORT |= _BV(C1702A_PEN); //inv
+        pgm_1702a_pen_disable();
         C1702A_PGMPWREN_PORT &= ~_BV(C1702A_PGMPWREN);
         // Wait for high voltage supplies to discharge
         _delay_ms(100);
@@ -221,14 +222,16 @@ static void pgm_1702a_do_reset(void)
     if ((C1702A_READPWREN_PIN & _BV(C1702A_READPWREN)) == _BV(C1702A_READPWREN))
 #endif /* _MDUINO */
     {
+        
 #ifdef _M8OD
-        cpld_write(CTRL_PORT, (C1702A_REN | C1702A_READPWREN), (C1702A_REN /* inv */));
+        pgm_1702a_ren_disable();
+        cpld_write(CTRL_PORT, (C1702A_READPWREN), 0);
         delay_ncycles(0xFFFF);
         delay_ncycles(0xFFFF);
 #endif /* _M8OD */
 
 #ifdef _MDUINO
-        C1702A_REN_PORT |= _BV(C1702A_REN); //inv
+        pgm_1702a_ren_disable();
         C1702A_READPWREN_PORT &= ~_BV(C1702A_READPWREN);
         _delay_ms(100);
         _delay_ms(100);
@@ -283,10 +286,6 @@ void pgm_1702a_write_chunk(void)
         pgm_1702a_vdd_disable();
 
         pgm_1702a_delay_post_write(); /* 12ms */
-
-#ifdef _DEBUG
-        printf("pgm_1702a_write_chunk() data=0x%02X\r\n", data);
-#endif /* _DEBUG */
     }
 
     _g_1702a_offset += thisChunk;

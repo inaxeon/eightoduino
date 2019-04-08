@@ -37,6 +37,7 @@
 #include <avr/io.h>
 #include <avr/pgmspace.h>
 #include <avr/interrupt.h>
+#include <avr/wdt.h>
 #include <util/delay.h>
 #include "usart_buffered.h"
 #include "adc.h"
@@ -78,6 +79,7 @@ int main(void)
 #endif /* _DEBUG */
     g_irq_enable();
     adc_init();
+    wdt_enable(WDTO_1S);
 #endif /* _MDUINO */
 
 #ifdef _DEBUG
@@ -97,6 +99,9 @@ int main(void)
     for (;;)
     {
         int cmd = cmd_get_next();
+#ifdef _MDUINO
+        wdt_reset();
+#endif /* _MDUINO */
         if (cmd < 0)
             continue;
 
