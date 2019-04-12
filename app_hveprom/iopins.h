@@ -33,7 +33,7 @@
 #define MCMX_270X_RD              0x0200
 #define MCMX_270X_PE              0x0400
 #define MCMX_270X_PON             0x0800
-#define MCMX_270X_NC_4            0x1000
+#define MCMX_270X_NC_2            0x1000
 
 #define C1702A_NC_0               0x0004
 #define C1702A_IMAX               0x0020
