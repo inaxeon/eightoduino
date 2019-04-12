@@ -26,10 +26,9 @@
 #define SHIELD_ID_0               0x0008
 #define SHIELD_ID_1               0x0010
 
-#define MCMX_270X_DEVSEL          0x0004
-#define MCMX_270X_NC_0            0x0020
-#define MCMX_270X_NC_1            0x0040
-#define MCMX_270X_NC_2            0x0080
+#define MCMX_270X_DEVSEL          0x0020
+#define MCMX_270X_NC_0            0x0040
+#define MCMX_270X_NC_1            0x0080
 #define MCMX_270X_WR              0x0100
 #define MCMX_270X_RD              0x0200
 #define MCMX_270X_PE              0x0400
@@ -64,7 +63,7 @@
 #define SHIELD_ID_1_DDR           DDRG
 #define SHIELD_ID_1_PIN           PING
 
-#define MCMX_270X_DEVSEL          PE4
+#define MCMX_270X_DEVSEL          PE3
 #define MCMX_270X_DEVSEL_DDR      DDRE
 #define MCMX_270X_DEVSEL_PIN      PINE
 
