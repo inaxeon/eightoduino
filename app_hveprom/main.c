@@ -179,6 +179,8 @@ static int8_t cmd_get_next(void)
                     case CMD_BLANK_CHECK:
                     case CMD_DEV_RESET:
                     case CMD_MEASURE_12V:
+                    case CMD_TEST:
+                    case CMD_TEST_READ:
                         return c;
                     default:
                         return -1;

@@ -77,6 +77,14 @@
 
 #endif /* _MDUINO */
 
+#define TEST_270X_MCM6876X_PON    1
+#define TEST_270X_MCM6876X_RD     2
+#define TEST_270X_MCM6876X_WR     3
+#define TEST_270X_MCM6876X_PE     4
+#define TEST_270X_MCM6876X_AA     5
+#define TEST_270X_MCM6876X_55     6
+#define TEST_270X_MCM6876X_DATA   7
+
 uint8_t _g_maxPerByteWrites;
 uint8_t _g_useHts;
 uint8_t _g_extraWrites;
@@ -404,4 +412,54 @@ void pgm_270x_mcm6876x_start_blank_check(void)
     pgm_270x_mcm6876x_power_on();
 
     cmd_respond(CMD_START_BLANK_CHECK, ERR_OK);
+}
+
+void pgm_270x_mcm6876x_test(void)
+{
+    uint8_t test_num = host_read8();
+
+    switch (test_num)
+    {
+        case TEST_270X_MCM6876X_PON:
+            pgm_270x_mcm6876x_power_on();
+            break;
+        case TEST_270X_MCM6876X_RD:
+            pgm_270x_mcm6876x_power_on();
+            pgm_270x_mcm6876x_rd_enable();
+            break;
+        case TEST_270X_MCM6876X_WR:
+            pgm_270x_mcm6876x_power_on();
+            pgm_270x_mcm6876x_wr_enable();
+            break;
+        case TEST_270X_MCM6876X_PE:
+            pgm_270x_mcm6876x_power_on();
+            pgm_270x_mcm6876x_pe_enable();
+            break;
+        case TEST_270X_MCM6876X_AA:
+            pgm_270x_mcm6876x_power_on();
+            pgm_dir_out();
+            pgm_write_data(0xAA);
+            pgm_write_address(0xAAA);
+            break;
+        case TEST_270X_MCM6876X_55:
+            pgm_270x_mcm6876x_power_on();
+            pgm_dir_out();
+            pgm_write_data(0x55);
+            pgm_write_address(0x1555);
+            break;
+        case TEST_270X_MCM6876X_DATA:
+            pgm_270x_mcm6876x_power_on();
+            break;
+        default:
+            cmd_respond(ERR_INVALID_CMD, ERR_OK);
+            return;
+    }
+
+    cmd_respond(CMD_TEST, ERR_OK);
+}
+
+void pgm_270x_mcm6876x_test_read(void)
+{
+    cmd_respond(CMD_TEST_READ, ERR_OK);
+    host_write8(pgm_read_data());
 }

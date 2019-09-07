@@ -29,6 +29,8 @@
 #define CMD_BLANK_CHECK          0x15
 #define CMD_DEV_RESET            0x16
 #define CMD_MEASURE_12V          0x17
+#define CMD_TEST                 0x18
+#define CMD_TEST_READ            0x19
 
 #define DEV_1702A                0x00
 #define DEV_C2704                0x01

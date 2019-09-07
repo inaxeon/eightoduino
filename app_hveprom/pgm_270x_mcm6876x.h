@@ -31,5 +31,7 @@ void pgm_270x_mcm6876x_start_blank_check(void);
 void pgm_270x_mcm6876x_blank_check(void);
 void pgm_270x_mcm6876x_start_write(void);
 void pgm_270x_mcm6876x_start_read(void);
+void pgm_270x_mcm6876x_test(void);
+void pgm_270x_mcm6876x_test_read(void);
 
 #endif /* _PGM_270X_MCM6876X_H */

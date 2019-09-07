@@ -90,6 +90,17 @@
 
 #endif /* _MDUINO */
 
+#define TEST_1702A_READ_PON    1
+#define TEST_1702A_READ_CS     2
+#define TEST_1702A_READ_AA     3
+#define TEST_1702A_READ_55     4
+#define TEST_1702A_READ_DATA   5
+#define TEST_1702A_WRITE_PON   6
+#define TEST_1702A_WRITE_PGM   7
+#define TEST_1702A_WRITE_VDD   8
+#define TEST_1702A_WRITE_AA    9
+#define TEST_1702A_WRITE_55    10
+
 uint16_t _g_1702a_offset;
 
 void pgm_1702a_set_params(void)
@@ -428,4 +439,66 @@ void pgm_1702a_reset(void)
 
     pgm_1702a_do_reset();
     cmd_respond(CMD_DEV_RESET, ERR_OK);
+}
+
+void pgm_1702a_test(void)
+{
+    uint8_t test_num = host_read8();
+
+    switch (test_num)
+    {
+        case TEST_1702A_READ_PON:
+            pgm_1702a_read_power_on();
+            break;
+        case TEST_1702A_READ_CS:
+            pgm_1702a_read_power_on();
+            pgm_1702a_cs_enable();
+            break;
+        case TEST_1702A_READ_AA:
+            pgm_1702a_read_power_on();
+            pgm_1702a_ren_enable();
+            pgm_write_address(0xAA);
+            break;
+        case TEST_1702A_READ_55:
+            pgm_1702a_read_power_on();
+            pgm_1702a_ren_enable();
+            pgm_write_address(0x55);
+            break;
+        case TEST_1702A_READ_DATA:
+            pgm_1702a_read_power_on();
+            pgm_1702a_ren_enable();
+            break;
+        case TEST_1702A_WRITE_PON:
+            pgm_1702a_write_power_on();
+            break;
+        case TEST_1702A_WRITE_PGM:
+            pgm_1702a_write_power_on();
+            pgm_1702a_pgm_enable();
+            break;
+        case TEST_1702A_WRITE_VDD:
+            pgm_1702a_write_power_on();
+            pgm_1702a_vdd_enable();
+            break;
+        case TEST_1702A_WRITE_AA:
+            pgm_1702a_write_power_on();
+            pgm_1702a_pen_enable();
+            pgm_write_address(0xAA);
+            break;
+        case TEST_1702A_WRITE_55:
+            pgm_1702a_write_power_on();
+            pgm_1702a_pen_enable();
+            pgm_write_address(0x55);
+            break;
+        default:
+            cmd_respond(ERR_INVALID_CMD, ERR_OK);
+            return;
+    }
+
+    cmd_respond(CMD_TEST, ERR_OK);
+}
+
+void pgm_1702a_test_read(void)
+{
+    cmd_respond(CMD_TEST_READ, ERR_OK);
+    host_write8(pgm_read_data());
 }

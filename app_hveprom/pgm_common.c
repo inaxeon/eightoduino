@@ -56,6 +56,8 @@ static void pgm_start_blank_check(void);
 static void pgm_blank_check(void);
 static void pgm_reset(void);
 static void pgm_measure_12v(void);
+static void pgm_test(void);
+static void pgm_test_read(void);
 
 uint8_t _g_shieldType;
 
@@ -86,6 +88,12 @@ void pgm_process_command(uint8_t cmd)
         break;
     case CMD_DEV_RESET:
         pgm_reset();
+        break;
+    case CMD_TEST:
+        pgm_test();
+        break;
+    case CMD_TEST_READ:
+        pgm_test_read();
         break;
     default:
         break;
@@ -188,6 +196,28 @@ static void pgm_reset(void)
         pgm_1702a_reset();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_reset();
+}
+
+static void pgm_test(void)
+{
+    if (pgm_setup_dev_type(CMD_TEST) < 0)
+        return;
+
+    if (_g_shieldType == SHIELD_TYPE_1702A)
+        pgm_1702a_test();
+    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+        pgm_270x_mcm6876x_test();
+}
+
+static void pgm_test_read(void)
+{
+    if (pgm_setup_dev_type(CMD_TEST) < 0)
+        return;
+
+    if (_g_shieldType == SHIELD_TYPE_1702A)
+        pgm_1702a_test_read();
+    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+        pgm_270x_mcm6876x_test_read();
 }
 
 static void pgm_measure_12v(void)

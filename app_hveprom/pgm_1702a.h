@@ -30,5 +30,7 @@ void pgm_1702a_start_blank_check(void);
 void pgm_1702a_blank_check(void);
 void pgm_1702a_start_write(void);
 void pgm_1702a_start_read(void);
+void pgm_1702a_test(void);
+void pgm_1702a_test_read(void);
 
 #endif /* _PGM_1702A_H */
