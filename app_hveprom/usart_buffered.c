@@ -121,6 +121,11 @@ void usart0_open(uint8_t flags, uint16_t brg)
         UCSR0B |= _BV(RXEN0);
     else
         UCSR0B &= ~_BV(RXEN0);
+    
+    if (flags & USART_BRGH)
+        UCSR0A |= _BV(U2X0);
+    else
+        UCSR0A &= ~_BV(U2X0);
 
     UCSR0B |= _BV(RXCIE0);
 
@@ -283,6 +288,11 @@ void usart1_open(uint8_t flags, uint16_t brg)
     else
         UCSR1B &= ~_BV(RXEN1);
 
+    if (flags & USART_BRGH)
+        UCSR1A |= _BV(U2X1);
+    else
+        UCSR1A &= ~_BV(U2X1);
+
     UCSR1B |= _BV(RXCIE1);
 
     UBRR1L = (brg & 0xFF);
@@ -443,6 +453,11 @@ void usart2_open(uint8_t flags, uint16_t brg)
         UCSR2B |= _BV(RXEN2);
     else
         UCSR2B &= ~_BV(RXEN2);
+
+    if (flags & USART_BRGH)
+        UCSR2A |= _BV(U2X2);
+    else
+        UCSR2A &= ~_BV(U2X2);
 
     UCSR2B |= _BV(RXCIE2);
 

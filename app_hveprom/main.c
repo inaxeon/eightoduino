@@ -64,17 +64,26 @@ int main(void)
     uint8_t shieldType;
 
 #ifdef _M8OD
-    uart_open(HOST_UART, 38400, 8, PARITY_NONE, 1, 0);
+    uart_open(HOST_UART, HOST_BAUD, 8, PARITY_NONE, 1, 0);
 #ifdef _DEBUG
-    uart_open(DEBUG_UART, 38400, 8, PARITY_NONE, 1, 0);
+    uart_open(DEBUG_UART, DEBUG_BAUD, 8, PARITY_NONE, 1, 0);
     setup_printf(DEBUG_UART);
 #endif /* _DEBUG */
 #endif  /* _M8OD */
 
 #ifdef _MDUINO
-    host_usart_open(USART_CONT_RX, (((F_CPU / 38400) / 16) - 1));
+
+#if HOST_BAUD > 38400
+    // The USB-to-Serial AVR seems to set U2X to reduce error at higher baud rates.
+    // This shouldn't be necessary for us since we are sharing its clock, however we
+    // have to anyway otherwise we introduce errors due to integer rounding.
+    host_usart_open(USART_CONT_RX | USART_BRGH, (((F_CPU / HOST_BAUD) / 8) - 1));
+#else
+    host_usart_open(USART_CONT_RX, (((F_CPU / HOST_BAUD) / 16) - 1));
+#endif /* HOST_BAUD > 38400 */
+
 #ifdef _DEBUG
-    debug_usart_open(USART_CONT_RX, (((F_CPU / 38400) / 16) - 1));
+    debug_usart_open(USART_CONT_RX, (((F_CPU / DEBUG_BAUD) / 16) - 1));
     stdout = &uart_str;
 #endif /* _DEBUG */
     g_irq_enable();

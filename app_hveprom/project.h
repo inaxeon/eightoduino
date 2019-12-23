@@ -30,6 +30,9 @@
 #define SHIELD_TYPE_1702A           0x01
 #define SHIELD_TYPE_270X_MCM6876X   0x02
 
+#define HOST_BAUD                   38400
+#define DEBUG_BAUD                  38400
+
 #ifdef _MDUINO
 
 #define host_usart_open        usart0_open
