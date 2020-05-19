@@ -48,12 +48,28 @@
 
 #ifdef _M8OD
 
-#define pgm_1702a_delay_read() delay_ncycles(5)
+#ifdef _80D_5MHZ_
+#define DELAY_READ 2
+#define DELAY_AD_HOLD 2
+#define DELAY_AD_HOLD_POST_VDD 38
+#define DELAY_WRITE 745
+#define DELAY_POST_WRITE 3340
+#define DELAY_POWER_WAIT 0x7FFF
+#else
+#define DELAY_READ 5
+#define DELAY_AD_HOLD 5
+#define DELAY_AD_HOLD_POST_VDD 81
+#define DELAY_WRITE 1495
+#define DELAY_POST_WRITE 6684
+#define DELAY_POWER_WAIT 0xFFFF
+#endif
+
+#define pgm_1702a_delay_read() delay_ncycles(DELAY_READ)
 #define pgm_1702a_delay_ad_setup() delay_ncycles(1)
-#define pgm_1702a_delay_ad_hold() delay_ncycles(5)
-#define pgm_1702a_delay_ad_hold_post_vdd() delay_ncycles(81)
-#define pgm_1702a_delay_write() delay_ncycles(1495)
-#define pgm_1702a_delay_post_write() delay_ncycles(6684)
+#define pgm_1702a_delay_ad_hold() delay_ncycles(DELAY_AD_HOLD)
+#define pgm_1702a_delay_ad_hold_post_vdd() delay_ncycles(DELAY_AD_HOLD_POST_VDD)
+#define pgm_1702a_delay_write() delay_ncycles(DELAY_WRITE)
+#define pgm_1702a_delay_post_write() delay_ncycles(DELAY_POST_WRITE)
 
 #define pgm_1702a_pen_enable()  cpld_write(CTRL_PORT, C1702A_PEN, C1702A_PEN)
 #define pgm_1702a_pen_disable() cpld_write(CTRL_PORT, C1702A_PEN, 0)
@@ -140,7 +156,7 @@ static void pgm_1702a_write_power_on()
     {
 #ifdef _M8OD
         cpld_write(CTRL_PORT, C1702A_PGMPWREN, C1702A_PGMPWREN);
-        delay_ncycles(0xFFFF);
+        delay_ncycles(DELAY_POWER_WAIT);
 #endif /* _M8OD */
 
 #ifdef _MDUINO
@@ -207,9 +223,9 @@ static void pgm_1702a_do_reset(void)
         pgm_1702a_pen_disable();
         cpld_write(CTRL_PORT, (C1702A_PGMPWREN), 0);
         // Wait for high voltage supplies to discharge
-        delay_ncycles(0xFFFF);
-        delay_ncycles(0xFFFF);
-        delay_ncycles(0xFFFF);
+        delay_ncycles(DELAY_POWER_WAIT);
+        delay_ncycles(DELAY_POWER_WAIT);
+        delay_ncycles(DELAY_POWER_WAIT);
 #endif /* _M8OD */
 
 #ifdef _MDUINO
@@ -237,8 +253,8 @@ static void pgm_1702a_do_reset(void)
 #ifdef _M8OD
         pgm_1702a_ren_disable();
         cpld_write(CTRL_PORT, (C1702A_READPWREN), 0);
-        delay_ncycles(0xFFFF);
-        delay_ncycles(0xFFFF);
+        delay_ncycles(DELAY_POWER_WAIT);
+        delay_ncycles(DELAY_POWER_WAIT);
 #endif /* _M8OD */
 
 #ifdef _MDUINO

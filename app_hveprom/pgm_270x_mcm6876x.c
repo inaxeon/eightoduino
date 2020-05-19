@@ -47,11 +47,21 @@
 
 #ifdef _M8OD
 
+#ifdef _80D_5MHZ_
+#define DELAY_WRITE_MCM6876X 430
+#define DELAY_WRITE_270X 260
+#define DELAY_POWER_WAIT 0x7FFF
+#else
+#define DELAY_WRITE_MCM6876X 870
+#define DELAY_WRITE_270X 535
+#define DELAY_POWER_WAIT 0xFFFF
+#endif
+
 #define pgm_270x_mcm6876x_delay_read() delay_ncycles(1)
 #define pgm_270x_mcm6876x_delay_ad_setup() delay_ncycles(1)
 #define pgm_270x_mcm6876x_delay_ad_hold() delay_ncycles(1)
-#define pgm_270x_mcm6876x_delay_write_mcm6876x() delay_ncycles(870)
-#define pgm_270x_mcm6876x_delay_write_270x() delay_ncycles(535)
+#define pgm_270x_mcm6876x_delay_write_mcm6876x() delay_ncycles(DELAY_WRITE_MCM6876X)
+#define pgm_270x_mcm6876x_delay_write_270x() delay_ncycles(DELAY_WRITE_270X)
 #define pgm_270x_mcm6876x_wr_enable() cpld_write(CTRL_PORT, MCMX_270X_WR, MCMX_270X_WR)
 #define pgm_270x_mcm6876x_wr_disable() cpld_write(CTRL_PORT, MCMX_270X_WR, 0)
 #define pgm_270x_mcm6876x_rd_enable() cpld_write(CTRL_PORT, MCMX_270X_RD, MCMX_270X_RD)
@@ -186,7 +196,7 @@ void pgm_270x_mcm6876x_power_on()
 {
 #ifdef _M8OD
     cpld_write(CTRL_PORT, MCMX_270X_PON, MCMX_270X_PON);
-    delay_ncycles(0xFFFF);
+    delay_ncycles(DELAY_POWER_WAIT);
 #endif /* _M8OD */
 
 #ifdef _MDUINO
@@ -202,7 +212,7 @@ void pgm_270x_mcm6876x_reset(void)
     pgm_270x_mcm6876x_wr_disable();
 
 #ifdef _M8OD
-    delay_ncycles(0xFFFF);
+    delay_ncycles(DELAY_POWER_WAIT);
     cpld_write(CTRL_PORT, MCMX_270X_PON, 0); /* Power off */
 #endif /* _M8OD */
 
