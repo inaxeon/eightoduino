@@ -44,6 +44,56 @@
 #include "pgm_common.h"
 #include "pgm_mcs48.h"
 
+#ifdef _M8OD
+
+#define pgm_mcs48_cs_enable() cpld_write(CTRL_PORT, MCS48_CS, 0)
+#define pgm_mcs48_cs_disable() cpld_write(CTRL_PORT, MCS48_CS, MCS48_CS)
+
+#define pgm_mcs48_a0_enable() cpld_write(CTRL_PORT, MCS48_A0, MCS48_A0)
+#define pgm_mcs48_a0_disable() cpld_write(CTRL_PORT, MCS48_A0, 0)
+
+#define pgm_mcs48_ea_enable() cpld_write(CTRL_PORT, MCS48_EA, MCS48_EA)
+#define pgm_mcs48_ea_disable() cpld_write(CTRL_PORT, MCS48_EA, 0)
+
+#define pgm_mcs48_vdd_enable() cpld_write(CTRL_PORT, MCS48_VDDEN, MCS48_VDDEN)
+#define pgm_mcs48_vdd_disable() cpld_write(CTRL_PORT, MCS48_VDDEN, 0)
+
+#define pgm_mcs48_test0_enable() cpld_write(CTRL_PORT, MCS48_TEST0, MCS48_TEST0)
+#define pgm_mcs48_test0_disable() cpld_write(CTRL_PORT, MCS48_TEST0, 0)
+
+#define pgm_mcs48_prog_enable() cpld_write(CTRL_PORT, MCS48_PROGEN, MCS48_PROGEN)
+#define pgm_mcs48_prog_disable() cpld_write(CTRL_PORT, MCS48_PROGEN, 0)
+
+#define pgm_mcs48_reset_enable() cpld_write(CTRL_PORT, MCS48_RESET, 0)
+#define pgm_mcs48_reset_disable() cpld_write(CTRL_PORT, MCS48_RESET, MCS48_RESET)
+
+#endif /* _M8OD */
+
+#ifdef _MDUINO
+
+#define pgm_mcs48_cs_enable() MCS48_CS_PORT &= ~_BV(MCS48_CS)
+#define pgm_mcs48_cs_disable() MCS48_CS_PORT |= _BV(MCS48_CS)
+
+#define pgm_mcs48_a0_enable() MCS48_A0_PORT |= _BV(MCS48_A0)
+#define pgm_mcs48_a0_disable() MCS48_A0_PORT &= ~_BV(MCS48_A0)
+
+#define pgm_mcs48_ea_enable() MCS48_EA_PORT |= _BV(MCS48_EA)
+#define pgm_mcs48_ea_disable() MCS48_EA_PORT &= ~_BV(MCS48_EA)
+
+#define pgm_mcs48_vdd_enable() MCS48_VDD_PORT |= _BV(MCS48_VDD)
+#define pgm_mcs48_vdd_disable() MCS48_VDD_PORT &= ~_BV(MCS48_VDD)
+
+#define pgm_mcs48_test0_enable() MCS48_TEST0_PORT |= _BV(MCS48_TEST0)
+#define pgm_mcs48_test0_disable() MCS48_TEST0_PORT &= ~_BV(MCS48_TEST0)
+
+#define pgm_mcs48_prog_enable() MCS48_PROG_PORT |= _BV(MCS48_PROG)
+#define pgm_mcs48_prog_disable() MCS48_PROG_PORT &= ~_BV(MCS48_PROG)
+
+#define pgm_mcs48_reset_enable() MCS48_RESET_PORT &= ~_BV(MCS48_RESET)
+#define pgm_mcs48_reset_disable() MCS48_RESET_PORT |= _BV(MCS48_RESET)
+
+#endif /* _MDUINO */
+
 void pcm_mcs48_init(void)
 {
     _g_maxPerByteWrites = 0;
@@ -54,31 +104,35 @@ void pcm_mcs48_init(void)
 
 #ifdef _M8OD
     cpld_write(CTRL_PORT,
-        (MCMX_270X_DEVSEL | MCMX_270X_NC_0 | MCMX_270X_NC_1 | MCMX_270X_NC_2 | MCMX_270X_WR | MCMX_270X_RD | MCMX_270X_PE | MCMX_270X_PON),
-        0
+        (MCS48_CS | MCS48_A0 | MCS48_PON | MCS48_PROGEN | MCS48_EA | MCS48_TEST0 | MCS48_VDDEN | MCS48_RESET),
+        (MCS48_CS)
     );
-    // DEVSEL + NC's as inputs
+    
     cpld_write(CTRL_TRIS,
-        (MCMX_270X_DEVSEL | MCMX_270X_NC_0 | MCMX_270X_NC_1 | MCMX_270X_NC_2 | MCMX_270X_WR | MCMX_270X_RD | MCMX_270X_PE | MCMX_270X_PON),
-        (MCMX_270X_DEVSEL | MCMX_270X_NC_0 | MCMX_270X_NC_1 | MCMX_270X_NC_2)
+        (MCS48_CS | MCS48_A0 | MCS48_PON | MCS48_PROGEN | MCS48_EA | MCS48_ALE | MCS48_TEST0 | MCS48_VDDEN | MCS48_RESET),
+        (MCS48_ALE)
     );
 #endif /* _M8OD */
 
 #ifdef _MDUINO
-    MCMX_270X_WR_PORT &= ~_BV(MCMX_270X_WR);
-    MCMX_270X_RD_PORT &= ~_BV(MCMX_270X_RD);
-    MCMX_270X_PE_PORT &= ~_BV(MCMX_270X_PE);
-    MCMX_270X_PON_PORT &= ~_BV(MCMX_270X_PON);
+    MCS48_CS_PORT |= _BV(MCS48_CS);
+    MCS48_A0_PORT &= ~_BV(MCS48_A0);
+    MCS48_PON_PORT &= ~_BV(MCS48_PON);
+    MCS48_PROGEN_PORT &= ~_BV(MCS48_PROGEN);
+    MCS48_EA_PORT &= ~_BV(MCS48_EA);
+    MCS48_TEST0_PORT &= ~_BV(MCS48_TEST0);
+    MCS48_VDDEN_PORT &= ~_BV(MCS48_VDDEN);
+    MCS48_RESET_PORT &= ~_BV(MCS48_RESET);
 
-    MCMX_270X_DEVSEL_DDR &= ~_BV(MCMX_270X_DEVSEL); // input
-    MCMX_270X_NC_0_DDR &= ~_BV(MCMX_270X_NC_0); // input
-    MCMX_270X_NC_1_DDR &= ~_BV(MCMX_270X_NC_1); // input
-    MCMX_270X_NC_2_DDR &= ~_BV(MCMX_270X_NC_2); // input
-    MCMX_270X_WR_DDR |= _BV(MCMX_270X_WR); // output
-    MCMX_270X_RD_DDR |= _BV(MCMX_270X_RD); // output
-    MCMX_270X_PE_DDR |= _BV(MCMX_270X_PE); // output
-    MCMX_270X_PON_DDR |= _BV(MCMX_270X_PON); // output
-    MCMX_270X_NC_3_DDR &= ~_BV(MCMX_270X_NC_3); // input
+    MCS48_CS_DDR |= _BV(MCS48_CS);
+    MCS48_A0_DRR |= _BV(MCS48_A0);
+    MCS48_PON_DDR |= _BV(MCS48_PON);
+    MCS48_PROGEN_DDR |= _BV(MCS48_PROGEN);
+    MCS48_EA_DDR |= _BV(MCS48_EA);
+    MCS48_TEST0_DDR |= _BV(MCS48_TEST0);
+    MCS48_VDDEN_DDR |= _BV(MCS48_VDDEN);
+    MCS48_RESET_DDR |= _BV(MCS48_RESET);
+    MCS48_ALE_DDR &= ~_BV(MCS48_ALE);
 #endif /* _MDUINO */
 
 #ifdef _DEBUG
@@ -97,37 +151,41 @@ void pcm_mcs48_set_params(uint8_t dev_type, uint16_t dev_size, uint8_t max_retri
     _g_totalWrites = 0;
 
 #ifdef _DEBUG
-    //printf("pcm_mcs48_set_params(): completed\r\n");
+    printf("pcm_mcs48_set_params(): completed\r\n");
 #endif /* _DEBUG */
 }
 
 void pcm_mcs48_power_on()
 {
 #ifdef _M8OD
-    cpld_write(CTRL_PORT, MCMX_270X_PON, MCMX_270X_PON);
+    cpld_write(CTRL_PORT, MCS48_PON, MCS48_PON);
     delay_ncycles(DELAY_POWER_WAIT);
 #endif /* _M8OD */
 
 #ifdef _MDUINO
-    MCMX_270X_PON_PORT |= _BV(MCMX_270X_PON);
+    MCS48_PON_PORT |= _BV(MCS48_PON);
     _delay_ms(100);
 #endif /* _MDUINO */
 }
 
 void pcm_mcs48_reset(void)
 {
-    pcm_mcs48_pe_disable();
-    //pcm_mcs48_rd_disable();
-    //pcm_mcs48_wr_disable();
+    pgm_mcs48_cs_disable();
+    pgm_mcs48_a0_disable();
+    pgm_mcs48_ea_disable();
+    pgm_mcs48_vdd_disable();
+    pgm_mcs48_test0_disable();
+    pgm_mcs48_prog_disable();
+    pgm_mcs48_reset_disable();
 
 #ifdef _M8OD
     delay_ncycles(DELAY_POWER_WAIT);
-    cpld_write(CTRL_PORT, MCMX_270X_PON, 0); /* Power off */
+    cpld_write(CTRL_PORT, MCS48_PON, 0); /* Power off */
 #endif /* _M8OD */
 
 #ifdef _MDUINO
     _delay_ms(100);
-    MCMX_270X_PON_PORT &= ~_BV(MCMX_270X_PON);
+    MCS48_PON_PORT &= ~_BV(MCS48_PON);
 #endif /* _MDUINO */
 
     pgm_dir_in();
