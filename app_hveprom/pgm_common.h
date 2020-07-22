@@ -36,6 +36,10 @@
 #define DEV_C2704                0x01
 #define DEV_C2708                0x02
 #define DEV_MCM6876X             0x03
+#define DEV_8748                 0x04
+#define DEV_8749                 0x05
+#define DEV_8741                 0x06
+#define DEV_8742                 0x07
 
 #define ERR_OK                   0x00
 #define ERR_PROCEED_DUALSOCKET   0x01
@@ -53,6 +57,7 @@
 #define WRITE_CHUNK_SIZE         8
 #define MCM6876X_MAX_RETRIES     25
 #define C270X_MAX_RETRIES        100
+#define MCS48_MAX_RETRIES        25
 
 void pgm_process_command(uint8_t cmd);
 void pgm_write_address(uint16_t address);

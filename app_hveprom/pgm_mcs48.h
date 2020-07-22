@@ -21,7 +21,7 @@
 #ifndef _PGM_MCS48_H
 #define _PGM_MCS48_H
 
-void pgm_mcs48_set_params(void);
+void pgm_mcs48_set_params(uint8_t dev_type, uint16_t dev_size, uint8_t max_retries);
 void pgm_mcs48_init(void);
 void pgm_mcs48_reset(void);
 void pgm_mcs48_write_chunk(void);

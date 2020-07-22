@@ -80,21 +80,38 @@
 #define pgm_mcs48_ea_enable() MCS48_EA_PORT |= _BV(MCS48_EA)
 #define pgm_mcs48_ea_disable() MCS48_EA_PORT &= ~_BV(MCS48_EA)
 
-#define pgm_mcs48_vdd_enable() MCS48_VDD_PORT |= _BV(MCS48_VDD)
-#define pgm_mcs48_vdd_disable() MCS48_VDD_PORT &= ~_BV(MCS48_VDD)
+#define pgm_mcs48_vdd_enable() MCS48_VDDEN_PORT |= _BV(MCS48_VDDEN)
+#define pgm_mcs48_vdd_disable() MCS48_VDDEN_PORT &= ~_BV(MCS48_VDDEN)
 
 #define pgm_mcs48_test0_enable() MCS48_TEST0_PORT |= _BV(MCS48_TEST0)
 #define pgm_mcs48_test0_disable() MCS48_TEST0_PORT &= ~_BV(MCS48_TEST0)
 
-#define pgm_mcs48_prog_enable() MCS48_PROG_PORT |= _BV(MCS48_PROG)
-#define pgm_mcs48_prog_disable() MCS48_PROG_PORT &= ~_BV(MCS48_PROG)
+#define pgm_mcs48_prog_enable() MCS48_PROGEN_PORT |= _BV(MCS48_PROGEN)
+#define pgm_mcs48_prog_disable() MCS48_PROGEN_PORT &= ~_BV(MCS48_PROGEN)
 
 #define pgm_mcs48_reset_enable() MCS48_RESET_PORT &= ~_BV(MCS48_RESET)
 #define pgm_mcs48_reset_disable() MCS48_RESET_PORT |= _BV(MCS48_RESET)
 
 #endif /* _MDUINO */
 
-void pcm_mcs48_init(void)
+#define TEST_MCS48_PON    1
+#define TEST_MCS48_VDD    2
+#define TEST_MCS48_EA     3
+#define TEST_MCS48_PROG   4
+#define TEST_MCS48_AA     5
+#define TEST_MCS48_55     6
+#define TEST_MCS48_DATA   7
+
+static uint8_t _g_maxPerByteWrites;
+static uint8_t _g_useHts;
+static uint8_t _g_extraWrites;
+static uint8_t _g_maxRetries;
+static uint32_t _g_totalWrites;
+static uint16_t _g_devSize;
+static uint16_t _g_offset;
+static int8_t _g_devType;
+
+void pgm_mcs48_init(void)
 {
     _g_maxPerByteWrites = 0;
     _g_totalWrites = 0;
@@ -125,7 +142,7 @@ void pcm_mcs48_init(void)
     MCS48_RESET_PORT &= ~_BV(MCS48_RESET);
 
     MCS48_CS_DDR |= _BV(MCS48_CS);
-    MCS48_A0_DRR |= _BV(MCS48_A0);
+    MCS48_A0_DDR |= _BV(MCS48_A0);
     MCS48_PON_DDR |= _BV(MCS48_PON);
     MCS48_PROGEN_DDR |= _BV(MCS48_PROGEN);
     MCS48_EA_DDR |= _BV(MCS48_EA);
@@ -136,11 +153,11 @@ void pcm_mcs48_init(void)
 #endif /* _MDUINO */
 
 #ifdef _DEBUG
-    printf("pcm_mcs48_io_init(): completed\r\n");
+    printf("pgm_mcs48_io_init(): completed\r\n");
 #endif /* _DEBUG */
 }
 
-void pcm_mcs48_set_params(uint8_t dev_type, uint16_t dev_size, uint8_t max_retries)
+void pgm_mcs48_set_params(uint8_t dev_type, uint16_t dev_size, uint8_t max_retries)
 {
     _g_maxRetries = max_retries;
     _g_devSize = dev_size;
@@ -151,11 +168,11 @@ void pcm_mcs48_set_params(uint8_t dev_type, uint16_t dev_size, uint8_t max_retri
     _g_totalWrites = 0;
 
 #ifdef _DEBUG
-    printf("pcm_mcs48_set_params(): completed\r\n");
+    printf("pgm_mcs48_set_params(): completed\r\n");
 #endif /* _DEBUG */
 }
 
-void pcm_mcs48_power_on()
+void pgm_mcs48_power_on()
 {
 #ifdef _M8OD
     cpld_write(CTRL_PORT, MCS48_PON, MCS48_PON);
@@ -168,7 +185,7 @@ void pcm_mcs48_power_on()
 #endif /* _MDUINO */
 }
 
-void pcm_mcs48_reset(void)
+void pgm_mcs48_reset(void)
 {
     pgm_mcs48_cs_disable();
     pgm_mcs48_a0_disable();
@@ -192,7 +209,7 @@ void pcm_mcs48_reset(void)
     cmd_respond(CMD_DEV_RESET, ERR_OK);
 }
 
-void pcm_mcs48_write_chunk(void)
+void pgm_mcs48_write_chunk(void)
 {
     uint8_t chunk[WRITE_CHUNK_SIZE];
     uint8_t attempt;
@@ -201,7 +218,7 @@ void pcm_mcs48_write_chunk(void)
     uint16_t thisChunk = remaining > WRITE_CHUNK_SIZE ? WRITE_CHUNK_SIZE : remaining;
 
 #ifdef _DEBUG
-    printf("pcm_mcs48_write_chunk() thisChunk=%d remaining=%d _g_offset=%d\r\n", thisChunk, remaining, _g_offset);
+    printf("pgm_mcs48_write_chunk() thisChunk=%d remaining=%d _g_offset=%d\r\n", thisChunk, remaining, _g_offset);
 #endif /* _DEBUG */
 
     /* The host is going to shove all of the data in at once, so we have to buffer it */
@@ -217,8 +234,8 @@ void pcm_mcs48_write_chunk(void)
             
         for (attempt = 0; attempt < stopat; attempt++)
         {
-            uint8_t data;
-            uint8_t temp = chunk[i];
+            // uint8_t data;
+            // uint8_t temp = chunk[i];
 
         }
 
@@ -246,7 +263,7 @@ void pcm_mcs48_write_chunk(void)
     }
 }
 
-void pcm_mcs48_read_chunk(void)
+void pgm_mcs48_read_chunk(void)
 {
     int16_t remaining = (_g_devSize - _g_offset);
     uint8_t i;
@@ -255,7 +272,7 @@ void pcm_mcs48_read_chunk(void)
     cmd_respond(CMD_READ_CHUNK, (_g_offset + thisChunk) == _g_devSize ? ERR_COMPLETE : ERR_OK);
 
 #ifdef _DEBUG
-    printf("pcm_mcs48_read_chunk() thisChunk=%d remaining=%d _g_offset=%d\r\n", thisChunk, remaining, _g_offset);
+    printf("pgm_mcs48_read_chunk() thisChunk=%d remaining=%d _g_offset=%d\r\n", thisChunk, remaining, _g_offset);
 #endif /* _DEBUG */
 
     for (i = 0; i < thisChunk; i++)
@@ -263,18 +280,18 @@ void pcm_mcs48_read_chunk(void)
         pgm_write_address(_g_offset + i); /* Output address */
 
         /* Read data */
-        pcm_mcs48_delay_read();
-        pcm_mcs48_rd_enable();
-        pcm_mcs48_delay_read();
-        host_write8(pgm_read_data());
-        pcm_mcs48_rd_disable();
-        pcm_mcs48_delay_read();
+        // pgm_mcs48_delay_read();
+        // pgm_mcs48_rd_enable();
+        // pgm_mcs48_delay_read();
+        // host_write8(pgm_read_data());
+        // pgm_mcs48_rd_disable();
+        // pgm_mcs48_delay_read();
     }
 
     _g_offset += thisChunk;
 }
 
-void pcm_mcs48_blank_check(void)
+void pgm_mcs48_blank_check(void)
 {
     uint16_t offset = 0;
     uint8_t data;
@@ -283,15 +300,15 @@ void pcm_mcs48_blank_check(void)
     {
         // CLOSE, BUT NOT GOING TO WORK.
         pgm_write_address(offset); /* Output address */
-        pcm_mcs48_delay_read();
-        pcm_mcs48_rd_enable();
-        pcm_mcs48_delay_read();
-        data = pgm_read_data();
-        pcm_mcs48_rd_disable();
-        pcm_mcs48_delay_read();
+        // pgm_mcs48_delay_read();
+        // pgm_mcs48_rd_enable();
+        // pgm_mcs48_delay_read();
+        // data = pgm_read_data();
+        // pgm_mcs48_rd_disable();
+        // pgm_mcs48_delay_read();
 
-        if (data != 0xFF)
-            break;
+        // if (data != 0xFF)
+        //     break;
 
         offset++;
     }
@@ -308,77 +325,81 @@ void pcm_mcs48_blank_check(void)
     }
 }
 
-void pcm_mcs48_start_write(void)
+void pgm_mcs48_start_write(void)
 {
     _g_useHts = host_read8();
     _g_extraWrites = host_read8();
 
 #ifdef _DEBUG
-    printf("pcm_mcs48_start_write() _g_useHts=%d _g_extraWrites=%d\r\n", _g_useHts, _g_extraWrites);
+    printf("pgm_mcs48_start_write() _g_useHts=%d _g_extraWrites=%d\r\n", _g_useHts, _g_extraWrites);
 #endif /* _DEBUG */
 
-    pcm_mcs48_power_on();
+    pgm_mcs48_power_on();
 
     cmd_respond(CMD_START_WRITE, ERR_OK);
 }
 
-void pcm_mcs48_start_read(void)
+void pgm_mcs48_start_read(void)
 {
 #ifdef _DEBUG
-    printf("pcm_mcs48_start_read()\r\n");
+    printf("pgm_mcs48_start_read()\r\n");
 #endif /* _DEBUG */
 
-    pcm_mcs48_power_on();
+    pgm_mcs48_power_on();
 
     cmd_respond(CMD_START_READ, ERR_OK);
 }
 
-void pcm_mcs48_start_blank_check(void)
+void pgm_mcs48_start_blank_check(void)
 {
 #ifdef _DEBUG
-    printf("pcm_mcs48_start_blank_check()\r\n");
+    printf("pgm_mcs48_start_blank_check()\r\n");
 #endif /* _DEBUG */
 
-    pcm_mcs48_power_on();
+    pgm_mcs48_power_on();
 
     cmd_respond(CMD_START_BLANK_CHECK, ERR_OK);
 }
 
-void pcm_mcs48_test(void)
+void pgm_mcs48_test(void)
 {
     uint8_t test_num = host_read8();
 
     switch (test_num)
     {
-        case TEST_270X_MCM6876X_PON:
-            pcm_mcs48_power_on();
+        case TEST_MCS48_PON:
+            pgm_mcs48_power_on();
             break;
-        case TEST_270X_MCM6876X_RD:
-            pcm_mcs48_power_on();
-            pcm_mcs48_rd_enable();
+        case TEST_MCS48_VDD:
+            pgm_mcs48_power_on();
+            pgm_mcs48_vdd_enable();
             break;
-        case TEST_270X_MCM6876X_WR:
-            pcm_mcs48_power_on();
-            pcm_mcs48_wr_enable();
+        case TEST_MCS48_EA:
+            pgm_mcs48_power_on();
+            pgm_mcs48_ea_enable();
             break;
-        case TEST_270X_MCM6876X_PE:
-            pcm_mcs48_power_on();
-            pcm_mcs48_pe_enable();
+        case TEST_MCS48_PROG:
+            pgm_mcs48_power_on();
+            pgm_mcs48_prog_enable();
             break;
-        case TEST_270X_MCM6876X_AA:
-            pcm_mcs48_power_on();
+        case TEST_MCS48_AA:
+            pgm_mcs48_power_on();
             pgm_dir_out();
             pgm_write_data(0xAA);
             pgm_write_address(0xAAA);
+            pgm_mcs48_a0_enable();
+            pgm_mcs48_cs_enable();
             break;
-        case TEST_270X_MCM6876X_55:
-            pcm_mcs48_power_on();
+        case TEST_MCS48_55:
+            pgm_mcs48_power_on();
             pgm_dir_out();
             pgm_write_data(0x55);
             pgm_write_address(0x1555);
+            pgm_mcs48_test0_enable();
+            pgm_mcs48_reset_enable();
             break;
-        case TEST_270X_MCM6876X_DATA:
-            pcm_mcs48_power_on();
+        case TEST_MCS48_DATA:
+            pgm_mcs48_power_on();
             break;
         default:
             cmd_respond(ERR_INVALID_CMD, ERR_OK);
@@ -388,7 +409,7 @@ void pcm_mcs48_test(void)
     cmd_respond(CMD_TEST, ERR_OK);
 }
 
-void pcm_mcs48_test_read(void)
+void pgm_mcs48_test_read(void)
 {
     cmd_respond(CMD_TEST_READ, ERR_OK);
     host_write8(pgm_read_data());

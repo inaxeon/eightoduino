@@ -46,6 +46,7 @@
 #include "pgm_common.h"
 #include "pgm_1702a.h"
 #include "pgm_270x_mcm6876x.h"
+#include "pgm_mcs48.h"
 
 static int8_t pgm_setup_dev_type(uint8_t cmd);
 static void pgm_start_write(void);
@@ -142,6 +143,8 @@ static void pgm_start_write(void)
         pgm_1702a_start_write();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_start_write();
+    if (_g_shieldType == SHIELD_TYPE_MCS48)
+        pgm_mcs48_start_write();
 }
 
 static void pgm_start_read(void)
@@ -153,6 +156,8 @@ static void pgm_start_read(void)
         pgm_1702a_start_read();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_start_read();
+    if (_g_shieldType == SHIELD_TYPE_MCS48)
+        pgm_mcs48_start_read();
 }
 
 static void pgm_write_chunk(void)
@@ -161,6 +166,8 @@ static void pgm_write_chunk(void)
         pgm_1702a_write_chunk();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_write_chunk();
+    if (_g_shieldType == SHIELD_TYPE_MCS48)
+        pgm_mcs48_write_chunk();
 }
 
 static void pgm_read_chunk(void)
@@ -169,6 +176,8 @@ static void pgm_read_chunk(void)
         pgm_1702a_read_chunk();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_read_chunk();
+    if (_g_shieldType == SHIELD_TYPE_MCS48)
+        pgm_mcs48_read_chunk();
 }
 
 static void pgm_start_blank_check(void)
@@ -180,6 +189,8 @@ static void pgm_start_blank_check(void)
         pgm_1702a_start_blank_check();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_start_blank_check();
+    if (_g_shieldType == SHIELD_TYPE_MCS48)
+        pgm_mcs48_start_blank_check();
 }
 
 static void pgm_blank_check(void)
@@ -188,6 +199,8 @@ static void pgm_blank_check(void)
         pgm_1702a_blank_check();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_blank_check();
+    if (_g_shieldType == SHIELD_TYPE_MCS48)
+        pgm_mcs48_blank_check();
 }
 
 static void pgm_reset(void)
@@ -196,6 +209,8 @@ static void pgm_reset(void)
         pgm_1702a_reset();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_reset();
+    if (_g_shieldType == SHIELD_TYPE_MCS48)
+        pgm_mcs48_reset();
 }
 
 static void pgm_test(void)
@@ -207,6 +222,8 @@ static void pgm_test(void)
         pgm_1702a_test();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_test();
+    if (_g_shieldType == SHIELD_TYPE_MCS48)
+        pgm_mcs48_test();
 }
 
 static void pgm_test_read(void)
@@ -218,6 +235,8 @@ static void pgm_test_read(void)
         pgm_1702a_test_read();
     if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_test_read();
+    if (_g_shieldType == SHIELD_TYPE_MCS48)
+        pgm_mcs48_test_read();
 }
 
 static void pgm_measure_12v(void)
@@ -287,6 +306,18 @@ static int8_t pgm_setup_dev_type(uint8_t cmd)
         if (!pgm_270x_mcm6876x_check_switch(DEV_MCM6876X))
             goto err_wrongswitch;
         pgm_270x_mcm6876x_set_params(DEV_MCM6876X, 0x2000, MCM6876X_MAX_RETRIES);
+        break;
+    case DEV_8741:
+    case DEV_8748:
+        if (_g_shieldType != SHIELD_TYPE_MCS48)
+            goto err_wrongshield;
+        pgm_mcs48_set_params(devtype, 0x400, MCS48_MAX_RETRIES);
+        break;
+    case DEV_8742:
+    case DEV_8749:
+        if (_g_shieldType != SHIELD_TYPE_MCS48)
+            goto err_wrongshield;
+        pgm_mcs48_set_params(devtype, 0x800, MCS48_MAX_RETRIES);
         break;
     default:
 #ifdef _DEBUG

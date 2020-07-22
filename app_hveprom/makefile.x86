@@ -12,7 +12,7 @@ SYSASMOBJS = cstrt086.obj util.obj
 .asm.obj:
     wasm $(ASMFLAGS) $<
 
-hveprom_8od.hex: main.obj pgm_common.obj pgm_270x_mcm6876x.obj pgm_1702a.obj dummy.obj $(SYSCOBJS) $(SYSASMOBJS)
+hveprom_8od.hex: main.obj pgm_common.obj pgm_270x_mcm6876x.obj pgm_1702a.obj pgm_mcs48.obj dummy.obj $(SYSCOBJS) $(SYSASMOBJS)
     wlink name hveprom_8od.hex file { $< }
 
 $(SYSCOBJS): $(SYS)\*.c $(SYS)\*.h

@@ -95,14 +95,14 @@
 #define TEST_270X_MCM6876X_55     6
 #define TEST_270X_MCM6876X_DATA   7
 
-uint8_t _g_maxPerByteWrites;
-uint8_t _g_useHts;
-uint8_t _g_extraWrites;
-uint8_t _g_maxRetries;
-uint32_t _g_totalWrites;
-uint16_t _g_devSize;
-uint16_t _g_offset;
-int8_t _g_devType;
+static uint8_t _g_maxPerByteWrites;
+static uint8_t _g_useHts;
+static uint8_t _g_extraWrites;
+static uint8_t _g_maxRetries;
+static uint32_t _g_totalWrites;
+static uint16_t _g_devSize;
+static uint16_t _g_offset;
+static int8_t _g_devType;
 
 void pgm_270x_mcm6876x_init(void)
 {

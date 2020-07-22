@@ -184,7 +184,7 @@
 
 #define MCS48_EA                  PH6
 #define MCS48_EA_DDR              DDRH
-#define MCS48_PORT                PORTH
+#define MCS48_EA_PORT             PORTH
 
 #define MCS48_ALE                 PH5
 #define MCS48_ALE_DDR             DDRH

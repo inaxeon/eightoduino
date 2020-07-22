@@ -128,18 +128,31 @@ static uint8_t detect_shield(void)
 {
     bool bit_0 = false;
     bool bit_1 = false;
+    bool bit_c = false;
+    bool bit_b = false;
+    bool bit_a = false;
 
 #ifdef _M8OD
-    cpld_write(CTRL_TRIS, (SHIELD_ID_0 | SHIELD_ID_1), (SHIELD_ID_0 | SHIELD_ID_1));
-    bit_0 = (cpld_read(CTRL_PORT) & SHIELD_ID_0) == SHIELD_ID_0;
-    bit_1 = (cpld_read(CTRL_PORT) & SHIELD_ID_1) == SHIELD_ID_1;
+    cpld_write(SHIELDID_C01_TRIS, (SHIELD_ID_0 | SHIELD_ID_1 | SHIELD_ID_C), (SHIELD_ID_0 | SHIELD_ID_1 | SHIELD_ID_C));
+    cpld_write(SHIELDID_AB_TRIS, (SHIELD_ID_A | SHIELD_ID_B), (SHIELD_ID_A | SHIELD_ID_B));
+    bit_0 = (cpld_read(SHIELDID_C01_PORT) & SHIELD_ID_0) == SHIELD_ID_0;
+    bit_1 = (cpld_read(SHIELDID_C01_PORT) & SHIELD_ID_1) == SHIELD_ID_1;
+    bit_c = (cpld_read(SHIELDID_C01_PORT) & SHIELD_ID_C) == SHIELD_ID_C;
+    bit_b = (cpld_read(SHIELDID_AB_PORT) & SHIELD_ID_B) == SHIELD_ID_B;
+    bit_a = (cpld_read(SHIELDID_AB_PORT) & SHIELD_ID_A) == SHIELD_ID_A;
 #endif /* _M8OD */
 
 #ifdef _MDUINO
     SHIELD_ID_0_DDR &= ~_BV(SHIELD_ID_0);
     SHIELD_ID_1_DDR &= ~_BV(SHIELD_ID_1);
+    SHIELD_ID_C_DDR &= ~_BV(SHIELD_ID_C);
+    SHIELD_ID_B_DDR &= ~_BV(SHIELD_ID_B);
+    SHIELD_ID_A_DDR &= ~_BV(SHIELD_ID_A);
     bit_0 = (SHIELD_ID_0_PIN & _BV(SHIELD_ID_0)) == _BV(SHIELD_ID_0);
     bit_1 = (SHIELD_ID_1_PIN & _BV(SHIELD_ID_1)) == _BV(SHIELD_ID_1);
+    bit_c = (SHIELD_ID_C_PIN & _BV(SHIELD_ID_C)) == _BV(SHIELD_ID_C);
+    bit_b = (SHIELD_ID_B_PIN & _BV(SHIELD_ID_B)) == _BV(SHIELD_ID_B);
+    bit_a = (SHIELD_ID_A_PIN & _BV(SHIELD_ID_A)) == _BV(SHIELD_ID_A);
 #endif /* _MDUINO */
 
     if (!bit_0 && bit_1)
@@ -156,6 +169,20 @@ static uint8_t detect_shield(void)
         printf("Shield type: Detected SHIELD_TYPE_1702A\r\n");
 #endif /* _DEBUG */
         return SHIELD_TYPE_1702A;
+    }
+
+    // This is a fucking mess. Because I didn't anticipate more than two shields,
+    // and the two previous shield designs are now "out there", subsequent designs
+    // set bit 0 and 1, then we look at bits A, B and C to see which design it is.
+    if (bit_0 && bit_1)
+    {
+        if (!bit_a && !bit_b && !bit_c)
+        {
+#ifdef _DEBUG
+            printf("Shield type: Detected SHIELD_TYPE_MCS48\r\n");
+#endif /* _DEBUG */
+            return SHIELD_TYPE_MCS48;
+        }
     }
 
 #ifdef _DEBUG
