@@ -24,12 +24,12 @@
 #ifdef _M8OD
 
 
-#define SHIELD_ID_A               0x0001
-#define SHIELD_ID_B               0x0002
-#define SHIELD_ID_C               0x0004
+#define SHIELD_ID_A               0x0001 // PORTB
+#define SHIELD_ID_B               0x0002 // PORTB
+#define SHIELD_ID_C               0x0004 // PORTA
 
-#define SHIELD_ID_0               0x0008
-#define SHIELD_ID_1               0x0010
+#define SHIELD_ID_0               0x0008 // PORTA
+#define SHIELD_ID_1               0x0010 // PORTA
 
 #define MCMX_270X_DEVSEL          0x0020
 #define MCMX_270X_NC_0            0x0040
@@ -65,6 +65,12 @@
 
 #define DATA_PORT                 PORTC
 #define DATA_TRIS                 TRISC
+
+#define SHIELDID_AB_PORT          PORTB
+#define SHIELDID_AB_TRIS          TRISB
+
+#define SHIELDID_C01_PORT         PORTA
+#define SHIELDID_C01_TRIS         TRISA
 
 #endif /* _M8OD */
 
