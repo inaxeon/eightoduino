@@ -2,7 +2,7 @@
  *   8OD - Arduino form factor i8086 based SBC
  *   Matthew Millman (tech.mattmillman.com/8od)
  *
- *   1702A/2704/2708/MCM68764/MCM68766 EPROM Programmer
+ *   1702A/2704/2708/MCM68764/MCM68766/MCS48 EPROM Programmer
  *
  *   This is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -22,6 +22,11 @@
 #define __IOPINS_H__
 
 #ifdef _M8OD
+
+
+#define SHIELD_ID_A               0x0001
+#define SHIELD_ID_B               0x0002
+#define SHIELD_ID_C               0x0004
 
 #define SHIELD_ID_0               0x0008
 #define SHIELD_ID_1               0x0010
@@ -45,6 +50,16 @@
 #define C1702A_PGMPWREN           0x0800
 #define C1702A_READPWREN          0x1000
 
+#define MCS48_CS                  0x2000
+#define MCS48_A0                  0x1000
+#define MCS48_PON                 0x0800
+#define MCS48_PROGEN              0x0400
+#define MCS48_EA                  0x0200
+#define MCS48_ALE                 0x0100
+#define MCS48_TEST0               0x0080
+#define MCS48_VDDEN               0x0040
+#define MCS48_RESET               0x0020
+
 #define CTRL_PORT                 PORTA
 #define CTRL_TRIS                 TRISA
 
@@ -62,6 +77,18 @@
 #define SHIELD_ID_1               PG5
 #define SHIELD_ID_1_DDR           DDRG
 #define SHIELD_ID_1_PIN           PING
+
+#define SHIELD_ID_A               PH0
+#define SHIELD_ID_A_DDR           DDRH
+#define SHIELD_ID_A_PIN           PINH
+
+#define SHIELD_ID_B               PH1
+#define SHIELD_ID_B_DDR           DDRH
+#define SHIELD_ID_B_PIN           PINH
+
+#define SHIELD_ID_C               PE4
+#define SHIELD_ID_C_DDR           DDRE
+#define SHIELD_ID_C_PIN           PINE
 
 #define MCMX_270X_DEVSEL          PE3
 #define MCMX_270X_DEVSEL_DDR      DDRE
@@ -131,6 +158,44 @@
 #define C1702A_READPWREN_DDR      DDRB
 #define C1702A_READPWREN_PORT     PORTB
 #define C1702A_READPWREN_PIN      PINB
+
+#define MCS48_CS                  PB7
+#define MCS48_CS_DDR              DDRB
+#define MCS48_CS_PORT             PORTB
+
+#define MCS48_A0                  PB6
+#define MCS48_A0_DDR              DDRB
+#define MCS48_A0_PORT             PORTB
+
+#define MCS48_PON                 PB5
+#define MCS48_PON_DDR             DDRB
+#define MCS48_PON_PORT            PORTB
+#define MCS48_PON_PIN             PINB
+
+#define MCS48_PROGEN              PB4
+#define MCS48_PROGEN_DDR          DDRB
+#define MCS48_PROGEN_PORT         PORTB
+
+#define MCS48_EA                  PH6
+#define MCS48_EA_DDR              DDRH
+#define MCS48_PORT                PORTH
+
+#define MCS48_ALE                 PH5
+#define MCS48_ALE_DDR             DDRH
+#define MCS48_ALE_PORT            PORTH
+#define MCS48_ALE_PIN             PINH
+
+#define MCS48_TEST0               PH4
+#define MCS48_TEST0_DDR           DDRH
+#define MCS48_TEST0_PORT          PORTH
+
+#define MCS48_VDDEN               PH3
+#define MCS48_VDDEN_DDR           DDRH
+#define MCS48_VDDEN_PORT          PORTH
+
+#define MCS48_RESET               PE3
+#define MCS48_RESET_DDR           DDRE
+#define MCS48_RESET_PORT          PORTE
 
 #define ADDRESS_0                 PD7
 #define ADDRESS_0_DDR             DDRD

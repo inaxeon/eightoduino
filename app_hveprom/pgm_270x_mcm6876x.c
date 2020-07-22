@@ -3,7 +3,7 @@
  *   8OD - Arduino form factor i8086 based SBC
  *   Matthew Millman (tech.mattmillman.com/8od)
  *
- *   1702A/2704/2708/MCM68764/MCM68766 EPROM Programmer
+ *   1702A/2704/2708/MCM68764/MCM68766/MCS48 EPROM Programmer
  *
  *   This is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by

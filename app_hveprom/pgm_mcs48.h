@@ -18,19 +18,19 @@
  *   along with this software.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _PGM_1702A_H
-#define _PGM_1702A_H
+#ifndef _PGM_MCS48_H
+#define _PGM_MCS48_H
 
-void pgm_1702a_set_params(void);
-void pgm_1702a_init(void);
-void pgm_1702a_reset(void);
-void pgm_1702a_write_chunk(void);
-void pgm_1702a_read_chunk(void);
-void pgm_1702a_start_blank_check(void);
-void pgm_1702a_blank_check(void);
-void pgm_1702a_start_write(void);
-void pgm_1702a_start_read(void);
-void pgm_1702a_test(void);
-void pgm_1702a_test_read(void);
+void pgm_mcs48_set_params(void);
+void pgm_mcs48_init(void);
+void pgm_mcs48_reset(void);
+void pgm_mcs48_write_chunk(void);
+void pgm_mcs48_read_chunk(void);
+void pgm_mcs48_start_blank_check(void);
+void pgm_mcs48_blank_check(void);
+void pgm_mcs48_start_write(void);
+void pgm_mcs48_start_read(void);
+void pgm_mcs48_test(void);
+void pgm_mcs48_test_read(void);
 
-#endif /* _PGM_1702A_H */
+#endif /* _PGM_MCS48_H */
