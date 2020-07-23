@@ -186,7 +186,7 @@ static uint8_t detect_shield(void)
     }
 
 #ifdef _DEBUG
-    printf("Shield type: Unknown. bit_0: %u bit_1: %u\r\n", bit_0, bit_1);
+    printf("Shield type: Unknown. bit_0: %u bit_1: %u bit_a: %u bit_b: %u bit_c: %u\r\n", bit_0, bit_1, bit_a, bit_b, bit_c);
 #endif /* _DEBUG */
     return SHIELD_TYPE_UNKNOWN;
 }

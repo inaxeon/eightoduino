@@ -21,7 +21,7 @@
 #ifndef _PROJECT_H
 #define _PROJECT_H
 
-//#define _DEBUG
+#define _DEBUG
 
 #define HOST_UART   UARTB
 #define DEBUG_UART  UARTC

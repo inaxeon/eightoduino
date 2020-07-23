@@ -95,9 +95,9 @@
 #endif /* _MDUINO */
 
 #define TEST_MCS48_PON    1
-#define TEST_MCS48_VDD    2
-#define TEST_MCS48_EA     3
-#define TEST_MCS48_PROG   4
+#define TEST_MCS48_EA     2
+#define TEST_MCS48_PROG   3
+#define TEST_MCS48_VDD    4
 #define TEST_MCS48_AA     5
 #define TEST_MCS48_55     6
 #define TEST_MCS48_DATA   7
@@ -206,6 +206,7 @@ void pgm_mcs48_reset(void)
 #endif /* _MDUINO */
 
     pgm_dir_in();
+    pgm_write_address(0);
     cmd_respond(CMD_DEV_RESET, ERR_OK);
 }
 
@@ -386,7 +387,7 @@ void pgm_mcs48_test(void)
             pgm_mcs48_power_on();
             pgm_dir_out();
             pgm_write_data(0xAA);
-            pgm_write_address(0xAAA);
+            pgm_write_address(0x200);
             pgm_mcs48_a0_enable();
             pgm_mcs48_cs_enable();
             break;
@@ -394,7 +395,7 @@ void pgm_mcs48_test(void)
             pgm_mcs48_power_on();
             pgm_dir_out();
             pgm_write_data(0x55);
-            pgm_write_address(0x1555);
+            pgm_write_address(0x500);
             pgm_mcs48_test0_enable();
             pgm_mcs48_reset_enable();
             break;

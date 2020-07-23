@@ -24,8 +24,8 @@
 #ifdef _M8OD
 
 
-#define SHIELD_ID_A               0x0001 // PORTB
-#define SHIELD_ID_B               0x0002 // PORTB
+#define SHIELD_ID_A               0x0002 // PORTB
+#define SHIELD_ID_B               0x0001 // PORTB
 #define SHIELD_ID_C               0x0004 // PORTA
 
 #define SHIELD_ID_0               0x0008 // PORTA
@@ -84,11 +84,11 @@
 #define SHIELD_ID_1_DDR           DDRG
 #define SHIELD_ID_1_PIN           PING
 
-#define SHIELD_ID_A               PH0
+#define SHIELD_ID_A               PH1
 #define SHIELD_ID_A_DDR           DDRH
 #define SHIELD_ID_A_PIN           PINH
 
-#define SHIELD_ID_B               PH1
+#define SHIELD_ID_B               PH0
 #define SHIELD_ID_B_DDR           DDRH
 #define SHIELD_ID_B_PIN           PINH
 
