@@ -88,7 +88,7 @@ int main(void)
 #endif /* _DEBUG */
     g_irq_enable();
     adc_init();
-    wdt_enable(WDTO_1S);
+    //wdt_enable(WDTO_1S);
 #endif /* _MDUINO */
 
 #ifdef _DEBUG

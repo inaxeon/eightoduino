@@ -57,7 +57,7 @@
 #define WRITE_CHUNK_SIZE         8
 #define MCM6876X_MAX_RETRIES     25
 #define C270X_MAX_RETRIES        100
-#define MCS48_MAX_RETRIES        25
+#define MCS48_MAX_RETRIES        5
 
 void pgm_process_command(uint8_t cmd);
 void pgm_write_address(uint16_t address);

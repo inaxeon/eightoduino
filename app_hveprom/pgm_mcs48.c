@@ -46,6 +46,8 @@
 
 #ifdef _M8OD
 
+#define pgm_mcs48_delay_small() delay_ncycles(1)
+
 #define pgm_mcs48_cs_enable() cpld_write(CTRL_PORT, MCS48_CS, 0)
 #define pgm_mcs48_cs_disable() cpld_write(CTRL_PORT, MCS48_CS, MCS48_CS)
 
@@ -70,6 +72,12 @@
 #endif /* _M8OD */
 
 #ifdef _MDUINO
+
+#define pgm_mcs48_delay_small() _delay_us(5)
+#define pgm_mcs48_delay_write() _delay_ms(50)
+#define pgm_mcs48_delay_post_write() _delay_ms(25)
+#define pgm_mcs48_delay_pre_address_latch() _delay_ms(8)
+#define pgm_mcs48_delay_post_address_latch() _delay_ms(8)
 
 #define pgm_mcs48_cs_enable() MCS48_CS_PORT &= ~_BV(MCS48_CS)
 #define pgm_mcs48_cs_disable() MCS48_CS_PORT |= _BV(MCS48_CS)
@@ -132,7 +140,7 @@ void pgm_mcs48_init(void)
 #endif /* _M8OD */
 
 #ifdef _MDUINO
-    MCS48_CS_PORT |= _BV(MCS48_CS);
+    MCS48_CS_PORT &= ~_BV(MCS48_CS);
     MCS48_A0_PORT &= ~_BV(MCS48_A0);
     MCS48_PON_PORT &= ~_BV(MCS48_PON);
     MCS48_PROGEN_PORT &= ~_BV(MCS48_PROGEN);
@@ -187,13 +195,13 @@ void pgm_mcs48_power_on()
 
 void pgm_mcs48_reset(void)
 {
-    pgm_mcs48_cs_disable();
     pgm_mcs48_a0_disable();
     pgm_mcs48_ea_disable();
     pgm_mcs48_vdd_disable();
     pgm_mcs48_test0_disable();
     pgm_mcs48_prog_disable();
-    pgm_mcs48_reset_disable();
+    pgm_mcs48_reset_enable();
+    pgm_mcs48_cs_enable();
 
 #ifdef _M8OD
     delay_ncycles(DELAY_POWER_WAIT);
@@ -229,15 +237,76 @@ void pgm_mcs48_write_chunk(void)
     /* Now get writing it */
     for (i = 0; i < thisChunk; i++)
     {
+        uint16_t thisOffset = (_g_offset + i);
+
         uint8_t verified = 0;
         uint8_t stopat = _g_useHts ? _g_maxRetries : 1;
-        pgm_write_address(_g_offset + i); /* Output address */
+
+        /* Setup address */
+        pgm_mcs48_reset_enable(); // Prepare for address input
+        pgm_mcs48_delay_small();
+        pgm_mcs48_test0_disable(); // Target data bus = input
+        pgm_mcs48_delay_small();
+        pgm_dir_out();
+        pgm_write_data((uint8_t)(thisOffset & 0xFF));
+        pgm_write_address(thisOffset & 0x700); /* Output address */
+        pgm_mcs48_delay_pre_address_latch(); // Multi-millisecond delay observed to be required here on CMOS parts
+        pgm_mcs48_reset_disable();
+        pgm_mcs48_delay_post_address_latch(); // Multi-millisecond delay observed to be required here on CMOS parts
             
         for (attempt = 0; attempt < stopat; attempt++)
         {
-            // uint8_t data;
-            // uint8_t temp = chunk[i];
+            uint8_t data;
+            uint8_t temp = chunk[i];
 
+            pgm_mcs48_test0_disable(); // Target data bus = input
+            pgm_mcs48_delay_small();
+            pgm_dir_out();
+
+            /* Present data */
+            pgm_mcs48_delay_small();
+            pgm_write_data(temp); // Present data
+            pgm_mcs48_delay_small();
+            pgm_mcs48_vdd_enable(); // Programming power on
+            pgm_mcs48_delay_small();
+            pgm_mcs48_prog_enable(); // Programming pulse on
+            pgm_mcs48_delay_write();
+            pgm_mcs48_prog_disable(); // Programming pulse off
+            pgm_mcs48_delay_small();
+            pgm_mcs48_vdd_disable(); // Programming power off
+
+            pgm_write_data(0x00);
+            
+            // After much trial and error I discover that CMOS variants of the MCS-48 need a bit of a 'cool off' time after programming each byte.
+            // NMOS parts don't need this delay. I can't be bothered making it configurable for the sake of shaving a handful of seconds off the total write time.
+            _delay_ms(20); 
+
+            if (_g_useHts)
+            {
+                /* Read back data */
+                pgm_dir_in();
+                pgm_mcs48_delay_small();
+                pgm_mcs48_test0_enable(); // Target data bus = output
+                pgm_mcs48_delay_small();
+                data = pgm_read_data();
+                pgm_mcs48_delay_small();
+#ifdef _DEBUG
+                printf("pgm_mcs48_write_chunk() data=0x%02X chunk[i]=0x%02X attempt=%d\r\n", data, chunk[i], attempt);
+#endif /* _DEBUG */
+
+                if (data == chunk[i] && verified == 0)
+                {
+                    verified = 1;
+                    stopat = attempt + _g_extraWrites;
+#ifdef _DEBUG
+                    printf("pgm_mcs48_write_chunk() data verified. Setting stopat to %d\r\n", stopat);
+#endif /* _DEBUG */
+                }
+            }
+            else
+            {
+                verified = 1; /* 270x write strategy does not use inline verify, so just set this to '1' */
+            }
         }
 
         if (!verified)
@@ -278,15 +347,21 @@ void pgm_mcs48_read_chunk(void)
 
     for (i = 0; i < thisChunk; i++)
     {
-        pgm_write_address(_g_offset + i); /* Output address */
-
-        /* Read data */
-        // pgm_mcs48_delay_read();
-        // pgm_mcs48_rd_enable();
-        // pgm_mcs48_delay_read();
-        // host_write8(pgm_read_data());
-        // pgm_mcs48_rd_disable();
-        // pgm_mcs48_delay_read();
+        uint16_t thisOffset = (_g_offset + i);
+        pgm_mcs48_test0_disable();
+        pgm_mcs48_delay_small();
+        pgm_dir_out();
+        pgm_write_data((uint8_t)(thisOffset & 0xFF));
+        pgm_write_address(thisOffset & 0x700); /* Output address */
+        pgm_mcs48_delay_small(); // Important
+        pgm_mcs48_reset_disable();
+        pgm_mcs48_delay_small();
+        pgm_dir_in();
+        pgm_mcs48_test0_enable();
+        pgm_mcs48_delay_small();
+        host_write8(pgm_read_data());
+        pgm_mcs48_reset_enable();
+        pgm_mcs48_delay_small();
     }
 
     _g_offset += thisChunk;
@@ -299,17 +374,23 @@ void pgm_mcs48_blank_check(void)
 
     while (offset < _g_devSize)
     {
-        // CLOSE, BUT NOT GOING TO WORK.
-        pgm_write_address(offset); /* Output address */
-        // pgm_mcs48_delay_read();
-        // pgm_mcs48_rd_enable();
-        // pgm_mcs48_delay_read();
-        // data = pgm_read_data();
-        // pgm_mcs48_rd_disable();
-        // pgm_mcs48_delay_read();
+        pgm_mcs48_test0_disable();
+        pgm_mcs48_delay_small();
+        pgm_dir_out();
+        pgm_write_data((uint8_t)(offset & 0xFF));
+        pgm_write_address(offset & 0x700); /* Output address */
+        pgm_mcs48_delay_small(); // Important
+        pgm_mcs48_reset_disable();
+        pgm_mcs48_delay_small();
+        pgm_dir_in();
+        pgm_mcs48_test0_enable();
+        pgm_mcs48_delay_small();
+        data = pgm_read_data();
+        pgm_mcs48_reset_enable();
+        pgm_mcs48_delay_small();
 
-        // if (data != 0xFF)
-        //     break;
+        if (data != 0x00)
+            break;
 
         offset++;
     }
@@ -337,6 +418,10 @@ void pgm_mcs48_start_write(void)
 
     pgm_mcs48_power_on();
 
+    pgm_mcs48_ea_enable();
+    pgm_mcs48_cs_disable();
+    pgm_mcs48_test0_enable();
+
     cmd_respond(CMD_START_WRITE, ERR_OK);
 }
 
@@ -348,6 +433,10 @@ void pgm_mcs48_start_read(void)
 
     pgm_mcs48_power_on();
 
+    pgm_mcs48_ea_enable();
+    pgm_mcs48_cs_disable();
+    pgm_mcs48_test0_enable();
+
     cmd_respond(CMD_START_READ, ERR_OK);
 }
 
@@ -358,6 +447,10 @@ void pgm_mcs48_start_blank_check(void)
 #endif /* _DEBUG */
 
     pgm_mcs48_power_on();
+
+    pgm_mcs48_ea_enable();
+    pgm_mcs48_cs_disable();
+    pgm_mcs48_test0_enable();
 
     cmd_respond(CMD_START_BLANK_CHECK, ERR_OK);
 }

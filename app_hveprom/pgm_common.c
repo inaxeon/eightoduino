@@ -132,6 +132,9 @@ void pgm_init(uint8_t shieldType)
 
     if (shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_init();
+
+    if (shieldType == SHIELD_TYPE_MCS48)
+        pgm_mcs48_init();
 }
 
 static void pgm_start_write(void)
