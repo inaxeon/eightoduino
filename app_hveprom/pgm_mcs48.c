@@ -75,7 +75,8 @@
 
 #define pgm_mcs48_delay_small() _delay_us(5)
 #define pgm_mcs48_delay_write() _delay_ms(50)
-#define pgm_mcs48_delay_post_write() _delay_ms(25)
+#define pgm_mcs48_delay_post_write() _delay_ms(20)
+#define pgm_mcs48_delay_pre_read() _delay_us(20)
 #define pgm_mcs48_delay_pre_address_latch() _delay_ms(8)
 #define pgm_mcs48_delay_post_address_latch() _delay_ms(8)
 
@@ -270,7 +271,9 @@ void pgm_mcs48_write_chunk(void)
             pgm_mcs48_vdd_enable(); // Programming power on
             pgm_mcs48_delay_small();
             pgm_mcs48_prog_enable(); // Programming pulse on
-            pgm_mcs48_delay_write();
+            // 50ms!!! eeep! A rather different approach to an EPROM. Instead of building up the charge bit by bit,
+            // Intel asks us charge the fuck out of it. HTS is implemented here, but like hell we'll need to give it another go!
+            pgm_mcs48_delay_write(); 
             pgm_mcs48_prog_disable(); // Programming pulse off
             pgm_mcs48_delay_small();
             pgm_mcs48_vdd_disable(); // Programming power off
@@ -279,7 +282,7 @@ void pgm_mcs48_write_chunk(void)
             
             // After much trial and error I discover that CMOS variants of the MCS-48 need a bit of a 'cool off' time after programming each byte.
             // NMOS parts don't need this delay. I can't be bothered making it configurable for the sake of shaving a handful of seconds off the total write time.
-            _delay_ms(20); 
+            pgm_mcs48_delay_post_write(); 
 
             if (_g_useHts)
             {
@@ -287,7 +290,7 @@ void pgm_mcs48_write_chunk(void)
                 pgm_dir_in();
                 pgm_mcs48_delay_small();
                 pgm_mcs48_test0_enable(); // Target data bus = output
-                pgm_mcs48_delay_small();
+                pgm_mcs48_delay_pre_read();
                 data = pgm_read_data();
                 pgm_mcs48_delay_small();
 #ifdef _DEBUG
@@ -348,6 +351,8 @@ void pgm_mcs48_read_chunk(void)
     for (i = 0; i < thisChunk; i++)
     {
         uint16_t thisOffset = (_g_offset + i);
+        uint8_t data;
+
         pgm_mcs48_test0_disable();
         pgm_mcs48_delay_small();
         pgm_dir_out();
@@ -358,10 +363,16 @@ void pgm_mcs48_read_chunk(void)
         pgm_mcs48_delay_small();
         pgm_dir_in();
         pgm_mcs48_test0_enable();
-        pgm_mcs48_delay_small();
-        host_write8(pgm_read_data());
+        pgm_mcs48_delay_pre_read();
+        data = pgm_read_data();
         pgm_mcs48_reset_enable();
         pgm_mcs48_delay_small();
+
+        host_write8(data);
+#ifdef _DEBUG
+        printf("pgm_mcs48_read_chunk() thisOffset=%d data=0x%02X\r\n", thisOffset, data);
+#endif /* _DEBUG */
+
     }
 
     _g_offset += thisChunk;
@@ -381,10 +392,11 @@ void pgm_mcs48_blank_check(void)
         pgm_write_address(offset & 0x700); /* Output address */
         pgm_mcs48_delay_small(); // Important
         pgm_mcs48_reset_disable();
-        pgm_mcs48_delay_small();
+        pgm_mcs48_delay_small(); // Important
         pgm_dir_in();
         pgm_mcs48_test0_enable();
         pgm_mcs48_delay_small();
+        pgm_mcs48_delay_pre_read();
         data = pgm_read_data();
         pgm_mcs48_reset_enable();
         pgm_mcs48_delay_small();
