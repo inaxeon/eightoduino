@@ -75,7 +75,7 @@
 
 #define pgm_mcs48_delay_small() _delay_us(5)
 #define pgm_mcs48_delay_write() _delay_ms(50)
-#define pgm_mcs48_delay_post_write() _delay_ms(20)
+#define pgm_mcs48_delay_post_write() _delay_ms(25)
 #define pgm_mcs48_delay_pre_read() _delay_us(20)
 #define pgm_mcs48_delay_pre_address_latch() _delay_ms(8)
 #define pgm_mcs48_delay_post_address_latch() _delay_ms(8)
@@ -328,7 +328,7 @@ void pgm_mcs48_write_chunk(void)
     {
         cmd_respond(CMD_WRITE_CHUNK, ERR_COMPLETE);
         host_write8(_g_maxPerByteWrites);
-        host_write32(_g_devType == DEV_MCM6876X ? _g_totalWrites : 0);
+        host_write32(_g_totalWrites);
     }
     else
     {
