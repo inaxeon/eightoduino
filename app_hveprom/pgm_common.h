@@ -40,6 +40,8 @@
 #define DEV_8749                 0x05
 #define DEV_8741                 0x06
 #define DEV_8742                 0x07
+#define DEV_8048                 0x08
+#define DEV_8049                 0x09
 
 #define ERR_OK                   0x00
 #define ERR_PROCEED_DUALSOCKET   0x01
