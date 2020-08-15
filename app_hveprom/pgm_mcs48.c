@@ -449,6 +449,12 @@ void pgm_mcs48_start_write(void)
     printf("pgm_mcs48_start_write() _g_useHts=%d _g_extraWrites=%d\r\n", _g_useHts, _g_extraWrites);
 #endif /* _DEBUG */
 
+    if (_g_devType == DEV_8048 || _g_devType == DEV_8049)
+    {
+        cmd_respond(CMD_START_WRITE, ERR_INVALID_CMD);
+        return;
+    }
+
     pgm_mcs48_power_on();
 
     pgm_mcs48_ea_enable();
@@ -474,6 +480,12 @@ void pgm_mcs48_start_blank_check(void)
 #ifdef _DEBUG
     printf("pgm_mcs48_start_blank_check()\r\n");
 #endif /* _DEBUG */
+
+    if (_g_devType == DEV_8048 || _g_devType == DEV_8049)
+    {
+        cmd_respond(CMD_START_BLANK_CHECK, ERR_INVALID_CMD);
+        return;
+    }
 
     pgm_mcs48_power_on();
 
