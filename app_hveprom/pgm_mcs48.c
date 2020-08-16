@@ -117,7 +117,7 @@
 static uint8_t _g_maxPerByteWrites;
 static uint8_t _g_useHts;
 static uint8_t _g_extraWrites;
-static uint8_t _g_maxRetries;
+static uint8_t _g_slowMode;
 static uint32_t _g_totalWrites;
 static uint16_t _g_devSize;
 static uint16_t _g_offset;
@@ -127,7 +127,7 @@ void pgm_mcs48_init(void)
 {
     _g_maxPerByteWrites = 0;
     _g_totalWrites = 0;
-    _g_maxRetries = 0;
+    _g_slowMode = 0;
     _g_devSize = 0;
     _g_devType = -1;
 
@@ -293,7 +293,7 @@ void pgm_mcs48_write_chunk(void)
             pgm_mcs48_delay_small();
             pgm_mcs48_prog_enable(); // Programming pulse on
             // 50ms!!! eeep! A rather different approach to an EPROM. Instead of building up the charge bit by bit,
-            // Intel asks us charge the fuck out of it. HTS is implemented here, but like hell we'll need to give it another go!
+            // Intel asks us charge the fuck out of it. hit until set is implemented here, but like hell we'll need to give it another go!
             pgm_mcs48_delay_write(); 
             pgm_mcs48_prog_disable(); // Programming pulse off
             pgm_mcs48_delay_small();
@@ -321,10 +321,7 @@ void pgm_mcs48_write_chunk(void)
                 if (data == chunk[i] && verified == 0)
                 {
                     verified = 1;
-                    stopat = attempt + _g_extraWrites;
-#ifdef _DEBUG
-                    printf("pgm_mcs48_write_chunk() data verified. Setting stopat to %d\r\n", stopat);
-#endif /* _DEBUG */
+                    break;
                 }
             }
             else
@@ -443,10 +440,10 @@ void pgm_mcs48_blank_check(void)
 void pgm_mcs48_start_write(void)
 {
     _g_useHts = host_read8();
-    _g_extraWrites = host_read8();
+    _g_slowMode = host_read8();
 
 #ifdef _DEBUG
-    printf("pgm_mcs48_start_write() _g_useHts=%d _g_extraWrites=%d\r\n", _g_useHts, _g_extraWrites);
+    printf("pgm_mcs48_start_write() _g_useHts=%d _g_slowMode=%d\r\n", _g_useHts, _g_extraWrites);
 #endif /* _DEBUG */
 
     if (_g_devType == DEV_8048 || _g_devType == DEV_8049)
