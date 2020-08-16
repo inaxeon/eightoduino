@@ -50,8 +50,8 @@
 #define C1702A_PGMPWREN           0x0800
 #define C1702A_READPWREN          0x1000
 
-#define MCS48_CS                  0x2000
-#define MCS48_A0                  0x1000
+#define MCS48_PWR_UP1             0x1000
+#define MCS48_PWR_UP2             0x2000
 #define MCS48_PON                 0x0800
 #define MCS48_PROGEN              0x0400
 #define MCS48_EA                  0x0200
@@ -165,13 +165,13 @@
 #define C1702A_READPWREN_PORT     PORTB
 #define C1702A_READPWREN_PIN      PINB
 
-#define MCS48_CS                  PB7
-#define MCS48_CS_DDR              DDRB
-#define MCS48_CS_PORT             PORTB
+#define MCS48_PWR_UP1             PB6
+#define MCS48_PWR_UP1_DDR         DDRB
+#define MCS48_PWR_UP1_PORT        PORTB
 
-#define MCS48_A0                  PB6
-#define MCS48_A0_DDR              DDRB
-#define MCS48_A0_PORT             PORTB
+#define MCS48_PWR_UP2             PB7
+#define MCS48_PWR_UP2_DDR         DDRB
+#define MCS48_PWR_UP2_PORT        PORTB
 
 #define MCS48_PON                 PB5
 #define MCS48_PON_DDR             DDRB

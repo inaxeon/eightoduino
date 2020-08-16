@@ -48,11 +48,11 @@
 
 #define pgm_mcs48_delay_small() delay_ncycles(1)
 
-#define pgm_mcs48_cs_enable() cpld_write(CTRL_PORT, MCS48_CS, 0)
-#define pgm_mcs48_cs_disable() cpld_write(CTRL_PORT, MCS48_CS, MCS48_CS)
+#define pgm_mcs48_pwr_up1_enable() cpld_write(CTRL_TRIS, MCS48_PWR_UP1, 0)
+#define pgm_mcs48_pwr_up1_disable() cpld_write(CTRL_TRIS, MCS48_PWR_UP1, MCS48_PWR_UP1)
 
-#define pgm_mcs48_a0_enable() cpld_write(CTRL_PORT, MCS48_A0, MCS48_A0)
-#define pgm_mcs48_a0_disable() cpld_write(CTRL_PORT, MCS48_A0, 0)
+#define pgm_mcs48_pwr_up2_enable() cpld_write(CTRL_TRIS, MCS48_PWR_UP2, 0)
+#define pgm_mcs48_pwr_up2_disable() cpld_write(CTRL_TRIS, MCS48_PWR_UP2, MCS48_PWR_UP2)
 
 #define pgm_mcs48_ea_enable() cpld_write(CTRL_PORT, MCS48_EA, MCS48_EA)
 #define pgm_mcs48_ea_disable() cpld_write(CTRL_PORT, MCS48_EA, 0)
@@ -81,14 +81,13 @@
 #define pgm_mcs48_delay_pre_read() _delay_us(20)
 #define pgm_mcs48_delay_pre_address_latch() _delay_ms(8)
 #define pgm_mcs48_delay_post_address_latch() _delay_ms(8)
-
 #define pgm_mcs48_delay_pre_post_vdd() _delay_ms(1)
 
-#define pgm_mcs48_cs_enable() MCS48_CS_PORT &= ~_BV(MCS48_CS)
-#define pgm_mcs48_cs_disable() MCS48_CS_PORT |= _BV(MCS48_CS)
+#define pgm_mcs48_pwr_up1_enable() MCS48_PWR_UP1_DDR |= _BV(MCS48_PWR_UP1)
+#define pgm_mcs48_pwr_up1_disable() MCS48_PWR_UP1_DDR &= ~_BV(MCS48_PWR_UP1)
 
-#define pgm_mcs48_a0_enable() MCS48_A0_PORT |= _BV(MCS48_A0)
-#define pgm_mcs48_a0_disable() MCS48_A0_PORT &= ~_BV(MCS48_A0)
+#define pgm_mcs48_pwr_up2_enable() MCS48_PWR_UP2_DDR |= _BV(MCS48_PWR_UP2)
+#define pgm_mcs48_pwr_up2_disable() MCS48_PWR_UP2_DDR &= ~_BV(MCS48_PWR_UP2)
 
 #define pgm_mcs48_ea_enable() MCS48_EA_PORT |= _BV(MCS48_EA)
 #define pgm_mcs48_ea_disable() MCS48_EA_PORT &= ~_BV(MCS48_EA)
@@ -107,13 +106,16 @@
 
 #endif /* _MDUINO */
 
-#define TEST_MCS48_PON    1
-#define TEST_MCS48_EA     2
-#define TEST_MCS48_PROG   3
-#define TEST_MCS48_VDD    4
-#define TEST_MCS48_AA     5
-#define TEST_MCS48_55     6
-#define TEST_MCS48_DATA   7
+#define TEST_MCS48_PON          1
+#define TEST_MCS48_EA_12V       2
+#define TEST_MCS48_EA_18V       3
+#define TEST_MCS48_EA_22V       4
+#define TEST_MCS48_PROG         5
+#define TEST_MCS48_VDD_21V      6
+#define TEST_MCS48_VDD_25V      7
+#define TEST_MCS48_AA           8
+#define TEST_MCS48_55           9
+#define TEST_MCS48_DATA         10
 
 static uint8_t _g_maxPerByteWrites;
 static uint8_t _g_useHts;
@@ -134,19 +136,17 @@ void pgm_mcs48_init(void)
 
 #ifdef _M8OD
     cpld_write(CTRL_PORT,
-        (MCS48_CS | MCS48_A0 | MCS48_PON | MCS48_PROGEN | MCS48_EA | MCS48_TEST0 | MCS48_VDDEN | MCS48_RESET),
-        (MCS48_CS)
-    );
+        (MCS48_PWR_UP1 | MCS48_PWR_UP2 | MCS48_PON | MCS48_PROGEN | MCS48_EA | MCS48_TEST0 | MCS48_VDDEN | MCS48_RESET), 0);
     
     cpld_write(CTRL_TRIS,
-        (MCS48_CS | MCS48_A0 | MCS48_PON | MCS48_PROGEN | MCS48_EA | MCS48_ALE | MCS48_TEST0 | MCS48_VDDEN | MCS48_RESET),
+        (MCS48_PWR_UP1 | MCS48_PWR_UP2 | MCS48_PON | MCS48_PROGEN | MCS48_EA | MCS48_ALE | MCS48_TEST0 | MCS48_VDDEN | MCS48_RESET),
         (MCS48_ALE)
     );
 #endif /* _M8OD */
 
 #ifdef _MDUINO
-    MCS48_CS_PORT &= ~_BV(MCS48_CS);
-    MCS48_A0_PORT &= ~_BV(MCS48_A0);
+    MCS48_PWR_UP1_PORT &= ~_BV(MCS48_PWR_UP1);
+    MCS48_PWR_UP2_PORT &= ~_BV(MCS48_PWR_UP2);
     MCS48_PON_PORT &= ~_BV(MCS48_PON);
     MCS48_PROGEN_PORT &= ~_BV(MCS48_PROGEN);
     MCS48_EA_PORT &= ~_BV(MCS48_EA);
@@ -154,8 +154,8 @@ void pgm_mcs48_init(void)
     MCS48_VDDEN_PORT &= ~_BV(MCS48_VDDEN);
     MCS48_RESET_PORT &= ~_BV(MCS48_RESET);
 
-    MCS48_CS_DDR |= _BV(MCS48_CS);
-    MCS48_A0_DDR |= _BV(MCS48_A0);
+    MCS48_PWR_UP1_DDR &= ~_BV(MCS48_PWR_UP1);
+    MCS48_PWR_UP2_DDR &= ~_BV(MCS48_PWR_UP2);
     MCS48_PON_DDR |= _BV(MCS48_PON);
     MCS48_PROGEN_DDR |= _BV(MCS48_PROGEN);
     MCS48_EA_DDR |= _BV(MCS48_EA);
@@ -187,6 +187,28 @@ void pgm_mcs48_set_params(uint8_t dev_type, uint16_t dev_size, uint8_t max_retri
 
 void pgm_mcs48_power_on()
 {
+    switch (_g_devType)
+    {
+        case DEV_8748:
+        case DEV_8749:
+        case DEV_8742:
+            // Vpp = 21V
+            pgm_mcs48_pwr_up1_enable();
+            pgm_mcs48_pwr_up2_disable();
+            break;
+        case DEV_8741:
+            // Vpp = 25V
+            pgm_mcs48_pwr_up1_enable();
+            pgm_mcs48_pwr_up2_enable();
+            break;
+        case DEV_8048:
+        case DEV_8049:
+            // Vpp = 15V. Reduced down to 12V by 3V zener for EA pin only
+            pgm_mcs48_pwr_up1_disable();
+            pgm_mcs48_pwr_up2_disable();
+            break;
+    }
+
 #ifdef _M8OD
     cpld_write(CTRL_PORT, MCS48_PON, MCS48_PON);
     delay_ncycles(DELAY_POWER_WAIT);
@@ -203,13 +225,11 @@ void pgm_mcs48_power_on()
 
 void pgm_mcs48_reset(void)
 {
-    pgm_mcs48_a0_disable();
     pgm_mcs48_ea_disable();
     pgm_mcs48_vdd_disable();
     pgm_mcs48_test0_disable();
     pgm_mcs48_prog_disable();
     pgm_mcs48_reset_enable();
-    pgm_mcs48_cs_enable();
 
 #ifdef _M8OD
     delay_ncycles(DELAY_POWER_WAIT);
@@ -436,12 +456,17 @@ void pgm_mcs48_start_write(void)
     printf("pgm_mcs48_start_write() _g_useHts=%d _g_extraWrites=%d\r\n", _g_useHts, _g_extraWrites);
 #endif /* _DEBUG */
 
+    if (_g_devType == DEV_8048 || _g_devType == DEV_8049)
+    {
+        cmd_respond(CMD_START_WRITE, ERR_INVALID_CMD);
+        return;
+    }
+
     pgm_mcs48_power_on();
 
     pgm_mcs48_ea_enable();
-    pgm_mcs48_cs_disable();
-    pgm_mcs48_test0_disable();
     pgm_mcs48_reset_enable();
+    pgm_mcs48_test0_enable();
 
     cmd_respond(CMD_START_WRITE, ERR_OK);
 }
@@ -453,9 +478,6 @@ void pgm_mcs48_start_read(void)
 #endif /* _DEBUG */
 
     pgm_mcs48_power_on();
-
-    pgm_mcs48_ea_enable();
-    pgm_mcs48_cs_disable();
     pgm_mcs48_test0_enable();
     pgm_mcs48_reset_enable();
 
@@ -468,10 +490,15 @@ void pgm_mcs48_start_blank_check(void)
     printf("pgm_mcs48_start_blank_check()\r\n");
 #endif /* _DEBUG */
 
+    if (_g_devType == DEV_8048 || _g_devType == DEV_8049)
+    {
+        cmd_respond(CMD_START_BLANK_CHECK, ERR_INVALID_CMD);
+        return;
+    }
+
     pgm_mcs48_power_on();
 
     pgm_mcs48_ea_enable();
-    pgm_mcs48_cs_disable();
     pgm_mcs48_test0_enable();
     pgm_mcs48_reset_enable();
 
@@ -487,15 +514,33 @@ void pgm_mcs48_test(void)
         case TEST_MCS48_PON:
             pgm_mcs48_power_on();
             break;
-        case TEST_MCS48_VDD:
+        case TEST_MCS48_VDD_21V:
+            _g_devType = DEV_8748;
             pgm_mcs48_power_on();
             pgm_mcs48_vdd_enable();
             break;
-        case TEST_MCS48_EA:
+        case TEST_MCS48_VDD_25V:
+            _g_devType = DEV_8741;
+            pgm_mcs48_power_on();
+            pgm_mcs48_vdd_enable();
+            break;
+        case TEST_MCS48_EA_12V:
+            _g_devType = DEV_8048;
+            pgm_mcs48_power_on();
+            pgm_mcs48_ea_enable();
+            break;
+        case TEST_MCS48_EA_18V:
+            _g_devType = DEV_8748;
+            pgm_mcs48_power_on();
+            pgm_mcs48_ea_enable();
+            break;
+        case TEST_MCS48_EA_22V:
+            _g_devType = DEV_8741;
             pgm_mcs48_power_on();
             pgm_mcs48_ea_enable();
             break;
         case TEST_MCS48_PROG:
+            _g_devType = DEV_8748;
             pgm_mcs48_power_on();
             pgm_mcs48_prog_enable();
             break;
@@ -504,8 +549,6 @@ void pgm_mcs48_test(void)
             pgm_dir_out();
             pgm_write_data(0xAA);
             pgm_write_address(0x200);
-            pgm_mcs48_a0_enable();
-            pgm_mcs48_cs_enable();
             break;
         case TEST_MCS48_55:
             pgm_mcs48_power_on();
