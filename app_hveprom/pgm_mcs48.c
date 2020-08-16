@@ -73,12 +73,16 @@
 
 #ifdef _MDUINO
 
-#define pgm_mcs48_delay_small() _delay_us(5)
+#define pgm_mcs48_delay_4tcy() _delay_us(20)
 #define pgm_mcs48_delay_write() _delay_ms(50)
+
+// If having difficulties - try increasing the below 4 delays
 #define pgm_mcs48_delay_post_write() _delay_ms(25)
 #define pgm_mcs48_delay_pre_read() _delay_us(20)
 #define pgm_mcs48_delay_pre_address_latch() _delay_ms(8)
 #define pgm_mcs48_delay_post_address_latch() _delay_ms(8)
+
+#define pgm_mcs48_delay_pre_post_vdd() _delay_ms(1)
 
 #define pgm_mcs48_cs_enable() MCS48_CS_PORT &= ~_BV(MCS48_CS)
 #define pgm_mcs48_cs_disable() MCS48_CS_PORT |= _BV(MCS48_CS)
@@ -192,6 +196,9 @@ void pgm_mcs48_power_on()
     MCS48_PON_PORT |= _BV(MCS48_PON);
     _delay_ms(100);
 #endif /* _MDUINO */
+
+    pgm_mcs48_test0_disable();
+    pgm_mcs48_reset_enable();
 }
 
 void pgm_mcs48_reset(void)
@@ -225,6 +232,7 @@ void pgm_mcs48_write_chunk(void)
     uint8_t attempt;
     int16_t remaining = (_g_devSize - _g_offset);
     uint8_t i;
+    bool slow = false;
     uint16_t thisChunk = remaining > WRITE_CHUNK_SIZE ? WRITE_CHUNK_SIZE : remaining;
 
 #ifdef _DEBUG
@@ -245,54 +253,61 @@ void pgm_mcs48_write_chunk(void)
 
         /* Setup address */
         pgm_mcs48_reset_enable(); // Prepare for address input
-        pgm_mcs48_delay_small();
+        //pgm_mcs48_delay_small();
         pgm_mcs48_test0_disable(); // Target data bus = input
-        pgm_mcs48_delay_small();
+        //pgm_mcs48_delay_small();
         pgm_dir_out();
         pgm_write_data((uint8_t)(thisOffset & 0xFF));
         pgm_write_address(thisOffset & 0x700); /* Output address */
-        pgm_mcs48_delay_pre_address_latch(); // Multi-millisecond delay observed to be required here on CMOS parts
+        if (slow)
+            pgm_mcs48_delay_pre_address_latch();
+        pgm_mcs48_delay_4tcy(); // Multi-millisecond delay observed to be required here on CMOS parts
         pgm_mcs48_reset_disable();
-        pgm_mcs48_delay_post_address_latch(); // Multi-millisecond delay observed to be required here on CMOS parts
+        if (slow)
+            pgm_mcs48_delay_post_address_latch();
+        pgm_mcs48_delay_4tcy(); // Multi-millisecond delay observed to be required here on CMOS parts
             
         for (attempt = 0; attempt < stopat; attempt++)
         {
             uint8_t data;
             uint8_t temp = chunk[i];
 
-            pgm_mcs48_test0_disable(); // Target data bus = input
-            pgm_mcs48_delay_small();
-            pgm_dir_out();
+            if (temp != 0x00)
+            {
+                pgm_mcs48_test0_disable(); // Target data bus = input
+                //pgm_mcs48_delay_small();
+                pgm_dir_out();
 
-            /* Present data */
-            pgm_mcs48_delay_small();
-            pgm_write_data(temp); // Present data
-            pgm_mcs48_delay_small();
-            pgm_mcs48_vdd_enable(); // Programming power on
-            pgm_mcs48_delay_small();
-            pgm_mcs48_prog_enable(); // Programming pulse on
-            // 50ms!!! eeep! A rather different approach to an EPROM. Instead of building up the charge bit by bit,
-            // Intel asks us charge the fuck out of it. HTS is implemented here, but like hell we'll need to give it another go!
-            pgm_mcs48_delay_write(); 
-            pgm_mcs48_prog_disable(); // Programming pulse off
-            pgm_mcs48_delay_small();
-            pgm_mcs48_vdd_disable(); // Programming power off
+                /* Present data */
+                //pgm_mcs48_delay_4tcy();
+                pgm_write_data(temp); // Present data
+                pgm_mcs48_delay_4tcy();
+                pgm_mcs48_vdd_enable(); // Programming power on
+                pgm_mcs48_delay_pre_post_vdd();
+                pgm_mcs48_prog_enable(); // Programming pulse on
+                // 50ms!!! eeep! A rather different approach to an EPROM. Instead of building up the charge bit by bit,
+                // Intel asks us charge the fuck out of it. HTS is implemented here, but like hell we'll need to give it another go!
+                pgm_mcs48_delay_write(); 
+                pgm_mcs48_prog_disable(); // Programming pulse off
+                pgm_mcs48_delay_pre_post_vdd();
+                pgm_mcs48_vdd_disable(); // Programming power off
 
-            pgm_write_data(0x00);
-            
-            // After much trial and error I discover that CMOS variants of the MCS-48 need a bit of a 'cool off' time after programming each byte.
-            // NMOS parts don't need this delay. I can't be bothered making it configurable for the sake of shaving a handful of seconds off the total write time.
-            pgm_mcs48_delay_post_write(); 
+                // After much trial and error I discover that CMOS variants of the MCS-48 need a bit of a 'cool off' time after programming each byte.
+                // NMOS parts don't need this delay. I can't be bothered making it configurable for the sake of shaving a handful of seconds off the total write time.
+                if (slow)
+                    pgm_mcs48_delay_post_write(); 
+
+                pgm_mcs48_delay_4tcy();
+            }
 
             if (_g_useHts)
             {
                 /* Read back data */
                 pgm_dir_in();
-                pgm_mcs48_delay_small();
                 pgm_mcs48_test0_enable(); // Target data bus = output
                 pgm_mcs48_delay_pre_read();
                 data = pgm_read_data();
-                pgm_mcs48_delay_small();
+                pgm_mcs48_delay_4tcy();
 #ifdef _DEBUG
                 printf("pgm_mcs48_write_chunk() data=0x%02X chunk[i]=0x%02X attempt=%d\r\n", data, chunk[i], attempt);
 #endif /* _DEBUG */
@@ -353,22 +368,19 @@ void pgm_mcs48_read_chunk(void)
         uint16_t thisOffset = (_g_offset + i);
         uint8_t data;
 
-        pgm_mcs48_test0_disable();
-        pgm_mcs48_delay_small();
         pgm_dir_out();
         pgm_write_data((uint8_t)(thisOffset & 0xFF));
         pgm_write_address(thisOffset & 0x700); /* Output address */
-        pgm_mcs48_delay_small(); // Important
+        pgm_mcs48_delay_4tcy();
         pgm_mcs48_reset_disable();
-        pgm_mcs48_delay_small();
+        pgm_mcs48_delay_4tcy();
         pgm_dir_in();
-        pgm_mcs48_test0_enable();
-        pgm_mcs48_delay_pre_read();
+        pgm_mcs48_delay_4tcy();
         data = pgm_read_data();
         pgm_mcs48_reset_enable();
-        pgm_mcs48_delay_small();
-
+        pgm_mcs48_delay_4tcy();
         host_write8(data);
+
 #ifdef _DEBUG
         printf("pgm_mcs48_read_chunk() thisOffset=%d data=0x%02X\r\n", thisOffset, data);
 #endif /* _DEBUG */
@@ -385,21 +397,17 @@ void pgm_mcs48_blank_check(void)
 
     while (offset < _g_devSize)
     {
-        pgm_mcs48_test0_disable();
-        pgm_mcs48_delay_small();
         pgm_dir_out();
         pgm_write_data((uint8_t)(offset & 0xFF));
         pgm_write_address(offset & 0x700); /* Output address */
-        pgm_mcs48_delay_small(); // Important
+        pgm_mcs48_delay_4tcy();
         pgm_mcs48_reset_disable();
-        pgm_mcs48_delay_small(); // Important
+        pgm_mcs48_delay_4tcy();
         pgm_dir_in();
-        pgm_mcs48_test0_enable();
-        pgm_mcs48_delay_small();
-        pgm_mcs48_delay_pre_read();
+        pgm_mcs48_delay_4tcy();
         data = pgm_read_data();
         pgm_mcs48_reset_enable();
-        pgm_mcs48_delay_small();
+        pgm_mcs48_delay_4tcy();
 
         if (data != 0x00)
             break;
@@ -432,7 +440,8 @@ void pgm_mcs48_start_write(void)
 
     pgm_mcs48_ea_enable();
     pgm_mcs48_cs_disable();
-    pgm_mcs48_test0_enable();
+    pgm_mcs48_test0_disable();
+    pgm_mcs48_reset_enable();
 
     cmd_respond(CMD_START_WRITE, ERR_OK);
 }
@@ -448,6 +457,7 @@ void pgm_mcs48_start_read(void)
     pgm_mcs48_ea_enable();
     pgm_mcs48_cs_disable();
     pgm_mcs48_test0_enable();
+    pgm_mcs48_reset_enable();
 
     cmd_respond(CMD_START_READ, ERR_OK);
 }
@@ -463,6 +473,7 @@ void pgm_mcs48_start_blank_check(void)
     pgm_mcs48_ea_enable();
     pgm_mcs48_cs_disable();
     pgm_mcs48_test0_enable();
+    pgm_mcs48_reset_enable();
 
     cmd_respond(CMD_START_BLANK_CHECK, ERR_OK);
 }
