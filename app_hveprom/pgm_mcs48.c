@@ -383,7 +383,6 @@ void pgm_mcs48_read_chunk(void)
     {
         uint16_t thisOffset = (_g_offset + i);
         uint8_t data;
-
         pgm_dir_out();
         pgm_write_data((uint8_t)(thisOffset & 0xFF));
         pgm_write_address(thisOffset & 0x700); /* Output address */
@@ -392,7 +391,21 @@ void pgm_mcs48_read_chunk(void)
         pgm_mcs48_delay_4tcy();
         pgm_dir_in();
         pgm_mcs48_delay_4tcy();
+
+        if (_g_devType == DEV_8741)
+        {
+            // Unlike the rest of the MCS-48 family, the 8741 datasheet does not explicitly tell us what we have to
+            // do with TEST0 when reading back the EPROM. Much experimentation finds that it cannot be left at 5V
+            // as with other parts. Instead it must be asserted before reading a byte, then de-asserted thereafter.
+            pgm_mcs48_test0_enable();
+            pgm_mcs48_delay_4tcy();
+        }
+
         data = pgm_read_data();
+
+        if (_g_devType == DEV_8741)
+            pgm_mcs48_test0_disable();
+
         pgm_mcs48_reset_enable();
         pgm_mcs48_delay_4tcy();
         host_write8(data);
@@ -421,7 +434,21 @@ void pgm_mcs48_blank_check(void)
         pgm_mcs48_delay_4tcy();
         pgm_dir_in();
         pgm_mcs48_delay_4tcy();
+
+        if (_g_devType == DEV_8741)
+        {
+            // Unlike the rest of the MCS-48 family, the 8741 datasheet does not explicitly tell us what we have to
+            // do with TEST0 when reading back the EPROM. Much experimentation finds that it cannot be left at 5V
+            // as with other parts. Instead it must be asserted before reading a byte, then de-asserted thereafter.
+            pgm_mcs48_test0_enable();
+            pgm_mcs48_delay_4tcy();
+        }
+
         data = pgm_read_data();
+
+        if (_g_devType == DEV_8741)
+            pgm_mcs48_test0_disable();
+
         pgm_mcs48_reset_enable();
         pgm_mcs48_delay_4tcy();
 
@@ -461,8 +488,13 @@ void pgm_mcs48_start_write(void)
     pgm_mcs48_power_on();
 
     pgm_mcs48_ea_enable();
+
+    if (_g_devType == DEV_8741)
+        pgm_mcs48_test0_disable();
+    else
+        pgm_mcs48_test0_enable();
+
     pgm_mcs48_reset_enable();
-    pgm_mcs48_test0_enable();
 
     cmd_respond(CMD_START_WRITE, ERR_OK);
 }
@@ -474,7 +506,14 @@ void pgm_mcs48_start_read(void)
 #endif /* _DEBUG */
 
     pgm_mcs48_power_on();
-    pgm_mcs48_test0_enable();
+
+    pgm_mcs48_ea_enable();
+
+    if (_g_devType == DEV_8741)
+        pgm_mcs48_test0_disable();
+    else
+        pgm_mcs48_test0_enable();
+
     pgm_mcs48_reset_enable();
 
     cmd_respond(CMD_START_READ, ERR_OK);

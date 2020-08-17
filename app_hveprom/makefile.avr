@@ -11,7 +11,7 @@ COREUTILS  = C:/Projects/coreutils/bin/
 
 DEVICE     = atmega2560
 CLOCK      = 16000000
-PROGRAMMER = -p m2560 -c stk500v2 -P COM3 -b 115200 -D
+PROGRAMMER = -p m2560 -c stk500v2 -P COM4 -b 115200 -D
 SRCS       = main.c pgm_common.c pgm_270x_mcm6876x.c pgm_1702a.c pgm_mcs48.c usart_buffered.c adc.c util.c
 OBJS       = $(SRCS:.c=.o)
 DEPDIR     = deps
