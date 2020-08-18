@@ -119,7 +119,6 @@
 static uint8_t _g_maxPerByteWrites;
 static uint8_t _g_useHts;
 static uint8_t _g_maxRetries;
-static uint8_t _g_slowMode;
 static uint32_t _g_totalWrites;
 static uint16_t _g_devSize;
 static uint16_t _g_offset;
@@ -129,7 +128,6 @@ void pgm_mcs48_init(void)
 {
     _g_maxPerByteWrites = 0;
     _g_totalWrites = 0;
-    _g_slowMode = 0;
     _g_devSize = 0;
     _g_devType = -1;
 
@@ -271,22 +269,12 @@ void pgm_mcs48_write_chunk(void)
 
         /* Setup address */
         pgm_mcs48_reset_enable(); // Prepare for address input
-        //pgm_mcs48_delay_small();
         pgm_mcs48_test0_disable(); // Target data bus = input
-        //pgm_mcs48_delay_small();
         pgm_dir_out();
         pgm_write_data((uint8_t)(thisOffset & 0xFF));
         pgm_write_address(thisOffset & 0x700); /* Output address */
-
-        if (_g_slowMode)
-            pgm_mcs48_delay_pre_address_latch();  // Multi-millisecond delay observed to be required here on CMOS parts
-        
         pgm_mcs48_delay_4tcy();
         pgm_mcs48_reset_disable();
-
-        if (_g_slowMode)
-            pgm_mcs48_delay_post_address_latch(); // Multi-millisecond delay observed to be required here on CMOS parts
-
         pgm_mcs48_delay_4tcy();
             
         for (attempt = 0; attempt < stopat; attempt++)
@@ -299,7 +287,6 @@ void pgm_mcs48_write_chunk(void)
                 pgm_mcs48_test0_disable(); // Target data bus = input
                 pgm_dir_out();
 
-                /* Present data */
                 pgm_write_data(temp); // Present data
                 pgm_mcs48_delay_4tcy();
                 pgm_mcs48_vdd_enable(); // Programming power on
@@ -311,11 +298,6 @@ void pgm_mcs48_write_chunk(void)
                 pgm_mcs48_prog_disable(); // Programming pulse off
                 pgm_mcs48_delay_pre_post_vdd();
                 pgm_mcs48_vdd_disable(); // Programming power off
-
-                // After much trial and error I discover that CMOS variants of the MCS-48 need a bit of a 'cool off' time after programming each byte.
-                if (_g_slowMode)
-                    pgm_mcs48_delay_post_write(); 
-
                 pgm_mcs48_delay_4tcy();
             }
 
@@ -339,7 +321,7 @@ void pgm_mcs48_write_chunk(void)
             }
             else
             {
-                verified = 1; /* 270x write strategy does not use inline verify, so just set this to '1' */
+                verified = 1;
             }
         }
 
@@ -473,10 +455,10 @@ void pgm_mcs48_blank_check(void)
 void pgm_mcs48_start_write(void)
 {
     _g_useHts = host_read8();
-    _g_slowMode = host_read8();
+    host_read8();
 
 #ifdef _DEBUG
-    printf("pgm_mcs48_start_write() _g_useHts=%d _g_slowMode=%d\r\n", _g_useHts, _g_extraWrites);
+    printf("pgm_mcs48_start_write() _g_useHts=%d\r\n", _g_useHts);
 #endif /* _DEBUG */
 
     if (_g_devType == DEV_8048 || _g_devType == DEV_8049)
