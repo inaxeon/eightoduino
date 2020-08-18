@@ -470,12 +470,7 @@ void pgm_mcs48_start_write(void)
     pgm_mcs48_power_on();
 
     pgm_mcs48_ea_enable();
-
-    if (_g_devType == DEV_8741)
-        pgm_mcs48_test0_disable();
-    else
-        pgm_mcs48_test0_enable();
-
+    pgm_mcs48_test0_enable();
     pgm_mcs48_reset_enable();
 
     cmd_respond(CMD_START_WRITE, ERR_OK);
@@ -516,7 +511,12 @@ void pgm_mcs48_start_blank_check(void)
     pgm_mcs48_power_on();
 
     pgm_mcs48_ea_enable();
-    pgm_mcs48_test0_enable();
+
+    if (_g_devType == DEV_8741)
+        pgm_mcs48_test0_disable();
+    else
+        pgm_mcs48_test0_enable();
+
     pgm_mcs48_reset_enable();
 
     cmd_respond(CMD_START_BLANK_CHECK, ERR_OK);
