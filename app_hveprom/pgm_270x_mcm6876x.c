@@ -248,7 +248,7 @@ void pgm_270x_mcm6876x_write_chunk(void)
         uint8_t stopat = _g_useHts ? _g_maxRetries : 1;
         pgm_write_address(_g_offset + i); /* Output address */
             
-        for (attempt = 0; attempt < stopat; attempt++)
+        for (attempt = 1; attempt <= stopat; attempt++)
         {
             uint8_t data;
             uint8_t temp = chunk[i];

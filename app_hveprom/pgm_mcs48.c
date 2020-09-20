@@ -277,7 +277,7 @@ void pgm_mcs48_write_chunk(void)
         pgm_mcs48_reset_disable();
         pgm_mcs48_delay_4tcy();
             
-        for (attempt = 0; attempt < stopat; attempt++)
+        for (attempt = 1; attempt <= stopat; attempt++)
         {
             uint8_t data;
             uint8_t temp = chunk[i];
