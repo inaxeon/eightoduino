@@ -22,7 +22,7 @@
 #define _PROJECT_H
 
 //#define _DEBUG
-//#ifdef _RS232_BUILD_
+//#define _RS232_BUILD_
 
 #define HOST_UART   UARTB
 #define DEBUG_UART  UARTC
