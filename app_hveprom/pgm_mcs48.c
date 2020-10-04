@@ -566,6 +566,8 @@ void pgm_mcs48_test(void)
             pgm_dir_out();
             pgm_write_data(0xAA);
             pgm_write_address(0x200);
+            pgm_mcs48_test0_disable();
+            pgm_mcs48_reset_disable();
             break;
         case TEST_MCS48_55:
             pgm_mcs48_power_on();
