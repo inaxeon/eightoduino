@@ -46,7 +46,24 @@
 
 #ifdef _M8OD
 
-#define pgm_mcs48_delay_small() delay_ncycles(1)
+#ifdef _80D_5MHZ_
+#define DELAY_PRE_READ      1
+#define DELAY_4TCY          2
+#define DELAY_WRITE         13925
+#define DELAY_PRE_POST_VDD  260
+#define DELAY_POWER_WAIT    0x7FFF
+#else
+#define DELAY_PRE_READ      2
+#define DELAY_4TCY          4
+#define DELAY_WRITE         27850
+#define DELAY_PRE_POST_VDD  535
+#define DELAY_POWER_WAIT    0xFFFF
+#endif
+
+#define pgm_mcs48_delay_4tcy() delay_ncycles(DELAY_4TCY)
+#define pgm_mcs48_delay_write() delay_ncycles(DELAY_WRITE)
+#define pgm_mcs48_delay_pre_read() delay_ncycles(DELAY_PRE_READ)
+#define pgm_mcs48_delay_pre_post_vdd() delay_ncycles(DELAY_PRE_POST_VDD)
 
 #define pgm_mcs48_pwr_up1_enable() cpld_write(CTRL_TRIS, MCS48_PWR_UP1, 0)
 #define pgm_mcs48_pwr_up1_disable() cpld_write(CTRL_TRIS, MCS48_PWR_UP1, MCS48_PWR_UP1)
@@ -75,11 +92,7 @@
 
 #define pgm_mcs48_delay_4tcy() _delay_us(20)
 #define pgm_mcs48_delay_write() _delay_ms(50)
-
-#define pgm_mcs48_delay_post_write() _delay_ms(25)
 #define pgm_mcs48_delay_pre_read() _delay_us(20)
-#define pgm_mcs48_delay_pre_address_latch() _delay_ms(10)
-#define pgm_mcs48_delay_post_address_latch() _delay_ms(10)
 #define pgm_mcs48_delay_pre_post_vdd() _delay_ms(1)
 
 #define pgm_mcs48_pwr_up1_enable() MCS48_PWR_UP1_DDR |= _BV(MCS48_PWR_UP1)
@@ -370,7 +383,6 @@ void pgm_mcs48_read_chunk(void)
         pgm_write_address(thisOffset & 0x700); /* Output address */
         pgm_mcs48_delay_4tcy();
         pgm_mcs48_reset_disable();
-        pgm_mcs48_delay_4tcy();
         pgm_dir_in();
         pgm_mcs48_delay_4tcy();
 
