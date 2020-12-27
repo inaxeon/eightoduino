@@ -324,6 +324,11 @@ static int8_t pgm_setup_dev_type(uint8_t cmd)
             goto err_wrongshield;
         pgm_mcs48_set_params(devtype, 0x800, MCS48_MAX_RETRIES);
         break;
+    case DEV_8050:
+        if (_g_shieldType != SHIELD_TYPE_MCS48)
+            goto err_wrongshield;
+        pgm_mcs48_set_params(devtype, 0x1000, MCS48_MAX_RETRIES);
+        break;
     default:
 #ifdef _DEBUG
         printf("Invalid device type: %d\r\n", devtype);

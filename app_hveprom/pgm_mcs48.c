@@ -213,6 +213,7 @@ void pgm_mcs48_power_on()
             break;
         case DEV_8048:
         case DEV_8049:
+        case DEV_8050:
             // Vpp = 15V. Reduced down to 12V by 3V zener for EA pin only
             pgm_mcs48_pwr_up1_disable();
             pgm_mcs48_pwr_up2_disable();
@@ -380,7 +381,7 @@ void pgm_mcs48_read_chunk(void)
         uint8_t data;
         pgm_dir_out();
         pgm_write_data((uint8_t)(thisOffset & 0xFF));
-        pgm_write_address(thisOffset & 0x700); /* Output address */
+        pgm_write_address(thisOffset & 0xF00); /* Output address */
         pgm_mcs48_delay_4tcy();
         pgm_mcs48_reset_disable();
         pgm_dir_in();
@@ -422,7 +423,7 @@ void pgm_mcs48_blank_check(void)
     {
         pgm_dir_out();
         pgm_write_data((uint8_t)(offset & 0xFF));
-        pgm_write_address(offset & 0x700); /* Output address */
+        pgm_write_address(offset & 0xF00); /* Output address */
         pgm_mcs48_delay_4tcy();
         pgm_mcs48_reset_disable();
         pgm_mcs48_delay_4tcy();
@@ -473,7 +474,7 @@ void pgm_mcs48_start_write(void)
     printf("pgm_mcs48_start_write() _g_useHts=%d\r\n", _g_useHts);
 #endif /* _DEBUG */
 
-    if (_g_devType == DEV_8048 || _g_devType == DEV_8049)
+    if (_g_devType == DEV_8048 || _g_devType == DEV_8049 || _g_devType == DEV_8050)
     {
         cmd_respond(CMD_START_WRITE, ERR_INVALID_CMD);
         return;
@@ -514,7 +515,7 @@ void pgm_mcs48_start_blank_check(void)
     printf("pgm_mcs48_start_blank_check()\r\n");
 #endif /* _DEBUG */
 
-    if (_g_devType == DEV_8048 || _g_devType == DEV_8049)
+    if (_g_devType == DEV_8048 || _g_devType == DEV_8049 || _g_devType == DEV_8050)
     {
         cmd_respond(CMD_START_BLANK_CHECK, ERR_INVALID_CMD);
         return;
