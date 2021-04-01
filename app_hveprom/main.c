@@ -98,9 +98,8 @@ int main(void)
     if (shieldType == SHIELD_TYPE_UNKNOWN)
     {
 #ifdef _DEBUG
-        printf("No shield attached. Cannot proceed.\r\n");
+        printf("Error: No shield attached.\r\n");
 #endif /* _DEBUG */
-        infinite_loop();
     }
 
     pgm_init(shieldType);
