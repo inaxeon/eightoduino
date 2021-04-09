@@ -129,11 +129,9 @@ void pgm_init(uint8_t shieldType)
 
     if (shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_init();
-
-    if (shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_init();
-
-    if (shieldType == SHIELD_TYPE_MCS48)
+    else if (shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_init();
 }
 
@@ -144,10 +142,12 @@ static void pgm_start_write(void)
 
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_start_write();
-    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_start_write();
-    if (_g_shieldType == SHIELD_TYPE_MCS48)
+    else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_start_write();
+    else
+        cmd_respond(CMD_START_WRITE, ERR_NO_DEV);
 }
 
 static void pgm_start_read(void)
@@ -157,30 +157,36 @@ static void pgm_start_read(void)
 
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_start_read();
-    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_start_read();
-    if (_g_shieldType == SHIELD_TYPE_MCS48)
+    else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_start_read();
+    else
+        cmd_respond(CMD_START_READ, ERR_NO_DEV);
 }
 
 static void pgm_write_chunk(void)
 {
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_write_chunk();
-    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_write_chunk();
-    if (_g_shieldType == SHIELD_TYPE_MCS48)
+    else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_write_chunk();
+    else
+        cmd_respond(CMD_WRITE_CHUNK, ERR_NO_DEV);
 }
 
 static void pgm_read_chunk(void)
 {
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_read_chunk();
-    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_read_chunk();
-    if (_g_shieldType == SHIELD_TYPE_MCS48)
+    else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_read_chunk();
+    else
+        cmd_respond(CMD_READ_CHUNK, ERR_NO_DEV);
 }
 
 static void pgm_start_blank_check(void)
@@ -190,30 +196,36 @@ static void pgm_start_blank_check(void)
 
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_start_blank_check();
-    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_start_blank_check();
-    if (_g_shieldType == SHIELD_TYPE_MCS48)
+    else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_start_blank_check();
+    else
+        cmd_respond(CMD_START_BLANK_CHECK, ERR_NO_DEV);
 }
 
 static void pgm_blank_check(void)
 {
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_blank_check();
-    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_blank_check();
-    if (_g_shieldType == SHIELD_TYPE_MCS48)
+    else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_blank_check();
+    else
+        cmd_respond(CMD_BLANK_CHECK, ERR_NO_DEV);
 }
 
 static void pgm_reset(void)
 {
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_reset();
-    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_reset();
-    if (_g_shieldType == SHIELD_TYPE_MCS48)
+    else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_reset();
+    else
+        cmd_respond(CMD_DEV_RESET, ERR_NO_DEV);
 }
 
 static void pgm_test(void)
@@ -223,23 +235,27 @@ static void pgm_test(void)
 
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_test();
-    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_test();
-    if (_g_shieldType == SHIELD_TYPE_MCS48)
+    else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_test();
+    else
+        cmd_respond(CMD_TEST, ERR_NO_DEV);
 }
 
 static void pgm_test_read(void)
 {
-    if (pgm_setup_dev_type(CMD_TEST) < 0)
+    if (pgm_setup_dev_type(CMD_TEST_READ) < 0)
         return;
 
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_test_read();
-    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
         pgm_270x_mcm6876x_test_read();
-    if (_g_shieldType == SHIELD_TYPE_MCS48)
+    else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_test_read();
+    else
+        cmd_respond(CMD_TEST_READ, ERR_NO_DEV);
 }
 
 static void pgm_measure_12v(void)
