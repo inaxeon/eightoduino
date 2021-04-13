@@ -336,6 +336,7 @@ static int8_t pgm_setup_dev_type(uint8_t cmd)
     case DEV_8742:
     case DEV_8749:
     case DEV_8049:
+    case DEV_8755:
         if (_g_shieldType != SHIELD_TYPE_MCS48)
             goto err_wrongshield;
         pgm_mcs48_set_params(devtype, 0x800, MCS48_MAX_RETRIES);

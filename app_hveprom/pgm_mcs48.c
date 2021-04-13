@@ -77,14 +77,28 @@
 #define pgm_mcs48_vdd_enable() cpld_write(CTRL_PORT, MCS48_VDDEN, MCS48_VDDEN)
 #define pgm_mcs48_vdd_disable() cpld_write(CTRL_PORT, MCS48_VDDEN, 0)
 
-#define pgm_mcs48_test0_enable() cpld_write(CTRL_PORT, MCS48_TEST0, MCS48_TEST0)
-#define pgm_mcs48_test0_disable() cpld_write(CTRL_PORT, MCS48_TEST0, 0)
+#define pgm_mcs48_8755_test0_or_prog_enable() cpld_write(CTRL_PORT, MCS48_TEST0, MCS48_TEST0)
+#define pgm_mcs48_8755_test0_or_prog_disable() cpld_write(CTRL_PORT, MCS48_TEST0, 0)
 
 #define pgm_mcs48_prog_enable() cpld_write(CTRL_PORT, MCS48_PROGEN, MCS48_PROGEN)
 #define pgm_mcs48_prog_disable() cpld_write(CTRL_PORT, MCS48_PROGEN, 0)
 
-#define pgm_mcs48_reset_enable() cpld_write(CTRL_PORT, MCS48_RESET, 0)
-#define pgm_mcs48_reset_disable() cpld_write(CTRL_PORT, MCS48_RESET, MCS48_RESET)
+#define pgm_mcs48_8755_reset_or_ale_enable() do {               \
+    if (_g_devType == DEV_8755)                                 \
+        cpld_write(CTRL_PORT, MCS48_RESET, MCS48_RESET);        \
+    else                                                        \
+        cpld_write(CTRL_PORT, MCS48_RESET, 0);                  \
+    } while (0)
+
+#define pgm_mcs48_8755_reset_or_ale_disable() do {              \
+    if (_g_devType == DEV_8755)                                 \
+        cpld_write(CTRL_PORT, MCS48_RESET, 0);                  \
+    else                                                        \
+        cpld_write(CTRL_PORT, MCS48_RESET, MCS48_RESET);        \
+    } while (0)
+
+#define pgm_8755_rd_enable() cpld_write(PORTD, 0x800, 0)
+#define pgm_8755_rd_disable() cpld_write(PORTD, 0x800, 0x800)
 
 #endif /* _M8OD */
 
@@ -107,16 +121,33 @@
 #define pgm_mcs48_vdd_enable() MCS48_VDDEN_PORT |= _BV(MCS48_VDDEN)
 #define pgm_mcs48_vdd_disable() MCS48_VDDEN_PORT &= ~_BV(MCS48_VDDEN)
 
-#define pgm_mcs48_test0_enable() MCS48_TEST0_PORT |= _BV(MCS48_TEST0)
-#define pgm_mcs48_test0_disable() MCS48_TEST0_PORT &= ~_BV(MCS48_TEST0)
+#define pgm_mcs48_8755_test0_or_prog_enable() MCS48_TEST0_PORT |= _BV(MCS48_TEST0)
+#define pgm_mcs48_8755_test0_or_prog_disable() MCS48_TEST0_PORT &= ~_BV(MCS48_TEST0)
 
 #define pgm_mcs48_prog_enable() MCS48_PROGEN_PORT |= _BV(MCS48_PROGEN)
 #define pgm_mcs48_prog_disable() MCS48_PROGEN_PORT &= ~_BV(MCS48_PROGEN)
 
-#define pgm_mcs48_reset_enable() MCS48_RESET_PORT &= ~_BV(MCS48_RESET)
-#define pgm_mcs48_reset_disable() MCS48_RESET_PORT |= _BV(MCS48_RESET)
+#define pgm_mcs48_8755_reset_or_ale_enable() do {           \
+    if (_g_devType == DEV_8755)                             \
+        MCS48_RESET_PORT |= _BV(MCS48_RESET);               \
+    else                                                    \
+        MCS48_RESET_PORT &= ~_BV(MCS48_RESET);              \
+    } while (0)
+
+#define pgm_mcs48_8755_reset_or_ale_disable() do {          \
+    if (_g_devType == DEV_8755)                             \
+        MCS48_RESET_PORT &= ~_BV(MCS48_RESET);              \
+    else                                                    \
+        MCS48_RESET_PORT |= _BV(MCS48_RESET);               \
+    } while (0)
+
+#define pgm_8755_rd_enable() ADDRESS_11_PORT &= ~_BV(ADDRESS_11)
+#define pgm_8755_rd_disable() ADDRESS_11_PORT |= _BV(ADDRESS_11)
 
 #endif /* _MDUINO */
+
+// A11 is used as 'RD' on 8755 hence the or'ing of 0x800 onto the address, as we always want to leave it high
+#define pgm_mcs48_write_address(addr) pgm_write_address((addr) | (_g_devType == DEV_8755 ? 0x800 : 0x000))
 
 #define TEST_MCS48_PON          1
 #define TEST_MCS48_EA_12V       2
@@ -135,6 +166,7 @@ static uint8_t _g_maxRetries;
 static uint32_t _g_totalWrites;
 static uint16_t _g_devSize;
 static uint16_t _g_offset;
+static uint8_t _g_blankByte;
 static int8_t _g_devType;
 
 void pgm_mcs48_init(void)
@@ -189,6 +221,7 @@ void pgm_mcs48_set_params(uint8_t dev_type, uint16_t dev_size, uint8_t max_retri
     _g_offset = 0;
     _g_maxPerByteWrites = 0;
     _g_totalWrites = 0;
+    _g_blankByte = (dev_type == DEV_8755) ? 0xFF : 0x00;
 
 #ifdef _DEBUG
     printf("pgm_mcs48_set_params(): completed\r\n");
@@ -207,6 +240,7 @@ void pgm_mcs48_power_on()
             pgm_mcs48_pwr_up2_disable();
             break;
         case DEV_8741:
+        case DEV_8755:
             // Vpp = 25V
             pgm_mcs48_pwr_up1_enable();
             pgm_mcs48_pwr_up2_enable();
@@ -230,17 +264,25 @@ void pgm_mcs48_power_on()
     _delay_ms(100);
 #endif /* _MDUINO */
 
-    pgm_mcs48_test0_disable();
-    pgm_mcs48_reset_enable();
+    pgm_mcs48_8755_test0_or_prog_disable();
+
+    if (_g_devType == DEV_8755)
+        pgm_mcs48_8755_reset_or_ale_disable(); 
+    else
+        pgm_mcs48_8755_reset_or_ale_enable();
 }
 
 void pgm_mcs48_reset(void)
 {
     pgm_mcs48_ea_disable();
     pgm_mcs48_vdd_disable();
-    pgm_mcs48_test0_disable();
+    pgm_mcs48_8755_test0_or_prog_disable();
     pgm_mcs48_prog_disable();
-    pgm_mcs48_reset_enable();
+
+    if (_g_devType == DEV_8755)
+        pgm_mcs48_8755_reset_or_ale_disable(); 
+    else
+        pgm_mcs48_8755_reset_or_ale_enable();
 
 #ifdef _M8OD
     delay_ncycles(DELAY_POWER_WAIT);
@@ -253,7 +295,7 @@ void pgm_mcs48_reset(void)
 #endif /* _MDUINO */
 
     pgm_dir_in();
-    pgm_write_address(0);
+    pgm_mcs48_write_address(0x000);
     cmd_respond(CMD_DEV_RESET, ERR_OK);
 }
 
@@ -282,13 +324,16 @@ void pgm_mcs48_write_chunk(void)
         uint8_t stopat = _g_useHts ? _g_maxRetries : 1;
 
         /* Setup address */
-        pgm_mcs48_reset_enable(); // Prepare for address input
-        pgm_mcs48_test0_disable(); // Target data bus = input
+        pgm_mcs48_8755_reset_or_ale_enable(); // Prepare for address input
+
+        if (_g_devType != DEV_8755)
+            pgm_mcs48_8755_test0_or_prog_disable(); // Target data bus = input
+
         pgm_dir_out();
         pgm_write_data((uint8_t)(thisOffset & 0xFF));
-        pgm_write_address(thisOffset & 0x700); /* Output address */
+        pgm_mcs48_write_address(thisOffset & 0xF00); /* Output address */
         pgm_mcs48_delay_4tcy();
-        pgm_mcs48_reset_disable();
+        pgm_mcs48_8755_reset_or_ale_disable();
         pgm_mcs48_delay_4tcy();
             
         for (attempt = 1; attempt <= stopat; attempt++)
@@ -296,22 +341,37 @@ void pgm_mcs48_write_chunk(void)
             uint8_t data;
             uint8_t temp = chunk[i];
 
-            if (temp != 0x00)
+            if (temp != _g_blankByte)
             {
-                pgm_mcs48_test0_disable(); // Target data bus = input
+                if (_g_devType != DEV_8755)
+                    pgm_mcs48_8755_test0_or_prog_disable(); // Target data bus = input
+
                 pgm_dir_out();
 
                 pgm_write_data(temp); // Present data
                 pgm_mcs48_delay_4tcy();
-                pgm_mcs48_vdd_enable(); // Programming power on
-                pgm_mcs48_delay_pre_post_vdd();
-                pgm_mcs48_prog_enable(); // Programming pulse on
-                // 50ms!!! eeep! A rather different approach to an EPROM. Instead of building up the charge bit by bit,
-                // Intel asks us charge the fuck out of it. HTS is implemented here, but like hell we'll need to give it another go!
-                pgm_mcs48_delay_write(); 
-                pgm_mcs48_prog_disable(); // Programming pulse off
-                pgm_mcs48_delay_pre_post_vdd();
-                pgm_mcs48_vdd_disable(); // Programming power off
+
+                if (_g_devType != DEV_8755)
+                {
+                    pgm_mcs48_vdd_enable(); // Programming power on
+                    pgm_mcs48_delay_pre_post_vdd();
+                    pgm_mcs48_prog_enable(); // Programming pulse on
+                    pgm_mcs48_delay_write(); 
+                    pgm_mcs48_prog_disable(); // Programming pulse off
+                    pgm_mcs48_delay_pre_post_vdd();
+                    pgm_mcs48_vdd_disable(); // Programming power off
+                }
+                else
+                {
+                    pgm_mcs48_8755_test0_or_prog_enable();
+                    pgm_mcs48_delay_4tcy();
+                    pgm_mcs48_vdd_enable(); // Programming pulse on
+                    pgm_mcs48_delay_write(); 
+                    pgm_mcs48_vdd_disable(); // Programming pulse off
+                    pgm_mcs48_delay_4tcy();
+                    pgm_mcs48_8755_test0_or_prog_disable();
+                }
+
                 pgm_mcs48_delay_4tcy();
             }
 
@@ -319,9 +379,23 @@ void pgm_mcs48_write_chunk(void)
             {
                 /* Read back data */
                 pgm_dir_in();
-                pgm_mcs48_test0_enable(); // Target data bus = output
+
+                if (_g_devType == DEV_8755)
+                {
+                    pgm_8755_rd_enable();
+                    pgm_mcs48_delay_4tcy();
+                }
+                else
+                {
+                    pgm_mcs48_8755_test0_or_prog_enable(); // Target data bus = output
+                }
+
                 pgm_mcs48_delay_pre_read();
                 data = pgm_read_data();
+
+                if (_g_devType == DEV_8755)
+                    pgm_8755_rd_disable();
+
                 pgm_mcs48_delay_4tcy();
 #ifdef _DEBUG
                 printf("pgm_mcs48_write_chunk() data=0x%02X chunk[i]=0x%02X attempt=%d\r\n", data, chunk[i], attempt);
@@ -380,10 +454,15 @@ void pgm_mcs48_read_chunk(void)
         uint16_t thisOffset = (_g_offset + i);
         uint8_t data;
         pgm_dir_out();
+
+        if (_g_devType == DEV_8755)
+            pgm_mcs48_8755_reset_or_ale_enable();
+
         pgm_write_data((uint8_t)(thisOffset & 0xFF));
-        pgm_write_address(thisOffset & 0xF00); /* Output address */
+        pgm_mcs48_write_address(thisOffset & 0xF00); /* Output address */
         pgm_mcs48_delay_4tcy();
-        pgm_mcs48_reset_disable();
+        pgm_mcs48_8755_reset_or_ale_disable();
+
         pgm_dir_in();
         pgm_mcs48_delay_4tcy();
 
@@ -392,16 +471,26 @@ void pgm_mcs48_read_chunk(void)
             // Unlike the rest of the MCS-48 family, the 8741 datasheet does not explicitly tell us what we have to
             // do with TEST0 when reading back the EPROM. Much experimentation finds that it cannot be left at 5V
             // as with other parts. Instead it must be asserted before reading a byte, then de-asserted thereafter.
-            pgm_mcs48_test0_enable();
+            pgm_mcs48_8755_test0_or_prog_enable();
+            pgm_mcs48_delay_4tcy();
+        }
+
+        if (_g_devType == DEV_8755)
+        {
+            pgm_8755_rd_enable();
             pgm_mcs48_delay_4tcy();
         }
 
         data = pgm_read_data();
 
         if (_g_devType == DEV_8741)
-            pgm_mcs48_test0_disable();
+            pgm_mcs48_8755_test0_or_prog_disable();
 
-        pgm_mcs48_reset_enable();
+        if (_g_devType == DEV_8755)
+            pgm_8755_rd_disable();
+        else
+            pgm_mcs48_8755_reset_or_ale_enable();
+
         pgm_mcs48_delay_4tcy();
         host_write8(data);
 
@@ -417,15 +506,19 @@ void pgm_mcs48_read_chunk(void)
 void pgm_mcs48_blank_check(void)
 {
     uint16_t offset = 0;
-    uint8_t data;
+    uint8_t data = 0xAA;
 
     while (offset < _g_devSize)
     {
         pgm_dir_out();
+
+        if (_g_devType == DEV_8755)
+            pgm_mcs48_8755_reset_or_ale_enable();
+
         pgm_write_data((uint8_t)(offset & 0xFF));
-        pgm_write_address(offset & 0xF00); /* Output address */
+        pgm_mcs48_write_address(offset & 0xF00); /* Output address */
         pgm_mcs48_delay_4tcy();
-        pgm_mcs48_reset_disable();
+        pgm_mcs48_8755_reset_or_ale_disable();
         pgm_mcs48_delay_4tcy();
         pgm_dir_in();
         pgm_mcs48_delay_4tcy();
@@ -435,19 +528,29 @@ void pgm_mcs48_blank_check(void)
             // Unlike the rest of the MCS-48 family, the 8741 datasheet does not explicitly tell us what we have to
             // do with TEST0 when reading back the EPROM. Much experimentation finds that it cannot be left at 5V
             // as with other parts. Instead it must be asserted before reading a byte, then de-asserted thereafter.
-            pgm_mcs48_test0_enable();
+            pgm_mcs48_8755_test0_or_prog_enable();
+            pgm_mcs48_delay_4tcy();
+        }
+
+        if (_g_devType == DEV_8755)
+        {
+            pgm_8755_rd_enable();
             pgm_mcs48_delay_4tcy();
         }
 
         data = pgm_read_data();
 
         if (_g_devType == DEV_8741)
-            pgm_mcs48_test0_disable();
+            pgm_mcs48_8755_test0_or_prog_disable();
 
-        pgm_mcs48_reset_enable();
+        if (_g_devType == DEV_8755)
+            pgm_8755_rd_disable();
+        else
+            pgm_mcs48_8755_reset_or_ale_enable();
+
         pgm_mcs48_delay_4tcy();
 
-        if (data != 0x00)
+        if (data != _g_blankByte)
             break;
 
         offset++;
@@ -483,8 +586,16 @@ void pgm_mcs48_start_write(void)
     pgm_mcs48_power_on();
 
     pgm_mcs48_ea_enable();
-    pgm_mcs48_test0_enable();
-    pgm_mcs48_reset_enable();
+
+    if (_g_devType == DEV_8755)
+        pgm_mcs48_8755_test0_or_prog_disable();
+    else
+        pgm_mcs48_8755_test0_or_prog_enable();
+
+    if (_g_devType == DEV_8755)
+        pgm_mcs48_8755_reset_or_ale_disable(); 
+    else
+        pgm_mcs48_8755_reset_or_ale_enable(); 
 
     cmd_respond(CMD_START_WRITE, ERR_OK);
 }
@@ -499,12 +610,15 @@ void pgm_mcs48_start_read(void)
 
     pgm_mcs48_ea_enable();
 
-    if (_g_devType == DEV_8741)
-        pgm_mcs48_test0_disable();
+    if (_g_devType == DEV_8741 || _g_devType == DEV_8755)
+        pgm_mcs48_8755_test0_or_prog_disable();
     else
-        pgm_mcs48_test0_enable();
+        pgm_mcs48_8755_test0_or_prog_enable();
 
-    pgm_mcs48_reset_enable();
+    if (_g_devType == DEV_8755)
+        pgm_mcs48_8755_reset_or_ale_disable(); 
+    else
+        pgm_mcs48_8755_reset_or_ale_enable(); 
 
     cmd_respond(CMD_START_READ, ERR_OK);
 }
@@ -525,12 +639,15 @@ void pgm_mcs48_start_blank_check(void)
 
     pgm_mcs48_ea_enable();
 
-    if (_g_devType == DEV_8741)
-        pgm_mcs48_test0_disable();
+    if (_g_devType == DEV_8741 || _g_devType == DEV_8755)
+        pgm_mcs48_8755_test0_or_prog_disable();
     else
-        pgm_mcs48_test0_enable();
+        pgm_mcs48_8755_test0_or_prog_enable();
 
-    pgm_mcs48_reset_enable();
+    if (_g_devType == DEV_8755)
+        pgm_mcs48_8755_reset_or_ale_disable(); 
+    else
+        pgm_mcs48_8755_reset_or_ale_enable(); 
 
     cmd_respond(CMD_START_BLANK_CHECK, ERR_OK);
 }
@@ -578,17 +695,17 @@ void pgm_mcs48_test(void)
             pgm_mcs48_power_on();
             pgm_dir_out();
             pgm_write_data(0xAA);
-            pgm_write_address(0xA00);
-            pgm_mcs48_test0_disable();
-            pgm_mcs48_reset_disable();
+            pgm_mcs48_write_address(0xA00);
+            pgm_mcs48_8755_test0_or_prog_disable();
+            pgm_mcs48_8755_reset_or_ale_disable();
             break;
         case TEST_MCS48_55:
             pgm_mcs48_power_on();
             pgm_dir_out();
             pgm_write_data(0x55);
-            pgm_write_address(0x500);
-            pgm_mcs48_test0_enable();
-            pgm_mcs48_reset_enable();
+            pgm_mcs48_write_address(0x500);
+            pgm_mcs48_8755_test0_or_prog_enable();
+            pgm_mcs48_8755_reset_or_ale_enable();
             break;
         case TEST_MCS48_DATA:
             pgm_mcs48_power_on();
