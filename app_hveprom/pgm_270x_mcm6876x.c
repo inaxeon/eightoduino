@@ -3,7 +3,7 @@
  *   8OD - Arduino form factor i8086 based SBC
  *   Matthew Millman (tech.mattmillman.com/8od)
  *
- *   1702A/2704/2708/MCM68764/MCM68766/MCS48 EPROM Programmer
+ *   1702A/2704/2708/TMS2716/MCM68764/MCM68766/MCS48 EPROM Programmer
  *
  *   This is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -85,6 +85,16 @@
 #define pgm_270x_mcm6876x_pe_enable()  MCMX_270X_PE_PORT |= _BV(MCMX_270X_PE)
 #define pgm_270x_mcm6876x_pe_disable() MCMX_270X_PE_PORT &= ~_BV(MCMX_270X_PE)
 
+#define pgm_270x_tms2716_cs_enable() TMS2716_CS_PORT |= _BV(TMS2716_CS)
+#define pgm_270x_tms2716_cs_disable() TMS2716_CS_PORT &= ~_BV(TMS2716_CS)
+#define pgm_270x_tms2716_pe_enable() TMS2716_PE_PORT |= _BV(TMS2716_PE)
+#define pgm_270x_tms2716_pe_disable() TMS2716_PE_PORT &= ~_BV(TMS2716_PE)
+
+#define pgm_270x_mcm6876x_wr_is_enabled() ((MCMX_270X_WR_PORT & _BV(MCMX_270X_WR)) == _BV(MCMX_270X_WR))
+#define pgm_270x_tms2716_cs_is_enabled() ((TMS2716_CS_PORT & _BV(TMS2716_CS)) == _BV(TMS2716_CS))
+#define pgm_270x_tms2716_pe_is_enabled() ((TMS2716_PE_PORT & _BV(TMS2716_PE)) == _BV(TMS2716_PE))
+
+
 #endif /* _MDUINO */
 
 #define TEST_270X_MCM6876X_PON    1
@@ -94,6 +104,10 @@
 #define TEST_270X_MCM6876X_AA     5
 #define TEST_270X_MCM6876X_55     6
 #define TEST_270X_MCM6876X_DATA   7
+
+#define PIN18_STATE_5V            0
+#define PIN18_STATE_0V            1
+#define PIN18_STATE_VPP           2
 
 static uint8_t _g_maxPerByteWrites;
 static uint8_t _g_useHts;
@@ -105,7 +119,10 @@ static uint16_t _g_offset;
 static uint8_t _g_shieldType;
 static int8_t _g_devType;
 
-void pgm_270x_mcm6876x_tms2716_addr_fudge(uint16_t addr);
+static void pgm_270x_tms2716_set_pe(bool state);
+static void pgm_270x_mcm6876x_set_rd(bool state);
+static void pgm_270x_mcm6876x_tms2716_set_addr(uint16_t addr);
+static void pgm_270x_mcm6876x_tms2716_set_pin18_state(uint16_t state);
 
 void pgm_270x_mcm6876x_init(uint8_t shield_type)
 {
@@ -129,6 +146,8 @@ void pgm_270x_mcm6876x_init(uint8_t shield_type)
 #endif /* _M8OD */
 
 #ifdef _MDUINO
+    TMS2716_CS_PORT &= ~_BV(TMS2716_CS);
+    TMS2716_PE_PORT &= ~_BV(TMS2716_PE);
     MCMX_270X_WR_PORT &= ~_BV(MCMX_270X_WR);
     MCMX_270X_RD_PORT &= ~_BV(MCMX_270X_RD);
     MCMX_270X_PE_PORT &= ~_BV(MCMX_270X_PE);
@@ -141,6 +160,8 @@ void pgm_270x_mcm6876x_init(uint8_t shield_type)
     MCMX_270X_WR_DDR |= _BV(MCMX_270X_WR); // output
     MCMX_270X_RD_DDR |= _BV(MCMX_270X_RD); // output
     MCMX_270X_PE_DDR |= _BV(MCMX_270X_PE); // output
+    TMS2716_PE_DDR |= _BV(TMS2716_PE); // output
+    TMS2716_CS_DDR |= _BV(TMS2716_CS); // output
     MCMX_270X_PON_DDR |= _BV(MCMX_270X_PON); // output
     MCMX_270X_NC_3_DDR &= ~_BV(MCMX_270X_NC_3); // input
 #endif /* _MDUINO */
@@ -239,9 +260,9 @@ void pgm_270x_mcm6876x_power_on()
 
 void pgm_270x_mcm6876x_reset(void)
 {
-    pgm_270x_mcm6876x_pe_disable();
-    pgm_270x_mcm6876x_rd_disable();
-    pgm_270x_mcm6876x_wr_disable();
+    pgm_270x_tms2716_set_pe(false);
+    pgm_270x_mcm6876x_set_rd(false);
+    pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_5V);
 
 #ifdef _M8OD
     delay_ncycles(DELAY_POWER_WAIT);
@@ -278,7 +299,7 @@ void pgm_270x_mcm6876x_write_chunk(void)
     {
         uint8_t verified = 0;
         uint8_t stopat = _g_useHts ? _g_maxRetries : 1;
-        pgm_270x_mcm6876x_tms2716_addr_fudge(_g_offset + i);
+        pgm_270x_mcm6876x_tms2716_set_addr(_g_offset + i);
             
         for (attempt = 1; attempt <= stopat; attempt++)
         {
@@ -286,7 +307,7 @@ void pgm_270x_mcm6876x_write_chunk(void)
             uint8_t temp = chunk[i];
 
             /* Present data */
-            pgm_270x_mcm6876x_pe_enable();
+            pgm_270x_tms2716_set_pe(true);
             pgm_270x_mcm6876x_delay_read();
             pgm_dir_out();
             pgm_write_data(temp);
@@ -294,27 +315,27 @@ void pgm_270x_mcm6876x_write_chunk(void)
             pgm_270x_mcm6876x_delay_ad_setup();
 
             /* Pulse Vpp */
-            pgm_270x_mcm6876x_wr_enable();
+            pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_VPP);
             
             if (_g_devType == DEV_MCM6876X)
                 pgm_270x_mcm6876x_delay_write_mcm6876x(); /* 2ms */
             else
                 pgm_270x_mcm6876x_delay_write_270x(); /* 1ms */
 
-            pgm_270x_mcm6876x_wr_disable();
+            pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_0V);
             pgm_270x_mcm6876x_delay_ad_hold();
 
             pgm_dir_in();
-            pgm_270x_mcm6876x_pe_disable();
+            pgm_270x_tms2716_set_pe(false);
 
             if (_g_useHts)
             {
                 /* Read back data */
                 pgm_270x_mcm6876x_delay_read();
-                pgm_270x_mcm6876x_rd_enable();
+                pgm_270x_mcm6876x_set_rd(true);
                 pgm_270x_mcm6876x_delay_read();
                 data = pgm_read_data();
-                pgm_270x_mcm6876x_rd_disable();
+                pgm_270x_mcm6876x_set_rd(false);
 
 #ifdef _DEBUG
                 printf("pgm_270x_mcm6876x_write_chunk() data=0x%02X chunk[i]=0x%02X attempt=%d\r\n", data, chunk[i], attempt);
@@ -373,14 +394,14 @@ void pgm_270x_mcm6876x_read_chunk(void)
 
     for (i = 0; i < thisChunk; i++)
     {
-        pgm_270x_mcm6876x_tms2716_addr_fudge(_g_offset + i);
+        pgm_270x_mcm6876x_tms2716_set_addr(_g_offset + i);
 
         /* Read data */
         pgm_270x_mcm6876x_delay_read();
-        pgm_270x_mcm6876x_rd_enable();
+        pgm_270x_mcm6876x_set_rd(true);
         pgm_270x_mcm6876x_delay_read();
         host_write8(pgm_read_data());
-        pgm_270x_mcm6876x_rd_disable();
+        pgm_270x_mcm6876x_set_rd(false);
         pgm_270x_mcm6876x_delay_read();
     }
 
@@ -394,12 +415,12 @@ void pgm_270x_mcm6876x_blank_check(void)
 
     while (offset < _g_devSize)
     {
-        pgm_270x_mcm6876x_tms2716_addr_fudge(offset);
+        pgm_270x_mcm6876x_tms2716_set_addr(offset);
         pgm_270x_mcm6876x_delay_read();
-        pgm_270x_mcm6876x_rd_enable();
+        pgm_270x_mcm6876x_set_rd(true);
         pgm_270x_mcm6876x_delay_read();
         data = pgm_read_data();
-        pgm_270x_mcm6876x_rd_disable();
+        pgm_270x_mcm6876x_set_rd(false);
         pgm_270x_mcm6876x_delay_read();
 
         if (data != 0xFF)
@@ -467,15 +488,15 @@ void pgm_270x_mcm6876x_test(void)
             break;
         case TEST_270X_MCM6876X_RD:
             pgm_270x_mcm6876x_power_on();
-            pgm_270x_mcm6876x_rd_enable();
+            pgm_270x_mcm6876x_set_rd(true);
             break;
         case TEST_270X_MCM6876X_WR:
             pgm_270x_mcm6876x_power_on();
-            pgm_270x_mcm6876x_wr_enable();
+            pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_VPP);
             break;
         case TEST_270X_MCM6876X_PE:
             pgm_270x_mcm6876x_power_on();
-            pgm_270x_mcm6876x_pe_enable();
+            pgm_270x_tms2716_set_pe(true);
             break;
         case TEST_270X_MCM6876X_AA:
             pgm_270x_mcm6876x_power_on();
@@ -506,8 +527,106 @@ void pgm_270x_mcm6876x_test_read(void)
     host_write8(pgm_read_data());
 }
 
-void pgm_270x_mcm6876x_tms2716_addr_fudge(uint16_t addr)
+static void pgm_270x_tms2716_set_pe(bool state)
 {
-    pgm_write_address(addr); /* Output address */
+    if (_g_devType == DEV_TMS2716)
+    {
+        if (state)
+            pgm_270x_tms2716_pe_enable();
+        else
+            pgm_270x_tms2716_pe_disable();
+    }
+    else
+    {
+        if (state)
+            pgm_270x_mcm6876x_pe_enable();
+        else
+            pgm_270x_mcm6876x_pe_disable();
+    }
 }
 
+static void pgm_270x_mcm6876x_set_rd(bool state)
+{
+    if (_g_devType == DEV_TMS2716)
+    {
+        if (state)
+            pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_0V);
+        else
+            pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_5V);
+    }
+    else
+    {
+        if (state)
+            pgm_270x_mcm6876x_rd_enable();
+        else
+            pgm_270x_mcm6876x_rd_disable();
+    }
+}
+
+// The addition of the TMS2716 makes things a little difficult as the driver
+// for pin 20 is now has to double as an address selector. Stash that complexity
+// in here so the main algorithm doesn't have to care.
+static void pgm_270x_mcm6876x_tms2716_set_addr(uint16_t addr)
+{
+    pgm_write_address(addr); /* Output address, as we did before */
+
+    if ((addr & 0x400) == 0x400)
+        pgm_270x_mcm6876x_rd_disable(); // Let pin 20 pull high
+    else
+        pgm_270x_mcm6876x_rd_disable(); // Pull pin 20 low
+}
+
+// The situation with Pin 18 is hazardous as there is a risk of shoot-through.
+// So manage its state in a dedicated helper to ensure there's no oopsies in the
+// main algorithm.
+static void pgm_270x_mcm6876x_tms2716_set_pin18_state(uint16_t state)
+{
+    if (pgm_270x_mcm6876x_wr_is_enabled())
+    {
+        //Present state: PIN18_STATE_VPP
+        switch (state)
+        {
+            case PIN18_STATE_5V:
+                pgm_270x_mcm6876x_wr_disable();
+                return;
+            case PIN18_STATE_0V:
+                pgm_270x_mcm6876x_wr_disable();
+                pgm_270x_mcm6876x_delay_read();
+                pgm_270x_tms2716_cs_enable();
+                return;
+            case PIN18_STATE_VPP:
+                return; // Do nothing.
+        }
+    }
+
+    if (pgm_270x_tms2716_cs_is_enabled())
+    {
+        //Present state: PIN18_STATE_0V
+        switch (state)
+        {
+            case PIN18_STATE_5V:
+                pgm_270x_tms2716_cs_disable();
+                return;
+            case PIN18_STATE_0V:
+                return; // Do nothing
+            case PIN18_STATE_VPP:
+            pgm_270x_tms2716_cs_disable();
+            pgm_270x_mcm6876x_delay_read();
+            pgm_270x_mcm6876x_wr_enable();
+                return;
+        }
+    }
+
+    //Present state: PIN18_STATE_5V
+    switch (state)
+    {
+        case PIN18_STATE_5V:
+            return; // Do nothing
+        case PIN18_STATE_0V:
+            pgm_270x_tms2716_cs_enable();
+            return;
+        case PIN18_STATE_VPP:
+            pgm_270x_mcm6876x_wr_enable();
+            return;
+    }
+}

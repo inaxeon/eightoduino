@@ -128,6 +128,14 @@
 #define MCMX_270X_NC_3            PB6
 #define MCMX_270X_NC_3_DDR        DDRB
 
+#define TMS2716_PE                PH3
+#define TMS2716_PE_DDR            DDRH
+#define TMS2716_PE_PORT           PORTH
+
+#define TMS2716_CS                PH4
+#define TMS2716_CS_DDR            DDRH
+#define TMS2716_CS_PORT           PORTH
+
 #define C1702A_NC_0               PE4
 #define C1702A_NC_0_DDR           DDRE
 
