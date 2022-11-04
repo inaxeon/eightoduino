@@ -44,6 +44,9 @@
 #define DEV_8049                 0x09
 #define DEV_8050                 0x0A
 #define DEV_8755                 0x0B
+#define DEV_8041                 0x0C
+#define DEV_8042                 0x0D
+#define DEV_TMS2716              0x0E 
 
 #define ERR_OK                   0x00
 #define ERR_PROCEED_DUALSOCKET   0x01

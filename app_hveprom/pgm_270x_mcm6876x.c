@@ -102,15 +102,19 @@ static uint8_t _g_maxRetries;
 static uint32_t _g_totalWrites;
 static uint16_t _g_devSize;
 static uint16_t _g_offset;
+static uint8_t _g_shieldType;
 static int8_t _g_devType;
 
-void pgm_270x_mcm6876x_init(void)
+void pgm_270x_mcm6876x_tms2716_addr_fudge(uint16_t addr);
+
+void pgm_270x_mcm6876x_init(uint8_t shield_type)
 {
     _g_maxPerByteWrites = 0;
     _g_totalWrites = 0;
     _g_maxRetries = 0;
     _g_devSize = 0;
     _g_devType = -1;
+    _g_shieldType = shield_type;
 
 #ifdef _M8OD
     cpld_write(CTRL_PORT,
@@ -163,29 +167,57 @@ void pgm_270x_mcm6876x_set_params(uint8_t dev_type, uint16_t dev_size, uint8_t m
 
 bool pgm_270x_mcm6876x_check_switch(uint8_t dev_type)
 {
+    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
+    {
 #ifdef _M8OD
-    if ((cpld_read(CTRL_PORT) & MCMX_270X_DEVSEL) == 0)
-    {
-        if (dev_type == DEV_C2704 || dev_type == DEV_C2708)
-            return true;
-    }
-    if ((cpld_read(CTRL_PORT) & MCMX_270X_DEVSEL) == MCMX_270X_DEVSEL)
-    {
-        if (dev_type == DEV_MCM6876X)
-            return true;
-    }
+        if ((cpld_read(CTRL_PORT) & MCMX_270X_DEVSEL) == 0)
+        {
+            if (dev_type == DEV_C2704 || dev_type == DEV_C2708 || dev_type == DEV_TMS2716)
+                return true;
+        }
+        if ((cpld_read(CTRL_PORT) & MCMX_270X_DEVSEL) == MCMX_270X_DEVSEL)
+        {
+            if (dev_type == DEV_MCM6876X)
+                return true;
+        }
 #endif /* _M8OD */
 
 #ifdef _MDUINO
-    if ((MCMX_270X_DEVSEL_PIN & _BV(MCMX_270X_DEVSEL)) == 0)
-    {
-        if (dev_type == DEV_C2704 || dev_type == DEV_C2708)
-            return true;
+        if ((MCMX_270X_DEVSEL_PIN & _BV(MCMX_270X_DEVSEL)) == 0)
+        {
+            if (dev_type == DEV_C2704 || dev_type == DEV_C2708 || dev_type == DEV_TMS2716)
+                return true;
+        }
+        if ((MCMX_270X_DEVSEL_PIN & _BV(MCMX_270X_DEVSEL)) == _BV(MCMX_270X_DEVSEL))
+        {
+            if (dev_type == DEV_MCM6876X)
+                return true;
+        }
+#endif /* _MDUINO */
     }
-    if ((MCMX_270X_DEVSEL_PIN & _BV(MCMX_270X_DEVSEL)) == _BV(MCMX_270X_DEVSEL))
+
+#ifdef _MDUINO
+    if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V2)
     {
-        if (dev_type == DEV_MCM6876X)
-            return true;
+        // The V2 shield has a completely different mechanism of detecting the switch position.
+        // Instead it is possible observe the state of A11 when tri-stated to detect it.
+        // It's not as clean as the previous solution but it saves money on the BOM.
+        ADDRESS_11_DDR &= ~_BV(ADDRESS_11);
+
+        _delay_us(1);
+
+        if ((ADDRESS_11_PIN & _BV(ADDRESS_11)) == _BV(ADDRESS_11))
+        {
+            if (dev_type == DEV_C2704 || dev_type == DEV_C2708 || dev_type == DEV_TMS2716)
+                return true;
+        }
+        if ((ADDRESS_11_PIN & _BV(ADDRESS_11)) == 0)
+        {
+            if (dev_type == DEV_MCM6876X)
+                return true;
+        }
+
+        ADDRESS_11_DDR |= _BV(ADDRESS_11);
     }
 #endif /* _MDUINO */
 
@@ -246,7 +278,7 @@ void pgm_270x_mcm6876x_write_chunk(void)
     {
         uint8_t verified = 0;
         uint8_t stopat = _g_useHts ? _g_maxRetries : 1;
-        pgm_write_address(_g_offset + i); /* Output address */
+        pgm_270x_mcm6876x_tms2716_addr_fudge(_g_offset + i);
             
         for (attempt = 1; attempt <= stopat; attempt++)
         {
@@ -341,7 +373,7 @@ void pgm_270x_mcm6876x_read_chunk(void)
 
     for (i = 0; i < thisChunk; i++)
     {
-        pgm_write_address(_g_offset + i); /* Output address */
+        pgm_270x_mcm6876x_tms2716_addr_fudge(_g_offset + i);
 
         /* Read data */
         pgm_270x_mcm6876x_delay_read();
@@ -362,7 +394,7 @@ void pgm_270x_mcm6876x_blank_check(void)
 
     while (offset < _g_devSize)
     {
-        pgm_write_address(offset); /* Output address */
+        pgm_270x_mcm6876x_tms2716_addr_fudge(offset);
         pgm_270x_mcm6876x_delay_read();
         pgm_270x_mcm6876x_rd_enable();
         pgm_270x_mcm6876x_delay_read();
@@ -473,3 +505,9 @@ void pgm_270x_mcm6876x_test_read(void)
     cmd_respond(CMD_TEST_READ, ERR_OK);
     host_write8(pgm_read_data());
 }
+
+void pgm_270x_mcm6876x_tms2716_addr_fudge(uint16_t addr)
+{
+    pgm_write_address(addr); /* Output address */
+}
+

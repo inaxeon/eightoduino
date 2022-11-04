@@ -248,6 +248,8 @@ void pgm_mcs48_power_on()
         case DEV_8048:
         case DEV_8049:
         case DEV_8050:
+        case DEV_8041:
+        case DEV_8042:
             // Vpp = 15V. Reduced down to 12V by 3V zener for EA pin only
             pgm_mcs48_pwr_up1_disable();
             pgm_mcs48_pwr_up2_disable();
@@ -466,7 +468,7 @@ void pgm_mcs48_read_chunk(void)
         pgm_dir_in();
         pgm_mcs48_delay_4tcy();
 
-        if (_g_devType == DEV_8741)
+        if (_g_devType == DEV_8741 || _g_devType == DEV_8041)
         {
             // Unlike the rest of the MCS-48 family, the 8741 datasheet does not explicitly tell us what we have to
             // do with TEST0 when reading back the EPROM. Much experimentation finds that it cannot be left at 5V
@@ -483,7 +485,7 @@ void pgm_mcs48_read_chunk(void)
 
         data = pgm_read_data();
 
-        if (_g_devType == DEV_8741)
+        if (_g_devType == DEV_8741 || _g_devType == DEV_8041)
             pgm_mcs48_8755_test0_or_prog_disable();
 
         if (_g_devType == DEV_8755)
@@ -523,7 +525,7 @@ void pgm_mcs48_blank_check(void)
         pgm_dir_in();
         pgm_mcs48_delay_4tcy();
 
-        if (_g_devType == DEV_8741)
+        if (_g_devType == DEV_8741 || _g_devType == DEV_8041)
         {
             // Unlike the rest of the MCS-48 family, the 8741 datasheet does not explicitly tell us what we have to
             // do with TEST0 when reading back the EPROM. Much experimentation finds that it cannot be left at 5V
@@ -540,7 +542,7 @@ void pgm_mcs48_blank_check(void)
 
         data = pgm_read_data();
 
-        if (_g_devType == DEV_8741)
+        if (_g_devType == DEV_8741 || _g_devType == DEV_8041)
             pgm_mcs48_8755_test0_or_prog_disable();
 
         if (_g_devType == DEV_8755)
@@ -610,7 +612,7 @@ void pgm_mcs48_start_read(void)
 
     pgm_mcs48_ea_enable();
 
-    if (_g_devType == DEV_8741 || _g_devType == DEV_8755)
+    if (_g_devType == DEV_8741 || _g_devType == DEV_8041 || _g_devType == DEV_8755)
         pgm_mcs48_8755_test0_or_prog_disable();
     else
         pgm_mcs48_8755_test0_or_prog_enable();

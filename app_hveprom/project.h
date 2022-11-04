@@ -27,10 +27,11 @@
 #define HOST_UART   UARTB
 #define DEBUG_UART  UARTC
 
-#define SHIELD_TYPE_UNKNOWN         0x00
-#define SHIELD_TYPE_1702A           0x01
-#define SHIELD_TYPE_270X_MCM6876X   0x02
-#define SHIELD_TYPE_MCS48           0x03
+#define SHIELD_TYPE_UNKNOWN            0x00
+#define SHIELD_TYPE_1702A              0x01
+#define SHIELD_TYPE_270X_MCM6876X_V1   0x02
+#define SHIELD_TYPE_MCS48              0x03
+#define SHIELD_TYPE_270X_MCM6876X_V2   0x04
 
 #define HOST_BAUD                   38400
 #define DEBUG_BAUD                  38400

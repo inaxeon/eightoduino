@@ -157,9 +157,9 @@ static uint8_t detect_shield(void)
     if (!bit_0 && bit_1)
     {
 #ifdef _DEBUG
-        printf("Shield type: Detected SHIELD_TYPE_270X_MCM6876X\r\n");
+        printf("Shield type: Detected SHIELD_TYPE_270X_MCM6876X_V1\r\n");
 #endif /* _DEBUG */
-        return SHIELD_TYPE_270X_MCM6876X;
+        return SHIELD_TYPE_270X_MCM6876X_V1;
     }
 
     if (bit_0 && !bit_1)
@@ -181,6 +181,21 @@ static uint8_t detect_shield(void)
             printf("Shield type: Detected SHIELD_TYPE_MCS48\r\n");
 #endif /* _DEBUG */
             return SHIELD_TYPE_MCS48;
+        }
+
+        if (bit_a && !bit_b && !bit_c)
+        {
+#ifdef _DEBUG
+            printf("Shield type: Detected SHIELD_TYPE_270X_MCM6876X_V2\r\n");
+#endif /* _DEBUG */
+#ifdef _M8OD
+            // 8OD can't tri-state the address pins. Needed to detect the switch
+            // position on the V2 shield.
+            printf("Can't support this sheild type on this platform\r\n");
+            return SHIELD_TYPE_UNKNOWN;
+#endif
+
+            return SHIELD_TYPE_270X_MCM6876X_V2;
         }
     }
 

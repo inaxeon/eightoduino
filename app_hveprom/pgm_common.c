@@ -129,8 +129,8 @@ void pgm_init(uint8_t shieldType)
 
     if (shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_init();
-    else if (shieldType == SHIELD_TYPE_270X_MCM6876X)
-        pgm_270x_mcm6876x_init();
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1 || _g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
+        pgm_270x_mcm6876x_init(_g_shieldType);
     else if (shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_init();
 }
@@ -142,7 +142,7 @@ static void pgm_start_write(void)
 
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_start_write();
-    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1 || _g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
         pgm_270x_mcm6876x_start_write();
     else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_start_write();
@@ -157,7 +157,7 @@ static void pgm_start_read(void)
 
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_start_read();
-    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1 || _g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
         pgm_270x_mcm6876x_start_read();
     else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_start_read();
@@ -169,7 +169,7 @@ static void pgm_write_chunk(void)
 {
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_write_chunk();
-    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1 || _g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
         pgm_270x_mcm6876x_write_chunk();
     else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_write_chunk();
@@ -181,7 +181,7 @@ static void pgm_read_chunk(void)
 {
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_read_chunk();
-    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1 || _g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
         pgm_270x_mcm6876x_read_chunk();
     else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_read_chunk();
@@ -196,7 +196,7 @@ static void pgm_start_blank_check(void)
 
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_start_blank_check();
-    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1 || _g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
         pgm_270x_mcm6876x_start_blank_check();
     else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_start_blank_check();
@@ -208,7 +208,7 @@ static void pgm_blank_check(void)
 {
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_blank_check();
-    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1 || _g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
         pgm_270x_mcm6876x_blank_check();
     else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_blank_check();
@@ -220,7 +220,7 @@ static void pgm_reset(void)
 {
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_reset();
-    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1 || _g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
         pgm_270x_mcm6876x_reset();
     else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_reset();
@@ -235,7 +235,7 @@ static void pgm_test(void)
 
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_test();
-    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1 || _g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
         pgm_270x_mcm6876x_test();
     else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_test();
@@ -250,7 +250,7 @@ static void pgm_test_read(void)
 
     if (_g_shieldType == SHIELD_TYPE_1702A)
         pgm_1702a_test_read();
-    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X)
+    else if (_g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1 || _g_shieldType == SHIELD_TYPE_270X_MCM6876X_V1)
         pgm_270x_mcm6876x_test_read();
     else if (_g_shieldType == SHIELD_TYPE_MCS48)
         pgm_mcs48_test_read();
@@ -306,21 +306,28 @@ static int8_t pgm_setup_dev_type(uint8_t cmd)
         pgm_1702a_set_params();
         break;
     case DEV_C2704:
-        if (_g_shieldType != SHIELD_TYPE_270X_MCM6876X)
+        if (_g_shieldType != SHIELD_TYPE_270X_MCM6876X_V1 && _g_shieldType != SHIELD_TYPE_270X_MCM6876X_V2)
             goto err_wrongshield;
         if (!pgm_270x_mcm6876x_check_switch(DEV_C2704))
             goto err_wrongswitch;
         pgm_270x_mcm6876x_set_params(DEV_C2704, 0x200, C270X_MAX_RETRIES);
         break;
     case DEV_C2708:
-        if (_g_shieldType != SHIELD_TYPE_270X_MCM6876X)
+        if (_g_shieldType != SHIELD_TYPE_270X_MCM6876X_V1 && _g_shieldType != SHIELD_TYPE_270X_MCM6876X_V2)
             goto err_wrongshield;
         if (!pgm_270x_mcm6876x_check_switch(DEV_C2708))
             goto err_wrongswitch;
         pgm_270x_mcm6876x_set_params(DEV_C2708, 0x400, C270X_MAX_RETRIES);
         break;
+    case DEV_TMS2716:
+        if (_g_shieldType != SHIELD_TYPE_270X_MCM6876X_V2)
+            goto err_wrongshield;
+        if (!pgm_270x_mcm6876x_check_switch(DEV_TMS2716))
+            goto err_wrongswitch;
+        pgm_270x_mcm6876x_set_params(DEV_TMS2716, 0x800, C270X_MAX_RETRIES);
+        break;
     case DEV_MCM6876X:
-        if (_g_shieldType != SHIELD_TYPE_270X_MCM6876X)
+        if (_g_shieldType != SHIELD_TYPE_270X_MCM6876X_V1 && _g_shieldType != SHIELD_TYPE_270X_MCM6876X_V2)
             goto err_wrongshield;
         if (!pgm_270x_mcm6876x_check_switch(DEV_MCM6876X))
             goto err_wrongswitch;
@@ -329,6 +336,7 @@ static int8_t pgm_setup_dev_type(uint8_t cmd)
     case DEV_8741:
     case DEV_8748:
     case DEV_8048:
+    case DEV_8041:
         if (_g_shieldType != SHIELD_TYPE_MCS48)
             goto err_wrongshield;
         pgm_mcs48_set_params(devtype, 0x400, MCS48_MAX_RETRIES);
@@ -336,6 +344,7 @@ static int8_t pgm_setup_dev_type(uint8_t cmd)
     case DEV_8742:
     case DEV_8749:
     case DEV_8049:
+    case DEV_8042:
     case DEV_8755:
         if (_g_shieldType != SHIELD_TYPE_MCS48)
             goto err_wrongshield;

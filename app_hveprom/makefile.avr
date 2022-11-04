@@ -7,7 +7,7 @@
 ##############################################################################
 
 # Fixes clash between windows and coreutils mkdir. Comment out the below line to compile on Linux
-COREUTILS  = C:/Projects/coreutils/bin/
+COREUTILS  = C:/Dev/compilers/coreutils/bin/
 
 DEVICE     = atmega2560
 CLOCK      = 16000000

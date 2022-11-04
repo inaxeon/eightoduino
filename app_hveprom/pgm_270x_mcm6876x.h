@@ -21,7 +21,7 @@
 #ifndef _PGM_270X_MCM6876X_H
 #define _PGM_270X_MCM6876X_H
 
-void pgm_270x_mcm6876x_init(void);
+void pgm_270x_mcm6876x_init(uint8_t shield_type);
 bool pgm_270x_mcm6876x_check_switch(uint8_t dev_type);
 void pgm_270x_mcm6876x_set_params(uint8_t dev_type, uint16_t dev_size, uint8_t max_retries);
 void pgm_270x_mcm6876x_reset(void);
