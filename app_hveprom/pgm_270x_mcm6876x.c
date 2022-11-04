@@ -576,10 +576,13 @@ static void pgm_270x_mcm6876x_tms2716_set_addr(uint16_t addr)
 {
     pgm_write_address(addr); /* Output address, as we did before */
 
-    if ((addr & 0x400) == 0x400)
-        pgm_270x_mcm6876x_rd_disable(); // Let pin 20 pull high
-    else
-        pgm_270x_mcm6876x_rd_disable(); // Pull pin 20 low
+    if (_g_devType == DEV_TMS2716)
+    {
+        if ((addr & 0x400) == 0x400)
+            pgm_270x_mcm6876x_rd_disable(); // Let pin 20 pull high
+        else
+            pgm_270x_mcm6876x_rd_enable(); // Pull pin 20 low
+    }
 }
 
 // The situation with Pin 18 is hazardous as there is a risk of shoot-through.
