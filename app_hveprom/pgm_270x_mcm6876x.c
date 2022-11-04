@@ -527,6 +527,9 @@ void pgm_270x_mcm6876x_test_read(void)
     host_write8(pgm_read_data());
 }
 
+// For 2708 the "Program-Enable" state is achieved by raising Pin 20 to +12V.
+// For TMS2716 it's done by raising VCC to +12V. Yikes. Handle that in here.
+// For MCM6876x this path is electrically disconnected so don't care.
 static void pgm_270x_tms2716_set_pe(bool state)
 {
     if (_g_devType == DEV_TMS2716)
@@ -545,6 +548,9 @@ static void pgm_270x_tms2716_set_pe(bool state)
     }
 }
 
+// For 2708 the "Read" state is achieved by pulling pin 20 low
+// For TMS2716 it's done by pulling pin 18 low
+// For MCM6876x it's done by pulling pin 20 low
 static void pgm_270x_mcm6876x_set_rd(bool state)
 {
     if (_g_devType == DEV_TMS2716)

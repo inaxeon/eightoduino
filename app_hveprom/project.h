@@ -36,8 +36,6 @@
 #define HOST_BAUD                   38400
 #define DEBUG_BAUD                  38400
 
-#define _MDUINO
-#warning Remove
 #ifdef _MDUINO
 
 #ifdef _RS232_BUILD_
