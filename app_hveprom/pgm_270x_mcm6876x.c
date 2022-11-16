@@ -62,8 +62,8 @@
 #define pgm_270x_mcm6876x_delay_ad_hold() delay_ncycles(1)
 #define pgm_270x_mcm6876x_delay_write_mcm6876x() delay_ncycles(DELAY_WRITE_MCM6876X)
 #define pgm_270x_mcm6876x_delay_write_270x() delay_ncycles(DELAY_WRITE_270X)
-#define pgm_270x_mcm6876x_wr_enable() cpld_write(CTRL_PORT, MCMX_270X_WR, MCMX_270X_WR)
-#define pgm_270x_mcm6876x_wr_disable() cpld_write(CTRL_PORT, MCMX_270X_WR, 0)
+#define pgm_270x_mcm6876x_wr_h_enable() cpld_write(CTRL_PORT, MCMX_270X_WR_H, MCMX_270X_WR_H)
+#define pgm_270x_mcm6876x_wr_h_disable() cpld_write(CTRL_PORT, MCMX_270X_WR_H, 0)
 #define pgm_270x_mcm6876x_rd_enable() cpld_write(CTRL_PORT, MCMX_270X_RD, MCMX_270X_RD)
 #define pgm_270x_mcm6876x_rd_disable() cpld_write(CTRL_PORT, MCMX_270X_RD, 0)
 #define pgm_270x_mcm6876x_pe_enable() cpld_write(CTRL_PORT, MCMX_270X_PE, MCMX_270X_PE)
@@ -78,20 +78,20 @@
 #define pgm_270x_mcm6876x_delay_ad_hold() _delay_us(5)
 #define pgm_270x_mcm6876x_delay_write_mcm6876x() _delay_ms(2)
 #define pgm_270x_mcm6876x_delay_write_270x() _delay_ms(1)
-#define pgm_270x_mcm6876x_wr_enable()  MCMX_270X_WR_PORT |= _BV(MCMX_270X_WR)
-#define pgm_270x_mcm6876x_wr_disable() MCMX_270X_WR_PORT &= ~_BV(MCMX_270X_WR)
+#define pgm_270x_mcm6876x_wr_h_enable()  MCMX_270X_WR_H_PORT |= _BV(MCMX_270X_WR_H)
+#define pgm_270x_mcm6876x_wr_h_disable() MCMX_270X_WR_H_PORT &= ~_BV(MCMX_270X_WR_H)
 #define pgm_270x_mcm6876x_rd_enable()  MCMX_270X_RD_PORT |= _BV(MCMX_270X_RD)
 #define pgm_270x_mcm6876x_rd_disable() MCMX_270X_RD_PORT &= ~_BV(MCMX_270X_RD)
 #define pgm_270x_mcm6876x_pe_enable()  MCMX_270X_PE_PORT |= _BV(MCMX_270X_PE)
 #define pgm_270x_mcm6876x_pe_disable() MCMX_270X_PE_PORT &= ~_BV(MCMX_270X_PE)
 
-#define pgm_270x_tms2716_cs_enable() TMS2716_CS_PORT |= _BV(TMS2716_CS)
-#define pgm_270x_tms2716_cs_disable() TMS2716_CS_PORT &= ~_BV(TMS2716_CS)
+#define pgm_270x_mcm6876x_wr_l_enable() MCMX_270X_WR_L_PORT |= _BV(MCMX_270X_WR_L)
+#define pgm_270x_mcm6876x_wr_l_disable() MCMX_270X_WR_L_PORT &= ~_BV(MCMX_270X_WR_L)
 #define pgm_270x_tms2716_pe_enable() TMS2716_PE_PORT |= _BV(TMS2716_PE)
 #define pgm_270x_tms2716_pe_disable() TMS2716_PE_PORT &= ~_BV(TMS2716_PE)
 
-#define pgm_270x_mcm6876x_wr_is_enabled() ((MCMX_270X_WR_PORT & _BV(MCMX_270X_WR)) == _BV(MCMX_270X_WR))
-#define pgm_270x_tms2716_cs_is_enabled() ((TMS2716_CS_PORT & _BV(TMS2716_CS)) == _BV(TMS2716_CS))
+#define pgm_270x_mcm6876x_wr_h_is_enabled() ((MCMX_270X_WR_H_PORT & _BV(MCMX_270X_WR_H)) == _BV(MCMX_270X_WR_H))
+#define pgm_270x_mcm6876x_wr_l_is_enabled() ((MCMX_270X_WR_L_PORT & _BV(MCMX_270X_WR_L)) == _BV(MCMX_270X_WR_L))
 #define pgm_270x_tms2716_pe_is_enabled() ((TMS2716_PE_PORT & _BV(TMS2716_PE)) == _BV(TMS2716_PE))
 
 
@@ -105,9 +105,9 @@
 #define TEST_270X_MCM6876X_55     6
 #define TEST_270X_MCM6876X_DATA   7
 
-#define PIN18_STATE_5V            0
-#define PIN18_STATE_0V            1
-#define PIN18_STATE_VPP           2
+#define VPP_STATE_5V              0
+#define VPP_STATE_0V              1
+#define VPP_STATE_VPP             2
 
 static uint8_t _g_maxPerByteWrites;
 static uint8_t _g_useHts;
@@ -122,7 +122,7 @@ static int8_t _g_devType;
 static void pgm_270x_tms2716_set_pe(bool state);
 static void pgm_270x_mcm6876x_set_rd(bool state);
 static void pgm_270x_mcm6876x_tms2716_set_addr(uint16_t addr);
-static void pgm_270x_mcm6876x_tms2716_set_pin18_state(uint16_t state);
+static void pgm_270x_mcm6876x_tms2716_set_vpp_state(uint16_t state);
 
 void pgm_270x_mcm6876x_init(uint8_t shield_type)
 {
@@ -135,20 +135,20 @@ void pgm_270x_mcm6876x_init(uint8_t shield_type)
 
 #ifdef _M8OD
     cpld_write(CTRL_PORT,
-        (MCMX_270X_DEVSEL | MCMX_270X_NC_0 | MCMX_270X_NC_1 | MCMX_270X_NC_2 | MCMX_270X_WR | MCMX_270X_RD | MCMX_270X_PE | MCMX_270X_PON),
+        (MCMX_270X_DEVSEL | MCMX_270X_NC_0 | MCMX_270X_NC_1 | MCMX_270X_NC_2 | MCMX_270X_WR_H | MCMX_270X_RD | MCMX_270X_PE | MCMX_270X_PON),
         0
     );
     // DEVSEL + NC's as inputs
     cpld_write(CTRL_TRIS,
-        (MCMX_270X_DEVSEL | MCMX_270X_NC_0 | MCMX_270X_NC_1 | MCMX_270X_NC_2 | MCMX_270X_WR | MCMX_270X_RD | MCMX_270X_PE | MCMX_270X_PON),
+        (MCMX_270X_DEVSEL | MCMX_270X_NC_0 | MCMX_270X_NC_1 | MCMX_270X_NC_2 | MCMX_270X_WR_H | MCMX_270X_RD | MCMX_270X_PE | MCMX_270X_PON),
         (MCMX_270X_DEVSEL | MCMX_270X_NC_0 | MCMX_270X_NC_1 | MCMX_270X_NC_2)
     );
 #endif /* _M8OD */
 
 #ifdef _MDUINO
-    TMS2716_CS_PORT &= ~_BV(TMS2716_CS);
+    MCMX_270X_WR_L_PORT &= ~_BV(MCMX_270X_WR_L);
     TMS2716_PE_PORT &= ~_BV(TMS2716_PE);
-    MCMX_270X_WR_PORT &= ~_BV(MCMX_270X_WR);
+    MCMX_270X_WR_H_PORT &= ~_BV(MCMX_270X_WR_H);
     MCMX_270X_RD_PORT &= ~_BV(MCMX_270X_RD);
     MCMX_270X_PE_PORT &= ~_BV(MCMX_270X_PE);
     MCMX_270X_PON_PORT &= ~_BV(MCMX_270X_PON);
@@ -157,11 +157,11 @@ void pgm_270x_mcm6876x_init(uint8_t shield_type)
     MCMX_270X_NC_0_DDR &= ~_BV(MCMX_270X_NC_0); // input
     MCMX_270X_NC_1_DDR &= ~_BV(MCMX_270X_NC_1); // input
     MCMX_270X_NC_2_DDR &= ~_BV(MCMX_270X_NC_2); // input
-    MCMX_270X_WR_DDR |= _BV(MCMX_270X_WR); // output
+    MCMX_270X_WR_H_DDR |= _BV(MCMX_270X_WR_H); // output
     MCMX_270X_RD_DDR |= _BV(MCMX_270X_RD); // output
     MCMX_270X_PE_DDR |= _BV(MCMX_270X_PE); // output
     TMS2716_PE_DDR |= _BV(TMS2716_PE); // output
-    TMS2716_CS_DDR |= _BV(TMS2716_CS); // output
+    MCMX_270X_WR_L_DDR |= _BV(MCMX_270X_WR_L); // output
     MCMX_270X_PON_DDR |= _BV(MCMX_270X_PON); // output
     MCMX_270X_NC_3_DDR &= ~_BV(MCMX_270X_NC_3); // input
 #endif /* _MDUINO */
@@ -262,7 +262,7 @@ void pgm_270x_mcm6876x_reset(void)
 {
     pgm_270x_tms2716_set_pe(false);
     pgm_270x_mcm6876x_set_rd(false);
-    pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_5V);
+    pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_5V);
 
 #ifdef _M8OD
     delay_ncycles(DELAY_POWER_WAIT);
@@ -315,14 +315,14 @@ void pgm_270x_mcm6876x_write_chunk(void)
             pgm_270x_mcm6876x_delay_ad_setup();
 
             /* Pulse Vpp */
-            pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_VPP);
+            pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_VPP);
             
             if (_g_devType == DEV_MCM6876X)
                 pgm_270x_mcm6876x_delay_write_mcm6876x(); /* 2ms */
             else
                 pgm_270x_mcm6876x_delay_write_270x(); /* 1ms */
 
-            pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_0V);
+            pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_0V);
             pgm_270x_mcm6876x_delay_ad_hold();
 
             pgm_dir_in();
@@ -492,7 +492,7 @@ void pgm_270x_mcm6876x_test(void)
             break;
         case TEST_270X_MCM6876X_WR:
             pgm_270x_mcm6876x_power_on();
-            pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_VPP);
+            pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_VPP);
             break;
         case TEST_270X_MCM6876X_PE:
             pgm_270x_mcm6876x_power_on();
@@ -556,9 +556,9 @@ static void pgm_270x_mcm6876x_set_rd(bool state)
     if (_g_devType == DEV_TMS2716)
     {
         if (state)
-            pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_0V);
+            pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_0V);
         else
-            pgm_270x_mcm6876x_tms2716_set_pin18_state(PIN18_STATE_5V);
+            pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_5V);
     }
     else
     {
@@ -588,54 +588,56 @@ static void pgm_270x_mcm6876x_tms2716_set_addr(uint16_t addr)
 // The situation with Pin 18 is hazardous as there is a risk of shoot-through.
 // So manage its state in a dedicated helper to ensure there's no oopsies in the
 // main algorithm.
-static void pgm_270x_mcm6876x_tms2716_set_pin18_state(uint16_t state)
+static void pgm_270x_mcm6876x_tms2716_set_vpp_state(uint16_t state)
 {
-    if (pgm_270x_mcm6876x_wr_is_enabled())
+    if (pgm_270x_mcm6876x_wr_h_is_enabled())
     {
-        //Present state: PIN18_STATE_VPP
+        //Present state: VPP_STATE_VPP
         switch (state)
         {
-            case PIN18_STATE_5V:
-                pgm_270x_mcm6876x_wr_disable();
+            case VPP_STATE_5V:
+                pgm_270x_mcm6876x_wr_h_disable();
                 return;
-            case PIN18_STATE_0V:
-                pgm_270x_mcm6876x_wr_disable();
-                pgm_270x_mcm6876x_delay_read();
-                pgm_270x_tms2716_cs_enable();
+            case VPP_STATE_0V:
+                // Sequencing is extremely important here. If the below lines were swapped
+                // VPP would be shorted out for one clock cycle
+                pgm_270x_mcm6876x_wr_h_disable();
+                pgm_270x_mcm6876x_wr_l_enable();
                 return;
-            case PIN18_STATE_VPP:
-                return; // Do nothing.
+            case VPP_STATE_VPP:
+                return; // Already in correct state. Do nothing.
         }
     }
 
-    if (pgm_270x_tms2716_cs_is_enabled())
+    if (pgm_270x_mcm6876x_wr_l_is_enabled())
     {
-        //Present state: PIN18_STATE_0V
+        //Present state: VPP_STATE_0V
         switch (state)
         {
-            case PIN18_STATE_5V:
-                pgm_270x_tms2716_cs_disable();
+            case VPP_STATE_5V:
+                pgm_270x_mcm6876x_wr_l_disable();
                 return;
-            case PIN18_STATE_0V:
-                return; // Do nothing
-            case PIN18_STATE_VPP:
-            pgm_270x_tms2716_cs_disable();
-            pgm_270x_mcm6876x_delay_read();
-            pgm_270x_mcm6876x_wr_enable();
+            case VPP_STATE_0V:
+                return; // Already in correct state. Do nothing.
+            case VPP_STATE_VPP:
+            // Sequencing is extremely important here. If the below lines were swapped
+            // VPP would be shorted out for one clock cycle
+            pgm_270x_mcm6876x_wr_l_disable();
+            pgm_270x_mcm6876x_wr_h_enable();
                 return;
         }
     }
 
-    //Present state: PIN18_STATE_5V
+    //Present state: VPP_STATE_5V
     switch (state)
     {
-        case PIN18_STATE_5V:
-            return; // Do nothing
-        case PIN18_STATE_0V:
-            pgm_270x_tms2716_cs_enable();
+        case VPP_STATE_5V:
+            return; // Already in correct state. Do nothing.
+        case VPP_STATE_0V:
+            pgm_270x_mcm6876x_wr_l_enable();
             return;
-        case PIN18_STATE_VPP:
-            pgm_270x_mcm6876x_wr_enable();
+        case VPP_STATE_VPP:
+            pgm_270x_mcm6876x_wr_h_enable();
             return;
     }
 }

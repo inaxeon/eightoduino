@@ -34,7 +34,7 @@
 #define MCMX_270X_DEVSEL          0x0020
 #define MCMX_270X_NC_0            0x0040
 #define MCMX_270X_NC_1            0x0080
-#define MCMX_270X_WR              0x0100
+#define MCMX_270X_WR_H              0x0100
 #define MCMX_270X_RD              0x0200
 #define MCMX_270X_PE              0x0400
 #define MCMX_270X_PON             0x0800
@@ -109,9 +109,9 @@
 #define MCMX_270X_NC_2            PH4
 #define MCMX_270X_NC_2_DDR        DDRH
 
-#define MCMX_270X_WR              PH5
-#define MCMX_270X_WR_DDR          DDRH
-#define MCMX_270X_WR_PORT         PORTH
+#define MCMX_270X_WR_H              PH5
+#define MCMX_270X_WR_H_DDR          DDRH
+#define MCMX_270X_WR_H_PORT         PORTH
 
 #define MCMX_270X_RD              PH6
 #define MCMX_270X_RD_DDR          DDRH
@@ -132,9 +132,9 @@
 #define TMS2716_PE_DDR            DDRH
 #define TMS2716_PE_PORT           PORTH
 
-#define TMS2716_CS                PH4
-#define TMS2716_CS_DDR            DDRH
-#define TMS2716_CS_PORT           PORTH
+#define MCMX_270X_WR_L                PH4
+#define MCMX_270X_WR_L_DDR            DDRH
+#define MCMX_270X_WR_L_PORT           PORTH
 
 #define C1702A_NC_0               PE4
 #define C1702A_NC_0_DDR           DDRE
