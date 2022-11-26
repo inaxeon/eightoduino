@@ -114,7 +114,7 @@ int main(void)
             continue;
 
 #ifdef _DEBUG
-        printf("Got command: %x\r\n", cmd);
+        printf("Got command: 0x%x\r\n", cmd);
 #endif /* _DEBUG */
 
         pgm_process_command(cmd);

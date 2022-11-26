@@ -92,8 +92,6 @@
 
 #define pgm_270x_mcm6876x_wr_h_is_enabled() ((MCMX_270X_WR_H_PORT & _BV(MCMX_270X_WR_H)) == _BV(MCMX_270X_WR_H))
 #define pgm_270x_mcm6876x_wr_l_is_enabled() ((MCMX_270X_WR_L_PORT & _BV(MCMX_270X_WR_L)) == _BV(MCMX_270X_WR_L))
-#define pgm_270x_tms2716_pe_is_enabled() ((TMS2716_PE_PORT & _BV(TMS2716_PE)) == _BV(TMS2716_PE))
-
 
 #endif /* _MDUINO */
 
@@ -104,6 +102,8 @@
 #define TEST_270X_MCM6876X_AA     5
 #define TEST_270X_MCM6876X_55     6
 #define TEST_270X_MCM6876X_DATA   7
+#define TEST_TMS2716_A10_L        8
+#define TEST_TMS2716_A10_H_AND_PE 9
 
 #define VPP_STATE_5V              0
 #define VPP_STATE_0V              1
@@ -225,7 +225,7 @@ bool pgm_270x_mcm6876x_check_switch(uint8_t dev_type)
         // It's not as clean as the previous solution but it saves money on the BOM.
         ADDRESS_11_DDR &= ~_BV(ADDRESS_11);
 
-        _delay_us(1);
+        _delay_us(20);
 
         if ((ADDRESS_11_PIN & _BV(ADDRESS_11)) == _BV(ADDRESS_11))
         {
@@ -262,7 +262,7 @@ void pgm_270x_mcm6876x_reset(void)
 {
     pgm_270x_tms2716_set_pe(false);
     pgm_270x_mcm6876x_set_rd(false);
-    pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_5V);
+    pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_0V);
 
 #ifdef _M8OD
     delay_ncycles(DELAY_POWER_WAIT);
@@ -502,16 +502,25 @@ void pgm_270x_mcm6876x_test(void)
             pgm_270x_mcm6876x_power_on();
             pgm_dir_out();
             pgm_write_data(0xAA);
-            pgm_write_address(0xAAA);
+            pgm_270x_mcm6876x_tms2716_set_addr(0xAAA);
             break;
         case TEST_270X_MCM6876X_55:
             pgm_270x_mcm6876x_power_on();
             pgm_dir_out();
             pgm_write_data(0x55);
-            pgm_write_address(0x1555);
+            pgm_270x_mcm6876x_tms2716_set_addr(0x1555);
             break;
         case TEST_270X_MCM6876X_DATA:
             pgm_270x_mcm6876x_power_on();
+            break;
+        case TEST_TMS2716_A10_L:
+            pgm_270x_mcm6876x_power_on();
+            pgm_270x_mcm6876x_tms2716_set_addr(0x0);
+            break;
+        case TEST_TMS2716_A10_H_AND_PE:
+            pgm_270x_mcm6876x_power_on();
+            pgm_270x_mcm6876x_tms2716_set_addr(0x400);
+            pgm_270x_tms2716_set_pe(true);
             break;
         default:
             cmd_respond(ERR_INVALID_CMD, ERR_OK);
