@@ -398,8 +398,6 @@ void pgm_270x_mcm6876x_read_chunk(void)
 
     cmd_respond(CMD_READ_CHUNK, (_g_offset + thisChunk) == _g_devSize ? ERR_COMPLETE : ERR_OK);
 
-    pgm_270x_tms2716_set_pe(false);
-
 #ifdef _DEBUG
     printf("pgm_270x_mcm6876x_read_chunk() thisChunk=%d remaining=%d _g_offset=%d\r\n", thisChunk, remaining, _g_offset);
 #endif /* _DEBUG */
