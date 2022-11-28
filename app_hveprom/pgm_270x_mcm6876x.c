@@ -324,14 +324,15 @@ void pgm_270x_mcm6876x_write_chunk(void)
             pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_VPP);
             
             if (_g_devType == DEV_MCM6876X)
+            {
                 pgm_270x_mcm6876x_delay_write_mcm6876x(); /* 2ms */
-            else
-                pgm_270x_mcm6876x_delay_write_270x(); /* 1ms */
-
-            if (_g_devType == DEV_MCM6876X)
                 pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_5V);
+            }
             else
+            {
+                pgm_270x_mcm6876x_delay_write_270x(); /* 1ms */
                 pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_0V);
+            }
             
             pgm_270x_mcm6876x_delay_ad_hold();
 
