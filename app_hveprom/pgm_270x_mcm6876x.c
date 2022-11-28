@@ -102,8 +102,8 @@
 #define TEST_270X_MCM6876X_AA     5
 #define TEST_270X_MCM6876X_55     6
 #define TEST_270X_MCM6876X_DATA   7
-#define TEST_TMS2716_A10_L        8
-#define TEST_TMS2716_A10_H_AND_PE 9
+#define TEST_TMS2716_A10_L_CS_H   8
+#define TEST_TMS2716_A10_H_PE_H   9
 
 #define VPP_STATE_5V              0
 #define VPP_STATE_0V              1
@@ -223,6 +223,8 @@ bool pgm_270x_mcm6876x_check_switch(uint8_t dev_type)
         // The V2 shield has a completely different mechanism of detecting the switch position.
         // Instead it is possible observe the state of A11 when tri-stated to detect it.
         // It's not as clean as the previous solution but it saves money on the BOM.
+
+        bool ret = false;
         ADDRESS_11_DDR &= ~_BV(ADDRESS_11);
 
         _delay_us(20);
@@ -230,15 +232,18 @@ bool pgm_270x_mcm6876x_check_switch(uint8_t dev_type)
         if ((ADDRESS_11_PIN & _BV(ADDRESS_11)) == _BV(ADDRESS_11))
         {
             if (dev_type == DEV_C2704 || dev_type == DEV_C2708 || dev_type == DEV_TMS2716)
-                return true;
+                ret = true;
         }
         if ((ADDRESS_11_PIN & _BV(ADDRESS_11)) == 0)
         {
             if (dev_type == DEV_MCM6876X)
-                return true;
+                ret = true;
         }
 
         ADDRESS_11_DDR |= _BV(ADDRESS_11);
+
+        if (ret)
+            return true;
     }
 #endif /* _MDUINO */
 
@@ -286,6 +291,8 @@ void pgm_270x_mcm6876x_write_chunk(void)
     uint8_t i;
     uint16_t thisChunk = remaining > WRITE_CHUNK_SIZE ? WRITE_CHUNK_SIZE : remaining;
 
+    pgm_270x_tms2716_set_pe(true);
+
 #ifdef _DEBUG
     printf("pgm_270x_mcm6876x_write_chunk() thisChunk=%d remaining=%d _g_offset=%d\r\n", thisChunk, remaining, _g_offset);
 #endif /* _DEBUG */
@@ -307,7 +314,6 @@ void pgm_270x_mcm6876x_write_chunk(void)
             uint8_t temp = chunk[i];
 
             /* Present data */
-            pgm_270x_tms2716_set_pe(true);
             pgm_270x_mcm6876x_delay_read();
             pgm_dir_out();
             pgm_write_data(temp);
@@ -322,15 +328,17 @@ void pgm_270x_mcm6876x_write_chunk(void)
             else
                 pgm_270x_mcm6876x_delay_write_270x(); /* 1ms */
 
-            pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_0V);
+            if (_g_devType == DEV_MCM6876X)
+                pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_5V);
+            else
+                pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_0V);
+            
             pgm_270x_mcm6876x_delay_ad_hold();
-
-            pgm_dir_in();
-            pgm_270x_tms2716_set_pe(false);
 
             if (_g_useHts)
             {
                 /* Read back data */
+                pgm_dir_in();
                 pgm_270x_mcm6876x_delay_read();
                 pgm_270x_mcm6876x_set_rd(true);
                 pgm_270x_mcm6876x_delay_read();
@@ -370,6 +378,7 @@ void pgm_270x_mcm6876x_write_chunk(void)
 
     if (_g_offset == _g_devSize)
     {
+        pgm_270x_tms2716_set_pe(false);
         cmd_respond(CMD_WRITE_CHUNK, ERR_COMPLETE);
         host_write8(_g_maxPerByteWrites);
         host_write32(_g_devType == DEV_MCM6876X ? _g_totalWrites : 0);
@@ -387,6 +396,8 @@ void pgm_270x_mcm6876x_read_chunk(void)
     int thisChunk = remaining > READ_CHUNK_SIZE ? READ_CHUNK_SIZE : remaining;
 
     cmd_respond(CMD_READ_CHUNK, (_g_offset + thisChunk) == _g_devSize ? ERR_COMPLETE : ERR_OK);
+
+    pgm_270x_tms2716_set_pe(false);
 
 #ifdef _DEBUG
     printf("pgm_270x_mcm6876x_read_chunk() thisChunk=%d remaining=%d _g_offset=%d\r\n", thisChunk, remaining, _g_offset);
@@ -513,11 +524,12 @@ void pgm_270x_mcm6876x_test(void)
         case TEST_270X_MCM6876X_DATA:
             pgm_270x_mcm6876x_power_on();
             break;
-        case TEST_TMS2716_A10_L:
+        case TEST_TMS2716_A10_L_CS_H:
             pgm_270x_mcm6876x_power_on();
+            pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_5V);
             pgm_270x_mcm6876x_tms2716_set_addr(0x0);
             break;
-        case TEST_TMS2716_A10_H_AND_PE:
+        case TEST_TMS2716_A10_H_PE_H:
             pgm_270x_mcm6876x_power_on();
             pgm_270x_mcm6876x_tms2716_set_addr(0x400);
             pgm_270x_tms2716_set_pe(true);
