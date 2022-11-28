@@ -267,7 +267,11 @@ void pgm_270x_mcm6876x_reset(void)
 {
     pgm_270x_tms2716_set_pe(false);
     pgm_270x_mcm6876x_set_rd(false);
-    pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_0V);
+
+    if (_g_devType == DEV_MCM6876X)
+        pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_5V);
+    else
+        pgm_270x_mcm6876x_tms2716_set_vpp_state(VPP_STATE_0V);
 
 #ifdef _M8OD
     delay_ncycles(DELAY_POWER_WAIT);
