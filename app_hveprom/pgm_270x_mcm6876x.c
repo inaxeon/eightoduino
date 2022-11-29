@@ -3,7 +3,7 @@
  *   8OD - Arduino form factor i8086 based SBC
  *   Matthew Millman (tech.mattmillman.com/8od)
  *
- *   1702A/2704/2708/TMS2716/MCM68764/MCM68766/MCS48 EPROM Programmer
+ *   1702A/2704/2708/TMS2716/MCM6876x/MCS48 EPROM Programmer
  *
  *   This is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -301,7 +301,7 @@ void pgm_270x_mcm6876x_write_chunk(void)
     printf("pgm_270x_mcm6876x_write_chunk() thisChunk=%d remaining=%d _g_offset=%d\r\n", thisChunk, remaining, _g_offset);
 #endif /* _DEBUG */
 
-    /* The host is going to shove all of the data in at once, so we have to buffer it */
+    /* Read data from host */
     for (i = 0; i < thisChunk; i++)
         chunk[i] = host_read8();
 
