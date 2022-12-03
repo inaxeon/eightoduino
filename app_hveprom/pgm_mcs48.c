@@ -141,13 +141,10 @@
         MCS48_RESET_PORT |= _BV(MCS48_RESET);               \
     } while (0)
 
-#define pgm_8755_rd_enable() ADDRESS_11_PORT &= ~_BV(ADDRESS_11)
-#define pgm_8755_rd_disable() ADDRESS_11_PORT |= _BV(ADDRESS_11)
+#define pgm_8755_rd_enable() MCS48_ALE_PORT &= ~_BV(MCS48_ALE)
+#define pgm_8755_rd_disable() MCS48_ALE_PORT |= _BV(MCS48_ALE)
 
 #endif /* _MDUINO */
-
-// A11 is used as 'RD' on 8755 hence the or'ing of 0x800 onto the address, as we always want to leave it high
-#define pgm_mcs48_write_address(addr) pgm_write_address((addr) | (_g_devType == DEV_8755 ? 0x800 : 0x000))
 
 #define TEST_MCS48_PON          1
 #define TEST_MCS48_EA_12V       2
@@ -257,12 +254,24 @@ void pgm_mcs48_power_on()
     }
 
 #ifdef _M8OD
+    if (_g_devType == DEV_8755)
+        cpld_write(CTRL_TRIS, MCS48_ALE, 0); // ALE is used to drive RD for 8755
+    else
+        cpld_write(CTRL_TRIS, MCS48_ALE, MCS48_ALE); // Not presently used for MCS-48
+
     cpld_write(CTRL_PORT, MCS48_PON, MCS48_PON);
+
     delay_ncycles(DELAY_POWER_WAIT);
 #endif /* _M8OD */
 
 #ifdef _MDUINO
+    if (_g_devType == DEV_8755)
+        MCS48_ALE_DDR |= _BV(MCS48_ALE); // ALE is used to drive RD for 8755
+    else
+        MCS48_ALE_DDR &= ~_BV(MCS48_ALE); // Not presently used for MCS-48
+
     MCS48_PON_PORT |= _BV(MCS48_PON);
+
     _delay_ms(100);
 #endif /* _MDUINO */
 
@@ -297,7 +306,7 @@ void pgm_mcs48_reset(void)
 #endif /* _MDUINO */
 
     pgm_dir_in();
-    pgm_mcs48_write_address(0x000);
+    pgm_write_address(0x000);
     cmd_respond(CMD_DEV_RESET, ERR_OK);
 }
 
@@ -333,7 +342,7 @@ void pgm_mcs48_write_chunk(void)
 
         pgm_dir_out();
         pgm_write_data((uint8_t)(thisOffset & 0xFF));
-        pgm_mcs48_write_address(thisOffset & 0xF00); /* Output address */
+        pgm_write_address(thisOffset & 0xF00); /* Output address */
         pgm_mcs48_delay_4tcy();
         pgm_mcs48_8755_reset_or_ale_disable();
         pgm_mcs48_delay_4tcy();
@@ -461,7 +470,7 @@ void pgm_mcs48_read_chunk(void)
             pgm_mcs48_8755_reset_or_ale_enable();
 
         pgm_write_data((uint8_t)(thisOffset & 0xFF));
-        pgm_mcs48_write_address(thisOffset & 0xF00); /* Output address */
+        pgm_write_address(thisOffset & 0xF00); /* Output address */
         pgm_mcs48_delay_4tcy();
         pgm_mcs48_8755_reset_or_ale_disable();
 
@@ -518,7 +527,7 @@ void pgm_mcs48_blank_check(void)
             pgm_mcs48_8755_reset_or_ale_enable();
 
         pgm_write_data((uint8_t)(offset & 0xFF));
-        pgm_mcs48_write_address(offset & 0xF00); /* Output address */
+        pgm_write_address(offset & 0xF00); /* Output address */
         pgm_mcs48_delay_4tcy();
         pgm_mcs48_8755_reset_or_ale_disable();
         pgm_mcs48_delay_4tcy();
@@ -697,7 +706,7 @@ void pgm_mcs48_test(void)
             pgm_mcs48_power_on();
             pgm_dir_out();
             pgm_write_data(0xAA);
-            pgm_mcs48_write_address(0xA00);
+            pgm_write_address(0xA00);
             pgm_mcs48_8755_test0_or_prog_disable();
             pgm_mcs48_8755_reset_or_ale_disable();
             break;
@@ -705,7 +714,7 @@ void pgm_mcs48_test(void)
             pgm_mcs48_power_on();
             pgm_dir_out();
             pgm_write_data(0x55);
-            pgm_mcs48_write_address(0x500);
+            pgm_write_address(0x500);
             pgm_mcs48_8755_test0_or_prog_enable();
             pgm_mcs48_8755_reset_or_ale_enable();
             break;

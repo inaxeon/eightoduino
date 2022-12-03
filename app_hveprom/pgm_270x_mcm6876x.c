@@ -258,7 +258,13 @@ void pgm_270x_mcm6876x_power_on()
 #endif /* _M8OD */
 
 #ifdef _MDUINO
+    if (_g_devType == DEV_MCM6876X)
+        MCMX_270X_WR_L_PORT &= ~_BV(MCMX_270X_WR_L);
+    else
+        MCMX_270X_WR_L_PORT |= _BV(MCMX_270X_WR_L);
+
     MCMX_270X_PON_PORT |= _BV(MCMX_270X_PON);
+
     _delay_ms(100);
 #endif /* _MDUINO */
 }
