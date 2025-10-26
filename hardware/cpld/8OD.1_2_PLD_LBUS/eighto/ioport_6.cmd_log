@@ -1,0 +1,4 @@
+vhdtdtfi -lib work ioport_6.vhd -prj eighto -o ioport_6.spl -module ioport_6 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 ioport_6.spl C:/Projects/8086/PLD/eighto/ioport_6.sym 
+vhdtdtfi -lib work ioport_6.vhd -prj eighto -o ioport_6.spl -module ioport_6 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 ioport_6.spl C:/Projects/8086/PLD/eighto/ioport_6.sym 

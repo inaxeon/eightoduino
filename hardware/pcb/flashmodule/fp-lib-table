@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name TSOP48)(type KiCad)(uri "$(KIPRJMOD)\\TSOP48.pretty")(options "")(descr ""))
+  (lib (name DIP40)(type KiCad)(uri "$(KIPRJMOD)\\DIP40.pretty")(options "")(descr ""))
+)

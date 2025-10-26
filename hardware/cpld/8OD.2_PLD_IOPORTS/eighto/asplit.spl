@@ -1,0 +1,6 @@
+[Inputs]
+=al[19:0]=
+[Outputs]
+a19
+=aq[18:0]=
+[BiDir]

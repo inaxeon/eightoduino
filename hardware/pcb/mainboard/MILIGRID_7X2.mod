@@ -1,0 +1,118 @@
+PCBNEW-LibModule-V1  14/07/2014 21:29:43
+# encoding utf-8
+Units mm
+$INDEX
+MILIGRID_7X2
+$EndINDEX
+$MODULE MILIGRID_7X2
+Po 0 0 0 15 53C43DB3 00000000 ~~
+Li MILIGRID_7X2
+Sc 0
+AR 
+Op 0 0 0
+T0 0 -3 1 1 0 0.15 N V 21 N "MILIGRID_7X2"
+T1 0 3 1 1 0 0.15 N I 21 N "VAL**"
+DS 7 -2 7 2 0.15 21
+DS 7 2 -7 2 0.15 21
+DS -7 2 -7 -2 0.15 21
+DS -7 -2 7 -2 0.15 21
+$PAD
+Sh "1" R 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 6 -1
+$EndPAD
+$PAD
+Sh "2" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 6 1
+$EndPAD
+$PAD
+Sh "3" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 4 -1
+$EndPAD
+$PAD
+Sh "4" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 4 1
+$EndPAD
+$PAD
+Sh "5" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2 -1
+$EndPAD
+$PAD
+Sh "6" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2 1
+$EndPAD
+$PAD
+Sh "7" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 -1
+$EndPAD
+$PAD
+Sh "8" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 1
+$EndPAD
+$PAD
+Sh "9" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2 -1
+$EndPAD
+$PAD
+Sh "10" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2 1
+$EndPAD
+$PAD
+Sh "11" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -4 -1
+$EndPAD
+$PAD
+Sh "12" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -4 1
+$EndPAD
+$PAD
+Sh "13" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -6 -1
+$EndPAD
+$PAD
+Sh "14" C 1 1 0 0 0
+Dr 0.65 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -6 1
+$EndPAD
+$EndMODULE MILIGRID_7X2
+$EndLIBRARY

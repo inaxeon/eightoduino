@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="lbus">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2015-12-13T14:53:16</timestamp>
+    <pin polarity="Input" x="0" y="-672" name="cpuclk" />
+    <pin polarity="Input" x="0" y="-544" name="ale" />
+    <pin polarity="Input" x="0" y="-480" name="reset" />
+    <pin polarity="Input" x="0" y="-416" name="wr" />
+    <pin polarity="Input" x="0" y="-352" name="rd" />
+    <pin polarity="Input" x="0" y="-608" name="mio" />
+    <pin polarity="Input" x="0" y="-288" name="dtr" />
+    <pin polarity="Input" x="0" y="-224" name="den" />
+    <pin polarity="Input" x="0" y="-96" name="lle" />
+    <pin polarity="Input" x="0" y="-160" name="lbuscs" />
+    <pin polarity="Input" x="0" y="-32" name="a(19:0)" />
+    <pin polarity="Input" x="0" y="32" name="d(15:0)" />
+    <pin polarity="Output" x="0" y="96" name="ioin(7:0)" />
+    <pin polarity="Input" x="0" y="-736" name="pclk" />
+    <pin polarity="BiDirectional" x="384" y="-288" name="lbus_ad(7:0)" />
+    <pin polarity="Output" x="384" y="-736" name="lbus_mio" />
+    <pin polarity="Output" x="384" y="-416" name="lbus_dtr" />
+    <pin polarity="Output" x="384" y="-352" name="lbus_den" />
+    <pin polarity="Output" x="384" y="-544" name="lbus_rd" />
+    <pin polarity="Output" x="384" y="-480" name="lbus_wr" />
+    <pin polarity="Output" x="384" y="-608" name="lbus_rst" />
+    <pin polarity="Output" x="384" y="-672" name="lbus_ale" />
+    <pin polarity="Output" x="384" y="-224" name="lbus_a(19:8)" />
+    <graph>
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-672" type="pin cpuclk" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-544" type="pin ale" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-480" type="pin reset" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-416" type="pin wr" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-352" type="pin rd" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-608" type="pin mio" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-288" type="pin dtr" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-224" type="pin den" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin lle" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-160" type="pin lbuscs" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin a(19:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="32" type="pin d(15:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="164" y="96" type="pin ioin(7:0)" />
+        <line x2="0" y1="-416" y2="-416" x1="64" />
+        <line x2="0" y1="-352" y2="-352" x1="64" />
+        <line x2="0" y1="-288" y2="-288" x1="64" />
+        <line x2="0" y1="-224" y2="-224" x1="64" />
+        <rect width="64" x="0" y="-44" height="24" />
+        <line x2="0" y1="-32" y2="-32" x1="64" />
+        <rect width="64" x="0" y="20" height="24" />
+        <line x2="0" y1="32" y2="32" x1="64" />
+        <rect width="64" x="0" y="84" height="24" />
+        <line x2="64" y1="96" y2="96" x1="0" />
+        <line x2="0" y1="-160" y2="-160" x1="64" />
+        <line x2="0" y1="-96" y2="-96" x1="64" />
+        <line x2="0" y1="-480" y2="-480" x1="64" />
+        <line x2="0" y1="-544" y2="-544" x1="64" />
+        <line x2="0" y1="-608" y2="-608" x1="64" />
+        <line x2="0" y1="-672" y2="-672" x1="64" />
+        <rect width="256" x="64" y="-764" height="892" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-736" type="pin pclk" />
+        <line x2="0" y1="-736" y2="-736" x1="64" />
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="192" y="-768" type="symbol" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-288" type="pin lbus_ad(7:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-736" type="pin lbus_mio" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-416" type="pin lbus_dtr" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-352" type="pin lbus_den" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-544" type="pin lbus_rd" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-480" type="pin lbus_wr" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-608" type="pin lbus_rst" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-672" type="pin lbus_ale" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-224" type="pin lbus_a(19:8)" />
+        <line x2="384" y1="-544" y2="-544" x1="320" />
+        <line x2="384" y1="-480" y2="-480" x1="320" />
+        <line x2="384" y1="-416" y2="-416" x1="320" />
+        <line x2="384" y1="-352" y2="-352" x1="320" />
+        <rect width="64" x="320" y="-236" height="24" />
+        <line x2="384" y1="-224" y2="-224" x1="320" />
+        <rect width="64" x="320" y="-300" height="24" />
+        <line x2="384" y1="-288" y2="-288" x1="320" />
+        <line x2="384" y1="-608" y2="-608" x1="320" />
+        <line x2="384" y1="-672" y2="-672" x1="320" />
+        <line x2="384" y1="-736" y2="-736" x1="320" />
+    </graph>
+</symbol>

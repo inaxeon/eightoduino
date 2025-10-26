@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "N:/Electronics/eightoduino/PLD/eighto/intr_test_isim_beh.exe" -prj "N:/Electronics/eightoduino/PLD/eighto/intr_test_beh.prj" "work.intr_test" 

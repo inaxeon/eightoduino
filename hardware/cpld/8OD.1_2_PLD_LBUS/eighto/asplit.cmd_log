@@ -1,0 +1,2 @@
+vhdtdtfi -lib work asplit.vhd -prj eighto -o asplit.spl -module asplit -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 asplit.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/asplit.sym 

@@ -1,0 +1,19 @@
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 spimaster.spl N:/Electronics/eightoduino/PLD/eighto/spimaster.sym 
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 spimaster.spl N:/Electronics/eightoduino/PLD/eighto/spimaster.sym 
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 spimaster.spl N:/Electronics/eightoduino/PLD/eighto/spimaster.sym 
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 spimaster.spl N:/Electronics/eightoduino/PLD/eighto/spimaster.sym 
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 spimaster.spl N:/Electronics/eightoduino/PLD/eighto/spimaster.sym 
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 spimaster.spl N:/Electronics/eightoduino/PLD/eighto/spimaster.sym 
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 spimaster.spl N:/Electronics/eightoduino/PLD/eighto/spimaster.sym 
+vhdtdtfi -lib work spimaster.vhd -prj eighto -o spimaster.spl -module spimaster -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 spimaster.spl N:/Electronics/eightoduino/PLD/eighto/spimaster.sym 

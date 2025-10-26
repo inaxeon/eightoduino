@@ -1,0 +1,9 @@
+Fitter Status : Successful - Mon Mar 28 09:08:36 2016
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : halfshield
+Top-level Entity Name : halfshield
+Family : MAX7000S
+Device : EPM7064STC44-10
+Timing Models : Final
+Total macrocells : 22 / 64 ( 34 % )
+Total pins : 33 / 36 ( 92 % )

@@ -1,0 +1,10 @@
+[Inputs]
+reset
+wr
+portcs
+triscs
+=d[15:0]=
+[Outputs]
+=ioin[15:0]=
+[BiDir]
+=ioport[15:0]=

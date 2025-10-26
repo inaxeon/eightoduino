@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family xc9500 -refsym ioport C:/Projects/8086/PLD/eighto/ioport.sch C:/Projects/8086/PLD/eighto/ioport.sym 

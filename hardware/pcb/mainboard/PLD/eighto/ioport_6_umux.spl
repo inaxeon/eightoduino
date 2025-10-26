@@ -1,0 +1,16 @@
+[Inputs]
+reset
+wr
+portcs
+triscs
+utxb
+utxc
+uenb
+uenc
+=d[15:0]=
+[Outputs]
+urxb
+urxc
+=ioin[5:0]=
+[BiDir]
+=ioport[5:0]=

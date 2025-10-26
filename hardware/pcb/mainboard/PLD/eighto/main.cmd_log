@@ -1,0 +1,2098 @@
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/8086/PLD/eighto/main.xst" -ofn "N:/Electronics/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/8086/PLD/eighto/main.xst" -ofn "C:/Projects/8086/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "C:/Projects/eightoduino/PLD/eighto/main.xst" -ofn "C:/Projects/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-15 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-15-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+xst -intstyle ise -ifn "N:/Electronics/eightoduino/PLD/eighto/main.xst" -ofn "N:/Electronics/eightoduino/PLD/eighto/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc eighto.ucf -p xc95216-PQ160-10 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95216-10-PQ160 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 36 -pterms 25 -power std -localfbk -pinfbk main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 

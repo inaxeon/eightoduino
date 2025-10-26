@@ -1,0 +1,9 @@
+vhdtdtfi -lib work ioport_6_umux.vhd -prj eighto -o ioport_6_umux.spl -module ioport_6_umux -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work ioport_6_umux.vhd -prj eighto -o ioport_6_umux.spl -module ioport_6_umux -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 ioport_6_umux.spl C:/Projects/8086/PLD/eighto/ioport_6_umux.sym 
+vhdtdtfi -lib work ioport_6_umux.vhd -prj eighto -o ioport_6_umux.spl -module ioport_6_umux -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 ioport_6_umux.spl C:/Projects/8086/PLD/eighto/ioport_6_umux.sym 
+vhdtdtfi -lib work ioport_6_umux.vhd -prj eighto -o ioport_6_umux.spl -module ioport_6_umux -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 ioport_6_umux.spl C:/Projects/eightoduino/PLD/eighto/ioport_6_umux.sym 
+vhdtdtfi -lib work ioport_6_umux.vhd -prj eighto -o ioport_6_umux.spl -module ioport_6_umux -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 ioport_6_umux.spl C:/Projects/eightoduino/PLD/eighto/ioport_6_umux.sym 

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/FD21WB.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/adecode.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/asplit.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/biu.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/configreg.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/cpuclock.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/intc.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/ioport_16.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/ioport_16_umux.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/ioport_6_umux.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/oport_16.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/portread.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/spimaster.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;N:/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/timer16.vhd&quot; into library work</arg>
+</msg>
+
+</messages>
+

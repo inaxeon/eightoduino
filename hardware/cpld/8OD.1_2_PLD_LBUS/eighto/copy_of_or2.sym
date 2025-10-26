@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="or2">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2000-1-1T10:10:10</timestamp>
+    <attr value="OR2" name="VeriModel" />
+    <attr value="OR" name="Device" />
+    <attr value="Copy Of Symbol With Level: XILINX" name="Level" />
+    <attr value="OR2" name="VhdlModel" />
+    <attr value="2.0.0" name="Libver" />
+    <pin polarity="Input" x="0" y="-64" name="I0" />
+    <pin polarity="Input" x="0" y="-128" name="I1" />
+    <pin polarity="Output" x="256" y="-96" name="O" />
+    <graph>
+        <line x2="64" y1="-64" y2="-64" x1="0" />
+        <line x2="64" y1="-128" y2="-128" x1="0" />
+        <line x2="192" y1="-96" y2="-96" x1="256" />
+        <arc ex="192" ey="-96" sx="112" sy="-48" r="88" cx="116" cy="-136" />
+        <arc ex="48" ey="-144" sx="48" sy="-48" r="56" cx="16" cy="-96" />
+        <line x2="48" y1="-144" y2="-144" x1="112" />
+        <arc ex="112" ey="-144" sx="192" sy="-96" r="88" cx="116" cy="-56" />
+        <line x2="48" y1="-48" y2="-48" x1="112" />
+        <text style="fontsize:24;fontname:Arial" x="32" y="-32">OR2</text>
+    </graph>
+</symbol>

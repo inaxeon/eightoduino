@@ -1,0 +1,202 @@
+Pin Freeze File:  version P.20131013
+
+95216160 XC95216-10-PQ160
+ALE S:PIN151
+A<16> S:PIN3
+A<17> S:PIN2
+A<18> S:PIN158
+A<19> S:PIN156
+BHE S:PIN155
+CPU10 S:PIN149
+DEN S:PIN102
+EXTRD S:PIN154
+EXTWR S:PIN153
+IRQ1 S:PIN67
+IRQ2 S:PIN69
+IRQ3 S:PIN62
+IRQ4 S:PIN56
+MIO S:PIN152
+PGMRXD S:PIN101
+RESET S:PIN159
+SYSCLK S:PIN150
+TXA S:PIN76
+TXB S:PIN74
+TXC S:PIN59
+TXD S:PIN58
+WDI S:PIN96
+AQ<0> S:PIN47
+AQ<10> S:PIN34
+AQ<11> S:PIN33
+AQ<12> S:PIN32
+AQ<13> S:PIN30
+AQ<14> S:PIN29
+AQ<15> S:PIN28
+AQ<16> S:PIN27
+AQ<17> S:PIN26
+AQ<18> S:PIN25
+AQ<19> S:PIN24
+AQ<1> S:PIN36
+AQ<2> S:PIN37
+AQ<3> S:PIN38
+AQ<4> S:PIN39
+AQ<5> S:PIN45
+AQ<6> S:PIN44
+AQ<7> S:PIN43
+AQ<8> S:PIN42
+AQ<9> S:PIN35
+BHEQ S:PIN23
+CPUCLK S:PIN22
+EEWP S:PIN97
+MIDCLK S:PIN53
+MIDCS S:PIN54
+NMI S:PIN64
+PORTD<0> S:PIN95
+PORTD<10> S:PIN84
+PORTD<11> S:PIN85
+PORTD<12> S:PIN82
+PORTD<13> S:PIN83
+PORTD<14> S:PIN78
+PORTD<15> S:PIN79
+PORTD<1> S:PIN103
+PORTD<2> S:PIN92
+PORTD<3> S:PIN93
+PORTD<4> S:PIN90
+PORTD<5> S:PIN91
+PORTD<6> S:PIN88
+PORTD<7> S:PIN89
+PORTD<8> S:PIN86
+PORTD<9> S:PIN87
+RAMCS S:PIN77
+ROMCS S:PIN48
+RXA S:PIN66
+RXB S:PIN65
+RXC S:PIN63
+RXD S:PIN55
+UCSA S:PIN68
+UCSB S:PIN72
+UCSC S:PIN60
+UCSD S:PIN57
+UHE S:PIN49
+ULE S:PIN52
+PORTA<0> S:PIN132
+PORTA<2> S:PIN134
+PORTA<3> S:PIN135
+PORTA<4> S:PIN138
+PORTA<5> S:PIN139
+PORTA<6> S:PIN140
+PORTA<7> S:PIN142
+PORTA<8> S:PIN143
+PORTA<9> S:PIN144
+PORTA<10> S:PIN145
+PORTA<11> S:PIN146
+PORTA<12> S:PIN147
+PORTA<13> S:PIN148
+PORTA<15> S:PIN130
+PORTA<14> S:PIN131
+PORTA<1> S:PIN133
+AD_E<0> S:PIN21
+AD_E<6> S:PIN14
+AD_E<7> S:PIN13
+AD_E<8> S:PIN12
+AD_E<10> S:PIN9
+AD_E<11> S:PIN8
+AD_E<12> S:PIN7
+AD_E<13> S:PIN6
+AD_E<14> S:PIN5
+AD_E<15> S:PIN4
+MRST S:PIN98
+AD_E<2> S:PIN18
+AD_E<1> S:PIN19
+AD_E<5> S:PIN15
+AD_E<4> S:PIN16
+AD_E<3> S:PIN17
+AD_E<9> S:PIN11
+PORTB<1> S:PIN128
+PORTB<3> S:PIN125
+PORTB<4> S:PIN124
+PORTB<5> S:PIN123
+PORTB<0> S:PIN129
+PORTB<2> S:PIN126
+PORTC<0> S:PIN119
+PORTC<1> S:PIN122
+PORTC<2> S:PIN117
+PORTC<3> S:PIN118
+PORTC<4> S:PIN115
+PORTC<5> S:PIN116
+PORTC<6> S:PIN113
+PORTC<7> S:PIN114
+PORTC<8> S:PIN111
+PORTC<9> S:PIN112
+PORTC<10> S:PIN108
+PORTC<11> S:PIN109
+PORTC<12> S:PIN106
+PORTC<13> S:PIN107
+PORTC<14> S:PIN104
+PORTC<15> S:PIN105
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 ioportc/trishold<14> _14_ _15_ clockgen/tclk<2>
+		 XLXN_255<0> CPUCLK_OBUF XLXI_327/dq<14> BHEQ_OBUF
+		 AQ_19_OBUF WR_SYNC AQ_18_OBUF AQ_17_OBUF
+		 TIMER_RUN AQ_16_OBUF AQ_15_OBUF AQ_14_OBUF
+		 AQ_13_OBUF RD_SYNC
+PARTITION FB2_1 clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF XLXN_255<13> XLXN_255<12> clockgen/thirdclk<1>
+		 XLXN_255<11> XLXN_255<10> clockgen/tclk<4> _19_
+		 XLXN_255<8> XLXI_327/changehold<3> XLXN_255<7> XLXN_255<6>
+		 XLXI_327/changehold<2> _16_ _17_ XLXI_327/changehold<1>
+		 _18_ XLXI_327/changehold<0>
+PARTITION FB3_1 clockgen/inclkd4 AQ_12_OBUF AQ_11_OBUF ioportb/trishold<3>
+		 AQ_10_OBUF AQ_9_OBUF ioportb/trishold<2> AQ_1_OBUF
+		 AQ_2_OBUF clockgen/tclk<1> AQ_3_OBUF AQ_4_OBUF
+		 XLXI_327/trishold<4> AQ_8_OBUF AQ_7_OBUF STATUS_IOIN<1>/STATUS_IOIN<1>_SETF
+		 AQ_6_OBUF AD_E<9>_BUFR.MC
+PARTITION FB4_1 AD_E<3>_BUFR.MC clockgen/tclk<0> ioportc/trishold<0> ioportb/trishold<5>
+		 ioportb/trishold<1> ioportb/trishold<0> ioportb/dq<0> XLXN_2866
+		 XLXN_2865 XLXN_2864 XLXN_2860 XLXI_327/trishold<5>
+		 TIMER_CLK STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT XLXN_255<15> AD_E<4>_BUFR.MC
+		 XLXN_255<14> EXP4_
+PARTITION FB5_1 ioportc/trishold<5> AQ_5_OBUF AQ_0_OBUF ioportc/trishold<3>
+		 ROMCS_OBUF UHE_OBUF XLXN_2872 XLXN_2863
+		 ULE_OBUF XLXI_327/trishold<3> MIDCLK_OBUF MIDCS_OBUF
+		 AD_E<5>_BUFR.MC RXD_OBUF timer0/count0<3> XLXI_327/trishold<2>
+		 UCSD_OBUF timer0/count0<2>
+PARTITION FB6_1 ioportc/trishold<2> XLXI_327/dq<6> XLXI_327/dq<7> XLXN_2862
+		 XLXI_327/dq<8> XLXI_327/dq<9> XLXN_2861 XLXI_327/dq<10>
+		 XLXI_327/dq<11> XLXI_327/trishold<9> XLXI_327/dq<12> XLXI_327/dq<13>
+		 XLXI_327/trishold<8> XLXI_327/trishold<7> STATUS_IOIN<7> STATUS_IOIN<6>
+		 AD_E<2>_BUFR.MC XLXI_327/trishold<6>
+PARTITION FB7_1 EXP7_
+PARTITION FB7_3 clockgen/inclkd2 ioportc/trishold<9> UCSC_OBUF ioportc/trishold<8>
+		 ioportc/trishold<13> RXC_OBUF NMI_OBUF ioportc/trishold<12>
+		 RXB_OBUF RXA_OBUF ioportc/trishold<11> XLXI_327/trishold<13>
+		 UCSA_OBUF UARTD_ENABLE $OpTx$FX_DC$10 AD_E<1>_BUFR.MC
+		
+PARTITION FB8_2 ioportb/ioport_2_mux0000 ioportb/dq<1> ioportc/trishold<7> ioportb/ioport_0_mux0000
+		 XLXI_327/dq<15> ioportc/trishold<4> XLXI_327/ioport_14_mux0000 XLXI_327/dq<0>
+		 ioportc/trishold<1> XLXI_327/ioport_1_mux0000 XLXI_327/dq<2> ioportc/trishold<15>
+		 XLXI_327/dq<3> XLXI_327/dq<4> ioportb/dq<2> XLXI_327/dq<5>
+		 XLXN_2867
+PARTITION FB9_1 timer0/count0<10> UCSB_OBUF XLXI_327/trishold<14> timer0/count0<8>
+		 XLXI_327/trishold<15> RAMCS_OBUF timer0/count0<15> PORTD_14_OBUF
+		 PORTD_15_OBUF timer0/count0<14> PORTD_12_OBUF PORTD_13_OBUF
+		 timer0/count0<12> PORTD_10_OBUF PORTD_11_OBUF timer0/count0<11>
+		 PORTD_8_OBUF ioportc/trishold<10>
+PARTITION FB10_1 timer0/count0<0> ioportc/dq<6> ioportc/dq<7> XLXI_327/trishold<1>
+		 ioportc/dq<4> ioportc/dq<5> XLXI_327/trishold<0> ioportc/dq<2>
+		 ioportc/dq<3> XLXI_327/dq<1> ioportc/dq<0> ioportc/dq<1>
+		 STATUS_IOIN<0> ioportb/dq<5> ioportb/dq<4> timer0/count0<1>
+		 ioportb/dq<3> clockgen/tclk<3>
+PARTITION FB11_1 ioportc/trishold<6> PORTD_9_OBUF PORTD_6_OBUF timer0/count0<9>
+		 PORTD_7_OBUF PORTD_4_OBUF timer0/count0<7> PORTD_5_OBUF
+		 PORTD_2_OBUF timer0/count0<6> PORTD_3_OBUF PORTD_0_OBUF
+		 timer0/count0<5> ALE_IBUF$BUF0 EEWP_OBUF timer0/count0<4>
+		 XLXN_469 timer0/count0<13>
+PARTITION FB12_1 ioportb/trishold<4> XLXI_327/trishold<12> XLXI_327/trishold<11> XLXI_327/trishold<10>
+		 PORTD_1_OBUF ioportc/dq<14> UARTC_ENABLE ioportc/dq<15>
+		 ioportc/dq<12> UARTB_ENABLE ioportc/dq<13> ioportc/dq<10>
+		 UARTA_ENABLE ioportc/dq<11> ioportc/dq<8> STATUS_IOIN<1>
+		 ioportc/dq<9> timer0/count0<9>/timer0/count0<9>_CLKF
+

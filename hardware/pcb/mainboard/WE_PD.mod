@@ -1,0 +1,36 @@
+PCBNEW-LibModule-V1  14/07/2014 21:29:26
+# encoding utf-8
+Units mm
+$INDEX
+WE_PD
+$EndINDEX
+$MODULE WE_PD
+Po 0 0 0 15 53C43D9F 00000000 ~~
+Li WE_PD
+Sc 0
+AR 
+Op 0 0 0
+T0 0 -1.27 1 1 0 0.15 N V 21 N "WE_PD"
+T1 0 2 1 1 0 0.15 N I 21 N "VAL**"
+DS -6.4 6.4 -3 6.4 0.15 21
+DS 6.4 6.4 3 6.4 0.15 21
+DS -6.4 -6.4 -3 -6.4 0.15 21
+DS 6.4 -6.4 3 -6.4 0.15 21
+DS -6.4 -6.4 -6.4 6.4 0.15 21
+DS 6.4 -6.4 6.4 6.4 0.15 21
+$PAD
+Sh "1" R 5.4 3.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0 -4.95
+$EndPAD
+$PAD
+Sh "2" R 5.4 3.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0 4.95
+$EndPAD
+$EndMODULE WE_PD
+$EndLIBRARY

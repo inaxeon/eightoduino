@@ -1,0 +1,201 @@
+Pin Freeze File:  version P.20131013
+
+95216160 XC95216-10-PQ160
+ALE S:PIN108
+A<16> S:PIN118
+A<17> S:PIN117
+A<18> S:PIN116
+A<19> S:PIN115
+BHE S:PIN114
+CPU10 S:PIN106
+DEN S:PIN109
+EXTRD S:PIN113
+EXTWR S:PIN112
+IRQ1 S:PIN27
+IRQ2 S:PIN29
+IRQ3 S:PIN23
+IRQ4 S:PIN17
+MIO S:PIN111
+PGMRXD S:PIN34
+RESET S:PIN159
+SYSCLK S:PIN107
+TXA S:PIN33
+TXB S:PIN32
+TXC S:PIN21
+TXD S:PIN19
+AQ<0> S:PIN6
+AQ<1> S:PIN154
+AQ<2> S:PIN155
+AQ<3> S:PIN156
+AQ<4> S:PIN158
+AQ<5> S:PIN5
+AQ<6> S:PIN4
+AQ<7> S:PIN3
+AQ<8> S:PIN2
+AQ<9> S:PIN153
+AQ<10> S:PIN152
+AQ<11> S:PIN151
+AQ<12> S:PIN150
+AQ<13> S:PIN149
+AQ<14> S:PIN148
+AQ<15> S:PIN147
+AQ<16> S:PIN146
+AQ<17> S:PIN145
+AQ<18> S:PIN144
+BHEQ S:PIN143
+CPUCLK S:PIN140
+EEWP S:PIN55
+I2CCS S:PIN14
+MIDCLK S:PIN12
+MIDCS S:PIN13
+NMI S:PIN25
+PORTD<0> S:PIN57
+PORTD<10> S:PIN43
+PORTD<11> S:PIN42
+PORTD<12> S:PIN39
+PORTD<13> S:PIN38
+PORTD<14> S:PIN37
+PORTD<15> S:PIN36
+PORTD<1> S:PIN54
+PORTD<2> S:PIN53
+PORTD<3> S:PIN52
+PORTD<4> S:PIN50
+PORTD<5> S:PIN49
+PORTD<6> S:PIN48
+PORTD<7> S:PIN47
+PORTD<8> S:PIN45
+PORTD<9> S:PIN44
+RAMCS S:PIN35
+ROMCS S:PIN7
+RXA S:PIN15
+RXB S:PIN24
+RXC S:PIN26
+RXD S:PIN16
+UCSA S:PIN28
+UCSB S:PIN30
+UCSC S:PIN22
+UCSD S:PIN18
+UHE S:PIN8
+ULE S:PIN11
+PORTA<0> S:PIN89
+PORTA<2> S:PIN91
+PORTA<3> S:PIN92
+PORTA<4> S:PIN93
+PORTA<5> S:PIN95
+PORTA<6> S:PIN96
+PORTA<7> S:PIN97
+PORTA<8> S:PIN98
+PORTA<9> S:PIN101
+PORTA<10> S:PIN102
+PORTA<11> S:PIN103
+PORTA<12> S:PIN104
+PORTA<13> S:PIN105
+PORTA<15> S:PIN87
+PORTA<14> S:PIN88
+PORTA<1> S:PIN90
+AD_E<0> S:PIN139
+AD_E<6> S:PIN131
+AD_E<7> S:PIN130
+AD_E<8> S:PIN129
+AD_E<9> S:PIN128
+AD_E<10> S:PIN126
+AD_E<11> S:PIN125
+AD_E<12> S:PIN124
+AD_E<13> S:PIN123
+AD_E<14> S:PIN122
+AD_E<15> S:PIN119
+RDY S:PIN142
+MRST S:PIN56
+AD_E<5> S:PIN132
+AD_E<4> S:PIN133
+AD_E<3> S:PIN134
+AD_E<2> S:PIN135
+AD_E<1> S:PIN138
+PORTB<1> S:PIN85
+PORTB<3> S:PIN83
+PORTB<4> S:PIN82
+PORTB<5> S:PIN79
+PORTB<0> S:PIN86
+PORTB<2> S:PIN84
+PORTC<0> S:PIN78
+PORTC<1> S:PIN77
+PORTC<2> S:PIN76
+PORTC<3> S:PIN74
+PORTC<4> S:PIN72
+PORTC<5> S:PIN69
+PORTC<6> S:PIN68
+PORTC<7> S:PIN67
+PORTC<8> S:PIN66
+PORTC<9> S:PIN65
+PORTC<10> S:PIN64
+PORTC<11> S:PIN63
+PORTC<12> S:PIN62
+PORTC<13> S:PIN60
+PORTC<14> S:PIN59
+PORTC<15> S:PIN58
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 clockgen/tclk<0> UCSD_OBUF ioportc/trishold<5> ioportc/trishold<4>
+		 ioportc/trishold<3> UCSC_OBUF ioportb/trishold<5> clockgen/tclk<2>
+		 RXB_OBUF clockgen/tclk<1> NMI_OBUF RXC_OBUF
+		 XLXI_327/trishold<5> $OpTx$FX_DC$10 UCSA_OBUF AD_E<3>_BUFR.MC
+		 UCSB_OBUF AD_E<1>_BUFR.MC
+PARTITION FB2_1 timer0/count0<0> AL<0> ROMCS_OBUF ioportb/trishold<0>
+		 UHE_OBUF ioportb/dq<0> XLXN_2864 ULE_OBUF
+		 MIDCLK_OBUF XLXN_2860 MIDCS_OBUF I2CCS_OBUF
+		 STATUS_IOIN<1> RXA_OBUF RXD_OBUF timer0/count0<1>
+		 ioportc/trishold<6> STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT
+PARTITION FB3_1 timer0/count0<11> ioportc/trishold<14> XLXN_3158 XLXI_327/trishold<15>
+		 XLXI_327/trishold<14> RAMCS_OBUF XLXI_327/dq<14> PORTD_15_OBUF
+		 PORTD_14_OBUF timer0/count0<15> PORTD_13_OBUF PORTD_12_OBUF
+		 timer0/count0<14> PORTD_11_OBUF PORTD_10_OBUF timer0/count0<12>
+		 PORTD_9_OBUF ioportc/trishold<15>
+PARTITION FB4_1 clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF AL<10> AL<9> XLXI_327/trishold<8>
+		 AL<1> AL<2> XLXI_327/trishold<7> AL<3>
+		 AL<4> XLXI_327/trishold<6> AD_E<4>_BUFR.MC AL<8>
+		 STATUS_IOIN<7> AL<7> AL<6> STATUS_IOIN<6>
+		 AL<5> AD_E<2>_BUFR.MC
+PARTITION FB5_1 timer0/count0<13> PORTD_8_OBUF PORTD_7_OBUF timer0/count0<9>
+		 PORTD_6_OBUF PORTD_5_OBUF timer0/count0<8> PORTD_4_OBUF
+		 PORTD_3_OBUF timer0/count0<7> PORTD_2_OBUF PORTD_1_OBUF
+		 timer0/count0<6> EEWP_OBUF XLXN_469 timer0/count0<5>
+		 PORTD_0_OBUF ioportc/trishold<0>
+PARTITION FB6_1 clockgen/thirdclk<1> CPUCLK_OBUF XLXN_3133 clockgen/tclk<4>
+		 BHEQ_OBUF AL<18> clockgen/tclk<3> AL<17>
+		 AL<16> WR_SYNC AL<15> AL<14>
+		 TIMER_CLK AL<13> AL<12> RD_SYNC
+		 AL<11> STATUS_IOIN<1>/STATUS_IOIN<1>_SETF
+PARTITION FB7_1 clockgen/inclkd2 ioportc/dq<15> ioportc/dq<14> ioportc/trishold<2>
+		 ioportc/dq<13> ioportc/dq<12> UARTD_ENABLE ioportc/dq<11>
+		 ioportc/dq<10> UARTC_ENABLE ioportc/dq<9> ioportc/dq<8>
+		 UARTB_ENABLE ioportc/dq<7> ioportc/dq<6> UARTA_ENABLE
+		 ioportc/dq<5> TIMER_RUN
+PARTITION FB8_1 clockgen/inclkd4 XLXN_255<10> XLXN_255<9> ioportc/trishold<8>
+		 XLXN_255<8> XLXN_255<7> EXP4_ XLXN_255<6>
+		 _14_ XLXI_327/changehold<2> _15_ _16_
+		 XLXI_327/changehold<1> _17_ _18_ XLXI_327/changehold<0>
+		 XLXN_255<0> AL<19>
+PARTITION FB9_1 ioportb/trishold<1> ioportc/dq<4> ioportc/dq<3> XLXI_327/trishold<3>
+		 ioportc/dq<2> ioportc/dq<1> XLXI_327/trishold<2> ioportc/dq<0>
+		 ioportb/dq<5> XLXI_327/trishold<1> ioportb/dq<4> ioportb/dq<3>
+		 XLXI_327/trishold<0> ioportb/ioport_2_mux0000 ioportb/dq<1> XLXI_327/dq<1>
+		 ioportb/ioport_0_mux0000 AD_E<5>_BUFR.MC
+PARTITION FB10_1 ioportb/dq<2> timer0/count0<2> XLXI_327/trishold<4> XLXI_327/changehold<3>
+		 timer0/count0<4> XLXN_2872 XLXN_2863 EXP6_
+		 timer0/count0<3> EXP7_ XLXN_255<15> XLXN_255<14>
+		 XLXN_2867 XLXN_255<13> XLXN_255<12> STATUS_IOIN<0>
+		 XLXN_255<11> ioportc/trishold<7>
+PARTITION FB11_1 ioportb/trishold<4> XLXI_327/dq<15> XLXI_327/ioport_14_mux0000 ioportb/trishold<3>
+		 XLXI_327/dq<0> XLXI_327/ioport_1_mux0000 ioportb/trishold<2> XLXI_327/dq<2>
+		 XLXI_327/dq<3> XLXN_2866 XLXI_327/dq<4> XLXI_327/dq<5>
+		 XLXN_2865 XLXI_327/dq<6> XLXI_327/dq<7> XLXN_2862
+		 XLXI_327/dq<8> XLXN_2861
+PARTITION FB12_1 ioportc/trishold<9> XLXI_327/dq<9> XLXI_327/dq<10> timer0/count0<9>/timer0/count0<9>_CLKF
+		 XLXI_327/dq<11> XLXI_327/dq<12> XLXI_327/trishold<10> XLXI_327/dq<13>
+		 XLXI_327/trishold<11> XLXI_327/trishold<12> XLXI_327/trishold<13> XLXI_327/trishold<9>
+		 ioportc/trishold<10> ioportc/trishold<11> ioportc/trishold<12> ioportc/trishold<13>
+		 ioportc/trishold<1> timer0/count0<10>
+

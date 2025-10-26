@@ -1,0 +1,26 @@
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl C:/Projects/8086/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl C:/Projects/8086/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl C:/Projects/8086/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl N:/Electronics/eightoduino/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl N:/Electronics/eightoduino/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl N:/Electronics/eightoduino/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl N:/Electronics/eightoduino/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl N:/Electronics/eightoduino/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl N:/Electronics/eightoduino/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl N:/Electronics/eightoduino/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl C:/Projects/eightoduino/PLD/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl C:/Projects/PLD_HD44780/eighto/portread.sym 
+vhdtdtfi -lib work portread.vhd -prj eighto -o portread.spl -module portread -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 portread.spl C:/Projects/PLD_HD44780/eighto/portread.sym 

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/OBUFE_MXILINX_main</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/main.vhf</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/main.vhf</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/OBUFE_MXILINX_main/BEHAVIORAL</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/main.vhf</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/main.vhf</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/IBUF16_MXILINX_main</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/main.vhf</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/main.vhf</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/IBUF16_MXILINX_main/BEHAVIORAL</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/main.vhf</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/main.vhf</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/OBUFE16_MXILINX_main</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/main.vhf</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/main.vhf</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/OBUFE16_MXILINX_main/BEHAVIORAL</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/main.vhf</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/main.vhf</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/main</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/main.vhf</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/main.vhf</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/main/BEHAVIORAL</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/main.vhf</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/main.vhf</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/adecode</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/adecode.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/adecode.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/adecode/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/adecode.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/adecode.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/asplit</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/asplit.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/asplit.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/asplit/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/asplit.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/asplit.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/biu</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/biu.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/biu.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/biu/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/biu.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/biu.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/configreg</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/configreg.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/configreg.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/configreg/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/configreg.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/configreg.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/cpuclock</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/cpuclock.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/cpuclock.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/cpuclock/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/cpuclock.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/cpuclock.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/FD21</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/FD21WB.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/FD21WB.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/FD21/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/FD21WB.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/FD21WB.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/intc</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/intc.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/intc.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/intc/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/intc.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/intc.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/ioport_16</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/ioport_16.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/ioport_16.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/ioport_16/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/ioport_16.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/ioport_16.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/ioport_16_umux</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/ioport_16_umux.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/ioport_16_umux.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/ioport_16_umux/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/ioport_16_umux.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/ioport_16_umux.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/ioport_6_umux</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/ioport_6_umux.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/ioport_6_umux.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/ioport_6_umux/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/ioport_6_umux.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/ioport_6_umux.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/oport_16</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/oport_16.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/oport_16.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/oport_16/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/oport_16.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/oport_16.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/portread</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/portread.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/portread.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/portread/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/portread.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/portread.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/timer16</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/timer16.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/timer16.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/timer16/Behavioral</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/timer16.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/timer16.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">//s2fs02/matt/Electronics/eightoduino_v3/8OD.2_PLD_IOPORTS/eighto/main.vhf</arg>&quot; line <arg fmt="%d" index="2">903</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">a19</arg>&apos; of component &apos;<arg fmt="%s" index="4">asplit</arg>&apos;.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_8</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_9</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_10</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_11</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_12</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_13</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_14</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_15</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_16</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_17</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">BHEQ</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_18</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_19</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_0</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_1</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_2</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_3</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_4</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_5</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_6</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Q_7</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">d&lt;15:8&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">d&lt;5:2&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">d&lt;15:6&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">portaen</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">A&lt;18:7&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">DTR</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="1348" delta="old" >Unit <arg fmt="%s" index="1">ioport_16_umux</arg> is merged (output interface has tristates)
+</msg>
+
+<msg type="warning" file="Xst" num="1348" delta="old" >Unit <arg fmt="%s" index="1">ioport_6_umux</arg> is merged (output interface has tristates)
+</msg>
+
+<msg type="warning" file="Xst" num="1348" delta="old" >Unit <arg fmt="%s" index="1">ioport_16</arg> is merged (output interface has tristates)
+</msg>
+
+</messages>
+

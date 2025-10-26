@@ -1,0 +1,361 @@
+V3 253
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/adecode.vhd 2016/01/29.10:01:35 P.20131013
+EN work/adecode 1484315142 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/adecode.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/adecode/Behavioral 1484315143 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/adecode.vhd \
+      EN work/adecode 1484315142
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/asplit.vhd 2015/11/08.22:41:54 P.20131013
+EN work/asplit 1484315146 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/asplit.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/asplit/Behavioral 1484315147 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/asplit.vhd \
+      EN work/asplit 1484315146
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd 2016/01/24.20:11:56 P.20131013
+EN work/biu 1484315144 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/biu/Behavioral 1484315145 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd \
+      EN work/biu 1484315144
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/configreg.vhd 2016/03/13.09:20:30 P.20131013
+EN work/configreg 1484315130 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/configreg.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/configreg/Behavioral 1484315131 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/configreg.vhd \
+      EN work/configreg 1484315130
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/cpuclock.vhd 2016/03/06.17:04:26 P.20131013
+EN work/cpuclock 1484315148 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/cpuclock.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/cpuclock/Behavioral 1484315149 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/cpuclock.vhd \
+      EN work/cpuclock 1484315148
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/FD21WB.vhd 2014/12/18.00:12:06 P.20131013
+EN work/FD21 1484315128 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/FD21WB.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/FD21/Behavioral 1484315129 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/FD21WB.vhd \
+      EN work/FD21 1484315128
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/intc.vhd 2014/12/17.20:31:31 P.20131013
+EN work/intc 1484315132 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/intc.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/intc/Behavioral 1484315133 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/intc.vhd \
+      EN work/intc 1484315132
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_16_umux.vhd 2014/12/25.21:07:58 P.20131013
+EN work/ioport_16_umux 1484315140 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_16_umux.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/ioport_16_umux/Behavioral 1484315141 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_16_umux.vhd \
+      EN work/ioport_16_umux 1484315140
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_6_umux.vhd 2014/12/17.20:10:19 P.20131013
+EN work/ioport_6_umux 1484315134 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_6_umux.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/ioport_6_umux/Behavioral 1484315135 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_6_umux.vhd \
+      EN work/ioport_6_umux 1484315134
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd 2016/01/24.21:31:49 P.20131013
+EN work/lbus 1484315150 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/lbus/Behavioral 1484315151 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd \
+      EN work/lbus 1484315150
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf 2017/01/13.13:45:23 P.20131013
+EN work/IBUF16_MXILINX_main 1484315152 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/IBUF16_MXILINX_main/BEHAVIORAL 1484315153 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf \
+      EN work/IBUF16_MXILINX_main 1484315152 CP IBUF
+EN work/OBUFE_MXILINX_main 1484315154 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/OBUFE_MXILINX_main/BEHAVIORAL 1484315155 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf \
+      EN work/OBUFE_MXILINX_main 1484315154 CP OBUFT CP INV
+EN work/OBUFE16_MXILINX_main 1484315156 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/OBUFE16_MXILINX_main/BEHAVIORAL 1484315157 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf \
+      EN work/OBUFE16_MXILINX_main 1484315156 CP OBUFE_MXILINX_main
+EN work/main 1484315158 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/main/BEHAVIORAL 1484315159 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf \
+      EN work/main 1484315158 CP FD21 CP configreg CP intc CP ioport_6_umux \
+      CP portread CP timer16 CP INV CP OBUFE16_MXILINX_main CP AND2 \
+      CP OBUFE_MXILINX_main CP ioport_16_umux CP adecode CP IBUF16_MXILINX_main \
+      CP biu CP OR3 CP OR2 CP OBUF CP asplit CP cpuclock CP lbus CP GND
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/portread.vhd 2015/10/14.07:08:19 P.20131013
+EN work/portread 1484315136 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/portread.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/portread/Behavioral 1484315137 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/portread.vhd \
+      EN work/portread 1484315136
+FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/timer16.vhd 2014/09/03.10:48:14 P.20131013
+EN work/timer16 1484315138 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/timer16.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/timer16/Behavioral 1484315139 \
+      FL //s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/timer16.vhd \
+      EN work/timer16 1484315138
+FL //s8fs01/matt/Electronics/8086/PLD/eighto/adecode.vhd 2014/07/21.15:33:15 P.20131013
+FL //s8fs01/matt/Electronics/8086/PLD/eighto/main.vhf 2014/07/21.19:10:53 P.20131013
+FL //s8fs01/matt/Electronics/8086/PLD/eighto/porta.vhf 2014/07/21.19:00:12 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/adecode.vhd 2015/09/30.14:03:42 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/biu.vhd 2014/09/05.08:14:32 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/configreg.vhd 2014/12/17.19:01:36 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/cpuclock.vhd 2015/02/04.08:51:08 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/FD21WB.vhd 2014/12/18.01:12:06 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/intc.vhd 2014/12/17.21:31:31 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/ioport.vhf 2014/08/04.11:44:03 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/ioport_16.vhd 2014/09/03.11:45:34 P.20131013
+EN work/ioport_16 1443618237 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/ioport_16.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/ioport_16/Behavioral 1443618238 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/ioport_16.vhd \
+      EN work/ioport_16 1443618237
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/ioport_16_umux.vhd 2014/12/25.22:07:58 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/ioport_6_umux.vhd 2014/12/17.21:10:19 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/main.vhf 2015/09/30.14:02:40 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/oport_16.vhd 2014/09/03.11:46:02 P.20131013
+EN work/oport_16 1443618239 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/oport_16.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/oport_16/Behavioral 1443618240 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/oport_16.vhd \
+      EN work/oport_16 1443618239
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/oport_5.vhd 2014/08/13.18:16:31 P.20131013
+EN work/oport_5 1408519329 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/oport_5.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/oport_5/Behavioral 1408519330 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/oport_5.vhd \
+      EN work/oport_5 1408519329
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/oport_6.vhd 2014/09/01.22:29:12 P.20131013
+EN work/oport_6 1409607046 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/oport_6.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/oport_6/Behavioral 1409607047 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/oport_6.vhd \
+      EN work/oport_6 1409607046
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/pic.vhd 2014/09/04.17:09:08 P.20131013
+EN work/pic 1409902311 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/pic.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/pic/Behavioral 1409902312 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/pic.vhd EN work/pic 1409902311
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/portread.vhd 2014/12/17.19:51:01 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/spimaster.vhd 2014/09/16.07:32:35 P.20131013
+EN work/spimaster 1413101060 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/spimaster.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/spimaster/Behavioral 1413101061 \
+      FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/spimaster.vhd \
+      EN work/spimaster 1413101060
+FL //s8fs01/matt/Electronics/eightoduino/PLD/eighto/timer16.vhd 2014/09/03.11:48:14 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/adecode.vhd 2016/01/29.10:01:35 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/asplit.vhd 2015/11/08.22:41:54 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/biu.vhd 2016/01/24.20:11:56 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/configreg.vhd 2014/12/17.18:01:36 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/cpuclock.vhd 2015/12/13.13:33:48 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/FD21WB.vhd 2014/12/18.00:12:06 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/intc.vhd 2014/12/17.20:31:31 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport.vhf 2014/08/04.10:44:03 P.20131013
+EN work/IBUF16_MXILINX_ioport 1453705116 \
+      FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport.vhf \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/IBUF16_MXILINX_ioport/BEHAVIORAL 1453705117 \
+      FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport.vhf \
+      EN work/IBUF16_MXILINX_ioport 1453705116 CP IBUF
+EN work/OBUFE_MXILINX_ioport 1453705118 \
+      FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport.vhf \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/OBUFE_MXILINX_ioport/BEHAVIORAL 1453705119 \
+      FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport.vhf \
+      EN work/OBUFE_MXILINX_ioport 1453705118 CP OBUFT CP INV
+EN work/LD16_MXILINX_ioport 1453705120 \
+      FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport.vhf \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/LD16_MXILINX_ioport/BEHAVIORAL 1453705121 \
+      FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport.vhf \
+      EN work/LD16_MXILINX_ioport 1453705120 CP LD
+EN work/ioport 1453705122 \
+      FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport.vhf \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/ioport/BEHAVIORAL 1453705123 \
+      FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport.vhf \
+      EN work/ioport 1453705122 CP OBUFE_MXILINX_ioport CP LD16_MXILINX_ioport \
+      CP AND2 CP IBUF16_MXILINX_ioport
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport_16_umux.vhd 2014/12/25.21:07:58 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/ioport_6_umux.vhd 2014/12/17.20:10:19 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/lbus.vhd 2016/01/24.21:31:49 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/main.vhf 2016/01/29.09:59:49 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/portread.vhd 2015/10/14.07:08:19 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/timer16.vhd 2014/09/03.10:48:14 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/adecode.vhd 2016/01/29.10:01:35 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/asplit.vhd 2015/11/08.22:41:54 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd 2016/01/24.20:11:56 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/configreg.vhd 2016/03/13.09:20:30 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/cpuclock.vhd 2016/03/06.17:04:26 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/FD21WB.vhd 2014/12/18.00:12:06 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/intc.vhd 2014/12/17.20:31:31 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_16_umux.vhd 2014/12/25.21:07:58 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_6_umux.vhd 2014/12/17.20:10:19 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd 2016/01/24.21:31:49 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf 2016/01/29.09:59:49 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/portread.vhd 2015/10/14.07:08:19 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/timer16.vhd 2014/09/03.10:48:14 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/adecode.vhd 2016/01/29.10:01:35 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/asplit.vhd 2015/11/08.22:41:54 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/biu.vhd 2016/01/24.20:11:56 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/configreg.vhd 2014/12/17.18:01:36 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/cpuclock.vhd 2016/03/06.17:04:26 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/FD21WB.vhd 2014/12/18.00:12:06 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/intc.vhd 2014/12/17.20:31:31 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/ioport_16_umux.vhd 2014/12/25.21:07:58 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/ioport_6_umux.vhd 2014/12/17.20:10:19 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/lbus.vhd 2016/01/24.21:31:49 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/main.vhf 2016/01/29.09:59:49 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/portread.vhd 2015/10/14.07:08:19 P.20131013
+FL //s8fs01/matt/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_LBUS/eighto/timer16.vhd 2014/09/03.10:48:14 P.20131013
+FL C:/Projects/8086/PLD/eighto/adecode.vhd 2014/08/10.19:48:14 P.20131013
+FL C:/Projects/8086/PLD/eighto/configreg.vhd 2014/08/14.06:58:15 P.20131013
+FL C:/Projects/8086/PLD/eighto/cpuclock.vhd 2014/08/13.09:43:58 P.20131013
+FL C:/Projects/8086/PLD/eighto/ioport.vhf 2014/08/04.11:44:03 P.20131013
+FL C:/Projects/8086/PLD/eighto/ioport_16.vhd 2014/08/13.18:15:57 P.20131013
+FL C:/Projects/8086/PLD/eighto/ioport_16_umux.vhd 2014/08/13.09:15:09 P.20131013
+FL C:/Projects/8086/PLD/eighto/ioport_6.vhd 2014/08/05.12:48:25 P.20131013
+EN work/ioport_6 1407265882 FL C:/Projects/8086/PLD/eighto/ioport_6.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/ioport_6/Behavioral 1407265883 \
+      FL C:/Projects/8086/PLD/eighto/ioport_6.vhd EN work/ioport_6 1407265882
+FL C:/Projects/8086/PLD/eighto/ioport_6_umux.vhd 2014/08/13.18:15:30 P.20131013
+FL C:/Projects/8086/PLD/eighto/main.vhf 2014/08/13.10:13:29 P.20131013
+FL C:/Projects/8086/PLD/eighto/oport_16.vhd 2014/08/13.18:16:59 P.20131013
+FL C:/Projects/8086/PLD/eighto/oport_5.vhd 2014/08/13.18:16:31 P.20131013
+FL C:/Projects/8086/PLD/eighto/oport_6.vhd 2014/08/13.18:16:45 P.20131013
+FL C:/Projects/8086/PLD/eighto/pic.vhd 2014/08/13.08:17:13 P.20131013
+FL C:/Projects/8086/PLD/eighto/porta.vhf 2014/07/21.19:00:12 P.20131013
+EN work/OBUFE_MXILINX_porta 1407240542 FL C:/Projects/8086/PLD/eighto/porta.vhf \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/OBUFE_MXILINX_porta/BEHAVIORAL 1407240543 \
+      FL C:/Projects/8086/PLD/eighto/porta.vhf EN work/OBUFE_MXILINX_porta 1407240542 \
+      CP OBUFT CP INV
+EN work/OBUFE16_MXILINX_porta 1407240544 \
+      FL C:/Projects/8086/PLD/eighto/porta.vhf PB ieee/std_logic_1164 1381692176 \
+      PB ieee/NUMERIC_STD 1381692181 LB UNISIM PH unisim/VCOMPONENTS 1381692182
+AR work/OBUFE16_MXILINX_porta/BEHAVIORAL 1407240545 \
+      FL C:/Projects/8086/PLD/eighto/porta.vhf EN work/OBUFE16_MXILINX_porta 1407240544 \
+      CP OBUFE_MXILINX_porta
+EN work/LD16_MXILINX_porta 1407240546 \
+      FL C:/Projects/8086/PLD/eighto/porta.vhf PB ieee/std_logic_1164 1381692176 \
+      PB ieee/NUMERIC_STD 1381692181 LB UNISIM PH unisim/VCOMPONENTS 1381692182
+AR work/LD16_MXILINX_porta/BEHAVIORAL 1407240547 \
+      FL C:/Projects/8086/PLD/eighto/porta.vhf EN work/LD16_MXILINX_porta 1407240546 \
+      CP LD
+EN work/porta 1407240548 FL C:/Projects/8086/PLD/eighto/porta.vhf \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/porta/BEHAVIORAL 1407240549 \
+      FL C:/Projects/8086/PLD/eighto/porta.vhf EN work/porta 1407240548 \
+      CP OBUFE_MXILINX_porta CP LD16_MXILINX_porta CP OBUFE16_MXILINX_porta CP AND2
+FL C:/Projects/8086/PLD/eighto/portread.vhd 2014/08/10.18:55:36 P.20131013
+FL C:/Projects/8086/PLD/eighto/timer16.vhd 2014/08/12.15:15:02 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/adecode.vhd 2015/11/06.08:51:09 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/asplit.vhd 2015/11/08.22:41:54 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/biu.vhd 2015/11/05.23:26:56 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/configreg.vhd 2014/12/17.18:01:36 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/cpuclock.vhd 2015/12/13.13:33:48 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/FD21WB.vhd 2014/12/18.00:12:06 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/intc.vhd 2014/12/17.20:31:31 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/ioport.vhf 2014/08/04.10:44:03 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/ioport_16_umux.vhd 2014/12/25.21:07:58 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/ioport_6_umux.vhd 2014/12/17.20:10:19 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/lbus.vhd 2015/12/13.18:43:40 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/main.vhf 2015/12/13.19:04:56 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/portread.vhd 2015/10/14.07:08:19 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/timer16.vhd 2014/09/03.10:48:14 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/adecode.vhd 2015/11/06.09:03:33 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/biu.vhd 2015/11/06.12:26:56 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/configreg.vhd 2014/12/18.07:01:36 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/cpuclock.vhd 2015/02/04.20:51:08 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/FD21WB.vhd 2014/12/18.13:12:06 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/intc.vhd 2014/12/18.09:31:31 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/ioport.vhf 2014/08/04.23:44:03 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/ioport_16_umux.vhd 2014/12/26.10:07:58 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/ioport_6_umux.vhd 2014/12/18.09:10:19 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lbus.vhd 2015/11/06.15:47:49 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lcd.vhd 2015/11/06.09:30:15 P.20131013
+EN work/lcd 1446756031 \
+      FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lcd.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/lcd/Behavioral 1446756032 \
+      FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lcd.vhd EN work/lcd 1446756031
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/main.vhf 2015/11/06.12:32:28 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/portread.vhd 2015/10/14.20:08:19 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/timer16.vhd 2014/09/03.23:48:14 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/adecode.vhd 2015/11/06.09:03:33 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/biu.vhd 2015/10/13.23:32:32 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/configreg.vhd 2014/12/18.07:01:36 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/cpuclock.vhd 2015/02/04.20:51:08 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/FD21WB.vhd 2014/12/18.13:12:06 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/intc.vhd 2014/12/18.09:31:31 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/ioport.vhf 2014/08/04.23:44:03 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/ioport_16_umux.vhd 2014/12/26.10:07:58 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/ioport_6_umux.vhd 2014/12/18.09:10:19 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/lcd.vhd 2015/10/14.20:14:33 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/main.vhf 2015/11/06.08:29:16 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/portread.vhd 2015/10/14.20:08:19 P.20131013
+FL C:/Projects/8od_phase_3/8OD.1_PLD_HD44780/eighto/timer16.vhd 2014/09/03.23:48:14 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/adecode.vhd 2014/11/30.08:32:36 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/biu.vhd 2014/09/05.20:14:32 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/configreg.vhd 2014/12/18.07:01:36 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/cpuclock.vhd 2014/12/18.11:40:09 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/FD21WB.vhd 2014/12/18.13:12:06 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/intc.vhd 2014/12/18.09:31:31 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/ioport.vhf 2014/08/04.23:44:03 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/ioport_16.vhd 2014/09/03.23:45:34 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/ioport_16_umux.vhd 2014/12/26.10:07:58 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/ioport_6_umux.vhd 2014/12/18.09:10:19 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/main.vhf 2014/12/26.10:27:23 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/oport_16.vhd 2014/09/03.23:46:02 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/portread.vhd 2014/12/18.07:51:01 P.20131013
+FL C:/Projects/eightoduino/PLD/eighto/timer16.vhd 2014/09/03.23:48:14 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/adecode.vhd 2015/10/14.15:34:16 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/biu.vhd 2015/10/13.11:32:32 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/configreg.vhd 2014/12/17.19:01:36 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/cpuclock.vhd 2015/02/04.08:51:08 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/FD21WB.vhd 2014/12/18.01:12:06 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/intc.vhd 2014/12/17.21:31:31 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/ioport.vhf 2014/08/04.11:44:03 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/ioport_16_umux.vhd 2014/12/25.22:07:58 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/ioport_6_umux.vhd 2014/12/17.21:10:19 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/lcd.vhd 2015/10/14.08:14:33 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/main.vhf 2015/10/14.17:47:03 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/portread.vhd 2015/10/14.08:08:19 P.20131013
+FL C:/Projects/PLD_HD44780/eighto/timer16.vhd 2014/09/03.11:48:14 P.20131013

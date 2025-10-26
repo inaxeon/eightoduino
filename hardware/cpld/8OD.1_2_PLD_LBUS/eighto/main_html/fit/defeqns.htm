@@ -1,0 +1,1348 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(0) <= AD_E(0)_BUFR.LFBK;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(0) <= AD_E_I(0) when AD_E_OE(0) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(0) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E(0)_BUFR <= ((NOT MIO AND PORTB(0).PIN AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(0).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(0).PIN AND FC_5_.OUT AND AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(0).PIN AND FC_5_.OUT AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND LBUS_AD(0).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND STATUS_IOIN(0) AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(0).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (DEN AND PORTA(0).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(0).PIN AND FC_5_.OUT AND NOT FC_6_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(0).PIN AND FC_5_.OUT AND AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(0).PIN AND FC_5_.OUT AND AQ(3).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E(1)_BUFR <= ((PORTA(1).PIN AND FC_5_.OUT AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND LBUS_AD(1).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND PORTB(1).PIN AND FC_5_.OUT AND FC_19_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND FC_5_.OUT AND FC_19_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	STATUS_IOIN(1).LFBK AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(1).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (DEN AND PORTA(1).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(1).PIN AND FC_5_.OUT AND NOT FC_19_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(1).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(1).PIN AND FC_5_.OUT AND AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(2).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(1) <= AD_E(1)_BUFR;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(1) <= AD_E_I(1) when AD_E_OE(1) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(1) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(2) <= AD_E(2)_BUFR;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(2) <= AD_E_I(2) when AD_E_OE(2) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(2) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E(2)_BUFR <= ((PORTA(2).PIN AND FC_5_.OUT AND AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(2).PIN AND FC_5_.OUT AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND LBUS_AD(2).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AL(0).LFBK AND BHEQ.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND IRQ1 AND FC_5_.OUT AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND PORTB(2).PIN AND FC_5_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(6).PIN AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(2).PIN AND FC_5_.OUT AND AQ(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(2).PIN AND NOT FC_5_.OUT AND AL(0).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(2).PIN AND NOT FC_5_.OUT AND NOT BHEQ.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (DEN AND PORTA(2).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(2).PIN AND FC_5_.OUT AND AQ(5).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(2).PIN AND FC_5_.OUT AND AQ(6).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(2).PIN AND FC_5_.OUT AND AQ(4).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E(3)_BUFR <= ((PORTA(3).PIN AND FC_5_.OUT AND AQ(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(3).PIN AND NOT FC_5_.OUT AND AL(0).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(3).PIN AND NOT FC_5_.OUT AND NOT BHEQ.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(3).PIN AND FC_5_.OUT AND AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(3).PIN AND FC_5_.OUT AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND LBUS_AD(3).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AL(0).LFBK AND BHEQ.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND IRQ2 AND FC_5_.OUT AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND PORTB(3).PIN AND FC_5_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(6).PIN AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (DEN AND PORTA(3).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(3).PIN AND FC_5_.OUT AND AQ(5).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(3).PIN AND FC_5_.OUT AND AQ(6).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(3).PIN AND FC_5_.OUT AND AQ(4).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(3) <= AD_E(3)_BUFR;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(3) <= AD_E_I(3) when AD_E_OE(3) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(3) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(4) <= AD_E(4)_BUFR;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(4) <= AD_E_I(4) when AD_E_OE(4) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(4) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E(4)_BUFR <= ((PORTA(4).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(4).PIN AND FC_5_.OUT AND AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(4).PIN AND FC_5_.OUT AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND LBUS_AD(4).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND IRQ3 AND FC_5_.OUT AND FC_6_.OUT AND NOT AQ(4).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND PORTB(4).PIN AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (DEN AND PORTA(4).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(4).PIN AND FC_5_.OUT AND NOT FC_6_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(4).PIN AND FC_5_.OUT AND AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(4).PIN AND FC_5_.OUT AND AQ(3).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E(5)_BUFR <= ((PORTA(5).PIN AND FC_5_.OUT AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND LBUS_AD(5).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND IRQ4 AND FC_5_.OUT AND FC_19_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND PORTB(5).PIN AND FC_5_.OUT AND FC_19_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(5).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (DEN AND PORTA(5).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(5).PIN AND FC_5_.OUT AND NOT FC_19_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(5).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(5).PIN AND FC_5_.OUT AND AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(2).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(5) <= AD_E(5)_BUFR;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(5) <= AD_E_I(5) when AD_E_OE(5) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(5) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(6) <= AD_E(6)_BUFR;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(6) <= AD_E_I(6) when AD_E_OE(6) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(6) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E(6)_BUFR <= NOT (((NOT PORTA(6).PIN AND FC_5_.OUT AND NOT FC_6_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(6).PIN AND FC_5_.OUT AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(6).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND NOT LBUS_AD(6).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT STATUS_IOIN(6) AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND NOT PORTA(6).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (DEN AND NOT PORTA(6).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(6).PIN AND FC_5_.OUT AND AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(6).PIN AND FC_5_.OUT AND AQ(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(6).PIN AND FC_5_.OUT AND AQ(1).PIN)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(7) <= AD_E(7)_BUFR;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(7) <= AD_E_I(7) when AD_E_OE(7) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(7) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E(7)_BUFR <= NOT (((NOT PORTA(7).PIN AND FC_5_.OUT AND AQ(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(7).PIN AND FC_5_.OUT AND AQ(1).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(7).PIN AND FC_5_.OUT AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(7).PIN AND NOT FC_5_.OUT AND AL(0).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(7).PIN AND NOT FC_5_.OUT AND NOT BHEQ.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND NOT LBUS_AD(7).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AL(0).LFBK AND BHEQ.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT STATUS_IOIN(7) AND FC_5_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(6).PIN AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND NOT PORTA(7).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (DEN AND NOT PORTA(7).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(7).PIN AND FC_5_.OUT AND AQ(5).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(7).PIN AND FC_5_.OUT AND AQ(6).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(7).PIN AND FC_5_.OUT AND AQ(4).PIN)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(8) <= ((NOT MIO AND NOT DEN AND PORTA(0).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(8).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(8).PIN AND FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND DEN AND LBUS_AD(0).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND LBUS_AD(0).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(8) <= AD_E_I(8) when AD_E_OE(8) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(8) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(9) <= AD_E(9)_BUFR;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(9) <= AD_E_I(9) when AD_E_OE(9) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(9) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E(9)_BUFR <= ((NOT MIO AND NOT DEN AND PORTA(1).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(9).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(9).PIN AND FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND DEN AND LBUS_AD(1).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND LBUS_AD(1).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT));
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(10) <= ((NOT MIO AND LBUS_AD(2).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND PORTA(2).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(10).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(10).PIN AND FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND DEN AND LBUS_AD(2).PIN AND NOT FC_5_.OUT));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(10) <= AD_E_I(10) when AD_E_OE(10) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(10) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(11) <= ((NOT MIO AND NOT DEN AND PORTA(3).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(11).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(11).PIN AND FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND DEN AND LBUS_AD(3).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND LBUS_AD(3).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(11) <= AD_E_I(11) when AD_E_OE(11) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(11) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(12) <= ((NOT MIO AND LBUS_AD(4).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND PORTA(4).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(12).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(12).PIN AND FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND DEN AND LBUS_AD(4).PIN AND NOT FC_5_.OUT));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(12) <= AD_E_I(12) when AD_E_OE(12) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(12) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(13) <= ((NOT MIO AND DEN AND LBUS_AD(5).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND LBUS_AD(5).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND PORTA(5).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(13).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(13).PIN AND FC_5_.OUT));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(13) <= AD_E_I(13) when AD_E_OE(13) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(13) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(14) <= ((NOT MIO AND NOT DEN AND PORTA(6).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(14).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(14).PIN AND FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND DEN AND LBUS_AD(6).PIN AND NOT FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND LBUS_AD(6).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(14) <= AD_E_I(14) when AD_E_OE(14) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(14) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+AD_E_I(15) <= ((NOT MIO AND LBUS_AD(7).PIN AND NOT FC_5_.OUT AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND PORTA(7).PIN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND PORTA(15).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(15).PIN AND FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND DEN AND LBUS_AD(7).PIN AND NOT FC_5_.OUT));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E(15) <= AD_E_I(15) when AD_E_OE(15) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD_E_OE(15) <= XLXN_3213(9)/XLXN_3213(9)_TRST;
+</td></tr><tr><td>
+FDCPE_AQ0: FDCPE port map (AQ(0),'0','0',AQ_CLR(0),AQ_PRE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(0) <= (NOT AD_E(0).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(0) <= (AD_E(0).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ1: FDCPE port map (AQ(1),'0','0',AQ_CLR(1),AQ_PRE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(1) <= (NOT AD_E(1).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(1) <= (AD_E(1).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ2: FDCPE port map (AQ(2),'0','0',AQ_CLR(2),AQ_PRE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(2) <= (NOT AD_E(2).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(2) <= (AD_E(2).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ3: FDCPE port map (AQ(3),'0','0',AQ_CLR(3),AQ_PRE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(3) <= (NOT AD_E(3).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(3) <= (AD_E(3).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ4: FDCPE port map (AQ(4),'0','0',AQ_CLR(4),AQ_PRE(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(4) <= (NOT AD_E(4).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(4) <= (AD_E(4).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ5: FDCPE port map (AQ(5),'0','0',AQ_CLR(5),AQ_PRE(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(5) <= (NOT AD_E(5).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(5) <= (AD_E(5).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ6: FDCPE port map (AQ(6),'0','0',AQ_CLR(6),AQ_PRE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(6) <= (NOT AD_E(6).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(6) <= (AD_E(6).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ7: FDCPE port map (AQ(7),'0','0',AQ_CLR(7),AQ_PRE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(7) <= (NOT AD_E(7).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(7) <= (AD_E(7).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ8: FDCPE port map (AQ(8),'0','0',AQ_CLR(8),AQ_PRE(8));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(8) <= (NOT AD_E(8).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(8) <= (AD_E(8).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ9: FDCPE port map (AQ(9),'0','0',AQ_CLR(9),AQ_PRE(9));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(9) <= (NOT AD_E(9).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(9) <= (AD_E(9).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ10: FDCPE port map (AQ(10),'0','0',AQ_CLR(10),AQ_PRE(10));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(10) <= (NOT AD_E(10).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(10) <= (AD_E(10).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ11: FDCPE port map (AQ(11),'0','0',AQ_CLR(11),AQ_PRE(11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(11) <= (NOT AD_E(11).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(11) <= (AD_E(11).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ12: FDCPE port map (AQ(12),'0','0',AQ_CLR(12),AQ_PRE(12));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(12) <= (NOT AD_E(12).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(12) <= (AD_E(12).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ13: FDCPE port map (AQ(13),'0','0',AQ_CLR(13),AQ_PRE(13));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(13) <= (NOT AD_E(13).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(13) <= (AD_E(13).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ14: FDCPE port map (AQ(14),'0','0',AQ_CLR(14),AQ_PRE(14));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(14) <= (NOT AD_E(14).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(14) <= (AD_E(14).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ15: FDCPE port map (AQ(15),'0','0',AQ_CLR(15),AQ_PRE(15));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(15) <= (NOT AD_E(15).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(15) <= (AD_E(15).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_AQ16: FDCPE port map (AQ(16),'0','0',AQ_CLR(16),AQ_PRE(16));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(16) <= (ALE AND NOT A(16));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(16) <= (ALE AND A(16));
+</td></tr><tr><td>
+FDCPE_AQ17: FDCPE port map (AQ(17),'0','0',AQ_CLR(17),AQ_PRE(17));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(17) <= (ALE AND NOT A(17));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(17) <= (ALE AND A(17));
+</td></tr><tr><td>
+FDCPE_AQ18: FDCPE port map (AQ(18),'0','0',AQ_CLR(18),AQ_PRE(18));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_CLR(18) <= (ALE AND NOT A(18));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AQ_PRE(18) <= (ALE AND A(18));
+</td></tr><tr><td>
+FDCPE_BHEQ: FDCPE port map (BHEQ,'0','0',BHEQ_CLR,BHEQ_PRE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BHEQ_CLR <= (ALE AND NOT BHE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BHEQ_PRE <= (ALE AND BHE);
+</td></tr><tr><td>
+FDCPE_CPUCLK: FDCPE port map (CPUCLK,CPUCLK_D,XLXI_386/thirdclk(1)/XLXI_386/thirdclk(1)_CLKF,'0','0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPUCLK_D <= (NOT XLXI_386/thirdclk(1) AND NOT CPUCLK_OBUF.LFBK);
+</td></tr><tr><td>
+FDCPE_EEWP: FDCPE port map (EEWP,AD_E(9).PIN,EEWP_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EEWP_C <= (NOT MIO AND FC_5_.OUT AND FC_13_.OUT AND NOT AQ(4).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+I2CCS <= NOT ((NOT MIO AND FC_5_.OUT AND NOT AQ(5).PIN AND AQ(6).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(4).PIN));
+</td></tr><tr><td>
+FDCPE_LBUS_A8: FDCPE port map (LBUS_A(8),'0','0',LBUS_A_CLR(8),LBUS_A_PRE(8));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(8) <= (NOT AD_E(8).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(8) <= (AD_E(8).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_LBUS_A9: FDCPE port map (LBUS_A(9),'0','0',LBUS_A_CLR(9),LBUS_A_PRE(9));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(9) <= (NOT AD_E(9).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(9) <= (AD_E(9).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_LBUS_A10: FDCPE port map (LBUS_A(10),'0','0',LBUS_A_CLR(10),LBUS_A_PRE(10));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(10) <= (NOT AD_E(10).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(10) <= (AD_E(10).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_LBUS_A11: FDCPE port map (LBUS_A(11),'0','0',LBUS_A_CLR(11),LBUS_A_PRE(11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(11) <= (NOT AD_E(11).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(11) <= (AD_E(11).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_LBUS_A12: FDCPE port map (LBUS_A(12),'0','0',LBUS_A_CLR(12),LBUS_A_PRE(12));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(12) <= (NOT AD_E(12).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(12) <= (AD_E(12).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_LBUS_A13: FDCPE port map (LBUS_A(13),'0','0',LBUS_A_CLR(13),LBUS_A_PRE(13));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(13) <= (NOT AD_E(13).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(13) <= (AD_E(13).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_LBUS_A14: FDCPE port map (LBUS_A(14),'0','0',LBUS_A_CLR(14),LBUS_A_PRE(14));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(14) <= (NOT AD_E(14).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(14) <= (AD_E(14).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_LBUS_A15: FDCPE port map (LBUS_A(15),'0','0',LBUS_A_CLR(15),LBUS_A_PRE(15));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(15) <= (NOT AD_E(15).PIN AND ALE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(15) <= (AD_E(15).PIN AND ALE);
+</td></tr><tr><td>
+FDCPE_LBUS_A16: FDCPE port map (LBUS_A(16),'0','0',LBUS_A_CLR(16),LBUS_A_PRE(16));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(16) <= (ALE AND NOT A(16));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(16) <= (ALE AND A(16));
+</td></tr><tr><td>
+FDCPE_LBUS_A17: FDCPE port map (LBUS_A(17),'0','0',LBUS_A_CLR(17),LBUS_A_PRE(17));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(17) <= (ALE AND NOT A(17));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(17) <= (ALE AND A(17));
+</td></tr><tr><td>
+FDCPE_LBUS_A18: FDCPE port map (LBUS_A(18),'0','0',LBUS_A_CLR(18),LBUS_A_PRE(18));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(18) <= (ALE AND NOT A(18));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(18) <= (ALE AND A(18));
+</td></tr><tr><td>
+FDCPE_LBUS_A19: FDCPE port map (LBUS_A(19),'0','0',LBUS_A_CLR(19),LBUS_A_PRE(19));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_CLR(19) <= (ALE AND NOT A(19));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_A_PRE(19) <= (ALE AND A(19));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_AD_I(0) <= ((AD_E(8).PIN AND NOT XLXI_389/dirholdp1 AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(8).PIN AND NOT XLXI_389/dirholdp1 AND NOT FC_9_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(0).PIN AND NOT DEN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(0).PIN AND XLXI_389/dirholdp1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(0).PIN AND XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND AD_E(8).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(8).PIN AND DEN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD(0) <= LBUS_AD_I(0) when LBUS_AD_OE(0) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD_OE(0) <= XLXI_389/eightbitdmx(6)/XLXI_389/eightbitdmx(6)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_AD_I(1) <= ((AD_E(9).PIN AND NOT XLXI_389/dirholdp1 AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(9).PIN AND NOT XLXI_389/dirholdp1 AND NOT FC_9_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(1).PIN AND NOT DEN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(1).PIN AND XLXI_389/dirholdp1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(1).PIN AND XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND AD_E(9).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(9).PIN AND DEN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD(1) <= LBUS_AD_I(1) when LBUS_AD_OE(1) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD_OE(1) <= XLXI_389/eightbitdmx(6)/XLXI_389/eightbitdmx(6)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_AD_I(2) <= ((AD_E(10).PIN AND NOT XLXI_389/dirholdp1 AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(10).PIN AND NOT XLXI_389/dirholdp1 AND NOT FC_9_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(2).PIN AND NOT DEN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(2).PIN AND XLXI_389/dirholdp1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(2).PIN AND XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND AD_E(10).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(10).PIN AND DEN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD(2) <= LBUS_AD_I(2) when LBUS_AD_OE(2) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD_OE(2) <= XLXI_389/eightbitdmx(6)/XLXI_389/eightbitdmx(6)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_AD_I(3) <= ((AD_E(11).PIN AND NOT XLXI_389/dirholdp1 AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(11).PIN AND NOT XLXI_389/dirholdp1 AND NOT FC_9_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(3).PIN AND NOT DEN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(3).PIN AND XLXI_389/dirholdp1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(3).PIN AND XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND AD_E(11).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(11).PIN AND DEN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD(3) <= LBUS_AD_I(3) when LBUS_AD_OE(3) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD_OE(3) <= XLXI_389/eightbitdmx(6)/XLXI_389/eightbitdmx(6)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_AD_I(4) <= ((XLXN_2864.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(4).PIN AND XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND AD_E(12).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(12).PIN AND DEN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(12).PIN AND NOT XLXI_389/dirholdp1 AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(12).PIN AND NOT XLXI_389/dirholdp1 AND NOT FC_9_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2.LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(4).PIN AND XLXI_389/dirholdp1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD(4) <= LBUS_AD_I(4) when LBUS_AD_OE(4) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD_OE(4) <= XLXI_389/eightbitdmx(6)/XLXI_389/eightbitdmx(6)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_AD_I(5) <= ((AD_E(13).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2 AND FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(13).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2 AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(5).PIN AND NOT DEN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(5).PIN AND XLXI_389/dirholdp1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(5).PIN AND XLXI_389/dirholdp2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND AD_E(13).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(13).PIN AND DEN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD(5) <= LBUS_AD_I(5) when LBUS_AD_OE(5) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD_OE(5) <= XLXI_389/eightbitdmx(6)/XLXI_389/eightbitdmx(6)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_AD_I(6) <= ((AD_E(14).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2 AND FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(14).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2 AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(6).PIN AND NOT DEN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(6).PIN AND XLXI_389/dirholdp1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(6).PIN AND XLXI_389/dirholdp2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND AD_E(14).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (DEN AND AD_E(14).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD(6) <= LBUS_AD_I(6) when LBUS_AD_OE(6) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD_OE(6) <= XLXI_389/eightbitdmx(6)/XLXI_389/eightbitdmx(6)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_AD_I(7) <= ((AD_E(15).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2 AND FC_5_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(15).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2 AND NOT FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(7).PIN AND NOT DEN AND NOT FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_9_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(7).PIN AND XLXI_389/dirholdp1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(7).PIN AND XLXI_389/dirholdp2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND AD_E(15).PIN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (AD_E(15).PIN AND DEN AND NOT XLXI_389/dirholdp1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_389/dirholdp2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD(7) <= LBUS_AD_I(7) when LBUS_AD_OE(7) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LBUS_AD_OE(7) <= XLXI_389/eightbitdmx(6)/XLXI_389/eightbitdmx(6)_TRST;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_ALE <= (ALE AND NOT CPUCLK.PIN);
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_CLK <= ((SYSCLK AND CPU10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXI_386/inclkd2 AND NOT CPU10));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_DEN <= NOT ((NOT MIO AND NOT DEN AND NOT FC_5_.OUT));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_DTR <= DTR;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_MIO <= MIO;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_RD <= NOT ((NOT MIO AND NOT EXTRD AND NOT FC_5_.OUT));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_RST <= NOT RESET;
+</td></tr><tr><td>
+</td></tr><tr><td>
+LBUS_WR <= NOT ((NOT MIO AND NOT EXTWR AND NOT FC_5_.OUT));
+</td></tr><tr><td>
+</td></tr><tr><td>
+MIDCLK <= ((XLXI_386/inclkd2 AND CPU10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT CPU10 AND XLXI_386/inclkd4.LFBK));
+</td></tr><tr><td>
+</td></tr><tr><td>
+MIDCS <= NOT ((NOT MIO AND FC_5_.OUT AND NOT AQ(5).PIN AND AQ(6).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+MRST_I <= '0';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MRST <= MRST_I when MRST_OE = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MRST_OE <= XLXN_3298;
+</td></tr><tr><td>
+</td></tr><tr><td>
+NMI <= ((XLXN_2860 AND XLXN_2866 AND IRQ3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXN_2860 AND XLXN_2867 AND IRQ2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXN_2860 AND XLXN_2872 AND IRQ1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXN_2860 AND FC_0_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXN_2860 AND FC_1_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXN_2860 AND FC_2_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXN_2860 AND FC_3_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXN_2860 AND XLXN_2865 AND IRQ4));
+</td></tr><tr><td>
+FDCPE_PORTA0: FDCPE port map (PORTA_I(0),AD_E(0).PIN,PORTA_C(0),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(0) <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(0) <= PORTA_I(0) when PORTA_OE(0) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(0) <= NOT XLXI_327/trishold(0).LFBK;
+</td></tr><tr><td>
+</td></tr><tr><td>
+PORTA_I(1) <= ((UARTA_ENABLE AND TXA)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXI_327/trishold(1) AND TXA)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT UARTA_ENABLE AND NOT XLXI_327/trishold(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XLXI_327/dq(1)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(1) <= PORTA_I(1) when PORTA_OE(1) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(1) <= NOT XLXI_327/trishold(1);
+</td></tr><tr><td>
+FDCPE_PORTA2: FDCPE port map (PORTA_I(2),AD_E(2).PIN,PORTA_C(2),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(2) <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(2) <= PORTA_I(2) when PORTA_OE(2) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(2) <= NOT XLXI_327/trishold(2).LFBK;
+</td></tr><tr><td>
+FDCPE_PORTA3: FDCPE port map (PORTA_I(3),AD_E(3).PIN,PORTA_C(3),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(3) <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(3) <= PORTA_I(3) when PORTA_OE(3) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(3) <= NOT XLXI_327/trishold(3).LFBK;
+</td></tr><tr><td>
+FDCPE_PORTA4: FDCPE port map (PORTA_I(4),AD_E(4).PIN,PORTA_C(4),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(4) <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(4) <= PORTA_I(4) when PORTA_OE(4) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(4) <= NOT XLXI_327/trishold(4).LFBK;
+</td></tr><tr><td>
+FDCPE_PORTA5: FDCPE port map (PORTA_I(5),AD_E(5).PIN,PORTA_C(5),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(5) <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(5) <= PORTA_I(5) when PORTA_OE(5) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(5) <= NOT XLXI_327/trishold(5);
+</td></tr><tr><td>
+FDCPE_PORTA6: FDCPE port map (PORTA_I(6),AD_E(6).PIN,PORTA_C(6),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(6) <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(6) <= PORTA_I(6) when PORTA_OE(6) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(6) <= NOT XLXI_327/trishold(6);
+</td></tr><tr><td>
+FDCPE_PORTA7: FDCPE port map (PORTA_I(7),AD_E(7).PIN,PORTA_C(7),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(7) <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(7) <= PORTA_I(7) when PORTA_OE(7) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(7) <= NOT XLXI_327/trishold(7).LFBK;
+</td></tr><tr><td>
+FDCPE_PORTA8: FDCPE port map (PORTA_I(8),AD_E(8).PIN,PORTA_C(8),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(8) <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(8) <= PORTA_I(8) when PORTA_OE(8) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(8) <= NOT XLXI_327/trishold(8);
+</td></tr><tr><td>
+FDCPE_PORTA9: FDCPE port map (PORTA_I(9),AD_E(9).PIN,PORTA_C(9),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(9) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(9) <= PORTA_I(9) when PORTA_OE(9) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(9) <= NOT XLXI_327/trishold(9);
+</td></tr><tr><td>
+FDCPE_PORTA10: FDCPE port map (PORTA_I(10),AD_E(10).PIN,PORTA_C(10),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(10) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(10) <= PORTA_I(10) when PORTA_OE(10) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(10) <= NOT XLXI_327/trishold(10).LFBK;
+</td></tr><tr><td>
+FDCPE_PORTA11: FDCPE port map (PORTA_I(11),AD_E(11).PIN,PORTA_C(11),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(11) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(11) <= PORTA_I(11) when PORTA_OE(11) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(11) <= NOT XLXI_327/trishold(11).LFBK;
+</td></tr><tr><td>
+FDCPE_PORTA12: FDCPE port map (PORTA_I(12),AD_E(12).PIN,PORTA_C(12),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(12) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(12) <= PORTA_I(12) when PORTA_OE(12) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(12) <= NOT XLXI_327/trishold(12).LFBK;
+</td></tr><tr><td>
+FDCPE_PORTA13: FDCPE port map (PORTA_I(13),AD_E(13).PIN,PORTA_C(13),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(13) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(13) <= PORTA_I(13) when PORTA_OE(13) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(13) <= NOT XLXI_327/trishold(13).LFBK;
+</td></tr><tr><td>
+</td></tr><tr><td>
+PORTA_I(14) <= ((UARTD_ENABLE AND TXD)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXI_327/trishold(14) AND TXD)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT UARTD_ENABLE AND NOT XLXI_327/trishold(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XLXI_327/dq(14)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(14) <= PORTA_I(14) when PORTA_OE(14) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(14) <= NOT XLXI_327/trishold(14);
+</td></tr><tr><td>
+FDCPE_PORTA15: FDCPE port map (PORTA_I(15),AD_E(15).PIN,PORTA_C(15),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_C(15) <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA(15) <= PORTA_I(15) when PORTA_OE(15) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTA_OE(15) <= NOT XLXI_327/trishold(15);
+</td></tr><tr><td>
+</td></tr><tr><td>
+PORTB_I(0) <= ((UARTC_ENABLE AND TXC)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ioportb/trishold(0) AND TXC)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT UARTC_ENABLE AND NOT ioportb/trishold(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ioportb/dq(0)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB(0) <= PORTB_I(0) when PORTB_OE(0) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB_OE(0) <= NOT ioportb/trishold(0);
+</td></tr><tr><td>
+FDCPE_PORTB1: FDCPE port map (PORTB_I(1),AD_E(1).PIN,PORTB_C(1),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB_C(1) <= (NOT MIO AND FC_5_.OUT AND FC_21_.OUT AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB(1) <= PORTB_I(1) when PORTB_OE(1) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB_OE(1) <= NOT ioportb/trishold(1);
+</td></tr><tr><td>
+</td></tr><tr><td>
+PORTB_I(2) <= ((UARTB_ENABLE AND TXB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ioportb/trishold(2) AND TXB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT UARTB_ENABLE AND NOT ioportb/trishold(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ioportb/dq(2)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB(2) <= PORTB_I(2) when PORTB_OE(2) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB_OE(2) <= NOT ioportb/trishold(2);
+</td></tr><tr><td>
+FDCPE_PORTB3: FDCPE port map (PORTB_I(3),AD_E(3).PIN,PORTB_C(3),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB_C(3) <= (NOT MIO AND FC_5_.OUT AND FC_21_.OUT AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB(3) <= PORTB_I(3) when PORTB_OE(3) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB_OE(3) <= NOT ioportb/trishold(3);
+</td></tr><tr><td>
+FDCPE_PORTB4: FDCPE port map (PORTB_I(4),AD_E(4).PIN,PORTB_C(4),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB_C(4) <= (NOT MIO AND FC_5_.OUT AND FC_21_.OUT AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB(4) <= PORTB_I(4) when PORTB_OE(4) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB_OE(4) <= NOT ioportb/trishold(4);
+</td></tr><tr><td>
+FDCPE_PORTB5: FDCPE port map (PORTB_I(5),AD_E(5).PIN,PORTB_C(5),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB_C(5) <= (NOT MIO AND FC_5_.OUT AND FC_21_.OUT AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB(5) <= PORTB_I(5) when PORTB_OE(5) = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTB_OE(5) <= NOT ioportb/trishold(5);
+</td></tr><tr><td>
+</td></tr><tr><td>
+RAMCS <= NOT ((MIO AND NOT LBUS_A(19).PIN));
+</td></tr><tr><td>
+FDCPE_RDY: FDCPE port map (RDY,LBUS_IRDY,CPUCLK_OBUF.LFBK,'0','0');
+</td></tr><tr><td>
+FTCPE_RD_SYNC: FTCPE port map (RD_SYNC,'1',RD_SYNC_C,ALE,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RD_SYNC_C <= (NOT EXTRD AND CPUCLK.PIN);
+</td></tr><tr><td>
+</td></tr><tr><td>
+ROMCS <= NOT ((MIO AND LBUS_A(19).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+RXA <= NOT ((UARTA_ENABLE AND NOT PORTA(0).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+RXB <= NOT ((UARTB_ENABLE AND NOT PORTB(3).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+RXC <= NOT ((UARTC_ENABLE AND NOT PORTB(1).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+RXD <= ((UARTD_ENABLE AND PORTA(15).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT UARTD_ENABLE AND PGMRXD));
+</td></tr><tr><td>
+FDCPE_STATUS_IOIN0: FDCPE port map (STATUS_IOIN(0),STATUS_IOIN_D(0),STATUS_IOIN_C(0),RESET,STATUS_IOIN_PRE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS_IOIN_D(0) <= (AD_E(0).PIN AND STATUS_IOIN(0).LFBK);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS_IOIN_C(0) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS_IOIN_PRE(0) <= (FC_24_.OUT AND FC_25_.OUT AND timer0/count0(6).LFBK);
+</td></tr><tr><td>
+FDCPE_STATUS_IOIN1: FDCPE port map (STATUS_IOIN(1),STATUS_IOIN_D(1),STATUS_IOIN_C(1),RESET,STATUS_IOIN(1)/STATUS_IOIN(1)_SETF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS_IOIN_D(1) <= (AD_E(1).PIN AND STATUS_IOIN(1).LFBK);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS_IOIN_C(1) <= (NOT MIO AND FC_5_.OUT AND FC_19_.OUT AND WR_SYNC.LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+</td></tr><tr><td>
+STATUS_IOIN(1)/STATUS_IOIN(1)_SETF <= ((XLXI_327/trishold(8) AND NOT PORTA(8).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XLXI_327/changehold(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(10).PIN AND NOT XLXI_327/changehold(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XLXI_327/trishold(10).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXI_327/trishold(8) AND PORTA(8).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_327/changehold(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXI_327/trishold(9) AND PORTA(9).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT XLXI_327/changehold(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXI_327/trishold(9) AND NOT PORTA(9).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XLXI_327/changehold(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(10).PIN AND XLXI_327/changehold(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XLXI_327/trishold(10).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (PORTA(11).PIN AND NOT XLXI_327/changehold(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XLXI_327/trishold(11).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT PORTA(11).PIN AND XLXI_327/changehold(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XLXI_327/trishold(11).LFBK));
+</td></tr><tr><td>
+FDCPE_STATUS_IOIN6: FDCPE port map (STATUS_IOIN(6),STATUS_IOIN_D(6),STATUS_IOIN_C(6),RESET,NOT STATUS_IOIN(6)/STATUS_IOIN(6)_SETF__$INT);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS_IOIN_D(6) <= (AD_E(6).PIN AND STATUS_IOIN(6).LFBK);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS_IOIN_C(6) <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(2).PIN);
+</td></tr><tr><td>
+</td></tr><tr><td>
+STATUS_IOIN(6)/STATUS_IOIN(6)_SETF__$INT <= (XLXI_327/trishold(2) AND PORTA(2).PIN);
+</td></tr><tr><td>
+FDCPE_STATUS_IOIN7: FDCPE port map (STATUS_IOIN(7),STATUS_IOIN_D(7),STATUS_IOIN_C(7),RESET,STATUS_IOIN_PRE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS_IOIN_D(7) <= (AD_E(7).PIN AND STATUS_IOIN(7).LFBK);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS_IOIN_C(7) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS_IOIN_PRE(7) <= (XLXI_327/trishold(3) AND PORTA(3).PIN);
+</td></tr><tr><td>
+FTCPE_TIMER_CLK: FTCPE port map (TIMER_CLK,TIMER_CLK_T,CPUCLK.PIN,'0','0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TIMER_CLK_T <= (FC_22_.OUT AND XLXI_386/tclk(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XLXI_386/tclk(3).LFBK AND XLXI_386/tclk(4).LFBK);
+</td></tr><tr><td>
+FDCPE_TIMER_RUN: FDCPE port map (TIMER_RUN,AD_E(14).PIN,TIMER_RUN_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TIMER_RUN_C <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_UARTA_ENABLE: FDCPE port map (UARTA_ENABLE,AD_E(10).PIN,UARTA_ENABLE_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UARTA_ENABLE_C <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_UARTB_ENABLE: FDCPE port map (UARTB_ENABLE,AD_E(11).PIN,UARTB_ENABLE_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UARTB_ENABLE_C <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_UARTC_ENABLE: FDCPE port map (UARTC_ENABLE,AD_E(12).PIN,UARTC_ENABLE_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UARTC_ENABLE_C <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_UARTD_ENABLE: FDCPE port map (UARTD_ENABLE,AD_E(13).PIN,UARTD_ENABLE_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UARTD_ENABLE_C <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+</td></tr><tr><td>
+UCSA <= NOT ((NOT MIO AND FC_4_.OUT AND AQ(5).PIN AND NOT AQ(4).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(3).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+UCSB <= NOT ((NOT MIO AND FC_4_.OUT AND AQ(5).PIN AND NOT AQ(4).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(3).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+UCSC <= NOT ((NOT MIO AND FC_4_.OUT AND AQ(5).PIN AND AQ(4).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(3).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+UCSD <= NOT ((NOT MIO AND FC_4_.OUT AND AQ(5).PIN AND AQ(4).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(3).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+UHE <= NOT (((NOT MIO AND NOT DEN AND FC_5_.OUT AND AL(0).LFBK AND AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(6).PIN AND NOT BHEQ.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND FC_5_.OUT AND AL(0).LFBK AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(6).PIN AND NOT BHEQ.PIN)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+ULE <= NOT (((NOT MIO AND NOT DEN AND FC_5_.OUT AND NOT AL(0).LFBK AND AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(6).PIN AND BHEQ.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND FC_5_.OUT AND NOT AL(0).LFBK AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(6).PIN AND BHEQ.PIN)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+WDI <= ALE;
+</td></tr><tr><td>
+FTCPE_WR_SYNC: FTCPE port map (WR_SYNC,'1',WR_SYNC_C,ALE,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WR_SYNC_C <= (NOT EXTWR AND CPUCLK.PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/changehold0: FDCPE port map (XLXI_327/changehold(0),PORTA(8).PIN,XLXI_327/changehold_C(0),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/changehold_C(0) <= (NOT MIO AND RD_SYNC AND FC_5_.OUT AND FC_19_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/changehold1: FDCPE port map (XLXI_327/changehold(1),PORTA(9).PIN,XLXI_327/changehold_C(1),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/changehold_C(1) <= (NOT MIO AND RD_SYNC AND FC_4_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/changehold2: FDCPE port map (XLXI_327/changehold(2),PORTA(10).PIN,XLXI_327/changehold_C(2),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/changehold_C(2) <= (NOT MIO AND RD_SYNC AND FC_5_.OUT AND FC_19_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/changehold3: FDCPE port map (XLXI_327/changehold(3),PORTA(11).PIN,XLXI_327/changehold_C(3),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/changehold_C(3) <= (NOT MIO AND RD_SYNC AND FC_5_.OUT AND FC_19_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/dq1: FDCPE port map (XLXI_327/dq(1),AD_E(1).PIN,XLXI_327/dq_C(1),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/dq_C(1) <= (NOT MIO AND FC_10_.OUT AND AL(2).LFBK AND NOT AL(4).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AL(3).LFBK);
+</td></tr><tr><td>
+FDCPE_XLXI_327/dq14: FDCPE port map (XLXI_327/dq(14),AD_E(14).PIN,XLXI_327/dq_C(14),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/dq_C(14) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold0: FDCPE port map (XLXI_327/trishold(0),AD_E(0).PIN,XLXI_327/trishold_C(0),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(0) <= (NOT MIO AND FC_23_.OUT AND AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold1: FDCPE port map (XLXI_327/trishold(1),AD_E(1).PIN,XLXI_327/trishold_C(1),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(1) <= (NOT MIO AND FC_5_.OUT AND FC_21_.OUT AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold2: FDCPE port map (XLXI_327/trishold(2),AD_E(2).PIN,XLXI_327/trishold_C(2),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(2) <= (NOT MIO AND FC_23_.OUT AND AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold3: FDCPE port map (XLXI_327/trishold(3),AD_E(3).PIN,XLXI_327/trishold_C(3),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(3) <= (NOT MIO AND FC_23_.OUT AND AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold4: FDCPE port map (XLXI_327/trishold(4),AD_E(4).PIN,XLXI_327/trishold_C(4),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(4) <= (NOT MIO AND FC_23_.OUT AND AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold5: FDCPE port map (XLXI_327/trishold(5),AD_E(5).PIN,XLXI_327/trishold_C(5),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(5) <= (NOT MIO AND FC_5_.OUT AND FC_13_.OUT AND NOT AQ(4).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold6: FDCPE port map (XLXI_327/trishold(6),AD_E(6).PIN,XLXI_327/trishold_C(6),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(6) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold7: FDCPE port map (XLXI_327/trishold(7),AD_E(7).PIN,XLXI_327/trishold_C(7),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(7) <= (NOT MIO AND FC_23_.OUT AND AQ(3).PIN AND NOT AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold8: FDCPE port map (XLXI_327/trishold(8),AD_E(8).PIN,XLXI_327/trishold_C(8),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(8) <= (NOT MIO AND WR_SYNC AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold9: FDCPE port map (XLXI_327/trishold(9),AD_E(9).PIN,XLXI_327/trishold_C(9),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(9) <= (NOT MIO AND FC_5_.OUT AND FC_13_.OUT AND NOT AQ(4).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold10: FDCPE port map (XLXI_327/trishold(10),AD_E(10).PIN,XLXI_327/trishold_C(10),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(10) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold11: FDCPE port map (XLXI_327/trishold(11),AD_E(11).PIN,XLXI_327/trishold_C(11),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(11) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold12: FDCPE port map (XLXI_327/trishold(12),AD_E(12).PIN,XLXI_327/trishold_C(12),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(12) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold13: FDCPE port map (XLXI_327/trishold(13),AD_E(13).PIN,XLXI_327/trishold_C(13),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(13) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold14: FDCPE port map (XLXI_327/trishold(14),AD_E(14).PIN,XLXI_327/trishold_C(14),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(14) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXI_327/trishold15: FDCPE port map (XLXI_327/trishold(15),AD_E(15).PIN,XLXI_327/trishold_C(15),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_327/trishold_C(15) <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FTCPE_XLXI_386/inclkd2: FTCPE port map (XLXI_386/inclkd2,'1',SYSCLK,'0','0');
+</td></tr><tr><td>
+FTCPE_XLXI_386/inclkd4: FTCPE port map (XLXI_386/inclkd4,'1',XLXI_386/inclkd2,'0','0');
+</td></tr><tr><td>
+FTCPE_XLXI_386/tclk0: FTCPE port map (XLXI_386/tclk(0),'1',CPUCLK.PIN,'0','0');
+</td></tr><tr><td>
+FTCPE_XLXI_386/tclk1: FTCPE port map (XLXI_386/tclk(1),XLXI_386/tclk(0),CPUCLK.PIN,'0','0');
+</td></tr><tr><td>
+FTCPE_XLXI_386/tclk2: FTCPE port map (XLXI_386/tclk(2),FC_22_.OUT,CPUCLK.PIN,'0','0');
+</td></tr><tr><td>
+FTCPE_XLXI_386/tclk3: FTCPE port map (XLXI_386/tclk(3),XLXI_386/tclk_T(3),CPUCLK.PIN,'0','0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_386/tclk_T(3) <= (FC_22_.OUT AND XLXI_386/tclk(2).LFBK);
+</td></tr><tr><td>
+FTCPE_XLXI_386/tclk4: FTCPE port map (XLXI_386/tclk(4),XLXI_386/tclk_T(4),CPUCLK.PIN,'0','0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_386/tclk_T(4) <= (FC_22_.OUT AND XLXI_386/tclk(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XLXI_386/tclk(3).LFBK);
+</td></tr><tr><td>
+</td></tr><tr><td>
+XLXI_386/thirdclk(1)/XLXI_386/thirdclk(1)_CLKF <= ((SYSCLK AND CPU10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (XLXI_386/inclkd2 AND NOT CPU10));
+</td></tr><tr><td>
+FDCPE_XLXI_386/thirdclk1: FDCPE port map (XLXI_386/thirdclk(1),XLXI_386/thirdclk_D(1),XLXI_386/thirdclk(1)/XLXI_386/thirdclk(1)_CLKF,'0','0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_386/thirdclk_D(1) <= (NOT XLXI_386/thirdclk(1).LFBK AND CPUCLK.PIN);
+</td></tr><tr><td>
+FTCPE_XLXI_389/dirholdp1: FTCPE port map (XLXI_389/dirholdp1,'1',XLXI_389/dirholdp1_C,NOT XLXI_389/dirholdp1/XLXI_389/dirholdp1_RSTF__$INT.LFBK,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXI_389/dirholdp1_C <= (NOT MIO AND NOT ALE);
+</td></tr><tr><td>
+</td></tr><tr><td>
+XLXI_389/dirholdp1/XLXI_389/dirholdp1_RSTF__$INT <= (EXTWR AND EXTRD);
+</td></tr><tr><td>
+FDCPE_XLXI_389/dirholdp2: FDCPE port map (XLXI_389/dirholdp2,XLXI_389/dirholdp1,XLXI_386/thirdclk(1)/XLXI_386/thirdclk(1)_CLKF,'0','0');
+</td></tr><tr><td>
+</td></tr><tr><td>
+XLXI_389/eightbitdmx(6)/XLXI_389/eightbitdmx(6)_TRST <= ((FC_12_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND DTR));
+</td></tr><tr><td>
+FDCPE_XLXN_2860: FDCPE port map (XLXN_2860,AD_E(0).PIN,XLXN_2860_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXN_2860_C <= (NOT MIO AND FC_23_.OUT AND NOT AQ(3).PIN AND AQ(1).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXN_2861: FDCPE port map (XLXN_2861,AD_E(8).PIN,XLXN_2861_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXN_2861_C <= (NOT MIO AND WR_SYNC AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXN_2862: FDCPE port map (XLXN_2862,AD_E(7).PIN,XLXN_2862_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXN_2862_C <= (NOT MIO AND FC_5_.OUT AND FC_21_.OUT AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXN_2863: FDCPE port map (XLXN_2863,AD_E(2).PIN,XLXN_2863_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXN_2863_C <= (NOT MIO AND FC_5_.OUT AND FC_21_.OUT AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXN_2864: FDCPE port map (XLXN_2864,AD_E(1).PIN,XLXN_2864_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXN_2864_C <= (NOT MIO AND FC_5_.OUT AND FC_21_.OUT AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXN_2865: FDCPE port map (XLXN_2865,AD_E(6).PIN,XLXN_2865_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXN_2865_C <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXN_2866: FDCPE port map (XLXN_2866,AD_E(5).PIN,XLXN_2866_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXN_2866_C <= (NOT MIO AND FC_5_.OUT AND FC_13_.OUT AND NOT AQ(4).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXN_2867: FDCPE port map (XLXN_2867,AD_E(4).PIN,XLXN_2867_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXN_2867_C <= (NOT MIO AND WR_SYNC AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_XLXN_2872: FDCPE port map (XLXN_2872,AD_E(3).PIN,XLXN_2872_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXN_2872_C <= (NOT MIO AND WR_SYNC AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+</td></tr><tr><td>
+XLXN_3213(9)/XLXN_3213(9)_TRST <= ((NOT MIO AND NOT DEN AND NOT DTR AND NOT FC_5_.OUT AND AL(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT BHEQ.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT DEN AND NOT DTR AND NOT FC_5_.OUT AND NOT AL(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	BHEQ.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT EXTRD AND FC_5_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(6).PIN AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT EXTRD AND FC_5_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(6).PIN AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(2).PIN));
+</td></tr><tr><td>
+FDCPE_XLXN_3298: FDCPE port map (XLXN_3298,AD_E(15).PIN,XLXN_3298_C,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLXN_3298_C <= (NOT MIO AND FC_17_.OUT AND NOT AQ(4).PIN AND NOT AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN AND NOT AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_ioportb/dq0: FDCPE port map (ioportb/dq(0),AD_E(0).PIN,ioportb/dq_C(0),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ioportb/dq_C(0) <= (NOT MIO AND WR_SYNC AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_ioportb/dq2: FDCPE port map (ioportb/dq(2),AD_E(2).PIN,ioportb/dq_C(2),RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ioportb/dq_C(2) <= (NOT MIO AND WR_SYNC AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_ioportb/trishold0: FDCPE port map (ioportb/trishold(0),AD_E(0).PIN,ioportb/trishold_C(0),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ioportb/trishold_C(0) <= (NOT MIO AND WR_SYNC AND FC_5_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(6).PIN AND NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_ioportb/trishold1: FDCPE port map (ioportb/trishold(1),AD_E(1).PIN,ioportb/trishold_C(1),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ioportb/trishold_C(1) <= (NOT MIO AND WR_SYNC AND FC_4_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_ioportb/trishold2: FDCPE port map (ioportb/trishold(2),AD_E(2).PIN,ioportb/trishold_C(2),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ioportb/trishold_C(2) <= (NOT MIO AND WR_SYNC AND FC_4_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_ioportb/trishold3: FDCPE port map (ioportb/trishold(3),AD_E(3).PIN,ioportb/trishold_C(3),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ioportb/trishold_C(3) <= (NOT MIO AND WR_SYNC AND FC_4_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_ioportb/trishold4: FDCPE port map (ioportb/trishold(4),AD_E(4).PIN,ioportb/trishold_C(4),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ioportb/trishold_C(4) <= (NOT MIO AND WR_SYNC AND FC_5_.OUT AND FC_6_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FDCPE_ioportb/trishold5: FDCPE port map (ioportb/trishold(5),AD_E(5).PIN,ioportb/trishold_C(5),'0',RESET);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ioportb/trishold_C(5) <= (NOT MIO AND FC_5_.OUT AND FC_13_.OUT AND NOT AQ(4).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+</td></tr><tr><td>
+FTCPE_timer0/count00: FTCPE port map (timer0/count0(0),timer0/count0_T(0),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(0) <= ((TIMER_RUN AND NOT FC_10_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(0).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND NOT timer0/count0(0).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(0).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND timer0/count0(0).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND TIMER_RUN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND AL(2).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT AL(4).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT AL(3).LFBK));
+</td></tr><tr><td>
+FTCPE_timer0/count01: FTCPE port map (timer0/count0(1),timer0/count0_T(1),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(1) <= ((TIMER_RUN AND NOT FC_10_.OUT AND timer0/count0(0).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(1).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND NOT timer0/count0(1).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(1).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND timer0/count0(1).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND TIMER_RUN AND timer0/count0(0).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND AL(2).LFBK AND timer0/count0(0).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT AL(4).LFBK AND timer0/count0(0).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT AL(3).LFBK AND timer0/count0(0).LFBK));
+</td></tr><tr><td>
+FTCPE_timer0/count02: FTCPE port map (timer0/count0(2),timer0/count0_T(2),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(2) <= ((TIMER_RUN AND NOT FC_10_.OUT AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(2).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND NOT timer0/count0(2).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(2).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND timer0/count0(2).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND TIMER_RUN AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND AL(2).LFBK AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT AL(4).LFBK AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT AL(3).LFBK AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK));
+</td></tr><tr><td>
+FTCPE_timer0/count03: FTCPE port map (timer0/count0(3),timer0/count0_T(3),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(3) <= ((TIMER_RUN AND NOT FC_10_.OUT AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK AND timer0/count0(2).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(3).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND NOT timer0/count0(3).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(3).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND timer0/count0(3).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND TIMER_RUN AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK AND timer0/count0(2).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND AL(2).LFBK AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK AND timer0/count0(2).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT AL(4).LFBK AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK AND timer0/count0(2).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT AL(3).LFBK AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK AND timer0/count0(2).LFBK));
+</td></tr><tr><td>
+FTCPE_timer0/count04: FTCPE port map (timer0/count0(4),timer0/count0_T(4),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(4) <= ((TIMER_RUN AND NOT FC_10_.OUT AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK AND timer0/count0(2).LFBK AND timer0/count0(3).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(4).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND NOT timer0/count0(4).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(4).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND timer0/count0(4).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND TIMER_RUN AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK AND timer0/count0(2).LFBK AND timer0/count0(3).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND AL(2).LFBK AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK AND timer0/count0(2).LFBK AND timer0/count0(3).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT AL(4).LFBK AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK AND timer0/count0(2).LFBK AND timer0/count0(3).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT AL(3).LFBK AND timer0/count0(0).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(1).LFBK AND timer0/count0(2).LFBK AND timer0/count0(3).LFBK));
+</td></tr><tr><td>
+FTCPE_timer0/count05: FTCPE port map (timer0/count0(5),timer0/count0_T(5),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(5) <= ((NOT FC_5_.OUT AND FC_14_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_13_.OUT AND FC_14_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(5).PIN AND FC_5_.OUT AND FC_13_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT timer0/count0(5).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(5).PIN AND FC_5_.OUT AND FC_13_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(5).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND FC_14_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND NOT AQ(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND AQ(1).PIN));
+</td></tr><tr><td>
+FTCPE_timer0/count06: FTCPE port map (timer0/count0(6),timer0/count0_T(6),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(6) <= ((NOT MIO AND AD_E(6).PIN AND FC_17_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT timer0/count0(6).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(6).PIN AND FC_17_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(6).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT FC_17_.OUT AND FC_24_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND FC_24_.OUT AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND TIMER_RUN AND FC_24_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND FC_24_.OUT AND NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND FC_24_.OUT AND NOT AQ(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND FC_24_.OUT AND AQ(1).PIN));
+</td></tr><tr><td>
+FTCPE_timer0/count07: FTCPE port map (timer0/count0(7),timer0/count0_T(7),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(7) <= ((NOT MIO AND AD_E(7).PIN AND FC_17_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT timer0/count0(7).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(7).PIN AND FC_17_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(7).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_17_.OUT AND FC_18_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_18_.OUT AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND FC_18_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_18_.OUT AND NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_18_.OUT AND NOT AQ(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_18_.OUT AND AQ(1).PIN));
+</td></tr><tr><td>
+FTCPE_timer0/count08: FTCPE port map (timer0/count0(8),timer0/count0_T(8),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(8) <= ((FC_7_.OUT AND AQ(1).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_5_.OUT AND FC_7_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_6_.OUT AND FC_7_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_7_.OUT AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(8).PIN AND WR_SYNC AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_6_.OUT AND NOT timer0/count0(8).LFBK AND AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(8).PIN AND WR_SYNC AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_6_.OUT AND timer0/count0(8).LFBK AND AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND FC_7_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT WR_SYNC AND FC_7_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_7_.OUT AND NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_7_.OUT AND NOT AQ(3).PIN));
+</td></tr><tr><td>
+FTCPE_timer0/count09: FTCPE port map (timer0/count0(9),timer0/count0_T(9),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(9) <= ((FC_7_.OUT AND timer0/count0(8).LFBK AND AQ(1).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_5_.OUT AND FC_7_.OUT AND timer0/count0(8).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_6_.OUT AND FC_7_.OUT AND timer0/count0(8).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_7_.OUT AND timer0/count0(8).LFBK AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(9).PIN AND WR_SYNC AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_6_.OUT AND NOT timer0/count0(9).LFBK AND AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(9).PIN AND WR_SYNC AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_6_.OUT AND timer0/count0(9).LFBK AND AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND FC_7_.OUT AND timer0/count0(8).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT WR_SYNC AND FC_7_.OUT AND timer0/count0(8).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_7_.OUT AND timer0/count0(8).LFBK AND NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_7_.OUT AND timer0/count0(8).LFBK AND NOT AQ(3).PIN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+timer0/count0(9)/timer0/count0(9)_CLKF <= ((TIMER_CLK AND NOT FC_4_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_CLK AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND WR_SYNC AND FC_4_.OUT AND NOT AQ(5).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND TIMER_CLK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_CLK AND AQ(5).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_CLK AND NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_CLK AND NOT AQ(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_CLK AND AQ(1).PIN));
+</td></tr><tr><td>
+FTCPE_timer0/count010: FTCPE port map (timer0/count0(10),timer0/count0_T(10),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(10) <= ((TIMER_RUN AND FC_11_.OUT AND AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(0).LFBK AND timer0/count0(1).LFBK AND timer0/count0(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(3).LFBK AND timer0/count0(4).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND FC_11_.OUT AND NOT AL(3).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(0).LFBK AND timer0/count0(1).LFBK AND timer0/count0(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(3).LFBK AND timer0/count0(4).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND NOT FC_10_.OUT AND FC_11_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(0).LFBK AND timer0/count0(1).LFBK AND timer0/count0(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(3).LFBK AND timer0/count0(4).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(10).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND NOT timer0/count0(10).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(10).PIN AND FC_10_.OUT AND NOT AL(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AL(4).LFBK AND AL(3).LFBK AND timer0/count0(10).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND TIMER_RUN AND FC_11_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(0).LFBK AND timer0/count0(1).LFBK AND timer0/count0(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(3).LFBK AND timer0/count0(4).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (TIMER_RUN AND FC_11_.OUT AND NOT AL(4).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(0).LFBK AND timer0/count0(1).LFBK AND timer0/count0(2).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(3).LFBK AND timer0/count0(4).LFBK));
+</td></tr><tr><td>
+FTCPE_timer0/count011: FTCPE port map (timer0/count0(11),timer0/count0_T(11),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(11) <= ((NOT MIO AND AD_E(11).PIN AND FC_5_.OUT AND FC_13_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT timer0/count0(11).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(11).PIN AND FC_5_.OUT AND FC_13_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(11).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_5_.OUT AND FC_14_.OUT AND FC_15_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(5).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_13_.OUT AND FC_14_.OUT AND FC_15_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(5).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND FC_15_.OUT AND timer0/count0(5).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND FC_14_.OUT AND FC_15_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(5).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND FC_15_.OUT AND timer0/count0(5).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND FC_15_.OUT AND timer0/count0(5).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND FC_15_.OUT AND timer0/count0(5).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	AQ(1).PIN));
+</td></tr><tr><td>
+FTCPE_timer0/count012: FTCPE port map (timer0/count0(12),timer0/count0_T(12),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(12) <= ((NOT FC_5_.OUT AND FC_20_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_20_.OUT AND AQ(1).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_20_.OUT AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_6_.OUT AND FC_20_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(12).PIN AND WR_SYNC AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_6_.OUT AND NOT timer0/count0(12).LFBK AND AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(12).PIN AND WR_SYNC AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_6_.OUT AND timer0/count0(12).LFBK AND AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND FC_20_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT WR_SYNC AND FC_20_.OUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_20_.OUT AND NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_20_.OUT AND NOT AQ(3).PIN));
+</td></tr><tr><td>
+FTCPE_timer0/count013: FTCPE port map (timer0/count0(13),timer0/count0_T(13),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(13) <= ((NOT FC_5_.OUT AND FC_20_.OUT AND timer0/count0(12).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_20_.OUT AND timer0/count0(12).LFBK AND AQ(1).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_20_.OUT AND timer0/count0(12).LFBK AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_6_.OUT AND FC_20_.OUT AND timer0/count0(12).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(13).PIN AND WR_SYNC AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_6_.OUT AND NOT timer0/count0(13).LFBK AND AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(13).PIN AND WR_SYNC AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_6_.OUT AND timer0/count0(13).LFBK AND AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND FC_20_.OUT AND timer0/count0(12).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT WR_SYNC AND FC_20_.OUT AND timer0/count0(12).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_20_.OUT AND timer0/count0(12).LFBK AND NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_20_.OUT AND timer0/count0(12).LFBK AND NOT AQ(3).PIN));
+</td></tr><tr><td>
+FTCPE_timer0/count014: FTCPE port map (timer0/count0(14),timer0/count0_T(14),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(14) <= ((NOT FC_6_.OUT AND FC_7_.OUT AND FC_8_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(8).LFBK AND timer0/count0(9).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(14).PIN AND WR_SYNC AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_6_.OUT AND NOT timer0/count0(14).LFBK AND AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(14).PIN AND WR_SYNC AND FC_5_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_6_.OUT AND timer0/count0(14).LFBK AND AQ(4).PIN AND AQ(3).PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_5_.OUT AND FC_7_.OUT AND FC_8_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(8).LFBK AND timer0/count0(9).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_7_.OUT AND FC_8_.OUT AND timer0/count0(8).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(9).LFBK AND AQ(1).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_7_.OUT AND FC_8_.OUT AND timer0/count0(8).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(9).LFBK AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND FC_7_.OUT AND FC_8_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(8).LFBK AND timer0/count0(9).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT WR_SYNC AND FC_7_.OUT AND FC_8_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(8).LFBK AND timer0/count0(9).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_7_.OUT AND FC_8_.OUT AND timer0/count0(8).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(9).LFBK AND NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_7_.OUT AND FC_8_.OUT AND timer0/count0(8).LFBK AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(9).LFBK AND NOT AQ(3).PIN));
+</td></tr><tr><td>
+FTCPE_timer0/count015: FTCPE port map (timer0/count0(15),timer0/count0_T(15),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer0/count0_T(15) <= ((NOT FC_5_.OUT AND FC_14_.OUT AND FC_15_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_16_.OUT AND timer0/count0(5).LFBK AND timer0/count0(11).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC_13_.OUT AND FC_14_.OUT AND FC_15_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FC_16_.OUT AND timer0/count0(5).LFBK AND timer0/count0(11).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND FC_15_.OUT AND FC_16_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(5).LFBK AND timer0/count0(11).LFBK AND AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND AD_E(15).PIN AND FC_5_.OUT AND FC_13_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT timer0/count0(15).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MIO AND NOT AD_E(15).PIN AND FC_5_.OUT AND FC_13_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(15).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MIO AND FC_14_.OUT AND FC_15_.OUT AND FC_16_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(5).LFBK AND timer0/count0(11).LFBK)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND FC_15_.OUT AND FC_16_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(5).LFBK AND timer0/count0(11).LFBK AND NOT AQ(4).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND FC_15_.OUT AND FC_16_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(5).LFBK AND timer0/count0(11).LFBK AND NOT AQ(3).PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC_14_.OUT AND FC_15_.OUT AND FC_16_.OUT AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	timer0/count0(5).LFBK AND timer0/count0(11).LFBK AND AQ(1).PIN));
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

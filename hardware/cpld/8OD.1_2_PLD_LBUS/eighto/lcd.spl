@@ -1,0 +1,17 @@
+[Inputs]
+wr
+rd
+dtr
+den
+lle
+lcdcs
+=a[19:0]=
+=d[15:0]=
+[Outputs]
+lcd_rs
+lcd_rw
+lcd_e1
+lcd_e2
+=ioin[7:0]=
+[BiDir]
+=lcd_d[7:0]=

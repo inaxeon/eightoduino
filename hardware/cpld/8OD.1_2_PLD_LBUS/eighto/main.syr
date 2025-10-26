@@ -1,0 +1,577 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Reading design: main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main"
+Output Format                      : NGC
+Target Device                      : XC9500 CPLDs
+
+---- Source Options
+Top Module Name                    : main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/IBUF16_MXILINX_main is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+WARNING:HDLParsers:3607 - Unit work/IBUF16_MXILINX_main/BEHAVIORAL is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+WARNING:HDLParsers:3607 - Unit work/OBUFE_MXILINX_main is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+WARNING:HDLParsers:3607 - Unit work/OBUFE_MXILINX_main/BEHAVIORAL is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+WARNING:HDLParsers:3607 - Unit work/OBUFE16_MXILINX_main is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+WARNING:HDLParsers:3607 - Unit work/OBUFE16_MXILINX_main/BEHAVIORAL is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+WARNING:HDLParsers:3607 - Unit work/main is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+WARNING:HDLParsers:3607 - Unit work/main/BEHAVIORAL is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+WARNING:HDLParsers:3607 - Unit work/adecode is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/adecode.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/adecode.vhd".
+WARNING:HDLParsers:3607 - Unit work/adecode/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/adecode.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/adecode.vhd".
+WARNING:HDLParsers:3607 - Unit work/asplit is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/asplit.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/asplit.vhd".
+WARNING:HDLParsers:3607 - Unit work/asplit/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/asplit.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/asplit.vhd".
+WARNING:HDLParsers:3607 - Unit work/biu is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd".
+WARNING:HDLParsers:3607 - Unit work/biu/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd".
+WARNING:HDLParsers:3607 - Unit work/configreg is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/configreg.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/configreg.vhd".
+WARNING:HDLParsers:3607 - Unit work/configreg/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/configreg.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/configreg.vhd".
+WARNING:HDLParsers:3607 - Unit work/cpuclock is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/cpuclock.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/cpuclock.vhd".
+WARNING:HDLParsers:3607 - Unit work/cpuclock/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/cpuclock.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/cpuclock.vhd".
+WARNING:HDLParsers:3607 - Unit work/FD21 is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/FD21WB.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/FD21WB.vhd".
+WARNING:HDLParsers:3607 - Unit work/FD21/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/FD21WB.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/FD21WB.vhd".
+WARNING:HDLParsers:3607 - Unit work/intc is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/intc.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/intc.vhd".
+WARNING:HDLParsers:3607 - Unit work/intc/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/intc.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/intc.vhd".
+WARNING:HDLParsers:3607 - Unit work/ioport_16_umux is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_16_umux.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_16_umux.vhd".
+WARNING:HDLParsers:3607 - Unit work/ioport_16_umux/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_16_umux.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_16_umux.vhd".
+WARNING:HDLParsers:3607 - Unit work/ioport_6_umux is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_6_umux.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_6_umux.vhd".
+WARNING:HDLParsers:3607 - Unit work/ioport_6_umux/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_6_umux.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_6_umux.vhd".
+WARNING:HDLParsers:3607 - Unit work/lbus is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd".
+WARNING:HDLParsers:3607 - Unit work/lbus/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd".
+WARNING:HDLParsers:3607 - Unit work/portread is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/portread.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/portread.vhd".
+WARNING:HDLParsers:3607 - Unit work/portread/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/portread.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/portread.vhd".
+WARNING:HDLParsers:3607 - Unit work/timer16 is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/timer16.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/timer16.vhd".
+WARNING:HDLParsers:3607 - Unit work/timer16/Behavioral is now defined in a different file.  It was defined in "//s8fs01/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/timer16.vhd", and is now defined in "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/timer16.vhd".
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/FD21WB.vhd" in Library work.
+Architecture behavioral of Entity fd21 is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/configreg.vhd" in Library work.
+Architecture behavioral of Entity configreg is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/intc.vhd" in Library work.
+Architecture behavioral of Entity intc is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_6_umux.vhd" in Library work.
+Architecture behavioral of Entity ioport_6_umux is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/portread.vhd" in Library work.
+Architecture behavioral of Entity portread is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/timer16.vhd" in Library work.
+Architecture behavioral of Entity timer16 is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_16_umux.vhd" in Library work.
+Architecture behavioral of Entity ioport_16_umux is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/adecode.vhd" in Library work.
+Architecture behavioral of Entity adecode is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd" in Library work.
+Architecture behavioral of Entity biu is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/asplit.vhd" in Library work.
+Architecture behavioral of Entity asplit is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/cpuclock.vhd" in Library work.
+Architecture behavioral of Entity cpuclock is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd" in Library work.
+Architecture behavioral of Entity lbus is up to date.
+Compiling vhdl file "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf" in Library work.
+Entity <ibuf16_mxilinx_main> compiled.
+Entity <ibuf16_mxilinx_main> (Architecture <behavioral>) compiled.
+Entity <obufe_mxilinx_main> compiled.
+Entity <obufe_mxilinx_main> (Architecture <behavioral>) compiled.
+Entity <obufe16_mxilinx_main> compiled.
+Entity <obufe16_mxilinx_main> (Architecture <behavioral>) compiled.
+Entity <main> compiled.
+Entity <main> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <main> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <FD21> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <configreg> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <intc> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <ioport_6_umux> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <portread> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <timer16> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <OBUFE16_MXILINX_main> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <OBUFE_MXILINX_main> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <ioport_16_umux> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <adecode> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <IBUF16_MXILINX_main> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <biu> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <asplit> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <cpuclock> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <lbus> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <main> in library <work> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_246_17" for instance <XLXI_246> in unit <main>.
+    Set user-defined property "HU_SET =  XLXI_271_16" for instance <XLXI_271> in unit <main>.
+    Set user-defined property "HU_SET =  XLXI_335_18" for instance <XLXI_335> in unit <main>.
+    Set user-defined property "SLEW =  SLOW" for instance <XLXI_381> in unit <main>.
+WARNING:Xst:753 - "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf" line 948: Unconnected output port 'a19' of component 'asplit'.
+    Set user-defined property "SLEW =  SLOW" for instance <XLXI_388> in unit <main>.
+Entity <main> analyzed. Unit <main> generated.
+
+Analyzing Entity <FD21> in library <work> (Architecture <behavioral>).
+Entity <FD21> analyzed. Unit <FD21> generated.
+
+Analyzing Entity <configreg> in library <work> (Architecture <behavioral>).
+Entity <configreg> analyzed. Unit <configreg> generated.
+
+Analyzing Entity <intc> in library <work> (Architecture <behavioral>).
+Entity <intc> analyzed. Unit <intc> generated.
+
+Analyzing Entity <ioport_6_umux> in library <work> (Architecture <behavioral>).
+Entity <ioport_6_umux> analyzed. Unit <ioport_6_umux> generated.
+
+Analyzing Entity <portread> in library <work> (Architecture <behavioral>).
+Entity <portread> analyzed. Unit <portread> generated.
+
+Analyzing Entity <timer16> in library <work> (Architecture <behavioral>).
+Entity <timer16> analyzed. Unit <timer16> generated.
+
+Analyzing Entity <OBUFE16_MXILINX_main> in library <work> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  I_36_30_12" for instance <I_36_30> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_31_11" for instance <I_36_31> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_32_10" for instance <I_36_32> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_33_9" for instance <I_36_33> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_34_13" for instance <I_36_34> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_35_14" for instance <I_36_35> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_36_15" for instance <I_36_36> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_37_8" for instance <I_36_37> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_38_4" for instance <I_36_38> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_39_7" for instance <I_36_39> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_40_3" for instance <I_36_40> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_41_2" for instance <I_36_41> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_42_1" for instance <I_36_42> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_43_0" for instance <I_36_43> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_44_5" for instance <I_36_44> in unit <OBUFE16_MXILINX_main>.
+    Set user-defined property "HU_SET =  I_36_45_6" for instance <I_36_45> in unit <OBUFE16_MXILINX_main>.
+Entity <OBUFE16_MXILINX_main> analyzed. Unit <OBUFE16_MXILINX_main> generated.
+
+Analyzing Entity <OBUFE_MXILINX_main> in library <work> (Architecture <behavioral>).
+Entity <OBUFE_MXILINX_main> analyzed. Unit <OBUFE_MXILINX_main> generated.
+
+Analyzing Entity <ioport_16_umux> in library <work> (Architecture <behavioral>).
+Entity <ioport_16_umux> analyzed. Unit <ioport_16_umux> generated.
+
+Analyzing Entity <adecode> in library <work> (Architecture <behavioral>).
+Entity <adecode> analyzed. Unit <adecode> generated.
+
+Analyzing Entity <IBUF16_MXILINX_main> in library <work> (Architecture <behavioral>).
+Entity <IBUF16_MXILINX_main> analyzed. Unit <IBUF16_MXILINX_main> generated.
+
+Analyzing Entity <biu> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd" line 57: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <clk>
+Entity <biu> analyzed. Unit <biu> generated.
+
+Analyzing Entity <asplit> in library <work> (Architecture <behavioral>).
+Entity <asplit> analyzed. Unit <asplit> generated.
+
+Analyzing Entity <cpuclock> in library <work> (Architecture <behavioral>).
+Entity <cpuclock> analyzed. Unit <cpuclock> generated.
+
+Analyzing Entity <lbus> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd" line 94: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <lle>
+WARNING:Xst:819 - "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd" line 103: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <dtr>, <den>, <mio>
+Entity <lbus> analyzed. Unit <lbus> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <FD21>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/FD21WB.vhd".
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_8>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_9>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_10>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_11>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_12>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_13>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_14>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_15>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_16>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_17>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <BHEQ>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_18>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_19>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_4>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_5>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_6>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q_7>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+Unit <FD21> synthesized.
+
+
+Synthesizing Unit <configreg>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/configreg.vhd".
+    Found 1-bit register for signal <tmrun>.
+    Found 1-bit register for signal <uinta>.
+    Found 1-bit register for signal <uintb>.
+    Found 1-bit register for signal <uintc>.
+    Found 1-bit register for signal <uintd>.
+    Found 1-bit register for signal <rst>.
+    Found 1-bit register for signal <eewp>.
+    Found 1-bit register for signal <uena>.
+    Found 1-bit register for signal <uenb>.
+    Found 1-bit register for signal <uenc>.
+    Found 1-bit register for signal <uend>.
+    Found 1-bit register for signal <gie>.
+    Found 1-bit register for signal <portainten>.
+    Found 1-bit register for signal <tmint>.
+    Found 1-bit register for signal <extinta>.
+    Found 1-bit register for signal <extintb>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <configreg> synthesized.
+
+
+Synthesizing Unit <intc>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/intc.vhd".
+WARNING:Xst:647 - Input <d<15:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <d<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <extflaga>.
+    Found 1-bit register for signal <extflagb>.
+    Found 1-bit register for signal <portaflag>.
+    Found 1-bit register for signal <timerflag>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <intc> synthesized.
+
+
+Synthesizing Unit <ioport_6_umux>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_6_umux.vhd".
+WARNING:Xst:647 - Input <d<15:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 6-bit tristate buffer for signal <ioport>.
+    Found 6-bit register for signal <dq>.
+    Found 6-bit register for signal <trishold>.
+    Summary:
+	inferred   6 Tristate(s).
+Unit <ioport_6_umux> synthesized.
+
+
+Synthesizing Unit <portread>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/portread.vhd".
+WARNING:Xst:647 - Input <portaen> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <portread> synthesized.
+
+
+Synthesizing Unit <timer16>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/timer16.vhd".
+    Found 16-bit up counter for signal <count0>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <timer16> synthesized.
+
+
+Synthesizing Unit <ioport_16_umux>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/ioport_16_umux.vhd".
+    Found 16-bit tristate buffer for signal <ioport>.
+    Found 1-bit xor2 for signal <changed_0$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <changed_1$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <changed_2$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <changed_3$xor0000> created at line 100.
+    Found 4-bit register for signal <changehold>.
+    Found 16-bit register for signal <dq>.
+    Found 16-bit register for signal <trishold>.
+    Summary:
+	inferred   4 Xor(s).
+	inferred  16 Tristate(s).
+Unit <ioport_16_umux> synthesized.
+
+
+Synthesizing Unit <adecode>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/adecode.vhd".
+WARNING:Xst:647 - Input <A<18:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <A<13:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <adecode> synthesized.
+
+
+Synthesizing Unit <biu>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/biu.vhd".
+    Found 1-bit register for signal <rdy>.
+    Found 1-bit register for signal <rdhold>.
+    Found 1-bit register for signal <wrhold>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <biu> synthesized.
+
+
+Synthesizing Unit <asplit>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/asplit.vhd".
+Unit <asplit> synthesized.
+
+
+Synthesizing Unit <cpuclock>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/cpuclock.vhd".
+    Found 1-bit register for signal <inclkd2>.
+    Found 1-bit register for signal <inclkd4>.
+    Found 6-bit up counter for signal <tclk>.
+    Found 2-bit up counter for signal <thirdclk>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <cpuclock> synthesized.
+
+
+Synthesizing Unit <lbus>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/lbus.vhd".
+WARNING:Xst:647 - Input <a<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit tristate buffer for signal <lbus_ad>.
+    Found 1-bit register for signal <dirholdp1>.
+    Found 1-bit register for signal <dirholdp2>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred   8 Tristate(s).
+Unit <lbus> synthesized.
+
+
+Synthesizing Unit <OBUFE_MXILINX_main>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+Unit <OBUFE_MXILINX_main> synthesized.
+
+
+Synthesizing Unit <IBUF16_MXILINX_main>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+Unit <IBUF16_MXILINX_main> synthesized.
+
+
+Synthesizing Unit <OBUFE16_MXILINX_main>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+Unit <OBUFE16_MXILINX_main> synthesized.
+
+
+Synthesizing Unit <main>.
+    Related source file is "//s2fs02/matt/Electronics/eightoduino_v3/8OD.1_2_PLD_LBUS/eighto/main.vhf".
+Unit <main> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 16-bit up counter                                     : 1
+ 2-bit up counter                                      : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 32
+ 1-bit register                                        : 27
+ 16-bit register                                       : 2
+ 4-bit register                                        : 1
+ 6-bit register                                        : 2
+# Latches                                              : 21
+ 1-bit latch                                           : 21
+# Tristates                                            : 23
+ 1-bit tristate buffer                                 : 22
+ 8-bit tristate buffer                                 : 1
+# Xors                                                 : 4
+ 1-bit xor2                                            : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 16-bit up counter                                     : 1
+ 2-bit up counter                                      : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 27
+ Flip-Flops                                            : 27
+# Latches                                              : 21
+ 1-bit latch                                           : 21
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1348 - Unit ioport_16_umux is merged (output interface has tristates)
+WARNING:Xst:1348 - Unit ioport_6_umux is merged (output interface has tristates)
+WARNING:Xst:1348 - Unit lbus is merged (output interface has tristates)
+
+Optimizing unit <main> ...
+
+Optimizing unit <portread> ...
+
+Optimizing unit <adecode> ...
+
+Optimizing unit <asplit> ...
+
+Optimizing unit <FD21> ...
+
+Optimizing unit <configreg> ...
+
+Optimizing unit <intc> ...
+
+Optimizing unit <biu> ...
+
+Optimizing unit <OBUFE_MXILINX_main> ...
+
+Optimizing unit <IBUF16_MXILINX_main> ...
+
+Optimizing unit <OBUFE16_MXILINX_main> ...
+
+Optimizing unit <timer16> ...
+
+Optimizing unit <cpuclock> ...
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : main.ngr
+Top Level Output File Name         : main
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Yes
+Target Technology                  : XC9500 CPLDs
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 131
+
+Cell Usage :
+# BELS                             : 789
+#      AND2                        : 312
+#      AND3                        : 14
+#      AND4                        : 9
+#      AND5                        : 1
+#      AND7                        : 1
+#      AND8                        : 6
+#      GND                         : 1
+#      INV                         : 295
+#      OR2                         : 119
+#      OR3                         : 2
+#      OR4                         : 1
+#      OR8                         : 1
+#      XOR2                        : 27
+# FlipFlops/Latches                : 120
+#      FD                          : 12
+#      FDC                         : 61
+#      FDCP                        : 4
+#      FDP                         : 22
+#      LD                          : 21
+# IO Buffers                       : 147
+#      IBUF                        : 40
+#      IOBUFE                      : 30
+#      OBUF                        : 60
+#      OBUFT                       : 17
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.96 secs
+ 
+--> 
+
+Total memory usage is 274072 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   67 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

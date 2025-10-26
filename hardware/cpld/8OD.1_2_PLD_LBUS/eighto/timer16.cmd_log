@@ -1,0 +1,4 @@
+vhdtdtfi -lib work timer16.vhd -prj eighto -o timer16.spl -module timer16 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 timer16.spl C:/Projects/8086/PLD/eighto/timer16.sym 
+vhdtdtfi -lib work timer16.vhd -prj eighto -o timer16.spl -module timer16 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 timer16.spl C:/Projects/8086/PLD/eighto/timer16.sym 

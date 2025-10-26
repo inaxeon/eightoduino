@@ -1,0 +1,29 @@
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/lbus.sym 
+vhdtdtfi -lib work lbus.vhd -prj eighto -o lbus.spl -module lbus -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lbus.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2/eighto/lbus.sym 

@@ -1,0 +1,189 @@
+Release 8.1i - Fit P.20131013
+Copyright(c) 1995-2003 Xilinx Inc. All rights reserved
+
+ 1-13-2017  1:50PM
+
+NOTE: This file is designed to be imported into a spreadsheet program
+such as Microsoft Excel for viewing, printing and sorting. The pipe '|'
+character is used as the data field separator.
+This file is also designed to support parsing.
+
+Input file:  main.ngd
+output file: main.pad
+Part type:   xc95216
+Speed grade: -10
+Package:     pq160
+
+Pinout by Pin Number:
+
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+Pin Number|Signal Name|Pin Usage|Pin Name|Direction|IO Standard|IO Bank Number|{blank}|Slew Rate|Termination|{blank}|Voltage|Constraint|
+P1|VCC||VCCIO||||||||||
+P2|AQ<8>|O|I/O/GTS3|OUTPUT|||||||||
+P3|AQ<7>|O|I/O|OUTPUT|||||||||
+P4|AQ<6>|I/O|I/O/GTS4|BIDIR|||||||||
+P5|AQ<5>|I/O|I/O|BIDIR|||||||||
+P6|AQ<0>|O|I/O/GTS1|OUTPUT|||||||||
+P7|ROMCS|O|I/O|OUTPUT|||||||||
+P8|UHE|O|I/O/GTS2|OUTPUT|||||||||
+P9|TIE||I/O||||||||||
+P10|VCC||VCCINT||||||||||
+P11|ULE|O|I/O|OUTPUT|||||||||
+P12|MIDCLK|O|I/O|OUTPUT|||||||||
+P13|MIDCS|O|I/O|OUTPUT|||||||||
+P14|I2CCS|O|I/O|OUTPUT|||||||||
+P15|RXA|O|I/O|OUTPUT|||||||||
+P16|RXD|O|I/O|OUTPUT|||||||||
+P17|IRQ4|I|I/O|INPUT|||||||||
+P18|UCSD|O|I/O|OUTPUT|||||||||
+P19|TXD|I|I/O|INPUT|||||||||
+P20|GND||GND||||||||||
+P21|TXC|I|I/O|INPUT|||||||||
+P22|UCSC|O|I/O|OUTPUT|||||||||
+P23|IRQ3|I|I/O|INPUT|||||||||
+P24|RXB|O|I/O|OUTPUT|||||||||
+P25|NMI|O|I/O|OUTPUT|||||||||
+P26|RXC|O|I/O|OUTPUT|||||||||
+P27|IRQ1|I|I/O|INPUT|||||||||
+P28|UCSA|O|I/O|OUTPUT|||||||||
+P29|IRQ2|I|I/O|INPUT|||||||||
+P30|UCSB|O|I/O|OUTPUT|||||||||
+P31|GND||GND||||||||||
+P32|TXB|I|I/O|INPUT|||||||||
+P33|TXA|I|I/O/GCK1|INPUT|||||||||
+P34|PGMRXD|I|I/O|INPUT|||||||||
+P35|RAMCS|O|I/O/GCK2|OUTPUT|||||||||
+P36|PORTD<15>|O|I/O|OUTPUT|||||||||
+P37|PORTD<14>|O|I/O|OUTPUT|||||||||
+P38|PORTD<13>|O|I/O|OUTPUT|||||||||
+P39|PORTD<12>|O|I/O|OUTPUT|||||||||
+P40|GND||GND||||||||||
+P41|VCC||VCCIO||||||||||
+P42|PORTD<11>|O|I/O/GCK3|OUTPUT|||||||||
+P43|PORTD<10>|O|I/O|OUTPUT|||||||||
+P44|PORTD<9>|O|I/O|OUTPUT|||||||||
+P45|PORTD<8>|O|I/O|OUTPUT|||||||||
+P46|VCC||VCCINT||||||||||
+P47|PORTD<7>|O|I/O|OUTPUT|||||||||
+P48|PORTD<6>|O|I/O|OUTPUT|||||||||
+P49|PORTD<5>|O|I/O|OUTPUT|||||||||
+P50|PORTD<4>|O|I/O|OUTPUT|||||||||
+P51|GND||GND||||||||||
+P52|PORTD<3>|O|I/O|OUTPUT|||||||||
+P53|PORTD<2>|O|I/O|OUTPUT|||||||||
+P54|PORTD<1>|O|I/O|OUTPUT|||||||||
+P55|EEWP|O|I/O|OUTPUT|||||||||
+P56|MRST|O|I/O|OUTPUT|||||||||
+P57|PORTD<0>|O|I/O|OUTPUT|||||||||
+P58|PORTC<15>|I/O|I/O|BIDIR|||||||||
+P59|PORTC<14>|I/O|I/O|BIDIR|||||||||
+P60|PORTC<13>|I/O|I/O|BIDIR|||||||||
+P61|VCC||VCCIO||||||||||
+P62|PORTC<12>|I/O|I/O|BIDIR|||||||||
+P63|PORTC<11>|I/O|I/O|BIDIR|||||||||
+P64|PORTC<10>|I/O|I/O|BIDIR|||||||||
+P65|PORTC<9>|I/O|I/O|BIDIR|||||||||
+P66|PORTC<8>|I/O|I/O|BIDIR|||||||||
+P67|PORTC<7>|I/O|I/O|BIDIR|||||||||
+P68|PORTC<6>|I/O|I/O|BIDIR|||||||||
+P69|PORTC<5>|I/O|I/O|BIDIR|||||||||
+P70|GND||GND||||||||||
+P71|TDI||TDI||||||||||
+P72|PORTC<4>|I/O|I/O|BIDIR|||||||||
+P73|TMS||TMS||||||||||
+P74|PORTC<3>|I/O|I/O|BIDIR|||||||||
+P75|TCK||TCK||||||||||
+P76|PORTC<2>|I/O|I/O|BIDIR|||||||||
+P77|PORTC<1>|I/O|I/O|BIDIR|||||||||
+P78|PORTC<0>|I/O|I/O|BIDIR|||||||||
+P79|PORTB<5>|I/O|I/O|BIDIR|||||||||
+P80|GND||GND||||||||||
+P81|VCC||VCCIO||||||||||
+P82|PORTB<4>|I/O|I/O|BIDIR|||||||||
+P83|PORTB<3>|I/O|I/O|BIDIR|||||||||
+P84|PORTB<2>|I/O|I/O|BIDIR|||||||||
+P85|PORTB<1>|I/O|I/O|BIDIR|||||||||
+P86|PORTB<0>|I/O|I/O|BIDIR|||||||||
+P87|PORTA<15>|I/O|I/O|BIDIR|||||||||
+P88|PORTA<14>|I/O|I/O|BIDIR|||||||||
+P89|PORTA<0>|I/O|I/O|BIDIR|||||||||
+P90|PORTA<1>|I/O|I/O|BIDIR|||||||||
+P91|PORTA<2>|I/O|I/O|BIDIR|||||||||
+P92|PORTA<3>|I/O|I/O|BIDIR|||||||||
+P93|PORTA<4>|I/O|I/O|BIDIR|||||||||
+P94|VCC||VCCINT||||||||||
+P95|PORTA<5>|I/O|I/O|BIDIR|||||||||
+P96|PORTA<6>|I/O|I/O|BIDIR|||||||||
+P97|PORTA<7>|I/O|I/O|BIDIR|||||||||
+P98|PORTA<8>|I/O|I/O|BIDIR|||||||||
+P99|GND||GND||||||||||
+P100|GND||GND||||||||||
+P101|PORTA<9>|I/O|I/O|BIDIR|||||||||
+P102|PORTA<10>|I/O|I/O|BIDIR|||||||||
+P103|PORTA<11>|I/O|I/O|BIDIR|||||||||
+P104|PORTA<12>|I/O|I/O|BIDIR|||||||||
+P105|PORTA<13>|I/O|I/O|BIDIR|||||||||
+P106|CPU10|I|I/O|INPUT|||||||||
+P107|SYSCLK|I|I/O|INPUT|||||||||
+P108|ALE|I|I/O|INPUT|||||||||
+P109|DEN|I|I/O|INPUT|||||||||
+P110|GND||GND||||||||||
+P111|MIO|I|I/O|INPUT|||||||||
+P112|EXTWR|I|I/O|INPUT|||||||||
+P113|EXTRD|I|I/O|INPUT|||||||||
+P114|BHE|I|I/O|INPUT|||||||||
+P115|A<19>|I|I/O|INPUT|||||||||
+P116|A<18>|I|I/O|INPUT|||||||||
+P117|A<17>|I|I/O|INPUT|||||||||
+P118|A<16>|I|I/O|INPUT|||||||||
+P119|AD_E<15>|I/O|I/O|BIDIR|||||||||
+P120|GND||GND||||||||||
+P121|VCC||VCCIO||||||||||
+P122|AD_E<14>|I/O|I/O|BIDIR|||||||||
+P123|AD_E<13>|I/O|I/O|BIDIR|||||||||
+P124|AD_E<12>|I/O|I/O|BIDIR|||||||||
+P125|AD_E<11>|I/O|I/O|BIDIR|||||||||
+P126|AD_E<10>|I/O|I/O|BIDIR|||||||||
+P127|GND||GND||||||||||
+P128|AD_E<9>|I/O|I/O|BIDIR|||||||||
+P129|AD_E<8>|I/O|I/O|BIDIR|||||||||
+P130|AD_E<7>|I/O|I/O|BIDIR|||||||||
+P131|AD_E<6>|I/O|I/O|BIDIR|||||||||
+P132|AD_E<5>|I/O|I/O|BIDIR|||||||||
+P133|AD_E<4>|I/O|I/O|BIDIR|||||||||
+P134|AD_E<3>|I/O|I/O|BIDIR|||||||||
+P135|AD_E<2>|I/O|I/O|BIDIR|||||||||
+P136|TDO||TDO||||||||||
+P137|GND||GND||||||||||
+P138|AD_E<1>|I/O|I/O|BIDIR|||||||||
+P139|AD_E<0>|I/O|I/O|BIDIR|||||||||
+P140|CPUCLK|I/O|I/O|BIDIR|||||||||
+P141|VCC||VCCIO||||||||||
+P142|RDY|O|I/O|OUTPUT|||||||||
+P143|BHEQ|I/O|I/O|BIDIR|||||||||
+P144|AQ<18>|O|I/O|OUTPUT|||||||||
+P145|AQ<17>|O|I/O|OUTPUT|||||||||
+P146|AQ<16>|O|I/O|OUTPUT|||||||||
+P147|AQ<15>|O|I/O|OUTPUT|||||||||
+P148|AQ<14>|O|I/O|OUTPUT|||||||||
+P149|AQ<13>|O|I/O|OUTPUT|||||||||
+P150|AQ<12>|O|I/O|OUTPUT|||||||||
+P151|AQ<11>|O|I/O|OUTPUT|||||||||
+P152|AQ<10>|O|I/O|OUTPUT|||||||||
+P153|AQ<9>|O|I/O|OUTPUT|||||||||
+P154|AQ<1>|I/O|I/O|BIDIR|||||||||
+P155|AQ<2>|I/O|I/O|BIDIR|||||||||
+P156|AQ<3>|I/O|I/O|BIDIR|||||||||
+P157|VCC||VCCINT||||||||||
+P158|AQ<4>|I/O|I/O|BIDIR|||||||||
+P159|RESET|GSR|I/O/GSR||||||||||
+P160|GND||GND||||||||||
+
+To preserve the pinout above for future design iterations in
+Project Navigator simply execute the (Lock Pins) process
+located under the (Implement Design) process in a toolbox named
+(Optional Implementation Tools) or invoke PIN2UCF from the
+command line. The location constraints will be written into your
+specified UCF file
+
+

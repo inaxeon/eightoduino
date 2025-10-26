@@ -1,0 +1,2885 @@
+<html><body>
+<pre>
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: main                                Date:  1-13-2017,  1:50PM
+Device Used: XC95216-10-PQ160
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+213/216 ( 99%) 721 /1080 ( 67%) 407/432 ( 94%)   165/216 ( 76%) 132/133 ( 99%)
+
+** Function Block Resources **
+
+Function    Mcells      FB Inps     Signals     Pterms      IO          
+Block       Used/Tot    Used/Tot    Used        Used/Tot    Used/Tot    
+FB1          18/18*      36/36*      42          51/90       7/12
+FB2          18/18*      32/36       32          50/90       9/11
+FB3          18/18*      34/36       34          71/90       8/11
+FB4          18/18*      35/36       35          54/90      10/11
+FB5          18/18*      36/36*      36          89/90      11/11*
+FB6          18/18*      32/36       32          40/90      11/11*
+FB7          18/18*      32/36       32          46/90      11/11*
+FB8          17/18       35/36       37          71/90      11/11*
+FB9          18/18*      35/36       35          57/90      11/11*
+FB10         16/18       33/36       48          87/90       5/11
+FB11         18/18*      34/36       34          49/90      11/11*
+FB12         18/18*      33/36       33          56/90       5/11
+             -----       -----                   -----       -----     
+            213/216     407/432                 721/1080   110/133
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+Global clock net(s) unused.
+Global output enable net(s) unused.
+Signal 'RESET' mapped onto global set/reset net GSR.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   21          21    |  I/O              :   124     125
+Output        :   48          48    |  GCK/IO           :     3       3
+Bidirectional :   62          62    |  GTS/IO           :     4       4
+GCK           :    0           0    |  GSR/IO           :     1       1
+GTS           :    0           0    |
+GSR           :    1           1    |
+                 ----        ----
+        Total    132         132
+
+** Power Data **
+
+There are 213 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'main.ise'.
+INFO:Cpld - Inferring BUFG constraint for signal 'TXA' based upon the LOC
+   constraint 'P33'. It is recommended that you declare this BUFG explicitedly
+   in your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+WARNING:Cpld:1007 - Removing unused input(s) 'DTR'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1239 - The global clock designation (BUFG) on signal 'TXA_IBUF' is
+   ignored. Most likely the signal is gated and therefore cannot be used as a
+   global control signal.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB8,
+   because too many function block product terms are required. Buffering output
+   signal AD_E<5> to allow all signals assigned to this function block to be
+   placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB8,
+   because too many function block product terms are required. Buffering output
+   signal AD_E<4> to allow all signals assigned to this function block to be
+   placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB8,
+   because too many function block product terms are required. Buffering output
+   signal AD_E<3> to allow all signals assigned to this function block to be
+   placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB8,
+   because too many function block product terms are required. Buffering output
+   signal AD_E<2> to allow all signals assigned to this function block to be
+   placed.
+WARNING:Cpld:896 - Unable to map all desired signals into function block, FB8,
+   because too many function block product terms are required. Buffering output
+   signal AD_E<1> to allow all signals assigned to this function block to be
+   placed.
+*************************  Summary of Mapped Logic  ************************
+
+** 110 Outputs **
+
+Signal                                          Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                                            Pts   Inps          No.  Type    Use     Mode Rate State
+UCSD                                            1     5     FB1_2   18   I/O     O       STD  FAST 
+UCSC                                            1     5     FB1_6   22   I/O     O       STD  FAST 
+RXB                                             1     2     FB1_9   24   I/O     O       STD  FAST 
+NMI                                             8     20    FB1_11  25   I/O     O       STD  FAST 
+RXC                                             1     2     FB1_12  26   I/O     O       STD  FAST 
+UCSA                                            1     5     FB1_15  28   I/O     O       STD  FAST 
+UCSB                                            1     5     FB1_17  30   I/O     O       STD  FAST 
+AQ<0>                                           2     2     FB2_2   6    GTS/I/O O       STD  FAST RESET
+ROMCS                                           1     2     FB2_3   7    I/O     O       STD  FAST 
+UHE                                             2     6     FB2_5   8    GTS/I/O O       STD  FAST 
+ULE                                             2     6     FB2_8   11   I/O     O       STD  FAST 
+MIDCLK                                          2     3     FB2_9   12   I/O     O       STD  FAST 
+MIDCS                                           1     4     FB2_11  13   I/O     O       STD  FAST 
+I2CCS                                           1     4     FB2_12  14   I/O     O       STD  FAST 
+RXA                                             1     2     FB2_14  15   I/O     O       STD  FAST 
+RXD                                             2     3     FB2_15  16   I/O     O       STD  FAST 
+RAMCS                                           1     2     FB3_6   35   GCK/I/O O       STD  FAST 
+PORTD<15>                                       2     9     FB3_8   36   I/O     O       STD  FAST RESET
+PORTD<14>                                       2     9     FB3_9   37   I/O     O       STD  FAST RESET
+PORTD<13>                                       2     9     FB3_11  38   I/O     O       STD  FAST RESET
+PORTD<12>                                       2     9     FB3_12  39   I/O     O       STD  FAST RESET
+PORTD<11>                                       2     9     FB3_14  42   GCK/I/O O       STD  FAST RESET
+PORTD<10>                                       2     9     FB3_15  43   I/O     O       STD  FAST RESET
+PORTD<9>                                        2     9     FB3_17  44   I/O     O       STD  FAST RESET
+AQ<10>                                          2     2     FB4_2   152  I/O     O       STD  FAST RESET
+AQ<9>                                           2     2     FB4_3   153  I/O     O       STD  FAST RESET
+AQ<1>                                           2     2     FB4_5   154  I/O     I/O     STD  FAST RESET
+AQ<2>                                           2     2     FB4_6   155  I/O     I/O     STD  FAST RESET
+AQ<3>                                           2     2     FB4_8   156  I/O     I/O     STD  FAST RESET
+AQ<4>                                           2     2     FB4_9   158  I/O     I/O     STD  FAST RESET
+AQ<8>                                           2     2     FB4_12  2    GTS/I/O O       STD  FAST RESET
+AQ<7>                                           2     2     FB4_14  3    I/O     O       STD  FAST RESET
+AQ<6>                                           2     2     FB4_15  4    GTS/I/O I/O     STD  FAST RESET
+AQ<5>                                           2     2     FB4_17  5    I/O     I/O     STD  FAST RESET
+PORTD<8>                                        2     9     FB5_2   45   I/O     O       STD  FAST RESET
+PORTD<7>                                        2     9     FB5_3   47   I/O     O       STD  FAST RESET
+PORTD<6>                                        2     9     FB5_5   48   I/O     O       STD  FAST RESET
+PORTD<5>                                        2     9     FB5_6   49   I/O     O       STD  FAST RESET
+PORTD<4>                                        2     9     FB5_8   50   I/O     O       STD  FAST RESET
+PORTD<3>                                        2     9     FB5_9   52   I/O     O       STD  FAST RESET
+
+Signal                                          Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                                            Pts   Inps          No.  Type    Use     Mode Rate State
+PORTD<2>                                        2     9     FB5_11  53   I/O     O       STD  FAST RESET
+PORTD<1>                                        2     9     FB5_12  54   I/O     O       STD  FAST RESET
+EEWP                                            2     9     FB5_14  55   I/O     O       STD  FAST RESET
+MRST                                            1     1     FB5_15  56   I/O     O       STD  FAST 
+PORTD<0>                                        2     9     FB5_17  57   I/O     O       STD  FAST RESET
+CPUCLK                                          2     3     FB6_2   140  I/O     I/O     STD  FAST RESET
+RDY                                             0     0     FB6_3   142  I/O     O       STD  SLOW 
+BHEQ                                            2     2     FB6_5   143  I/O     I/O     STD  FAST RESET
+AQ<18>                                          2     2     FB6_6   144  I/O     O       STD  FAST RESET
+AQ<17>                                          2     2     FB6_8   145  I/O     O       STD  FAST RESET
+AQ<16>                                          2     2     FB6_9   146  I/O     O       STD  FAST RESET
+AQ<15>                                          2     2     FB6_11  147  I/O     O       STD  FAST RESET
+AQ<14>                                          2     2     FB6_12  148  I/O     O       STD  FAST RESET
+AQ<13>                                          2     2     FB6_14  149  I/O     O       STD  FAST RESET
+AQ<12>                                          2     2     FB6_15  150  I/O     O       STD  FAST RESET
+AQ<11>                                          2     2     FB6_17  151  I/O     O       STD  FAST RESET
+PORTC<15>                                       3     10    FB7_2   58   I/O     I/O     STD  FAST RESET
+PORTC<14>                                       3     10    FB7_3   59   I/O     I/O     STD  FAST RESET
+PORTC<13>                                       3     10    FB7_5   60   I/O     I/O     STD  FAST RESET
+PORTC<12>                                       3     10    FB7_6   62   I/O     I/O     STD  FAST RESET
+PORTC<11>                                       3     10    FB7_8   63   I/O     I/O     STD  FAST RESET
+PORTC<10>                                       3     10    FB7_9   64   I/O     I/O     STD  FAST RESET
+PORTC<9>                                        3     10    FB7_11  65   I/O     I/O     STD  FAST RESET
+PORTC<8>                                        3     10    FB7_12  66   I/O     I/O     STD  FAST RESET
+PORTC<7>                                        3     10    FB7_14  67   I/O     I/O     STD  FAST RESET
+PORTC<6>                                        3     10    FB7_15  68   I/O     I/O     STD  FAST RESET
+PORTC<5>                                        3     10    FB7_17  69   I/O     I/O     STD  FAST RESET
+AD_E<10>                                        8     12    FB8_2   126  I/O     I/O     STD  FAST 
+AD_E<9>                                         8     12    FB8_3   128  I/O     I/O     STD  FAST 
+AD_E<8>                                         8     12    FB8_5   129  I/O     I/O     STD  FAST 
+AD_E<7>                                         8     13    FB8_6   130  I/O     I/O     STD  FAST 
+AD_E<6>                                         8     13    FB8_8   131  I/O     I/O     STD  FAST 
+AD_E<5>                                         2     4     FB8_9   132  I/O     I/O     STD  FAST 
+AD_E<4>                                         2     4     FB8_11  133  I/O     I/O     STD  FAST 
+AD_E<3>                                         2     4     FB8_12  134  I/O     I/O     STD  FAST 
+AD_E<2>                                         2     4     FB8_14  135  I/O     I/O     STD  FAST 
+AD_E<1>                                         2     4     FB8_15  138  I/O     I/O     STD  FAST 
+AD_E<0>                                         10    14    FB8_17  139  I/O     I/O     STD  FAST 
+PORTC<4>                                        3     10    FB9_2   72   I/O     I/O     STD  FAST RESET
+PORTC<3>                                        3     10    FB9_3   74   I/O     I/O     STD  FAST RESET
+
+Signal                                          Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                                            Pts   Inps          No.  Type    Use     Mode Rate State
+PORTC<2>                                        3     10    FB9_5   76   I/O     I/O     STD  FAST RESET
+PORTC<1>                                        3     10    FB9_6   77   I/O     I/O     STD  FAST RESET
+PORTC<0>                                        3     10    FB9_8   78   I/O     I/O     STD  FAST RESET
+PORTB<5>                                        3     10    FB9_9   79   I/O     I/O     STD  FAST RESET
+PORTB<4>                                        3     10    FB9_11  82   I/O     I/O     STD  FAST RESET
+PORTB<3>                                        3     10    FB9_12  83   I/O     I/O     STD  FAST RESET
+PORTB<2>                                        4     4     FB9_14  84   I/O     I/O     STD  FAST 
+PORTB<1>                                        3     10    FB9_15  85   I/O     I/O     STD  FAST RESET
+PORTB<0>                                        4     4     FB9_17  86   I/O     I/O     STD  FAST 
+AD_E<15>                                        8     12    FB10_11 119  I/O     I/O     STD  FAST 
+AD_E<14>                                        8     12    FB10_12 122  I/O     I/O     STD  FAST 
+AD_E<13>                                        8     12    FB10_14 123  I/O     I/O     STD  FAST 
+AD_E<12>                                        8     12    FB10_15 124  I/O     I/O     STD  FAST 
+AD_E<11>                                        8     12    FB10_17 125  I/O     I/O     STD  FAST 
+PORTA<15>                                       3     10    FB11_2  87   I/O     I/O     STD  FAST RESET
+PORTA<14>                                       4     4     FB11_3  88   I/O     I/O     STD  FAST 
+PORTA<0>                                        3     10    FB11_5  89   I/O     I/O     STD  FAST RESET
+PORTA<1>                                        4     4     FB11_6  90   I/O     I/O     STD  FAST 
+PORTA<2>                                        3     10    FB11_8  91   I/O     I/O     STD  FAST RESET
+PORTA<3>                                        3     10    FB11_9  92   I/O     I/O     STD  FAST RESET
+PORTA<4>                                        3     10    FB11_11 93   I/O     I/O     STD  FAST RESET
+PORTA<5>                                        3     10    FB11_12 95   I/O     I/O     STD  FAST RESET
+PORTA<6>                                        3     10    FB11_14 96   I/O     I/O     STD  FAST RESET
+PORTA<7>                                        3     10    FB11_15 97   I/O     I/O     STD  FAST RESET
+PORTA<8>                                        3     10    FB11_17 98   I/O     I/O     STD  FAST RESET
+PORTA<9>                                        3     10    FB12_2  101  I/O     I/O     STD  FAST RESET
+PORTA<10>                                       3     10    FB12_3  102  I/O     I/O     STD  FAST RESET
+PORTA<11>                                       3     10    FB12_5  103  I/O     I/O     STD  FAST RESET
+PORTA<12>                                       3     10    FB12_6  104  I/O     I/O     STD  FAST RESET
+PORTA<13>                                       3     10    FB12_8  105  I/O     I/O     STD  FAST RESET
+
+** 103 Buried Nodes **
+
+Signal                                          Total Total Loc     Pwr  Reg Init
+Name                                            Pts   Inps          Mode State
+clockgen/tclk<0>                                1     1     FB1_1   STD  RESET
+ioportc/trishold<5>                             2     9     FB1_3   STD  RESET
+ioportc/trishold<4>                             2     9     FB1_4   STD  RESET
+ioportc/trishold<3>                             2     9     FB1_5   STD  RESET
+ioportb/trishold<5>                             2     9     FB1_7   STD  RESET
+clockgen/tclk<2>                                2     3     FB1_8   STD  RESET
+clockgen/tclk<1>                                2     2     FB1_10  STD  RESET
+XLXI_327/trishold<5>                            2     9     FB1_13  STD  RESET
+$OpTx$FX_DC$10                                  2     6     FB1_14  STD  
+AD_E<3>_BUFR                                    10    11    FB1_16  STD  
+AD_E<1>_BUFR                                    10    11    FB1_18  STD  
+timer0/count0<0>                                11    12    FB2_1   STD  RESET
+ioportb/trishold<0>                             2     9     FB2_4   STD  RESET
+ioportb/dq<0>                                   2     9     FB2_6   STD  RESET
+XLXN_2864                                       2     9     FB2_7   STD  RESET
+XLXN_2860                                       2     9     FB2_10  STD  RESET
+STATUS_IOIN<1>                                  3     11    FB2_13  STD  RESET
+timer0/count0<1>                                11    13    FB2_16  STD  RESET
+ioportc/trishold<6>                             2     9     FB2_17  STD  RESET
+STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT        1     2     FB2_18  STD  
+timer0/count0<11>                               11    23    FB3_1   STD  RESET
+ioportc/trishold<14>                            2     9     FB3_2   STD  RESET
+XLXN_3158                                       2     9     FB3_3   STD  RESET
+XLXI_327/trishold<15>                           2     9     FB3_4   STD  RESET
+XLXI_327/trishold<14>                           2     9     FB3_5   STD  RESET
+XLXI_327/dq<14>                                 2     9     FB3_7   STD  RESET
+timer0/count0<15>                               11    27    FB3_10  STD  RESET
+timer0/count0<14>                               11    26    FB3_13  STD  RESET
+timer0/count0<12>                               11    24    FB3_16  STD  RESET
+ioportc/trishold<15>                            2     9     FB3_18  STD  RESET
+clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF  2     3     FB4_1   STD  
+XLXI_327/trishold<8>                            2     9     FB4_4   STD  RESET
+XLXI_327/trishold<7>                            2     9     FB4_7   STD  RESET
+XLXI_327/trishold<6>                            2     9     FB4_10  STD  RESET
+AD_E<4>_BUFR                                    10    11    FB4_11  STD  
+STATUS_IOIN<7>                                  3     12    FB4_13  STD  RESET
+STATUS_IOIN<6>                                  3     11    FB4_16  STD  RESET
+AD_E<2>_BUFR                                    10    11    FB4_18  STD  
+timer0/count0<13>                               11    25    FB5_1   STD  RESET
+timer0/count0<9>                                11    21    FB5_4   STD  RESET
+
+Signal                                          Total Total Loc     Pwr  Reg Init
+Name                                            Pts   Inps          Mode State
+timer0/count0<8>                                11    20    FB5_7   STD  RESET
+timer0/count0<7>                                11    19    FB5_10  STD  RESET
+timer0/count0<6>                                11    18    FB5_13  STD  RESET
+timer0/count0<5>                                11    17    FB5_16  STD  RESET
+ioportc/trishold<0>                             2     9     FB5_18  STD  RESET
+clockgen/thirdclk<1>                            2     3     FB6_1   STD  RESET
+clockgen/tclk<4>                                2     5     FB6_4   STD  RESET
+clockgen/tclk<3>                                2     4     FB6_7   STD  RESET
+WR_SYNC                                         2     3     FB6_10  STD  RESET
+TIMER_CLK                                       2     6     FB6_13  STD  RESET
+RD_SYNC                                         2     3     FB6_16  STD  RESET
+STATUS_IOIN<1>/STATUS_IOIN<1>_SETF              8     12    FB6_18  STD  
+clockgen/inclkd2                                1     1     FB7_1   STD  RESET
+ioportc/trishold<2>                             2     9     FB7_4   STD  RESET
+UARTD_ENABLE                                    2     9     FB7_7   STD  RESET
+UARTC_ENABLE                                    2     9     FB7_10  STD  RESET
+UARTB_ENABLE                                    2     9     FB7_13  STD  RESET
+UARTA_ENABLE                                    2     9     FB7_16  STD  RESET
+TIMER_RUN                                       2     9     FB7_18  STD  RESET
+clockgen/inclkd4                                1     1     FB8_1   STD  RESET
+ioportc/trishold<8>                             2     10    FB8_4   STD  RESET
+XLXI_327/changehold<2>                          2     10    FB8_10  STD  RESET
+XLXI_327/changehold<1>                          2     10    FB8_13  STD  RESET
+XLXI_327/changehold<0>                          2     10    FB8_16  STD  RESET
+AL<19>                                          2     2     FB8_18  STD  RESET
+ioportb/trishold<1>                             2     9     FB9_1   STD  RESET
+XLXI_327/trishold<3>                            2     9     FB9_4   STD  RESET
+XLXI_327/trishold<2>                            2     9     FB9_7   STD  RESET
+XLXI_327/trishold<1>                            2     9     FB9_10  STD  RESET
+XLXI_327/trishold<0>                            2     9     FB9_13  STD  RESET
+XLXI_327/dq<1>                                  2     9     FB9_16  STD  RESET
+AD_E<5>_BUFR                                    10    11    FB9_18  STD  
+ioportb/dq<2>                                   2     10    FB10_1  STD  RESET
+timer0/count0<2>                                10    16    FB10_2  STD  RESET
+XLXI_327/trishold<4>                            2     10    FB10_3  STD  RESET
+XLXI_327/changehold<3>                          2     10    FB10_4  STD  RESET
+timer0/count0<4>                                10    18    FB10_5  STD  RESET
+XLXN_2872                                       2     10    FB10_6  STD  RESET
+XLXN_2863                                       2     10    FB10_7  STD  RESET
+timer0/count0<3>                                10    17    FB10_9  STD  RESET
+
+Signal                                          Total Total Loc     Pwr  Reg Init
+Name                                            Pts   Inps          Mode State
+XLXN_2867                                       2     10    FB10_13 STD  RESET
+STATUS_IOIN<0>                                  3     29    FB10_16 STD  RESET
+ioportc/trishold<7>                             2     10    FB10_18 STD  RESET
+ioportb/trishold<4>                             2     9     FB11_1  STD  RESET
+ioportb/trishold<3>                             2     9     FB11_4  STD  RESET
+ioportb/trishold<2>                             2     9     FB11_7  STD  RESET
+XLXN_2866                                       2     9     FB11_10 STD  RESET
+XLXN_2865                                       2     9     FB11_13 STD  RESET
+XLXN_2862                                       2     9     FB11_16 STD  RESET
+XLXN_2861                                       2     9     FB11_18 STD  RESET
+ioportc/trishold<9>                             2     9     FB12_1  STD  RESET
+timer0/count0<9>/timer0/count0<9>_CLKF          8     9     FB12_4  STD  
+XLXI_327/trishold<10>                           2     9     FB12_7  STD  RESET
+XLXI_327/trishold<11>                           2     9     FB12_9  STD  RESET
+XLXI_327/trishold<12>                           2     9     FB12_10 STD  RESET
+XLXI_327/trishold<13>                           2     9     FB12_11 STD  RESET
+XLXI_327/trishold<9>                            2     9     FB12_12 STD  RESET
+ioportc/trishold<10>                            2     9     FB12_13 STD  RESET
+ioportc/trishold<11>                            2     9     FB12_14 STD  RESET
+ioportc/trishold<12>                            2     9     FB12_15 STD  RESET
+ioportc/trishold<13>                            2     9     FB12_16 STD  RESET
+ioportc/trishold<1>                             2     9     FB12_17 STD  RESET
+timer0/count0<10>                               11    22    FB12_18 STD  RESET
+
+** 22 Inputs **
+
+Signal                                          Loc     Pin  Pin     Pin     
+Name                                                    No.  Type    Use     
+TXD                                             FB1_3   19   I/O     I
+TXC                                             FB1_5   21   I/O     I
+IRQ3                                            FB1_8   23   I/O     I
+IRQ1                                            FB1_14  27   I/O     I
+IRQ2                                            FB1_16  29   I/O     I
+IRQ4                                            FB2_17  17   I/O     I
+TXB                                             FB3_2   32   I/O     I
+TXA                                             FB3_3   33   GCK/I/O I
+PGMRXD                                          FB3_5   34   I/O     I
+RESET                                           FB4_11  159  GSR/I/O GSR
+EXTRD                                           FB10_2  113  I/O     I
+BHE                                             FB10_3  114  I/O     I
+A<19>                                           FB10_5  115  I/O     I
+A<18>                                           FB10_6  116  I/O     I
+A<17>                                           FB10_8  117  I/O     I
+A<16>                                           FB10_9  118  I/O     I
+CPU10                                           FB12_9  106  I/O     I
+SYSCLK                                          FB12_11 107  I/O     I
+ALE                                             FB12_12 108  I/O     I
+DEN                                             FB12_14 109  I/O     I
+MIO                                             FB12_15 111  I/O     I
+EXTWR                                           FB12_17 112  I/O     I
+
+Legend:
+Pin No. - ~ - User Assigned
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@)         - Signal used as input (wire-AND input) to the macrocell logic.
+               The number of Signals Used may exceed the number of FB Inputs
+               Used due to wire-ANDing in the switch matrix.
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+Number of function block inputs used/remaining:               36/0
+Number of signals used by logic mapping into function block:  42
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+clockgen/tclk<0>      1       0   /\2   2     FB1_1         (b)     (b)
+UCSD                  1       0     0   4     FB1_2   18    I/O     O
+ioportc/trishold<5>   2       0     0   3     FB1_3   19    I/O     I
+ioportc/trishold<4>   2       0     0   3     FB1_4         (b)     (b)
+ioportc/trishold<3>   2       0     0   3     FB1_5   21    I/O     I
+UCSC                  1       0     0   4     FB1_6   22    I/O     O
+ioportb/trishold<5>   2       0     0   3     FB1_7         (b)     (b)
+clockgen/tclk<2>      2       0     0   3     FB1_8   23    I/O     I
+RXB                   1       0     0   4     FB1_9   24    I/O     O
+clockgen/tclk<1>      2       0   \/2   1     FB1_10        (b)     (b)
+NMI                   8       3<-   0   0     FB1_11  25    I/O     O
+RXC                   1       0   /\1   3     FB1_12  26    I/O     O
+XLXI_327/trishold<5>
+                      2       0     0   3     FB1_13        (b)     (b)
+$OpTx$FX_DC$10        2       0   \/1   2     FB1_14  27    I/O     I
+UCSA                  1       1<- \/5   0     FB1_15  28    I/O     O
+AD_E<3>_BUFR         10       5<-   0   0     FB1_16  29    I/O     I
+UCSB                  1       0   \/3   1     FB1_17  30    I/O     O
+AD_E<1>_BUFR         10       5<-   0   0     FB1_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AD_E<3>.PIN       15: IRQ2              29: UARTB_ENABLE 
+  2: AD_E<4>.PIN       16: IRQ3              30: UARTC_ENABLE 
+  3: AD_E<5>.PIN       17: IRQ4              31: WR_SYNC 
+  4: AQ<1>.PIN         18: MIO               32: XLXN_2860 
+  5: AQ<2>.PIN         19: PORTA<3>.PIN      33: XLXN_2861 
+  6: AQ<3>.PIN         20: PORTA<1>.PIN      34: XLXN_2862 
+  7: AQ<4>.PIN         21: PORTB<3>.PIN      35: XLXN_2863 
+  8: AQ<5>.PIN         22: PORTB<1>.PIN      36: XLXN_2864 
+  9: AQ<6>.PIN         23: PORTC<3>.PIN      37: XLXN_2865 
+ 10: CPUCLK.PIN        24: PORTC<1>.PIN      38: XLXN_2866 
+ 11: FC_0_.OUT         25: STATUS_IOIN<0>    39: XLXN_2867 
+ 12: FC_1_.OUT         26: STATUS_IOIN<1>    40: XLXN_2872 
+ 13: FC_2_.OUT         27: STATUS_IOIN<6>    41: clockgen/tclk<0>.LFBK 
+ 14: IRQ1              28: STATUS_IOIN<7>    42: clockgen/tclk<1>.LFBK 
+
+Signal                        1         2         3         4         5 Signals FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Used    Inputs
+clockgen/tclk<0>     .........X........................................ 1       1
+UCSD                 .....XXXX........X................................ 5       5
+ioportc/trishold<5>  ..XXXXXXX........X............X................... 9       9
+ioportc/trishold<4>  .X.XXXXXX........X............X................... 9       9
+ioportc/trishold<3>  X..XXXXXX........X............X................... 9       9
+UCSC                 .....XXXX........X................................ 5       5
+ioportb/trishold<5>  ..XXXXXXX........X............X................... 9       9
+clockgen/tclk<2>     .........X..............................XX........ 3       3
+RXB                  ....................X.......X..................... 2       2
+clockgen/tclk<1>     .........X..............................X......... 2       2
+NMI                  ..........XXXXXXX.......@X@@...X@@X@XXXX.......... 20      14
+RXC                  .....................X.......X.................... 2       2
+XLXI_327/trishold<5> 
+                     ..XXXXXXX........X............X................... 9       9
+$OpTx$FX_DC$10       ...XXX.XX........X................................ 6       6
+UCSA                 .....XXXX........X................................ 5       5
+AD_E<3>_BUFR         ...XXXXXX.....X..XX.X.X........................... 11      11
+UCSB                 .....XXXX........X................................ 5       5
+AD_E<1>_BUFR         ...XXXXXX........X.X.X.X.X........................ 11      11
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+*********************************** FB2  ***********************************
+Number of function block inputs used/remaining:               32/4
+Number of signals used by logic mapping into function block:  32
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+timer0/count0<0>     11       6<-   0   0     FB2_1         (b)     (b)
+AQ<0>                 2       0   /\2   1     FB2_2   6     GTS/I/O O
+ROMCS                 1       0     0   4     FB2_3   7     I/O     O
+ioportb/trishold<0>   2       0     0   3     FB2_4         (b)     (b)
+UHE                   2       0     0   3     FB2_5   8     GTS/I/O O
+ioportb/dq<0>         2       0     0   3     FB2_6   9     I/O     (b)
+XLXN_2864             2       0     0   3     FB2_7         (b)     (b)
+ULE                   2       0     0   3     FB2_8   11    I/O     O
+MIDCLK                2       0     0   3     FB2_9   12    I/O     O
+XLXN_2860             2       0     0   3     FB2_10        (b)     (b)
+MIDCS                 1       0     0   4     FB2_11  13    I/O     O
+I2CCS                 1       0     0   4     FB2_12  14    I/O     O
+STATUS_IOIN<1>        3       0     0   2     FB2_13        (b)     (b)
+RXA                   1       0     0   4     FB2_14  15    I/O     O
+RXD                   2       0   \/3   0     FB2_15  16    I/O     O
+timer0/count0<1>     11       6<-   0   0     FB2_16        (b)     (b)
+ioportc/trishold<6>   2       0   /\3   0     FB2_17  17    I/O     I
+STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT
+                      1       0   \/4   0     FB2_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AD_E<0>.PIN       12: AQ<6>.PIN                           23: TIMER_RUN 
+  2: AD_E<1>.PIN       13: BHEQ.PIN                            24: UARTA_ENABLE 
+  3: AD_E<6>.PIN       14: CPU10                               25: UARTD_ENABLE 
+  4: AL<0>.LFBK        15: DEN                                 26: WR_SYNC 
+  5: AL<19>            16: MIO                                 27: XLXI_327/trishold<2> 
+  6: ALE               17: PORTA<15>.PIN                       28: clockgen/inclkd2 
+  7: AQ<1>.PIN         18: PORTA<2>.PIN                        29: clockgen/inclkd4 
+  8: AQ<2>.PIN         19: PORTA<0>.PIN                        30: timer0/count0<0>.LFBK 
+  9: AQ<3>.PIN         20: PGMRXD                              31: timer0/count0<1>.LFBK 
+ 10: AQ<4>.PIN         21: STATUS_IOIN<1>.LFBK                 32: timer0/count0<9>/timer0/count0<9>_CLKF 
+ 11: AQ<5>.PIN         22: STATUS_IOIN<1>/STATUS_IOIN<1>_SETF 
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+timer0/count0<0>     X.....XXXXXX...X......X..X...X.X........ 12      12
+AQ<0>                X....X.................................. 2       2
+ROMCS                ....X..........X........................ 2       2
+ioportb/trishold<0>  X.....XXXXXX...X.........X.............. 9       9
+UHE                  ...X......XXX.XX........................ 6       6
+ioportb/dq<0>        X.....XXXXXX...X.........X.............. 9       9
+XLXN_2864            .X....XXXXXX...X.........X.............. 9       9
+ULE                  ...X......XXX.XX........................ 6       6
+MIDCLK               .............X.............XX........... 3       3
+XLXN_2860            X.....XXXXXX...X.........X.............. 9       9
+MIDCS                .........XXX...X........................ 4       4
+I2CCS                .........XXX...X........................ 4       4
+STATUS_IOIN<1>       .X....XXXXXX...X....XX...X.............. 11      11
+RXA                  ..................X....X................ 2       2
+RXD                  ................X..X....X............... 3       3
+timer0/count0<1>     .X....XXXXXX...X......X..X...XXX........ 13      13
+ioportc/trishold<6>  ..X...XXXXXX...X.........X.............. 9       9
+STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT 
+                     .................X........X............. 2       2
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB3  ***********************************
+Number of function block inputs used/remaining:               34/2
+Number of signals used by logic mapping into function block:  34
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+timer0/count0<11>    11       6<-   0   0     FB3_1         (b)     (b)
+ioportc/trishold<14>
+                      2       0   /\3   0     FB3_2   32    I/O     I
+XLXN_3158             2       0     0   3     FB3_3   33    GCK/I/O I
+XLXI_327/trishold<15>
+                      2       0     0   3     FB3_4         (b)     (b)
+XLXI_327/trishold<14>
+                      2       0     0   3     FB3_5   34    I/O     I
+RAMCS                 1       0     0   4     FB3_6   35    GCK/I/O O
+XLXI_327/dq<14>       2       0     0   3     FB3_7         (b)     (b)
+PORTD<15>             2       0     0   3     FB3_8   36    I/O     O
+PORTD<14>             2       0   \/3   0     FB3_9   37    I/O     O
+timer0/count0<15>    11       6<-   0   0     FB3_10        (b)     (b)
+PORTD<13>             2       0   /\3   0     FB3_11  38    I/O     O
+PORTD<12>             2       0   \/3   0     FB3_12  39    I/O     O
+timer0/count0<14>    11       6<-   0   0     FB3_13        (b)     (b)
+PORTD<11>             2       0   /\3   0     FB3_14  42    GCK/I/O O
+PORTD<10>             2       0   \/3   0     FB3_15  43    I/O     O
+timer0/count0<12>    11       6<-   0   0     FB3_16        (b)     (b)
+PORTD<9>              2       0   /\3   0     FB3_17  44    I/O     O
+ioportc/trishold<15>
+                      2       0   \/3   0     FB3_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AD_E<10>.PIN      13: AQ<5>.PIN               24: timer0/count0<15>.LFBK 
+  2: AD_E<11>.PIN      14: AQ<6>.PIN               25: timer0/count0<1> 
+  3: AD_E<12>.PIN      15: MIO                     26: timer0/count0<2> 
+  4: AD_E<13>.PIN      16: TIMER_RUN               27: timer0/count0<3> 
+  5: AD_E<14>.PIN      17: WR_SYNC                 28: timer0/count0<4> 
+  6: AD_E<15>.PIN      18: timer0/count0<0>        29: timer0/count0<5> 
+  7: AD_E<9>.PIN       19: timer0/count0<10>       30: timer0/count0<6> 
+  8: AL<19>            20: timer0/count0<11>.LFBK  31: timer0/count0<7> 
+  9: AQ<1>.PIN         21: timer0/count0<12>.LFBK  32: timer0/count0<8> 
+ 10: AQ<2>.PIN         22: timer0/count0<13>       33: timer0/count0<9> 
+ 11: AQ<3>.PIN         23: timer0/count0<14>.LFBK  34: timer0/count0<9>/timer0/count0<9>_CLKF 
+ 12: AQ<4>.PIN        
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+timer0/count0<11>    .X......XXXXXXXXXXXX....XXXXXXXXXX...... 23      23
+ioportc/trishold<14> 
+                     ....X...XXXXXXX.X....................... 9       9
+XLXN_3158            .....X..XXXXXXX.X....................... 9       9
+XLXI_327/trishold<15> 
+                     .....X..XXXXXXX.X....................... 9       9
+XLXI_327/trishold<14> 
+                     ....X...XXXXXXX.X....................... 9       9
+RAMCS                .......X......X......................... 2       2
+XLXI_327/dq<14>      ....X...XXXXXXX.X....................... 9       9
+PORTD<15>            .....X..XXXXXXX.X....................... 9       9
+PORTD<14>            ....X...XXXXXXX.X....................... 9       9
+timer0/count0<15>    .....X..XXXXXXXXXXXXXXXXXXXXXXXXXX...... 27      27
+PORTD<13>            ...X....XXXXXXX.X....................... 9       9
+PORTD<12>            ..X.....XXXXXXX.X....................... 9       9
+timer0/count0<14>    ....X...XXXXXXXXXXXXXXX.XXXXXXXXXX...... 26      26
+PORTD<11>            .X......XXXXXXX.X....................... 9       9
+PORTD<10>            X.......XXXXXXX.X....................... 9       9
+timer0/count0<12>    ..X.....XXXXXXXXXXXXX...XXXXXXXXXX...... 24      24
+PORTD<9>             ......X.XXXXXXX.X....................... 9       9
+ioportc/trishold<15> 
+                     .....X..XXXXXXX.X....................... 9       9
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB4  ***********************************
+Number of function block inputs used/remaining:               35/1
+Number of signals used by logic mapping into function block:  35
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF
+                      2       0   /\3   0     FB4_1         (b)     (b)
+AQ<10>                2       0     0   3     FB4_2   152   I/O     O
+AQ<9>                 2       0     0   3     FB4_3   153   I/O     O
+XLXI_327/trishold<8>
+                      2       0     0   3     FB4_4         (b)     (b)
+AQ<1>                 2       0     0   3     FB4_5   154   I/O     I/O
+AQ<2>                 2       0     0   3     FB4_6   155   I/O     I/O
+XLXI_327/trishold<7>
+                      2       0     0   3     FB4_7         (b)     (b)
+AQ<3>                 2       0     0   3     FB4_8   156   I/O     I/O
+AQ<4>                 2       0     0   3     FB4_9   158   I/O     I/O
+XLXI_327/trishold<6>
+                      2       0   \/3   0     FB4_10        (b)     (b)
+AD_E<4>_BUFR         10       5<-   0   0     FB4_11  159   GSR/I/O GSR
+AQ<8>                 2       0   /\2   1     FB4_12  2     GTS/I/O O
+STATUS_IOIN<7>        3       0     0   2     FB4_13        (b)     (b)
+AQ<7>                 2       0     0   3     FB4_14  3     I/O     O
+AQ<6>                 2       0     0   3     FB4_15  4     GTS/I/O I/O
+STATUS_IOIN<6>        3       0     0   2     FB4_16        (b)     (b)
+AQ<5>                 2       0   \/2   1     FB4_17  5     I/O     I/O
+AD_E<2>_BUFR         10       5<-   0   0     FB4_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AD_E<10>.PIN      13: AL<3>.LFBK        25: PORTB<4>.PIN 
+  2: AD_E<1>.PIN       14: AL<4>.LFBK        26: PORTB<2>.PIN 
+  3: AD_E<2>.PIN       15: AL<5>.LFBK        27: PORTC<4>.PIN 
+  4: AD_E<3>.PIN       16: AL<6>.LFBK        28: PORTC<2>.PIN 
+  5: AD_E<4>.PIN       17: ALE               29: STATUS_IOIN<6>.LFBK 
+  6: AD_E<5>.PIN       18: CPU10             30: STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT 
+  7: AD_E<6>.PIN       19: IRQ1              31: STATUS_IOIN<7>.LFBK 
+  8: AD_E<7>.PIN       20: IRQ3              32: SYSCLK 
+  9: AD_E<8>.PIN       21: MIO               33: WR_SYNC 
+ 10: AD_E<9>.PIN       22: PORTA<4>.PIN      34: XLXI_327/trishold<3> 
+ 11: AL<1>.LFBK        23: PORTA<3>.PIN      35: clockgen/inclkd2 
+ 12: AL<2>.LFBK        24: PORTA<2>.PIN     
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF 
+                     .................X.............X..X..... 3       3
+AQ<10>               X...............X....................... 2       2
+AQ<9>                .........X......X....................... 2       2
+XLXI_327/trishold<8> 
+                     ........X.XXXXXX....X...........X....... 9       9
+AQ<1>                .X..............X....................... 2       2
+AQ<2>                ..X.............X....................... 2       2
+XLXI_327/trishold<7> 
+                     .......X..XXXXXX....X...........X....... 9       9
+AQ<3>                ...X............X....................... 2       2
+AQ<4>                ....X...........X....................... 2       2
+XLXI_327/trishold<6> 
+                     ......X...XXXXXX....X...........X....... 9       9
+AD_E<4>_BUFR         ..........XXXXXX...XXX..X.X............. 11      11
+AQ<8>                ........X.......X....................... 2       2
+STATUS_IOIN<7>       .......X..XXXXXX....X.X.......X.XX...... 12      12
+AQ<7>                .......X........X....................... 2       2
+AQ<6>                ......X.........X....................... 2       2
+STATUS_IOIN<6>       ......X...XXXXXX....X.......XX..X....... 11      11
+AQ<5>                .....X..........X....................... 2       2
+AD_E<2>_BUFR         ..........XXXXXX..X.X..X.X.X............ 11      11
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB5  ***********************************
+Number of function block inputs used/remaining:               36/0
+Number of signals used by logic mapping into function block:  36
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+timer0/count0<13>    11       6<-   0   0     FB5_1         (b)     (b)
+PORTD<8>              2       0   /\3   0     FB5_2   45    I/O     O
+PORTD<7>              2       0   \/3   0     FB5_3   47    I/O     O
+timer0/count0<9>     11       6<-   0   0     FB5_4         (b)     (b)
+PORTD<6>              2       0   /\3   0     FB5_5   48    I/O     O
+PORTD<5>              2       0   \/3   0     FB5_6   49    I/O     O
+timer0/count0<8>     11       6<-   0   0     FB5_7         (b)     (b)
+PORTD<4>              2       0   /\3   0     FB5_8   50    I/O     O
+PORTD<3>              2       0   \/3   0     FB5_9   52    I/O     O
+timer0/count0<7>     11       6<-   0   0     FB5_10        (b)     (b)
+PORTD<2>              2       0   /\3   0     FB5_11  53    I/O     O
+PORTD<1>              2       0   \/3   0     FB5_12  54    I/O     O
+timer0/count0<6>     11       6<-   0   0     FB5_13        (b)     (b)
+EEWP                  2       0   /\3   0     FB5_14  55    I/O     O
+MRST                  1       0   \/3   1     FB5_15  56    I/O     O
+timer0/count0<5>     11       6<-   0   0     FB5_16        (b)     (b)
+PORTD<0>              2       0   /\3   0     FB5_17  57    I/O     O
+ioportc/trishold<0>   2       0   \/3   0     FB5_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AD_E<0>.PIN       13: AQ<2>.PIN          25: timer0/count0<12> 
+  2: AD_E<13>.PIN      14: AQ<3>.PIN          26: timer0/count0<13>.LFBK 
+  3: AD_E<1>.PIN       15: AQ<4>.PIN          27: timer0/count0<1> 
+  4: AD_E<2>.PIN       16: AQ<5>.PIN          28: timer0/count0<2> 
+  5: AD_E<3>.PIN       17: AQ<6>.PIN          29: timer0/count0<3> 
+  6: AD_E<4>.PIN       18: MIO                30: timer0/count0<4> 
+  7: AD_E<5>.PIN       19: TIMER_RUN          31: timer0/count0<5>.LFBK 
+  8: AD_E<6>.PIN       20: WR_SYNC            32: timer0/count0<6>.LFBK 
+  9: AD_E<7>.PIN       21: XLXN_3158          33: timer0/count0<7>.LFBK 
+ 10: AD_E<8>.PIN       22: timer0/count0<0>   34: timer0/count0<8>.LFBK 
+ 11: AD_E<9>.PIN       23: timer0/count0<10>  35: timer0/count0<9>.LFBK 
+ 12: AQ<1>.PIN         24: timer0/count0<11>  36: timer0/count0<9>/timer0/count0<9>_CLKF 
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+timer0/count0<13>    .X.........XXXXXXXXX.XXXXXXXXXXXXXXX.... 25      25
+PORTD<8>             .........X.XXXXXXX.X.................... 9       9
+PORTD<7>             ........X..XXXXXXX.X.................... 9       9
+timer0/count0<9>     ..........XXXXXXXXXX.X....XXXXXXXXXX.... 21      21
+PORTD<6>             .......X...XXXXXXX.X.................... 9       9
+PORTD<5>             ......X....XXXXXXX.X.................... 9       9
+timer0/count0<8>     .........X.XXXXXXXXX.X....XXXXXXXX.X.... 20      20
+PORTD<4>             .....X.....XXXXXXX.X.................... 9       9
+PORTD<3>             ....X......XXXXXXX.X.................... 9       9
+timer0/count0<7>     ........X..XXXXXXXXX.X....XXXXXXX..X.... 19      19
+PORTD<2>             ...X.......XXXXXXX.X.................... 9       9
+PORTD<1>             ..X........XXXXXXX.X.................... 9       9
+timer0/count0<6>     .......X...XXXXXXXXX.X....XXXXXX...X.... 18      18
+EEWP                 ..........XXXXXXXX.X.................... 9       9
+MRST                 ....................X................... 1       1
+timer0/count0<5>     ......X....XXXXXXXXX.X....XXXXX....X.... 17      17
+PORTD<0>             X..........XXXXXXX.X.................... 9       9
+ioportc/trishold<0>  X..........XXXXXXX.X.................... 9       9
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB6  ***********************************
+Number of function block inputs used/remaining:               32/4
+Number of signals used by logic mapping into function block:  32
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+clockgen/thirdclk<1>
+                      2       0   /\1   2     FB6_1         (b)     (b)
+CPUCLK                2       0     0   3     FB6_2   140   I/O     I/O
+RDY                   0       0     0   5     FB6_3   142   I/O     O
+clockgen/tclk<4>      2       0     0   3     FB6_4         (b)     (b)
+BHEQ                  2       0     0   3     FB6_5   143   I/O     I/O
+AQ<18>                2       0     0   3     FB6_6   144   I/O     O
+clockgen/tclk<3>      2       0     0   3     FB6_7         (b)     (b)
+AQ<17>                2       0     0   3     FB6_8   145   I/O     O
+AQ<16>                2       0     0   3     FB6_9   146   I/O     O
+WR_SYNC               2       0     0   3     FB6_10        (b)     (b)
+AQ<15>                2       0     0   3     FB6_11  147   I/O     O
+AQ<14>                2       0     0   3     FB6_12  148   I/O     O
+TIMER_CLK             2       0     0   3     FB6_13        (b)     (b)
+AQ<13>                2       0     0   3     FB6_14  149   I/O     O
+AQ<12>                2       0     0   3     FB6_15  150   I/O     O
+RD_SYNC               2       0     0   3     FB6_16        (b)     (b)
+AQ<11>                2       0   \/2   1     FB6_17  151   I/O     O
+STATUS_IOIN<1>/STATUS_IOIN<1>_SETF
+                      8       3<-   0   0     FB6_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AD_E<11>.PIN      12: EXTRD                   23: XLXI_327/trishold<11> 
+  2: AD_E<12>.PIN      13: EXTWR                   24: XLXI_327/trishold<8> 
+  3: AD_E<13>.PIN      14: PORTA<11>.PIN           25: XLXI_327/trishold<9> 
+  4: AD_E<14>.PIN      15: PORTA<10>.PIN           26: clockgen/tclk<0> 
+  5: AD_E<15>.PIN      16: PORTA<9>.PIN            27: clockgen/tclk<1> 
+  6: ALE               17: PORTA<8>.PIN            28: clockgen/tclk<2> 
+  7: A<16>             18: XLXI_327/changehold<0>  29: clockgen/tclk<3>.LFBK 
+  8: A<17>             19: XLXI_327/changehold<1>  30: clockgen/tclk<4>.LFBK 
+  9: A<18>             20: XLXI_327/changehold<2>  31: clockgen/thirdclk<1>.LFBK 
+ 10: BHE               21: XLXI_327/changehold<3>  32: clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF 
+ 11: CPUCLK_OBUF.LFBK  22: XLXI_327/trishold<10>  
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+clockgen/thirdclk<1> 
+                     ..........X...................XX........ 3       3
+CPUCLK               ..........X...................XX........ 3       3
+RDY                  ........................................ 0       0
+clockgen/tclk<4>     ..........X..............XXXX........... 5       5
+BHEQ                 .....X...X.............................. 2       2
+AQ<18>               .....X..X............................... 2       2
+clockgen/tclk<3>     ..........X..............XXX............ 4       4
+AQ<17>               .....X.X................................ 2       2
+AQ<16>               .....XX................................. 2       2
+WR_SYNC              .....X....X.X........................... 3       3
+AQ<15>               ....XX.................................. 2       2
+AQ<14>               ...X.X.................................. 2       2
+TIMER_CLK            ..........X..............XXXXX.......... 6       6
+AQ<13>               ..X..X.................................. 2       2
+AQ<12>               .X...X.................................. 2       2
+RD_SYNC              .....X....XX............................ 3       3
+AQ<11>               X....X.................................. 2       2
+STATUS_IOIN<1>/STATUS_IOIN<1>_SETF 
+                     .............XXXXXXXXXXXX............... 12      12
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB7  ***********************************
+Number of function block inputs used/remaining:               32/4
+Number of signals used by logic mapping into function block:  32
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+clockgen/inclkd2      1       0     0   4     FB7_1         (b)     (b)
+PORTC<15>             3       0     0   2     FB7_2   58    I/O     I/O
+PORTC<14>             3       0     0   2     FB7_3   59    I/O     I/O
+ioportc/trishold<2>   2       0     0   3     FB7_4         (b)     (b)
+PORTC<13>             3       0     0   2     FB7_5   60    I/O     I/O
+PORTC<12>             3       0     0   2     FB7_6   62    I/O     I/O
+UARTD_ENABLE          2       0     0   3     FB7_7         (b)     (b)
+PORTC<11>             3       0     0   2     FB7_8   63    I/O     I/O
+PORTC<10>             3       0     0   2     FB7_9   64    I/O     I/O
+UARTC_ENABLE          2       0     0   3     FB7_10        (b)     (b)
+PORTC<9>              3       0     0   2     FB7_11  65    I/O     I/O
+PORTC<8>              3       0     0   2     FB7_12  66    I/O     I/O
+UARTB_ENABLE          2       0     0   3     FB7_13        (b)     (b)
+PORTC<7>              3       0     0   2     FB7_14  67    I/O     I/O
+PORTC<6>              3       0     0   2     FB7_15  68    I/O     I/O
+UARTA_ENABLE          2       0     0   3     FB7_16        (b)     (b)
+PORTC<5>              3       0     0   2     FB7_17  69    I/O     I/O
+TIMER_RUN             2       0     0   3     FB7_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AD_E<10>.PIN      12: AD_E<9>.PIN           23: ioportc/trishold<11> 
+  2: AD_E<11>.PIN      13: AQ<1>.PIN             24: ioportc/trishold<12> 
+  3: AD_E<12>.PIN      14: AQ<2>.PIN             25: ioportc/trishold<13> 
+  4: AD_E<13>.PIN      15: AQ<3>.PIN             26: ioportc/trishold<14> 
+  5: AD_E<14>.PIN      16: AQ<4>.PIN             27: ioportc/trishold<15> 
+  6: AD_E<15>.PIN      17: AQ<5>.PIN             28: ioportc/trishold<5> 
+  7: AD_E<2>.PIN       18: AQ<6>.PIN             29: ioportc/trishold<6> 
+  8: AD_E<5>.PIN       19: MIO                   30: ioportc/trishold<7> 
+  9: AD_E<6>.PIN       20: SYSCLK                31: ioportc/trishold<8> 
+ 10: AD_E<7>.PIN       21: WR_SYNC               32: ioportc/trishold<9> 
+ 11: AD_E<8>.PIN       22: ioportc/trishold<10> 
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+clockgen/inclkd2     ...................X.................... 1       1
+PORTC<15>            .....X......XXXXXXX.X.....X............. 10      10
+PORTC<14>            ....X.......XXXXXXX.X....X.............. 10      10
+ioportc/trishold<2>  ......X.....XXXXXXX.X................... 9       9
+PORTC<13>            ...X........XXXXXXX.X...X............... 10      10
+PORTC<12>            ..X.........XXXXXXX.X..X................ 10      10
+UARTD_ENABLE         ...X........XXXXXXX.X................... 9       9
+PORTC<11>            .X..........XXXXXXX.X.X................. 10      10
+PORTC<10>            X...........XXXXXXX.XX.................. 10      10
+UARTC_ENABLE         ..X.........XXXXXXX.X................... 9       9
+PORTC<9>             ...........XXXXXXXX.X..........X........ 10      10
+PORTC<8>             ..........X.XXXXXXX.X.........X......... 10      10
+UARTB_ENABLE         .X..........XXXXXXX.X................... 9       9
+PORTC<7>             .........X..XXXXXXX.X........X.......... 10      10
+PORTC<6>             ........X...XXXXXXX.X.......X........... 10      10
+UARTA_ENABLE         X...........XXXXXXX.X................... 9       9
+PORTC<5>             .......X....XXXXXXX.X......X............ 10      10
+TIMER_RUN            ....X.......XXXXXXX.X................... 9       9
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB8  ***********************************
+Number of function block inputs used/remaining:               35/1
+Number of signals used by logic mapping into function block:  37
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+clockgen/inclkd4      1       0   \/3   1     FB8_1         (b)     (b)
+AD_E<10>              8       3<-   0   0     FB8_2   126   I/O     I/O
+AD_E<9>               8       3<-   0   0     FB8_3   128   I/O     I/O
+ioportc/trishold<8>   2       0   /\3   0     FB8_4         (b)     (b)
+AD_E<8>               8       3<-   0   0     FB8_5   129   I/O     I/O
+AD_E<7>               8       6<- /\3   0     FB8_6   130   I/O     I/O
+(unused)              0       0   /\5   0     FB8_7         (b)     (b)
+AD_E<6>               8       4<- /\1   0     FB8_8   131   I/O     I/O
+AD_E<5>               2       1<- /\4   0     FB8_9   132   I/O     I/O
+XLXI_327/changehold<2>
+                      2       0   /\1   2     FB8_10        (b)     (b)
+AD_E<4>               2       0     0   3     FB8_11  133   I/O     I/O
+AD_E<3>               2       0     0   3     FB8_12  134   I/O     I/O
+XLXI_327/changehold<1>
+                      2       0     0   3     FB8_13        (b)     (b)
+AD_E<2>               2       0     0   3     FB8_14  135   I/O     I/O
+AD_E<1>               2       0     0   3     FB8_15  138   I/O     I/O
+XLXI_327/changehold<0>
+                      2       0   \/3   0     FB8_16        (b)     (b)
+AD_E<0>              10       5<-   0   0     FB8_17  139   I/O     I/O
+AL<19>                2       0   /\2   1     FB8_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$FX_DC$10    14: AQ<6>             26: PORTC<0>.PIN 
+  2: AD_E<8>.PIN       15: A<19>             27: PORTA<10>.PIN 
+  3: AD_E<1>_BUFR      16: EXTRD             28: PORTA<9>.PIN 
+  4: AD_E<2>_BUFR      17: FC_3_.OUT         29: PORTA<8>.PIN 
+  5: AD_E<3>_BUFR      18: MIO               30: PORTA<7>.PIN 
+  6: AD_E<4>_BUFR      19: PORTA<0>.PIN      31: PORTA<6>.PIN 
+  7: AD_E<5>_BUFR      20: PORTB<0>.PIN      32: RD_SYNC 
+  8: ALE               21: PORTC<10>.PIN     33: STATUS_IOIN<0> 
+  9: AQ<1>.PIN         22: PORTC<9>.PIN      34: STATUS_IOIN<6> 
+ 10: AQ<2>.PIN         23: PORTC<8>.PIN      35: STATUS_IOIN<7> 
+ 11: AQ<3>.PIN         24: PORTC<7>.PIN      36: WR_SYNC 
+ 12: AQ<4>.PIN         25: PORTC<6>.PIN      37: clockgen/inclkd2 
+ 13: AQ<5>            
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+clockgen/inclkd4     ....................................X... 1       1
+AD_E<10>             X.......XXXXXX.XXX..X.....X............. 12      12
+AD_E<9>              X.......XXXXXX.XXX...X.....X............ 12      12
+ioportc/trishold<8>  .X......XXXX@@..XX.................X.... 10      8
+AD_E<8>              X.......XXXXXX.XXX....X.....X........... 12      12
+AD_E<7>              X.......XXXX@@.XXX.....X.....X....X..... 13      11
+AD_E<6>              X.......XXXX@@.XXX......X.....X..X...... 13      11
+AD_E<5>              X.....X....X...X........................ 4       4
+XLXI_327/changehold<2> 
+                     ........XXXX@@..XX........X....X........ 10      8
+AD_E<4>              X....X.....X...X........................ 4       4
+AD_E<3>              X...X......X...X........................ 4       4
+XLXI_327/changehold<1> 
+                     ........XXXX@@..XX.........X...X........ 10      8
+AD_E<2>              X..X.......X...X........................ 4       4
+AD_E<1>              X.X........X...X........................ 4       4
+XLXI_327/changehold<0> 
+                     ........XXXX@@..XX..........X..X........ 10      8
+AD_E<0>              X.......XXXX@@.XXXXX.....X......X....... 14      12
+AL<19>               .......X......X......................... 2       2
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB9  ***********************************
+Number of function block inputs used/remaining:               35/1
+Number of signals used by logic mapping into function block:  35
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+ioportb/trishold<1>   2       0   /\3   0     FB9_1         (b)     (b)
+PORTC<4>              3       0     0   2     FB9_2   72    I/O     I/O
+PORTC<3>              3       0     0   2     FB9_3   74    I/O     I/O
+XLXI_327/trishold<3>
+                      2       0     0   3     FB9_4         (b)     (b)
+PORTC<2>              3       0     0   2     FB9_5   76    I/O     I/O
+PORTC<1>              3       0     0   2     FB9_6   77    I/O     I/O
+XLXI_327/trishold<2>
+                      2       0     0   3     FB9_7         (b)     (b)
+PORTC<0>              3       0     0   2     FB9_8   78    I/O     I/O
+PORTB<5>              3       0     0   2     FB9_9   79    I/O     I/O
+XLXI_327/trishold<1>
+                      2       0     0   3     FB9_10        (b)     (b)
+PORTB<4>              3       0     0   2     FB9_11  82    I/O     I/O
+PORTB<3>              3       0     0   2     FB9_12  83    I/O     I/O
+XLXI_327/trishold<0>
+                      2       0     0   3     FB9_13        (b)     (b)
+PORTB<2>              4       0     0   1     FB9_14  84    I/O     I/O
+PORTB<1>              3       0     0   2     FB9_15  85    I/O     I/O
+XLXI_327/dq<1>        2       0   \/1   2     FB9_16        (b)     (b)
+PORTB<0>              4       1<- \/2   0     FB9_17  86    I/O     I/O
+AD_E<5>_BUFR         10       5<-   0   0     FB9_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AD_E<0>.PIN       13: IRQ4              25: ioportb/trishold<0> 
+  2: AD_E<1>.PIN       14: MIO               26: ioportb/trishold<1>.LFBK 
+  3: AD_E<2>.PIN       15: PORTA<5>.PIN      27: ioportb/trishold<2> 
+  4: AD_E<3>.PIN       16: PORTB<5>.PIN      28: ioportb/trishold<3> 
+  5: AD_E<4>.PIN       17: PORTC<5>.PIN      29: ioportb/trishold<4> 
+  6: AD_E<5>.PIN       18: TXB               30: ioportb/trishold<5> 
+  7: AQ<1>.PIN         19: TXC               31: ioportc/trishold<0> 
+  8: AQ<2>.PIN         20: UARTB_ENABLE      32: ioportc/trishold<1> 
+  9: AQ<3>.PIN         21: UARTC_ENABLE      33: ioportc/trishold<2> 
+ 10: AQ<4>.PIN         22: WR_SYNC           34: ioportc/trishold<3> 
+ 11: AQ<5>.PIN         23: ioportb/dq<0>     35: ioportc/trishold<4> 
+ 12: AQ<6>.PIN         24: ioportb/dq<2>    
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+ioportb/trishold<1>  .X....XXXXXX.X.......X.................. 9       9
+PORTC<4>             ....X.XXXXXX.X.......X............X..... 10      10
+PORTC<3>             ...X..XXXXXX.X.......X...........X...... 10      10
+XLXI_327/trishold<3> 
+                     ...X..XXXXXX.X.......X.................. 9       9
+PORTC<2>             ..X...XXXXXX.X.......X..........X....... 10      10
+PORTC<1>             .X....XXXXXX.X.......X.........X........ 10      10
+XLXI_327/trishold<2> 
+                     ..X...XXXXXX.X.......X.................. 9       9
+PORTC<0>             X.....XXXXXX.X.......X........X......... 10      10
+PORTB<5>             .....XXXXXXX.X.......X.......X.......... 10      10
+XLXI_327/trishold<1> 
+                     .X....XXXXXX.X.......X.................. 9       9
+PORTB<4>             ....X.XXXXXX.X.......X......X........... 10      10
+PORTB<3>             ...X..XXXXXX.X.......X.....X............ 10      10
+XLXI_327/trishold<0> 
+                     X.....XXXXXX.X.......X.................. 9       9
+PORTB<2>             .................X.X...X..X............. 4       4
+PORTB<1>             .X....XXXXXX.X.......X...X.............. 10      10
+XLXI_327/dq<1>       .X....XXXXXX.X.......X.................. 9       9
+PORTB<0>             ..................X.X.X.X............... 4       4
+AD_E<5>_BUFR         ......XXXXXXXXXXX....................... 11      11
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB10 ***********************************
+Number of function block inputs used/remaining:               33/3
+Number of signals used by logic mapping into function block:  48
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+ioportb/dq<2>         2       0   \/3   0     FB10_1        (b)     (b)
+timer0/count0<2>     10       5<-   0   0     FB10_2  113   I/O     I
+XLXI_327/trishold<4>
+                      2       0   /\2   1     FB10_3  114   I/O     I
+XLXI_327/changehold<3>
+                      2       0   \/3   0     FB10_4        (b)     (b)
+timer0/count0<4>     10       5<-   0   0     FB10_5  115   I/O     I
+XLXN_2872             2       0   /\2   1     FB10_6  116   I/O     I
+XLXN_2863             2       0   \/2   1     FB10_7        (b)     (b)
+(unused)              0       0   \/5   0     FB10_8  117   I/O     I
+timer0/count0<3>     10       7<- \/2   0     FB10_9  118   I/O     I
+(unused)              0       0   \/5   0     FB10_10       (b)     (b)
+AD_E<15>              8       7<- \/4   0     FB10_11 119   I/O     I/O
+AD_E<14>              8       4<- \/1   0     FB10_12 122   I/O     I/O
+XLXN_2867             2       1<- \/4   0     FB10_13       (b)     (b)
+AD_E<13>              8       4<- \/1   0     FB10_14 123   I/O     I/O
+AD_E<12>              8       3<-   0   0     FB10_15 124   I/O     I/O
+STATUS_IOIN<0>        3       0   /\2   0     FB10_16       (b)     (b)
+AD_E<11>              8       3<-   0   0     FB10_17 125   I/O     I/O
+ioportc/trishold<7>   2       0   /\3   0     FB10_18       (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$FX_DC$10    17: MIO                  33: timer0/count0<10> 
+  2: AD_E<0>.PIN       18: PORTA<15>.PIN        34: timer0/count0<11> 
+  3: AD_E<2>.PIN       19: PORTA<14>.PIN        35: timer0/count0<12> 
+  4: AD_E<3>.PIN       20: PORTA<13>.PIN        36: timer0/count0<13> 
+  5: AD_E<4>.PIN       21: PORTC<15>.PIN        37: timer0/count0<14> 
+  6: AD_E<7>.PIN       22: PORTC<14>.PIN        38: timer0/count0<15> 
+  7: AQ<1>.PIN         23: PORTC<13>.PIN        39: timer0/count0<1> 
+  8: AQ<2>.PIN         24: PORTC<12>.PIN        40: timer0/count0<2>.LFBK 
+  9: AQ<3>.PIN         25: PORTC<11>.PIN        41: timer0/count0<3>.LFBK 
+ 10: AQ<4>.PIN         26: PORTA<12>.PIN        42: timer0/count0<4>.LFBK 
+ 11: AQ<5>             27: PORTA<11>.PIN        43: timer0/count0<5> 
+ 12: AQ<6>             28: RD_SYNC              44: timer0/count0<6> 
+ 13: EXTRD             29: STATUS_IOIN<0>.LFBK  45: timer0/count0<7> 
+ 14: FC_3_.OUT         30: TIMER_RUN            46: timer0/count0<8> 
+ 15: FC_4_.OUT         31: WR_SYNC              47: timer0/count0<9> 
+ 16: FC_5_.OUT         32: timer0/count0<0>     48: timer0/count0<9>/timer0/count0<9>_CLKF 
+
+Signal                        1         2         3         4         5 Signals FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Used    Inputs
+ioportb/dq<2>        ..X...XXXX@@.X..X.............X................... 10      8
+timer0/count0<2>     ..X...XXXXXX.XX.X............XX@......@X.......X.. 16      14
+XLXI_327/trishold<4> 
+                     ....X.XXXX@@.X..X.............X................... 10      8
+XLXI_327/changehold<3> 
+                     ......XXXX@@.X..X.........XX...................... 10      8
+timer0/count0<4>     ....X.XXXXXX.XX.X............XX@......@XXX.....X.. 18      16
+XLXN_2872            ...X..XXXX@@.X..X.............X................... 10      8
+XLXN_2863            ..X...XXXX@@.X..X.............X................... 10      8
+timer0/count0<3>     ...X..XXXX@@.XX.X............XX@......@XX......X.. 17      13
+AD_E<15>             X.....XXXX@@XX..XX..X............................. 12      10
+AD_E<14>             X.....XXXXXXXX..X.X..X............................ 12      12
+XLXN_2867            ....X.XXXX@@.X..X.............X................... 10      8
+AD_E<13>             X.....XXXXXXXX..X..X..X........................... 12      12
+AD_E<12>             X.....XXXXXXXX..X......X.X........................ 12      12
+STATUS_IOIN<0>       .X....XXXX@@.XXXX...........X.X@@@@@@@@XXX@@@@@... 29      14
+AD_E<11>             X.....XXXXXXXX..X.......X.X....................... 12      12
+ioportc/trishold<7>  .....XXXXX@@.X..X.............X................... 10      8
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+*********************************** FB11 ***********************************
+Number of function block inputs used/remaining:               34/2
+Number of signals used by logic mapping into function block:  34
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+ioportb/trishold<4>   2       0     0   3     FB11_1        (b)     (b)
+PORTA<15>             3       0     0   2     FB11_2  87    I/O     I/O
+PORTA<14>             4       0     0   1     FB11_3  88    I/O     I/O
+ioportb/trishold<3>   2       0     0   3     FB11_4        (b)     (b)
+PORTA<0>              3       0     0   2     FB11_5  89    I/O     I/O
+PORTA<1>              4       0     0   1     FB11_6  90    I/O     I/O
+ioportb/trishold<2>   2       0     0   3     FB11_7        (b)     (b)
+PORTA<2>              3       0     0   2     FB11_8  91    I/O     I/O
+PORTA<3>              3       0     0   2     FB11_9  92    I/O     I/O
+XLXN_2866             2       0     0   3     FB11_10       (b)     (b)
+PORTA<4>              3       0     0   2     FB11_11 93    I/O     I/O
+PORTA<5>              3       0     0   2     FB11_12 95    I/O     I/O
+XLXN_2865             2       0     0   3     FB11_13       (b)     (b)
+PORTA<6>              3       0     0   2     FB11_14 96    I/O     I/O
+PORTA<7>              3       0     0   2     FB11_15 97    I/O     I/O
+XLXN_2862             2       0     0   3     FB11_16       (b)     (b)
+PORTA<8>              3       0     0   2     FB11_17 98    I/O     I/O
+XLXN_2861             2       0     0   3     FB11_18       (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AD_E<0>.PIN       13: AQ<4>.PIN         24: XLXI_327/trishold<0> 
+  2: AD_E<15>.PIN      14: AQ<5>.PIN         25: XLXI_327/trishold<14> 
+  3: AD_E<2>.PIN       15: AQ<6>.PIN         26: XLXI_327/trishold<15> 
+  4: AD_E<3>.PIN       16: MIO               27: XLXI_327/trishold<1> 
+  5: AD_E<4>.PIN       17: TXA               28: XLXI_327/trishold<2> 
+  6: AD_E<5>.PIN       18: TXD               29: XLXI_327/trishold<3> 
+  7: AD_E<6>.PIN       19: UARTA_ENABLE      30: XLXI_327/trishold<4> 
+  8: AD_E<7>.PIN       20: UARTD_ENABLE      31: XLXI_327/trishold<5> 
+  9: AD_E<8>.PIN       21: WR_SYNC           32: XLXI_327/trishold<6> 
+ 10: AQ<1>.PIN         22: XLXI_327/dq<14>   33: XLXI_327/trishold<7> 
+ 11: AQ<2>.PIN         23: XLXI_327/dq<1>    34: XLXI_327/trishold<8> 
+ 12: AQ<3>.PIN        
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+ioportb/trishold<4>  ....X....XXXXXXX....X................... 9       9
+PORTA<15>            .X.......XXXXXXX....X....X.............. 10      10
+PORTA<14>            .................X.X.X..X............... 4       4
+ioportb/trishold<3>  ...X.....XXXXXXX....X................... 9       9
+PORTA<0>             X........XXXXXXX....X..X................ 10      10
+PORTA<1>             ................X.X...X...X............. 4       4
+ioportb/trishold<2>  ..X......XXXXXXX....X................... 9       9
+PORTA<2>             ..X......XXXXXXX....X......X............ 10      10
+PORTA<3>             ...X.....XXXXXXX....X.......X........... 10      10
+XLXN_2866            .....X...XXXXXXX....X................... 9       9
+PORTA<4>             ....X....XXXXXXX....X........X.......... 10      10
+PORTA<5>             .....X...XXXXXXX....X.........X......... 10      10
+XLXN_2865            ......X..XXXXXXX....X................... 9       9
+PORTA<6>             ......X..XXXXXXX....X..........X........ 10      10
+PORTA<7>             .......X.XXXXXXX....X...........X....... 10      10
+XLXN_2862            .......X.XXXXXXX....X................... 9       9
+PORTA<8>             ........XXXXXXXX....X............X...... 10      10
+XLXN_2861            ........XXXXXXXX....X................... 9       9
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB12 ***********************************
+Number of function block inputs used/remaining:               33/3
+Number of signals used by logic mapping into function block:  33
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+ioportc/trishold<9>   2       0   /\3   0     FB12_1        (b)     (b)
+PORTA<9>              3       0     0   2     FB12_2  101   I/O     I/O
+PORTA<10>             3       0   \/2   0     FB12_3  102   I/O     I/O
+timer0/count0<9>/timer0/count0<9>_CLKF
+                      8       3<-   0   0     FB12_4        (b)     (b)
+PORTA<11>             3       0   /\1   1     FB12_5  103   I/O     I/O
+PORTA<12>             3       0     0   2     FB12_6  104   I/O     I/O
+XLXI_327/trishold<10>
+                      2       0     0   3     FB12_7        (b)     (b)
+PORTA<13>             3       0     0   2     FB12_8  105   I/O     I/O
+XLXI_327/trishold<11>
+                      2       0     0   3     FB12_9  106   I/O     I
+XLXI_327/trishold<12>
+                      2       0     0   3     FB12_10       (b)     (b)
+XLXI_327/trishold<13>
+                      2       0     0   3     FB12_11 107   I/O     I
+XLXI_327/trishold<9>
+                      2       0     0   3     FB12_12 108   I/O     I
+ioportc/trishold<10>
+                      2       0     0   3     FB12_13       (b)     (b)
+ioportc/trishold<11>
+                      2       0     0   3     FB12_14 109   I/O     I
+ioportc/trishold<12>
+                      2       0     0   3     FB12_15 111   I/O     I
+ioportc/trishold<13>
+                      2       0     0   3     FB12_16       (b)     (b)
+ioportc/trishold<1>   2       0   \/3   0     FB12_17 112   I/O     I
+timer0/count0<10>    11       6<-   0   0     FB12_18       (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AD_E<10>.PIN      12: AQ<6>.PIN                   23: timer0/count0<10>.LFBK 
+  2: AD_E<11>.PIN      13: MIO                         24: timer0/count0<1> 
+  3: AD_E<12>.PIN      14: TIMER_CLK                   25: timer0/count0<2> 
+  4: AD_E<13>.PIN      15: TIMER_RUN                   26: timer0/count0<3> 
+  5: AD_E<1>.PIN       16: WR_SYNC                     27: timer0/count0<4> 
+  6: AD_E<9>.PIN       17: XLXI_327/trishold<10>.LFBK  28: timer0/count0<5> 
+  7: AQ<1>.PIN         18: XLXI_327/trishold<11>.LFBK  29: timer0/count0<6> 
+  8: AQ<2>.PIN         19: XLXI_327/trishold<12>.LFBK  30: timer0/count0<7> 
+  9: AQ<3>.PIN         20: XLXI_327/trishold<13>.LFBK  31: timer0/count0<8> 
+ 10: AQ<4>.PIN         21: XLXI_327/trishold<9>.LFBK   32: timer0/count0<9> 
+ 11: AQ<5>.PIN         22: timer0/count0<0>            33: timer0/count0<9>/timer0/count0<9>_CLKF.LFBK 
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+ioportc/trishold<9>  .....XXXXXXXX..X........................ 9       9
+PORTA<9>             .....XXXXXXXX..X....X................... 10      10
+PORTA<10>            X.....XXXXXXX..XX....................... 10      10
+timer0/count0<9>/timer0/count0<9>_CLKF 
+                     ......XXXXXXXX.X........................ 9       9
+PORTA<11>            .X....XXXXXXX..X.X...................... 10      10
+PORTA<12>            ..X...XXXXXXX..X..X..................... 10      10
+XLXI_327/trishold<10> 
+                     X.....XXXXXXX..X........................ 9       9
+PORTA<13>            ...X..XXXXXXX..X...X.................... 10      10
+XLXI_327/trishold<11> 
+                     .X....XXXXXXX..X........................ 9       9
+XLXI_327/trishold<12> 
+                     ..X...XXXXXXX..X........................ 9       9
+XLXI_327/trishold<13> 
+                     ...X..XXXXXXX..X........................ 9       9
+XLXI_327/trishold<9> 
+                     .....XXXXXXXX..X........................ 9       9
+ioportc/trishold<10> 
+                     X.....XXXXXXX..X........................ 9       9
+ioportc/trishold<11> 
+                     .X....XXXXXXX..X........................ 9       9
+ioportc/trishold<12> 
+                     ..X...XXXXXXX..X........................ 9       9
+ioportc/trishold<13> 
+                     ...X..XXXXXXX..X........................ 9       9
+ioportc/trishold<1>  ....X.XXXXXXX..X........................ 9       9
+timer0/count0<10>    X.....XXXXXXX.XX.....XXXXXXXXXXXX....... 22      22
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+
+$OpTx$FX_DC$10 <= ((NOT MIO AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND NOT AQ(3).PIN AND 
+	AQ(2).PIN)
+	OR (NOT MIO AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND NOT AQ(1).PIN AND 
+	NOT AQ(2).PIN));
+
+
+AD_E_I(0) <= NOT (((NOT PORTA(0).PIN AND AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT PORTA(0).PIN AND NOT AQ(1).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND NOT STATUS_IOIN(0) AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT PORTB(0).PIN AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND NOT PORTC(0).PIN AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND NOT PORTA(0).PIN)
+	OR (NOT PORTA(0).PIN AND NOT FC_3_.OUT)
+	OR (NOT PORTA(0).PIN AND AQ(4).PIN)
+	OR (NOT PORTA(0).PIN AND AQ(3).PIN AND AQ(1).PIN)));
+AD_E(0) <= AD_E_I(0) when AD_E_OE(0) = '1' else 'Z';
+AD_E_OE(0) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E(1)_BUFR <= ((NOT MIO AND STATUS_IOIN(1) AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND PORTB(1).PIN AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN)
+	OR (MIO AND PORTA(1).PIN)
+	OR (PORTA(1).PIN AND AQ(4).PIN)
+	OR (NOT MIO AND PORTC(1).PIN AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (PORTA(1).PIN AND AQ(5).PIN)
+	OR (PORTA(1).PIN AND AQ(6).PIN)
+	OR (PORTA(1).PIN AND AQ(3).PIN AND AQ(2).PIN)
+	OR (PORTA(1).PIN AND AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (PORTA(1).PIN AND NOT AQ(1).PIN AND AQ(2).PIN));
+
+
+AD_E_I(1) <= AD_E(1)_BUFR;
+AD_E(1) <= AD_E_I(1) when AD_E_OE(1) = '1' else 'Z';
+AD_E_OE(1) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(2) <= AD_E(2)_BUFR;
+AD_E(2) <= AD_E_I(2) when AD_E_OE(2) = '1' else 'Z';
+AD_E_OE(2) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E(2)_BUFR <= ((NOT MIO AND IRQ1 AND NOT AL(1).LFBK AND NOT AL(2).LFBK AND 
+	NOT AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK)
+	OR (NOT MIO AND PORTB(2).PIN AND AL(1).LFBK AND AL(2).LFBK AND 
+	NOT AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK)
+	OR (NOT MIO AND PORTC(2).PIN AND NOT AL(1).LFBK AND NOT AL(2).LFBK AND 
+	AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK)
+	OR (MIO AND PORTA(2).PIN)
+	OR (PORTA(2).PIN AND AL(4).LFBK)
+	OR (PORTA(2).PIN AND AL(5).LFBK)
+	OR (PORTA(2).PIN AND AL(6).LFBK)
+	OR (PORTA(2).PIN AND AL(1).LFBK AND NOT AL(2).LFBK)
+	OR (PORTA(2).PIN AND NOT AL(1).LFBK AND AL(2).LFBK)
+	OR (PORTA(2).PIN AND AL(2).LFBK AND AL(3).LFBK));
+
+
+AD_E(3)_BUFR <= ((MIO AND PORTA(3).PIN)
+	OR (PORTA(3).PIN AND AQ(4).PIN)
+	OR (NOT MIO AND IRQ2 AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND PORTB(3).PIN AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND PORTC(3).PIN AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (PORTA(3).PIN AND AQ(5).PIN)
+	OR (PORTA(3).PIN AND AQ(6).PIN)
+	OR (PORTA(3).PIN AND AQ(3).PIN AND AQ(2).PIN)
+	OR (PORTA(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (PORTA(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN));
+
+
+AD_E_I(3) <= AD_E(3)_BUFR;
+AD_E(3) <= AD_E_I(3) when AD_E_OE(3) = '1' else 'Z';
+AD_E_OE(3) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(4) <= AD_E(4)_BUFR;
+AD_E(4) <= AD_E_I(4) when AD_E_OE(4) = '1' else 'Z';
+AD_E_OE(4) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E(4)_BUFR <= ((MIO AND PORTA(4).PIN)
+	OR (PORTA(4).PIN AND AL(4).LFBK)
+	OR (NOT MIO AND PORTC(4).PIN AND NOT AL(1).LFBK AND NOT AL(2).LFBK AND 
+	AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK)
+	OR (NOT MIO AND IRQ3 AND NOT AL(1).LFBK AND NOT AL(2).LFBK AND 
+	NOT AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK)
+	OR (NOT MIO AND PORTB(4).PIN AND AL(1).LFBK AND AL(2).LFBK AND 
+	NOT AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK)
+	OR (PORTA(4).PIN AND AL(5).LFBK)
+	OR (PORTA(4).PIN AND AL(6).LFBK)
+	OR (PORTA(4).PIN AND AL(1).LFBK AND NOT AL(2).LFBK)
+	OR (PORTA(4).PIN AND NOT AL(1).LFBK AND AL(2).LFBK)
+	OR (PORTA(4).PIN AND AL(2).LFBK AND AL(3).LFBK));
+
+
+AD_E_I(5) <= AD_E(5)_BUFR;
+AD_E(5) <= AD_E_I(5) when AD_E_OE(5) = '1' else 'Z';
+AD_E_OE(5) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E(5)_BUFR <= ((NOT MIO AND IRQ4 AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND PORTB(5).PIN AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND PORTC(5).PIN AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND PORTA(5).PIN)
+	OR (PORTA(5).PIN AND AQ(4).PIN)
+	OR (PORTA(5).PIN AND AQ(5).PIN)
+	OR (PORTA(5).PIN AND AQ(6).PIN)
+	OR (PORTA(5).PIN AND AQ(3).PIN AND AQ(2).PIN)
+	OR (PORTA(5).PIN AND AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (PORTA(5).PIN AND NOT AQ(1).PIN AND AQ(2).PIN));
+
+
+AD_E_I(6) <= ((PORTA(6).PIN AND NOT FC_3_.OUT)
+	OR (PORTA(6).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND STATUS_IOIN(6) AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND PORTC(6).PIN AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND PORTA(6).PIN)
+	OR (PORTA(6).PIN AND AQ(4).PIN)
+	OR (PORTA(6).PIN AND AQ(1).PIN));
+AD_E(6) <= AD_E_I(6) when AD_E_OE(6) = '1' else 'Z';
+AD_E_OE(6) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(7) <= ((XLXN_255(6).EXP)
+	OR (PORTA(7).PIN AND NOT FC_3_.OUT)
+	OR (PORTA(7).PIN AND AQ(4).PIN)
+	OR (PORTA(7).PIN AND AQ(1).PIN)
+	OR (PORTA(7).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND STATUS_IOIN(7) AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND PORTA(7).PIN));
+AD_E(7) <= AD_E_I(7) when AD_E_OE(7) = '1' else 'Z';
+AD_E_OE(7) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(8) <= ((PORTA(8).PIN AND NOT FC_3_.OUT)
+	OR (PORTA(8).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND PORTC(8).PIN AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND PORTA(8).PIN)
+	OR (PORTA(8).PIN AND AQ(4).PIN)
+	OR (PORTA(8).PIN AND NOT AQ(3).PIN)
+	OR (PORTA(8).PIN AND AQ(1).PIN));
+AD_E(8) <= AD_E_I(8) when AD_E_OE(8) = '1' else 'Z';
+AD_E_OE(8) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(9) <= ((PORTA(9).PIN AND NOT FC_3_.OUT)
+	OR (PORTA(9).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND PORTC(9).PIN AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND PORTA(9).PIN)
+	OR (PORTA(9).PIN AND AQ(4).PIN)
+	OR (PORTA(9).PIN AND NOT AQ(3).PIN)
+	OR (PORTA(9).PIN AND AQ(1).PIN));
+AD_E(9) <= AD_E_I(9) when AD_E_OE(9) = '1' else 'Z';
+AD_E_OE(9) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(10) <= ((PORTA(10).PIN AND NOT FC_3_.OUT)
+	OR (PORTA(10).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND PORTC(10).PIN AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND PORTA(10).PIN)
+	OR (PORTA(10).PIN AND AQ(4).PIN)
+	OR (PORTA(10).PIN AND NOT AQ(3).PIN)
+	OR (PORTA(10).PIN AND AQ(1).PIN));
+AD_E(10) <= AD_E_I(10) when AD_E_OE(10) = '1' else 'Z';
+AD_E_OE(10) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(11) <= ((PORTA(11).PIN AND NOT FC_3_.OUT)
+	OR (PORTA(11).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND PORTC(11).PIN AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND PORTA(11).PIN)
+	OR (PORTA(11).PIN AND AQ(4).PIN)
+	OR (PORTA(11).PIN AND NOT AQ(3).PIN)
+	OR (PORTA(11).PIN AND AQ(1).PIN));
+AD_E(11) <= AD_E_I(11) when AD_E_OE(11) = '1' else 'Z';
+AD_E_OE(11) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(12) <= ((PORTA(12).PIN AND AQ(2).PIN)
+	OR (PORTA(12).PIN AND NOT FC_3_.OUT)
+	OR (NOT MIO AND PORTC(12).PIN AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND PORTA(12).PIN)
+	OR (PORTA(12).PIN AND AQ(4).PIN)
+	OR (PORTA(12).PIN AND NOT AQ(3).PIN)
+	OR (PORTA(12).PIN AND AQ(1).PIN));
+AD_E(12) <= AD_E_I(12) when AD_E_OE(12) = '1' else 'Z';
+AD_E_OE(12) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(13) <= ((PORTA(13).PIN AND NOT FC_3_.OUT)
+	OR (PORTA(13).PIN AND AQ(1).PIN)
+	OR (PORTA(13).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND PORTC(13).PIN AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND PORTA(13).PIN)
+	OR (PORTA(13).PIN AND AQ(4).PIN)
+	OR (PORTA(13).PIN AND NOT AQ(3).PIN));
+AD_E(13) <= AD_E_I(13) when AD_E_OE(13) = '1' else 'Z';
+AD_E_OE(13) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(14) <= ((PORTA(14).PIN AND NOT FC_3_.OUT)
+	OR (PORTA(14).PIN AND AQ(1).PIN)
+	OR (PORTA(14).PIN AND AQ(2).PIN)
+	OR (NOT MIO AND PORTC(14).PIN AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND PORTA(14).PIN)
+	OR (PORTA(14).PIN AND AQ(4).PIN)
+	OR (PORTA(14).PIN AND NOT AQ(3).PIN));
+AD_E(14) <= AD_E_I(14) when AD_E_OE(14) = '1' else 'Z';
+AD_E_OE(14) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+
+AD_E_I(15) <= ((timer0/count0(3).EXP)
+	OR (MIO AND PORTA(15).PIN)
+	OR (PORTA(15).PIN AND AQ(4).PIN)
+	OR (PORTA(15).PIN AND NOT AQ(3).PIN)
+	OR (PORTA(15).PIN AND AQ(1).PIN)
+	OR (PORTA(15).PIN AND AQ(2).PIN));
+AD_E(15) <= AD_E_I(15) when AD_E_OE(15) = '1' else 'Z';
+AD_E_OE(15) <= (NOT EXTRD AND $OpTx$FX_DC$10 AND NOT AQ(4).PIN);
+
+FDCPE_AL19: FDCPE port map (AL(19),'0','0',AL_CLR(19),AL_PRE(19));
+AL_CLR(19) <= (ALE AND NOT A(19));
+AL_PRE(19) <= (ALE AND A(19));
+
+FDCPE_AQ0: FDCPE port map (AQ(0),'0','0',AQ_CLR(0),AQ_PRE(0));
+AQ_CLR(0) <= (NOT AD_E(0).PIN AND ALE);
+AQ_PRE(0) <= (AD_E(0).PIN AND ALE);
+
+FDCPE_AQ1: FDCPE port map (AQ(1),'0','0',AQ_CLR(1),AQ_PRE(1));
+AQ_CLR(1) <= (NOT AD_E(1).PIN AND ALE);
+AQ_PRE(1) <= (AD_E(1).PIN AND ALE);
+
+FDCPE_AQ2: FDCPE port map (AQ(2),'0','0',AQ_CLR(2),AQ_PRE(2));
+AQ_CLR(2) <= (NOT AD_E(2).PIN AND ALE);
+AQ_PRE(2) <= (AD_E(2).PIN AND ALE);
+
+FDCPE_AQ3: FDCPE port map (AQ(3),'0','0',AQ_CLR(3),AQ_PRE(3));
+AQ_CLR(3) <= (NOT AD_E(3).PIN AND ALE);
+AQ_PRE(3) <= (AD_E(3).PIN AND ALE);
+
+FDCPE_AQ4: FDCPE port map (AQ(4),'0','0',AQ_CLR(4),AQ_PRE(4));
+AQ_CLR(4) <= (NOT AD_E(4).PIN AND ALE);
+AQ_PRE(4) <= (AD_E(4).PIN AND ALE);
+
+FDCPE_AQ5: FDCPE port map (AQ(5),'0','0',AQ_CLR(5),AQ_PRE(5));
+AQ_CLR(5) <= (NOT AD_E(5).PIN AND ALE);
+AQ_PRE(5) <= (AD_E(5).PIN AND ALE);
+
+FDCPE_AQ6: FDCPE port map (AQ(6),'0','0',AQ_CLR(6),AQ_PRE(6));
+AQ_CLR(6) <= (NOT AD_E(6).PIN AND ALE);
+AQ_PRE(6) <= (AD_E(6).PIN AND ALE);
+
+FDCPE_AQ7: FDCPE port map (AQ(7),'0','0',AQ_CLR(7),AQ_PRE(7));
+AQ_CLR(7) <= (NOT AD_E(7).PIN AND ALE);
+AQ_PRE(7) <= (AD_E(7).PIN AND ALE);
+
+FDCPE_AQ8: FDCPE port map (AQ(8),'0','0',AQ_CLR(8),AQ_PRE(8));
+AQ_CLR(8) <= (NOT AD_E(8).PIN AND ALE);
+AQ_PRE(8) <= (AD_E(8).PIN AND ALE);
+
+FDCPE_AQ9: FDCPE port map (AQ(9),'0','0',AQ_CLR(9),AQ_PRE(9));
+AQ_CLR(9) <= (NOT AD_E(9).PIN AND ALE);
+AQ_PRE(9) <= (AD_E(9).PIN AND ALE);
+
+FDCPE_AQ10: FDCPE port map (AQ(10),'0','0',AQ_CLR(10),AQ_PRE(10));
+AQ_CLR(10) <= (NOT AD_E(10).PIN AND ALE);
+AQ_PRE(10) <= (AD_E(10).PIN AND ALE);
+
+FDCPE_AQ11: FDCPE port map (AQ(11),'0','0',AQ_CLR(11),AQ_PRE(11));
+AQ_CLR(11) <= (NOT AD_E(11).PIN AND ALE);
+AQ_PRE(11) <= (AD_E(11).PIN AND ALE);
+
+FDCPE_AQ12: FDCPE port map (AQ(12),'0','0',AQ_CLR(12),AQ_PRE(12));
+AQ_CLR(12) <= (NOT AD_E(12).PIN AND ALE);
+AQ_PRE(12) <= (AD_E(12).PIN AND ALE);
+
+FDCPE_AQ13: FDCPE port map (AQ(13),'0','0',AQ_CLR(13),AQ_PRE(13));
+AQ_CLR(13) <= (NOT AD_E(13).PIN AND ALE);
+AQ_PRE(13) <= (AD_E(13).PIN AND ALE);
+
+FDCPE_AQ14: FDCPE port map (AQ(14),'0','0',AQ_CLR(14),AQ_PRE(14));
+AQ_CLR(14) <= (NOT AD_E(14).PIN AND ALE);
+AQ_PRE(14) <= (AD_E(14).PIN AND ALE);
+
+FDCPE_AQ15: FDCPE port map (AQ(15),'0','0',AQ_CLR(15),AQ_PRE(15));
+AQ_CLR(15) <= (NOT AD_E(15).PIN AND ALE);
+AQ_PRE(15) <= (AD_E(15).PIN AND ALE);
+
+FDCPE_AQ16: FDCPE port map (AQ(16),'0','0',AQ_CLR(16),AQ_PRE(16));
+AQ_CLR(16) <= (ALE AND NOT A(16));
+AQ_PRE(16) <= (ALE AND A(16));
+
+FDCPE_AQ17: FDCPE port map (AQ(17),'0','0',AQ_CLR(17),AQ_PRE(17));
+AQ_CLR(17) <= (ALE AND NOT A(17));
+AQ_PRE(17) <= (ALE AND A(17));
+
+FDCPE_AQ18: FDCPE port map (AQ(18),'0','0',AQ_CLR(18),AQ_PRE(18));
+AQ_CLR(18) <= (ALE AND NOT A(18));
+AQ_PRE(18) <= (ALE AND A(18));
+
+FDCPE_BHEQ: FDCPE port map (BHEQ,'0','0',BHEQ_CLR,BHEQ_PRE);
+BHEQ_CLR <= (ALE AND NOT BHE);
+BHEQ_PRE <= (ALE AND BHE);
+
+FDCPE_CPUCLK: FDCPE port map (CPUCLK,CPUCLK_D,clockgen/thirdclk(1)/clockgen/thirdclk(1)_CLKF,'0','0');
+CPUCLK_D <= (NOT CPUCLK_OBUF.LFBK AND NOT clockgen/thirdclk(1).LFBK);
+
+FDCPE_EEWP: FDCPE port map (EEWP,AD_E(9).PIN,EEWP_C,RESET,'0');
+EEWP_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+
+
+
+
+
+
+
+I2CCS <= NOT ((NOT MIO AND NOT AQ(5).PIN AND AQ(6).PIN AND AQ(4).PIN));
+
+
+MIDCLK <= ((clockgen/inclkd2 AND CPU10)
+	OR (clockgen/inclkd4 AND NOT CPU10));
+
+
+MIDCS <= NOT ((NOT MIO AND NOT AQ(5).PIN AND AQ(6).PIN AND NOT AQ(4).PIN));
+
+
+MRST_I <= '0';
+MRST <= MRST_I when MRST_OE = '1' else 'Z';
+MRST_OE <= XLXN_3158;
+
+
+NMI <= ((XLXN_2860 AND XLXN_2866 AND IRQ3)
+	OR (XLXN_2860 AND XLXN_2867 AND IRQ2)
+	OR (XLXN_2860 AND XLXN_2872 AND IRQ1)
+	OR (XLXN_2860 AND FC_0_.OUT)
+	OR (XLXN_2860 AND FC_1_.OUT)
+	OR (XLXN_2860 AND FC_2_.OUT)
+	OR (STATUS_IOIN(1) AND XLXN_2860 AND XLXN_2863)
+	OR (XLXN_2860 AND XLXN_2865 AND IRQ4));
+
+FDCPE_PORTA0: FDCPE port map (PORTA_I(0),AD_E(0).PIN,PORTA_C(0),RESET,'0');
+PORTA_C(0) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(0) <= PORTA_I(0) when PORTA_OE(0) = '1' else 'Z';
+PORTA_OE(0) <= NOT XLXI_327/trishold(0);
+
+
+PORTA_I(1) <= ((UARTA_ENABLE AND TXA)
+	OR (XLXI_327/trishold(1) AND TXA)
+	OR (NOT UARTA_ENABLE AND NOT XLXI_327/trishold(1) AND 
+	XLXI_327/dq(1)));
+PORTA(1) <= PORTA_I(1) when PORTA_OE(1) = '1' else 'Z';
+PORTA_OE(1) <= NOT XLXI_327/trishold(1);
+
+FDCPE_PORTA2: FDCPE port map (PORTA_I(2),AD_E(2).PIN,PORTA_C(2),RESET,'0');
+PORTA_C(2) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(2) <= PORTA_I(2) when PORTA_OE(2) = '1' else 'Z';
+PORTA_OE(2) <= NOT XLXI_327/trishold(2);
+
+FDCPE_PORTA3: FDCPE port map (PORTA_I(3),AD_E(3).PIN,PORTA_C(3),RESET,'0');
+PORTA_C(3) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(3) <= PORTA_I(3) when PORTA_OE(3) = '1' else 'Z';
+PORTA_OE(3) <= NOT XLXI_327/trishold(3);
+
+FDCPE_PORTA4: FDCPE port map (PORTA_I(4),AD_E(4).PIN,PORTA_C(4),RESET,'0');
+PORTA_C(4) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(4) <= PORTA_I(4) when PORTA_OE(4) = '1' else 'Z';
+PORTA_OE(4) <= NOT XLXI_327/trishold(4);
+
+FDCPE_PORTA5: FDCPE port map (PORTA_I(5),AD_E(5).PIN,PORTA_C(5),RESET,'0');
+PORTA_C(5) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(5) <= PORTA_I(5) when PORTA_OE(5) = '1' else 'Z';
+PORTA_OE(5) <= NOT XLXI_327/trishold(5);
+
+FDCPE_PORTA6: FDCPE port map (PORTA_I(6),AD_E(6).PIN,PORTA_C(6),RESET,'0');
+PORTA_C(6) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(6) <= PORTA_I(6) when PORTA_OE(6) = '1' else 'Z';
+PORTA_OE(6) <= NOT XLXI_327/trishold(6);
+
+FDCPE_PORTA7: FDCPE port map (PORTA_I(7),AD_E(7).PIN,PORTA_C(7),RESET,'0');
+PORTA_C(7) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(7) <= PORTA_I(7) when PORTA_OE(7) = '1' else 'Z';
+PORTA_OE(7) <= NOT XLXI_327/trishold(7);
+
+FDCPE_PORTA8: FDCPE port map (PORTA_I(8),AD_E(8).PIN,PORTA_C(8),RESET,'0');
+PORTA_C(8) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(8) <= PORTA_I(8) when PORTA_OE(8) = '1' else 'Z';
+PORTA_OE(8) <= NOT XLXI_327/trishold(8);
+
+FDCPE_PORTA9: FDCPE port map (PORTA_I(9),AD_E(9).PIN,PORTA_C(9),RESET,'0');
+PORTA_C(9) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(9) <= PORTA_I(9) when PORTA_OE(9) = '1' else 'Z';
+PORTA_OE(9) <= NOT XLXI_327/trishold(9).LFBK;
+
+FDCPE_PORTA10: FDCPE port map (PORTA_I(10),AD_E(10).PIN,PORTA_C(10),RESET,'0');
+PORTA_C(10) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(10) <= PORTA_I(10) when PORTA_OE(10) = '1' else 'Z';
+PORTA_OE(10) <= NOT XLXI_327/trishold(10).LFBK;
+
+FDCPE_PORTA11: FDCPE port map (PORTA_I(11),AD_E(11).PIN,PORTA_C(11),RESET,'0');
+PORTA_C(11) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(11) <= PORTA_I(11) when PORTA_OE(11) = '1' else 'Z';
+PORTA_OE(11) <= NOT XLXI_327/trishold(11).LFBK;
+
+FDCPE_PORTA12: FDCPE port map (PORTA_I(12),AD_E(12).PIN,PORTA_C(12),RESET,'0');
+PORTA_C(12) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(12) <= PORTA_I(12) when PORTA_OE(12) = '1' else 'Z';
+PORTA_OE(12) <= NOT XLXI_327/trishold(12).LFBK;
+
+FDCPE_PORTA13: FDCPE port map (PORTA_I(13),AD_E(13).PIN,PORTA_C(13),RESET,'0');
+PORTA_C(13) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(13) <= PORTA_I(13) when PORTA_OE(13) = '1' else 'Z';
+PORTA_OE(13) <= NOT XLXI_327/trishold(13).LFBK;
+
+
+PORTA_I(14) <= ((UARTD_ENABLE AND TXD)
+	OR (XLXI_327/trishold(14) AND TXD)
+	OR (NOT UARTD_ENABLE AND NOT XLXI_327/trishold(14) AND 
+	XLXI_327/dq(14)));
+PORTA(14) <= PORTA_I(14) when PORTA_OE(14) = '1' else 'Z';
+PORTA_OE(14) <= NOT XLXI_327/trishold(14);
+
+FDCPE_PORTA15: FDCPE port map (PORTA_I(15),AD_E(15).PIN,PORTA_C(15),RESET,'0');
+PORTA_C(15) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+PORTA(15) <= PORTA_I(15) when PORTA_OE(15) = '1' else 'Z';
+PORTA_OE(15) <= NOT XLXI_327/trishold(15);
+
+
+PORTB_I(0) <= ((NOT UARTC_ENABLE AND NOT ioportb/trishold(0) AND 
+	ioportb/dq(0))
+	OR (UARTC_ENABLE AND TXC)
+	OR (ioportb/trishold(0) AND TXC));
+PORTB(0) <= PORTB_I(0) when PORTB_OE(0) = '1' else 'Z';
+PORTB_OE(0) <= NOT ioportb/trishold(0);
+
+FDCPE_PORTB1: FDCPE port map (PORTB_I(1),AD_E(1).PIN,PORTB_C(1),RESET,'0');
+PORTB_C(1) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+PORTB(1) <= PORTB_I(1) when PORTB_OE(1) = '1' else 'Z';
+PORTB_OE(1) <= NOT ioportb/trishold(1).LFBK;
+
+
+PORTB_I(2) <= ((UARTB_ENABLE AND TXB)
+	OR (ioportb/trishold(2) AND TXB)
+	OR (NOT UARTB_ENABLE AND NOT ioportb/trishold(2) AND 
+	ioportb/dq(2)));
+PORTB(2) <= PORTB_I(2) when PORTB_OE(2) = '1' else 'Z';
+PORTB_OE(2) <= NOT ioportb/trishold(2);
+
+FDCPE_PORTB3: FDCPE port map (PORTB_I(3),AD_E(3).PIN,PORTB_C(3),RESET,'0');
+PORTB_C(3) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+PORTB(3) <= PORTB_I(3) when PORTB_OE(3) = '1' else 'Z';
+PORTB_OE(3) <= NOT ioportb/trishold(3);
+
+FDCPE_PORTB4: FDCPE port map (PORTB_I(4),AD_E(4).PIN,PORTB_C(4),RESET,'0');
+PORTB_C(4) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+PORTB(4) <= PORTB_I(4) when PORTB_OE(4) = '1' else 'Z';
+PORTB_OE(4) <= NOT ioportb/trishold(4);
+
+FDCPE_PORTB5: FDCPE port map (PORTB_I(5),AD_E(5).PIN,PORTB_C(5),RESET,'0');
+PORTB_C(5) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+PORTB(5) <= PORTB_I(5) when PORTB_OE(5) = '1' else 'Z';
+PORTB_OE(5) <= NOT ioportb/trishold(5);
+
+FDCPE_PORTC0: FDCPE port map (PORTC_I(0),AD_E(0).PIN,PORTC_C(0),RESET,'0');
+PORTC_C(0) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(0) <= PORTC_I(0) when PORTC_OE(0) = '1' else 'Z';
+PORTC_OE(0) <= NOT ioportc/trishold(0);
+
+FDCPE_PORTC1: FDCPE port map (PORTC_I(1),AD_E(1).PIN,PORTC_C(1),RESET,'0');
+PORTC_C(1) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(1) <= PORTC_I(1) when PORTC_OE(1) = '1' else 'Z';
+PORTC_OE(1) <= NOT ioportc/trishold(1);
+
+FDCPE_PORTC2: FDCPE port map (PORTC_I(2),AD_E(2).PIN,PORTC_C(2),RESET,'0');
+PORTC_C(2) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(2) <= PORTC_I(2) when PORTC_OE(2) = '1' else 'Z';
+PORTC_OE(2) <= NOT ioportc/trishold(2);
+
+FDCPE_PORTC3: FDCPE port map (PORTC_I(3),AD_E(3).PIN,PORTC_C(3),RESET,'0');
+PORTC_C(3) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(3) <= PORTC_I(3) when PORTC_OE(3) = '1' else 'Z';
+PORTC_OE(3) <= NOT ioportc/trishold(3);
+
+FDCPE_PORTC4: FDCPE port map (PORTC_I(4),AD_E(4).PIN,PORTC_C(4),RESET,'0');
+PORTC_C(4) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(4) <= PORTC_I(4) when PORTC_OE(4) = '1' else 'Z';
+PORTC_OE(4) <= NOT ioportc/trishold(4);
+
+FDCPE_PORTC5: FDCPE port map (PORTC_I(5),AD_E(5).PIN,PORTC_C(5),RESET,'0');
+PORTC_C(5) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(5) <= PORTC_I(5) when PORTC_OE(5) = '1' else 'Z';
+PORTC_OE(5) <= NOT ioportc/trishold(5);
+
+FDCPE_PORTC6: FDCPE port map (PORTC_I(6),AD_E(6).PIN,PORTC_C(6),RESET,'0');
+PORTC_C(6) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(6) <= PORTC_I(6) when PORTC_OE(6) = '1' else 'Z';
+PORTC_OE(6) <= NOT ioportc/trishold(6);
+
+FDCPE_PORTC7: FDCPE port map (PORTC_I(7),AD_E(7).PIN,PORTC_C(7),RESET,'0');
+PORTC_C(7) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(7) <= PORTC_I(7) when PORTC_OE(7) = '1' else 'Z';
+PORTC_OE(7) <= NOT ioportc/trishold(7);
+
+FDCPE_PORTC8: FDCPE port map (PORTC_I(8),AD_E(8).PIN,PORTC_C(8),RESET,'0');
+PORTC_C(8) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(8) <= PORTC_I(8) when PORTC_OE(8) = '1' else 'Z';
+PORTC_OE(8) <= NOT ioportc/trishold(8);
+
+FDCPE_PORTC9: FDCPE port map (PORTC_I(9),AD_E(9).PIN,PORTC_C(9),RESET,'0');
+PORTC_C(9) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(9) <= PORTC_I(9) when PORTC_OE(9) = '1' else 'Z';
+PORTC_OE(9) <= NOT ioportc/trishold(9);
+
+FDCPE_PORTC10: FDCPE port map (PORTC_I(10),AD_E(10).PIN,PORTC_C(10),RESET,'0');
+PORTC_C(10) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(10) <= PORTC_I(10) when PORTC_OE(10) = '1' else 'Z';
+PORTC_OE(10) <= NOT ioportc/trishold(10);
+
+FDCPE_PORTC11: FDCPE port map (PORTC_I(11),AD_E(11).PIN,PORTC_C(11),RESET,'0');
+PORTC_C(11) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(11) <= PORTC_I(11) when PORTC_OE(11) = '1' else 'Z';
+PORTC_OE(11) <= NOT ioportc/trishold(11);
+
+FDCPE_PORTC12: FDCPE port map (PORTC_I(12),AD_E(12).PIN,PORTC_C(12),RESET,'0');
+PORTC_C(12) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(12) <= PORTC_I(12) when PORTC_OE(12) = '1' else 'Z';
+PORTC_OE(12) <= NOT ioportc/trishold(12);
+
+FDCPE_PORTC13: FDCPE port map (PORTC_I(13),AD_E(13).PIN,PORTC_C(13),RESET,'0');
+PORTC_C(13) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(13) <= PORTC_I(13) when PORTC_OE(13) = '1' else 'Z';
+PORTC_OE(13) <= NOT ioportc/trishold(13);
+
+FDCPE_PORTC14: FDCPE port map (PORTC_I(14),AD_E(14).PIN,PORTC_C(14),RESET,'0');
+PORTC_C(14) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(14) <= PORTC_I(14) when PORTC_OE(14) = '1' else 'Z';
+PORTC_OE(14) <= NOT ioportc/trishold(14);
+
+FDCPE_PORTC15: FDCPE port map (PORTC_I(15),AD_E(15).PIN,PORTC_C(15),RESET,'0');
+PORTC_C(15) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+PORTC(15) <= PORTC_I(15) when PORTC_OE(15) = '1' else 'Z';
+PORTC_OE(15) <= NOT ioportc/trishold(15);
+
+FDCPE_PORTD0: FDCPE port map (PORTD(0),AD_E(0).PIN,PORTD_C(0),RESET,'0');
+PORTD_C(0) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD1: FDCPE port map (PORTD(1),AD_E(1).PIN,PORTD_C(1),RESET,'0');
+PORTD_C(1) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD2: FDCPE port map (PORTD(2),AD_E(2).PIN,PORTD_C(2),RESET,'0');
+PORTD_C(2) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD3: FDCPE port map (PORTD(3),AD_E(3).PIN,PORTD_C(3),RESET,'0');
+PORTD_C(3) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD4: FDCPE port map (PORTD(4),AD_E(4).PIN,PORTD_C(4),RESET,'0');
+PORTD_C(4) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD5: FDCPE port map (PORTD(5),AD_E(5).PIN,PORTD_C(5),RESET,'0');
+PORTD_C(5) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD6: FDCPE port map (PORTD(6),AD_E(6).PIN,PORTD_C(6),RESET,'0');
+PORTD_C(6) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD7: FDCPE port map (PORTD(7),AD_E(7).PIN,PORTD_C(7),RESET,'0');
+PORTD_C(7) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD8: FDCPE port map (PORTD(8),AD_E(8).PIN,PORTD_C(8),RESET,'0');
+PORTD_C(8) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD9: FDCPE port map (PORTD(9),AD_E(9).PIN,PORTD_C(9),RESET,'0');
+PORTD_C(9) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD10: FDCPE port map (PORTD(10),AD_E(10).PIN,PORTD_C(10),RESET,'0');
+PORTD_C(10) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD11: FDCPE port map (PORTD(11),AD_E(11).PIN,PORTD_C(11),RESET,'0');
+PORTD_C(11) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD12: FDCPE port map (PORTD(12),AD_E(12).PIN,PORTD_C(12),RESET,'0');
+PORTD_C(12) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD13: FDCPE port map (PORTD(13),AD_E(13).PIN,PORTD_C(13),RESET,'0');
+PORTD_C(13) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD14: FDCPE port map (PORTD(14),AD_E(14).PIN,PORTD_C(14),RESET,'0');
+PORTD_C(14) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_PORTD15: FDCPE port map (PORTD(15),AD_E(15).PIN,PORTD_C(15),RESET,'0');
+PORTD_C(15) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+
+RAMCS <= NOT ((MIO AND NOT AL(19)));
+
+
+RDY <= '1';
+
+FTCPE_RD_SYNC: FTCPE port map (RD_SYNC,'1',RD_SYNC_C,ALE,'0');
+RD_SYNC_C <= (NOT EXTRD AND CPUCLK_OBUF.LFBK);
+
+
+ROMCS <= NOT ((MIO AND AL(19)));
+
+
+RXA <= NOT ((UARTA_ENABLE AND NOT PORTA(0).PIN));
+
+
+RXB <= NOT ((UARTB_ENABLE AND NOT PORTB(3).PIN));
+
+
+RXC <= NOT ((UARTC_ENABLE AND NOT PORTB(1).PIN));
+
+
+RXD <= ((UARTD_ENABLE AND PORTA(15).PIN)
+	OR (NOT UARTD_ENABLE AND PGMRXD));
+
+FDCPE_STATUS_IOIN0: FDCPE port map (STATUS_IOIN(0),STATUS_IOIN_D(0),STATUS_IOIN_C(0),RESET,STATUS_IOIN_PRE(0));
+STATUS_IOIN_D(0) <= (AD_E(0).PIN AND STATUS_IOIN(0).LFBK);
+STATUS_IOIN_C(0) <= (NOT MIO AND WR_SYNC AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+STATUS_IOIN_PRE(0) <= (FC_4_.OUT AND FC_5_.OUT AND timer0/count0(2).LFBK AND 
+	timer0/count0(3).LFBK AND timer0/count0(4).LFBK);
+
+FDCPE_STATUS_IOIN1: FDCPE port map (STATUS_IOIN(1),STATUS_IOIN_D(1),STATUS_IOIN_C(1),RESET,STATUS_IOIN(1)/STATUS_IOIN(1)_SETF);
+STATUS_IOIN_D(1) <= (AD_E(1).PIN AND STATUS_IOIN(1).LFBK);
+STATUS_IOIN_C(1) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+
+STATUS_IOIN(1)/STATUS_IOIN(1)_SETF <= ((XLXI_327/trishold(8) AND PORTA(8).PIN AND 
+	NOT XLXI_327/changehold(0))
+	OR (XLXI_327/trishold(10) AND PORTA(10).PIN AND 
+	NOT XLXI_327/changehold(2))
+	OR (XLXI_327/trishold(8) AND NOT PORTA(8).PIN AND 
+	XLXI_327/changehold(0))
+	OR (XLXI_327/trishold(10) AND NOT PORTA(10).PIN AND 
+	XLXI_327/changehold(2))
+	OR (XLXI_327/trishold(11) AND PORTA(11).PIN AND 
+	NOT XLXI_327/changehold(3))
+	OR (XLXI_327/trishold(11) AND NOT PORTA(11).PIN AND 
+	XLXI_327/changehold(3))
+	OR (XLXI_327/trishold(9) AND PORTA(9).PIN AND 
+	NOT XLXI_327/changehold(1))
+	OR (XLXI_327/trishold(9) AND NOT PORTA(9).PIN AND 
+	XLXI_327/changehold(1)));
+
+FDCPE_STATUS_IOIN6: FDCPE port map (STATUS_IOIN(6),STATUS_IOIN_D(6),STATUS_IOIN_C(6),RESET,NOT STATUS_IOIN(6)/STATUS_IOIN(6)_SETF__$INT);
+STATUS_IOIN_D(6) <= (AD_E(6).PIN AND STATUS_IOIN(6).LFBK);
+STATUS_IOIN_C(6) <= (NOT MIO AND WR_SYNC AND NOT AL(1).LFBK AND NOT AL(2).LFBK AND 
+	NOT AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK);
+
+
+STATUS_IOIN(6)/STATUS_IOIN(6)_SETF__$INT <= (XLXI_327/trishold(2) AND PORTA(2).PIN);
+
+FDCPE_STATUS_IOIN7: FDCPE port map (STATUS_IOIN(7),STATUS_IOIN_D(7),STATUS_IOIN_C(7),RESET,STATUS_IOIN_PRE(7));
+STATUS_IOIN_D(7) <= (AD_E(7).PIN AND STATUS_IOIN(7).LFBK);
+STATUS_IOIN_C(7) <= (NOT MIO AND WR_SYNC AND NOT AL(1).LFBK AND NOT AL(2).LFBK AND 
+	NOT AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK);
+STATUS_IOIN_PRE(7) <= (XLXI_327/trishold(3) AND PORTA(3).PIN);
+
+FTCPE_TIMER_CLK: FTCPE port map (TIMER_CLK,TIMER_CLK_T,CPUCLK_OBUF.LFBK,'0','0');
+TIMER_CLK_T <= (clockgen/tclk(0) AND clockgen/tclk(1) AND 
+	clockgen/tclk(2) AND clockgen/tclk(3).LFBK AND clockgen/tclk(4).LFBK);
+
+FDCPE_TIMER_RUN: FDCPE port map (TIMER_RUN,AD_E(14).PIN,TIMER_RUN_C,RESET,'0');
+TIMER_RUN_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_UARTA_ENABLE: FDCPE port map (UARTA_ENABLE,AD_E(10).PIN,UARTA_ENABLE_C,RESET,'0');
+UARTA_ENABLE_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_UARTB_ENABLE: FDCPE port map (UARTB_ENABLE,AD_E(11).PIN,UARTB_ENABLE_C,RESET,'0');
+UARTB_ENABLE_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_UARTC_ENABLE: FDCPE port map (UARTC_ENABLE,AD_E(12).PIN,UARTC_ENABLE_C,RESET,'0');
+UARTC_ENABLE_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_UARTD_ENABLE: FDCPE port map (UARTD_ENABLE,AD_E(13).PIN,UARTD_ENABLE_C,RESET,'0');
+UARTD_ENABLE_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+
+UCSA <= NOT ((NOT MIO AND AQ(5).PIN AND NOT AQ(6).PIN AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN));
+
+
+UCSB <= NOT ((NOT MIO AND AQ(5).PIN AND NOT AQ(6).PIN AND NOT AQ(4).PIN AND 
+	AQ(3).PIN));
+
+
+UCSC <= NOT ((NOT MIO AND AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND 
+	NOT AQ(3).PIN));
+
+
+UCSD <= NOT ((NOT MIO AND AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND 
+	AQ(3).PIN));
+
+
+UHE <= NOT (((NOT MIO AND NOT DEN AND AL(0).LFBK AND AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT BHEQ.PIN)
+	OR (NOT MIO AND NOT DEN AND AL(0).LFBK AND NOT AQ(5).PIN AND AQ(6).PIN AND 
+	NOT BHEQ.PIN)));
+
+
+ULE <= NOT (((NOT MIO AND NOT DEN AND NOT AL(0).LFBK AND AQ(5).PIN AND NOT AQ(6).PIN AND 
+	BHEQ.PIN)
+	OR (NOT MIO AND NOT DEN AND NOT AL(0).LFBK AND NOT AQ(5).PIN AND AQ(6).PIN AND 
+	BHEQ.PIN)));
+
+FTCPE_WR_SYNC: FTCPE port map (WR_SYNC,'1',WR_SYNC_C,ALE,'0');
+WR_SYNC_C <= (NOT EXTWR AND CPUCLK_OBUF.LFBK);
+
+FDCPE_XLXI_327/changehold0: FDCPE port map (XLXI_327/changehold(0),PORTA(8).PIN,XLXI_327/changehold_C(0),RESET,'0');
+XLXI_327/changehold_C(0) <= (NOT MIO AND RD_SYNC AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/changehold1: FDCPE port map (XLXI_327/changehold(1),PORTA(9).PIN,XLXI_327/changehold_C(1),RESET,'0');
+XLXI_327/changehold_C(1) <= (NOT MIO AND RD_SYNC AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/changehold2: FDCPE port map (XLXI_327/changehold(2),PORTA(10).PIN,XLXI_327/changehold_C(2),RESET,'0');
+XLXI_327/changehold_C(2) <= (NOT MIO AND RD_SYNC AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/changehold3: FDCPE port map (XLXI_327/changehold(3),PORTA(11).PIN,XLXI_327/changehold_C(3),RESET,'0');
+XLXI_327/changehold_C(3) <= (NOT MIO AND RD_SYNC AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/dq1: FDCPE port map (XLXI_327/dq(1),AD_E(1).PIN,XLXI_327/dq_C(1),RESET,'0');
+XLXI_327/dq_C(1) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/dq14: FDCPE port map (XLXI_327/dq(14),AD_E(14).PIN,XLXI_327/dq_C(14),RESET,'0');
+XLXI_327/dq_C(14) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold0: FDCPE port map (XLXI_327/trishold(0),AD_E(0).PIN,XLXI_327/trishold_C(0),'0',RESET);
+XLXI_327/trishold_C(0) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold1: FDCPE port map (XLXI_327/trishold(1),AD_E(1).PIN,XLXI_327/trishold_C(1),'0',RESET);
+XLXI_327/trishold_C(1) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold2: FDCPE port map (XLXI_327/trishold(2),AD_E(2).PIN,XLXI_327/trishold_C(2),'0',RESET);
+XLXI_327/trishold_C(2) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold3: FDCPE port map (XLXI_327/trishold(3),AD_E(3).PIN,XLXI_327/trishold_C(3),'0',RESET);
+XLXI_327/trishold_C(3) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold4: FDCPE port map (XLXI_327/trishold(4),AD_E(4).PIN,XLXI_327/trishold_C(4),'0',RESET);
+XLXI_327/trishold_C(4) <= (NOT MIO AND WR_SYNC AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold5: FDCPE port map (XLXI_327/trishold(5),AD_E(5).PIN,XLXI_327/trishold_C(5),'0',RESET);
+XLXI_327/trishold_C(5) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold6: FDCPE port map (XLXI_327/trishold(6),AD_E(6).PIN,XLXI_327/trishold_C(6),'0',RESET);
+XLXI_327/trishold_C(6) <= (NOT MIO AND WR_SYNC AND NOT AL(1).LFBK AND AL(2).LFBK AND 
+	AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK);
+
+FDCPE_XLXI_327/trishold7: FDCPE port map (XLXI_327/trishold(7),AD_E(7).PIN,XLXI_327/trishold_C(7),'0',RESET);
+XLXI_327/trishold_C(7) <= (NOT MIO AND WR_SYNC AND NOT AL(1).LFBK AND AL(2).LFBK AND 
+	AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK);
+
+FDCPE_XLXI_327/trishold8: FDCPE port map (XLXI_327/trishold(8),AD_E(8).PIN,XLXI_327/trishold_C(8),'0',RESET);
+XLXI_327/trishold_C(8) <= (NOT MIO AND WR_SYNC AND NOT AL(1).LFBK AND AL(2).LFBK AND 
+	AL(3).LFBK AND NOT AL(5).LFBK AND NOT AL(6).LFBK AND NOT AL(4).LFBK);
+
+FDCPE_XLXI_327/trishold9: FDCPE port map (XLXI_327/trishold(9),AD_E(9).PIN,XLXI_327/trishold_C(9),'0',RESET);
+XLXI_327/trishold_C(9) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold10: FDCPE port map (XLXI_327/trishold(10),AD_E(10).PIN,XLXI_327/trishold_C(10),'0',RESET);
+XLXI_327/trishold_C(10) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold11: FDCPE port map (XLXI_327/trishold(11),AD_E(11).PIN,XLXI_327/trishold_C(11),'0',RESET);
+XLXI_327/trishold_C(11) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold12: FDCPE port map (XLXI_327/trishold(12),AD_E(12).PIN,XLXI_327/trishold_C(12),'0',RESET);
+XLXI_327/trishold_C(12) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold13: FDCPE port map (XLXI_327/trishold(13),AD_E(13).PIN,XLXI_327/trishold_C(13),'0',RESET);
+XLXI_327/trishold_C(13) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold14: FDCPE port map (XLXI_327/trishold(14),AD_E(14).PIN,XLXI_327/trishold_C(14),'0',RESET);
+XLXI_327/trishold_C(14) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXI_327/trishold15: FDCPE port map (XLXI_327/trishold(15),AD_E(15).PIN,XLXI_327/trishold_C(15),'0',RESET);
+XLXI_327/trishold_C(15) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_XLXN_2860: FDCPE port map (XLXN_2860,AD_E(0).PIN,XLXN_2860_C,RESET,'0');
+XLXN_2860_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_XLXN_2861: FDCPE port map (XLXN_2861,AD_E(8).PIN,XLXN_2861_C,RESET,'0');
+XLXN_2861_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_XLXN_2862: FDCPE port map (XLXN_2862,AD_E(7).PIN,XLXN_2862_C,RESET,'0');
+XLXN_2862_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_XLXN_2863: FDCPE port map (XLXN_2863,AD_E(2).PIN,XLXN_2863_C,RESET,'0');
+XLXN_2863_C <= (NOT MIO AND WR_SYNC AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_XLXN_2864: FDCPE port map (XLXN_2864,AD_E(1).PIN,XLXN_2864_C,RESET,'0');
+XLXN_2864_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_XLXN_2865: FDCPE port map (XLXN_2865,AD_E(6).PIN,XLXN_2865_C,RESET,'0');
+XLXN_2865_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_XLXN_2866: FDCPE port map (XLXN_2866,AD_E(5).PIN,XLXN_2866_C,RESET,'0');
+XLXN_2866_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_XLXN_2867: FDCPE port map (XLXN_2867,AD_E(4).PIN,XLXN_2867_C,RESET,'0');
+XLXN_2867_C <= (NOT MIO AND WR_SYNC AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_XLXN_2872: FDCPE port map (XLXN_2872,AD_E(3).PIN,XLXN_2872_C,RESET,'0');
+XLXN_2872_C <= (NOT MIO AND WR_SYNC AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_XLXN_3158: FDCPE port map (XLXN_3158,AD_E(15).PIN,XLXN_3158_C,RESET,'0');
+XLXN_3158_C <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND NOT AQ(2).PIN);
+
+FTCPE_clockgen/inclkd2: FTCPE port map (clockgen/inclkd2,'1',SYSCLK,'0','0');
+
+FTCPE_clockgen/inclkd4: FTCPE port map (clockgen/inclkd4,'1',clockgen/inclkd2,'0','0');
+
+FTCPE_clockgen/tclk0: FTCPE port map (clockgen/tclk(0),'1',CPUCLK.PIN,'0','0');
+
+FTCPE_clockgen/tclk1: FTCPE port map (clockgen/tclk(1),clockgen/tclk(0).LFBK,CPUCLK.PIN,'0','0');
+
+FTCPE_clockgen/tclk2: FTCPE port map (clockgen/tclk(2),clockgen/tclk_T(2),CPUCLK.PIN,'0','0');
+clockgen/tclk_T(2) <= (clockgen/tclk(0).LFBK AND clockgen/tclk(1).LFBK);
+
+FTCPE_clockgen/tclk3: FTCPE port map (clockgen/tclk(3),clockgen/tclk_T(3),CPUCLK_OBUF.LFBK,'0','0');
+clockgen/tclk_T(3) <= (clockgen/tclk(0) AND clockgen/tclk(1) AND 
+	clockgen/tclk(2));
+
+FTCPE_clockgen/tclk4: FTCPE port map (clockgen/tclk(4),clockgen/tclk_T(4),CPUCLK_OBUF.LFBK,'0','0');
+clockgen/tclk_T(4) <= (clockgen/tclk(0) AND clockgen/tclk(1) AND 
+	clockgen/tclk(2) AND clockgen/tclk(3).LFBK);
+
+FDCPE_clockgen/thirdclk1: FDCPE port map (clockgen/thirdclk(1),clockgen/thirdclk_D(1),clockgen/thirdclk(1)/clockgen/thirdclk(1)_CLKF,'0','0');
+clockgen/thirdclk_D(1) <= (CPUCLK_OBUF.LFBK AND NOT clockgen/thirdclk(1).LFBK);
+
+
+clockgen/thirdclk(1)/clockgen/thirdclk(1)_CLKF <= ((SYSCLK AND CPU10)
+	OR (clockgen/inclkd2 AND NOT CPU10));
+
+FDCPE_ioportb/dq0: FDCPE port map (ioportb/dq(0),AD_E(0).PIN,ioportb/dq_C(0),RESET,'0');
+ioportb/dq_C(0) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_ioportb/dq2: FDCPE port map (ioportb/dq(2),AD_E(2).PIN,ioportb/dq_C(2),RESET,'0');
+ioportb/dq_C(2) <= (NOT MIO AND WR_SYNC AND FC_3_.OUT AND NOT AQ(4).PIN AND 
+	NOT AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_ioportb/trishold0: FDCPE port map (ioportb/trishold(0),AD_E(0).PIN,ioportb/trishold_C(0),'0',RESET);
+ioportb/trishold_C(0) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_ioportb/trishold1: FDCPE port map (ioportb/trishold(1),AD_E(1).PIN,ioportb/trishold_C(1),'0',RESET);
+ioportb/trishold_C(1) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_ioportb/trishold2: FDCPE port map (ioportb/trishold(2),AD_E(2).PIN,ioportb/trishold_C(2),'0',RESET);
+ioportb/trishold_C(2) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_ioportb/trishold3: FDCPE port map (ioportb/trishold(3),AD_E(3).PIN,ioportb/trishold_C(3),'0',RESET);
+ioportb/trishold_C(3) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_ioportb/trishold4: FDCPE port map (ioportb/trishold(4),AD_E(4).PIN,ioportb/trishold_C(4),'0',RESET);
+ioportb/trishold_C(4) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_ioportb/trishold5: FDCPE port map (ioportb/trishold(5),AD_E(5).PIN,ioportb/trishold_C(5),'0',RESET);
+ioportb/trishold_C(5) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	NOT AQ(4).PIN AND AQ(3).PIN AND AQ(1).PIN AND AQ(2).PIN);
+
+FDCPE_ioportc/trishold0: FDCPE port map (ioportc/trishold(0),AD_E(0).PIN,ioportc/trishold_C(0),'0',RESET);
+ioportc/trishold_C(0) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold1: FDCPE port map (ioportc/trishold(1),AD_E(1).PIN,ioportc/trishold_C(1),'0',RESET);
+ioportc/trishold_C(1) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold2: FDCPE port map (ioportc/trishold(2),AD_E(2).PIN,ioportc/trishold_C(2),'0',RESET);
+ioportc/trishold_C(2) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold3: FDCPE port map (ioportc/trishold(3),AD_E(3).PIN,ioportc/trishold_C(3),'0',RESET);
+ioportc/trishold_C(3) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold4: FDCPE port map (ioportc/trishold(4),AD_E(4).PIN,ioportc/trishold_C(4),'0',RESET);
+ioportc/trishold_C(4) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold5: FDCPE port map (ioportc/trishold(5),AD_E(5).PIN,ioportc/trishold_C(5),'0',RESET);
+ioportc/trishold_C(5) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold6: FDCPE port map (ioportc/trishold(6),AD_E(6).PIN,ioportc/trishold_C(6),'0',RESET);
+ioportc/trishold_C(6) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold7: FDCPE port map (ioportc/trishold(7),AD_E(7).PIN,ioportc/trishold_C(7),'0',RESET);
+ioportc/trishold_C(7) <= (NOT MIO AND WR_SYNC AND FC_3_.OUT AND AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold8: FDCPE port map (ioportc/trishold(8),AD_E(8).PIN,ioportc/trishold_C(8),'0',RESET);
+ioportc/trishold_C(8) <= (NOT MIO AND WR_SYNC AND FC_3_.OUT AND AQ(4).PIN AND 
+	NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold9: FDCPE port map (ioportc/trishold(9),AD_E(9).PIN,ioportc/trishold_C(9),'0',RESET);
+ioportc/trishold_C(9) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold10: FDCPE port map (ioportc/trishold(10),AD_E(10).PIN,ioportc/trishold_C(10),'0',RESET);
+ioportc/trishold_C(10) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold11: FDCPE port map (ioportc/trishold(11),AD_E(11).PIN,ioportc/trishold_C(11),'0',RESET);
+ioportc/trishold_C(11) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold12: FDCPE port map (ioportc/trishold(12),AD_E(12).PIN,ioportc/trishold_C(12),'0',RESET);
+ioportc/trishold_C(12) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold13: FDCPE port map (ioportc/trishold(13),AD_E(13).PIN,ioportc/trishold_C(13),'0',RESET);
+ioportc/trishold_C(13) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold14: FDCPE port map (ioportc/trishold(14),AD_E(14).PIN,ioportc/trishold_C(14),'0',RESET);
+ioportc/trishold_C(14) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FDCPE_ioportc/trishold15: FDCPE port map (ioportc/trishold(15),AD_E(15).PIN,ioportc/trishold_C(15),'0',RESET);
+ioportc/trishold_C(15) <= (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND NOT AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN);
+
+FTCPE_timer0/count00: FTCPE port map (timer0/count0(0),timer0/count0_T(0),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(0) <= ((NOT MIO AND AD_E(0).PIN AND WR_SYNC AND 
+	NOT timer0/count0(0).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(0).PIN AND WR_SYNC AND 
+	timer0/count0(0).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND TIMER_RUN)
+	OR (TIMER_RUN AND NOT WR_SYNC)
+	OR (TIMER_RUN AND AQ(6).PIN)
+	OR (TIMER_RUN AND NOT AQ(3).PIN)
+	OR (TIMER_RUN AND AQ(5).PIN)
+	OR (TIMER_RUN AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND AQ(1).PIN)
+	OR (TIMER_RUN AND AQ(2).PIN));
+
+FTCPE_timer0/count01: FTCPE port map (timer0/count0(1),timer0/count0_T(1),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(1) <= ((MIO AND TIMER_RUN AND timer0/count0(0).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0).LFBK AND AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0).LFBK AND NOT AQ(3).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0).LFBK)
+	OR (NOT MIO AND AD_E(1).PIN AND WR_SYNC AND 
+	NOT timer0/count0(1).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(1).PIN AND WR_SYNC AND 
+	timer0/count0(1).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND timer0/count0(0).LFBK AND AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0).LFBK AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0).LFBK AND AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0).LFBK AND AQ(2).PIN));
+
+FTCPE_timer0/count02: FTCPE port map (timer0/count0(2),timer0/count0_T(2),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(2) <= ((TIMER_RUN AND NOT FC_3_.OUT AND FC_4_.OUT)
+	OR (TIMER_RUN AND FC_4_.OUT AND AQ(1).PIN)
+	OR (TIMER_RUN AND FC_4_.OUT AND AQ(2).PIN)
+	OR (NOT MIO AND AD_E(2).PIN AND WR_SYNC AND FC_3_.OUT AND 
+	NOT timer0/count0(2).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(2).PIN AND WR_SYNC AND FC_3_.OUT AND 
+	timer0/count0(2).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND TIMER_RUN AND FC_4_.OUT)
+	OR (TIMER_RUN AND NOT WR_SYNC AND FC_4_.OUT)
+	OR (TIMER_RUN AND FC_4_.OUT AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND FC_4_.OUT AND NOT AQ(3).PIN));
+
+FTCPE_timer0/count03: FTCPE port map (timer0/count0(3),timer0/count0_T(3),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(3) <= ((XLXN_2863.EXP)
+	OR (TIMER_RUN AND NOT FC_3_.OUT AND FC_4_.OUT AND 
+	timer0/count0(2).LFBK)
+	OR (TIMER_RUN AND FC_4_.OUT AND timer0/count0(2).LFBK AND 
+	NOT AQ(4).PIN)
+	OR (TIMER_RUN AND FC_4_.OUT AND timer0/count0(2).LFBK AND 
+	NOT AQ(3).PIN)
+	OR (TIMER_RUN AND FC_4_.OUT AND timer0/count0(2).LFBK AND 
+	AQ(1).PIN)
+	OR (TIMER_RUN AND FC_4_.OUT AND timer0/count0(2).LFBK AND 
+	AQ(2).PIN)
+	OR (MIO AND TIMER_RUN AND FC_4_.OUT AND 
+	timer0/count0(2).LFBK)
+	OR (TIMER_RUN AND NOT WR_SYNC AND FC_4_.OUT AND 
+	timer0/count0(2).LFBK));
+
+FTCPE_timer0/count04: FTCPE port map (timer0/count0(4),timer0/count0_T(4),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(4) <= ((TIMER_RUN AND NOT FC_3_.OUT AND FC_4_.OUT AND 
+	timer0/count0(2).LFBK AND timer0/count0(3).LFBK)
+	OR (TIMER_RUN AND FC_4_.OUT AND timer0/count0(2).LFBK AND 
+	timer0/count0(3).LFBK AND AQ(1).PIN)
+	OR (TIMER_RUN AND FC_4_.OUT AND timer0/count0(2).LFBK AND 
+	timer0/count0(3).LFBK AND AQ(2).PIN)
+	OR (NOT MIO AND AD_E(4).PIN AND WR_SYNC AND FC_3_.OUT AND 
+	NOT timer0/count0(4).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(4).PIN AND WR_SYNC AND FC_3_.OUT AND 
+	timer0/count0(4).LFBK AND AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND TIMER_RUN AND FC_4_.OUT AND 
+	timer0/count0(2).LFBK AND timer0/count0(3).LFBK)
+	OR (TIMER_RUN AND NOT WR_SYNC AND FC_4_.OUT AND 
+	timer0/count0(2).LFBK AND timer0/count0(3).LFBK)
+	OR (TIMER_RUN AND FC_4_.OUT AND timer0/count0(2).LFBK AND 
+	timer0/count0(3).LFBK AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND FC_4_.OUT AND timer0/count0(2).LFBK AND 
+	timer0/count0(3).LFBK AND NOT AQ(3).PIN));
+
+FTCPE_timer0/count05: FTCPE port map (timer0/count0(5),timer0/count0_T(5),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(5) <= ((MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4))
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND NOT AQ(3).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4))
+	OR (NOT MIO AND AD_E(5).PIN AND WR_SYNC AND 
+	NOT timer0/count0(5).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(5).PIN AND WR_SYNC AND 
+	timer0/count0(5).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND AQ(2).PIN));
+
+FTCPE_timer0/count06: FTCPE port map (timer0/count0(6),timer0/count0_T(6),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(6) <= ((MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND NOT AQ(3).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5).LFBK)
+	OR (NOT MIO AND AD_E(6).PIN AND WR_SYNC AND 
+	NOT timer0/count0(6).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(6).PIN AND WR_SYNC AND 
+	timer0/count0(6).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND AQ(2).PIN));
+
+FTCPE_timer0/count07: FTCPE port map (timer0/count0(7),timer0/count0_T(7),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(7) <= ((MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5).LFBK AND timer0/count0(6).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND NOT AQ(3).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5).LFBK AND timer0/count0(6).LFBK)
+	OR (NOT MIO AND AD_E(7).PIN AND WR_SYNC AND 
+	NOT timer0/count0(7).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(7).PIN AND WR_SYNC AND 
+	timer0/count0(7).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND AQ(2).PIN));
+
+FTCPE_timer0/count08: FTCPE port map (timer0/count0(8),timer0/count0_T(8),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(8) <= ((MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND 
+	timer0/count0(7).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	NOT AQ(3).PIN)
+	OR (NOT MIO AND AD_E(8).PIN AND WR_SYNC AND 
+	NOT timer0/count0(8).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(8).PIN AND WR_SYNC AND 
+	timer0/count0(8).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND 
+	timer0/count0(7).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	AQ(2).PIN));
+
+FTCPE_timer0/count09: FTCPE port map (timer0/count0(9),timer0/count0_T(9),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(9) <= ((MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND 
+	timer0/count0(7).LFBK AND timer0/count0(8).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND NOT AQ(3).PIN)
+	OR (NOT MIO AND AD_E(9).PIN AND WR_SYNC AND 
+	NOT timer0/count0(9).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(9).PIN AND WR_SYNC AND 
+	timer0/count0(9).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND 
+	timer0/count0(7).LFBK AND timer0/count0(8).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND AQ(2).PIN));
+
+
+timer0/count0(9)/timer0/count0(9)_CLKF <= ((TIMER_CLK AND NOT AQ(4).PIN)
+	OR (TIMER_CLK AND NOT AQ(3).PIN)
+	OR (NOT MIO AND WR_SYNC AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND 
+	AQ(4).PIN AND AQ(3).PIN AND NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (MIO AND TIMER_CLK)
+	OR (TIMER_CLK AND AQ(5).PIN)
+	OR (TIMER_CLK AND AQ(6).PIN)
+	OR (TIMER_CLK AND AQ(1).PIN)
+	OR (TIMER_CLK AND AQ(2).PIN));
+
+FTCPE_timer0/count010: FTCPE port map (timer0/count0(10),timer0/count0_T(10),timer0/count0(9)/timer0/count0(9)_CLKF.LFBK,RESET,'0');
+timer0/count0_T(10) <= ((NOT MIO AND AD_E(10).PIN AND WR_SYNC AND 
+	NOT timer0/count0(10).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(10).PIN AND WR_SYNC AND 
+	timer0/count0(10).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9))
+	OR (MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9))
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5) AND timer0/count0(6) AND timer0/count0(7) AND 
+	timer0/count0(8) AND timer0/count0(9) AND AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5) AND timer0/count0(6) AND timer0/count0(7) AND 
+	timer0/count0(8) AND timer0/count0(9) AND NOT AQ(3).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5) AND timer0/count0(6) AND timer0/count0(7) AND 
+	timer0/count0(8) AND timer0/count0(9) AND AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5) AND timer0/count0(6) AND timer0/count0(7) AND 
+	timer0/count0(8) AND timer0/count0(9) AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5) AND timer0/count0(6) AND timer0/count0(7) AND 
+	timer0/count0(8) AND timer0/count0(9) AND AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5) AND timer0/count0(6) AND timer0/count0(7) AND 
+	timer0/count0(8) AND timer0/count0(9) AND AQ(2).PIN));
+
+FTCPE_timer0/count011: FTCPE port map (timer0/count0(11),timer0/count0_T(11),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(11) <= ((NOT MIO AND AD_E(11).PIN AND WR_SYNC AND 
+	NOT timer0/count0(11).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(11).PIN AND WR_SYNC AND 
+	timer0/count0(11).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(10) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9))
+	OR (MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(10) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9))
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND NOT AQ(3).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND AQ(2).PIN));
+
+FTCPE_timer0/count012: FTCPE port map (timer0/count0(12),timer0/count0_T(12),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(12) <= ((MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(10) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND 
+	timer0/count0(11).LFBK AND AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND 
+	timer0/count0(11).LFBK AND NOT AQ(3).PIN)
+	OR (NOT MIO AND AD_E(12).PIN AND WR_SYNC AND 
+	NOT timer0/count0(12).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(12).PIN AND WR_SYNC AND 
+	timer0/count0(12).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(10) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND 
+	timer0/count0(11).LFBK AND AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND 
+	timer0/count0(11).LFBK AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND 
+	timer0/count0(11).LFBK AND AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5) AND timer0/count0(6) AND 
+	timer0/count0(7) AND timer0/count0(8) AND timer0/count0(9) AND 
+	timer0/count0(11).LFBK AND AQ(2).PIN));
+
+FTCPE_timer0/count013: FTCPE port map (timer0/count0(13),timer0/count0_T(13),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(13) <= ((NOT MIO AND AD_E(13).PIN AND WR_SYNC AND 
+	NOT timer0/count0(13).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(13).PIN AND WR_SYNC AND 
+	timer0/count0(13).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(10) AND timer0/count0(11) AND timer0/count0(12) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND 
+	timer0/count0(7).LFBK AND timer0/count0(8).LFBK AND timer0/count0(9).LFBK)
+	OR (MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(10) AND timer0/count0(11) AND timer0/count0(12) AND 
+	timer0/count0(1) AND timer0/count0(2) AND timer0/count0(3) AND 
+	timer0/count0(4) AND timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND 
+	timer0/count0(7).LFBK AND timer0/count0(8).LFBK AND timer0/count0(9).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(11) AND timer0/count0(12) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND timer0/count0(9).LFBK AND AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(11) AND timer0/count0(12) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND timer0/count0(9).LFBK AND NOT AQ(3).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(11) AND timer0/count0(12) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND timer0/count0(9).LFBK AND AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(11) AND timer0/count0(12) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND timer0/count0(9).LFBK AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(11) AND timer0/count0(12) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND timer0/count0(9).LFBK AND AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(11) AND timer0/count0(12) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5).LFBK AND timer0/count0(6).LFBK AND timer0/count0(7).LFBK AND 
+	timer0/count0(8).LFBK AND timer0/count0(9).LFBK AND AQ(2).PIN));
+
+FTCPE_timer0/count014: FTCPE port map (timer0/count0(14),timer0/count0_T(14),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(14) <= ((MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(10) AND timer0/count0(13) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5) AND timer0/count0(6) AND timer0/count0(7) AND 
+	timer0/count0(8) AND timer0/count0(9) AND timer0/count0(11).LFBK AND 
+	timer0/count0(12).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	NOT AQ(3).PIN)
+	OR (NOT MIO AND AD_E(14).PIN AND WR_SYNC AND 
+	NOT timer0/count0(14).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(14).PIN AND WR_SYNC AND 
+	timer0/count0(14).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(10) AND timer0/count0(13) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5) AND timer0/count0(6) AND timer0/count0(7) AND 
+	timer0/count0(8) AND timer0/count0(9) AND timer0/count0(11).LFBK AND 
+	timer0/count0(12).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	AQ(2).PIN));
+
+FTCPE_timer0/count015: FTCPE port map (timer0/count0(15),timer0/count0_T(15),timer0/count0(9)/timer0/count0(9)_CLKF,RESET,'0');
+timer0/count0_T(15) <= ((MIO AND TIMER_RUN AND timer0/count0(0) AND 
+	timer0/count0(10) AND timer0/count0(13) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5) AND timer0/count0(6) AND timer0/count0(7) AND 
+	timer0/count0(8) AND timer0/count0(9) AND timer0/count0(11).LFBK AND 
+	timer0/count0(12).LFBK AND timer0/count0(14).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	timer0/count0(14).LFBK AND AQ(6).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	timer0/count0(14).LFBK AND NOT AQ(3).PIN)
+	OR (NOT MIO AND AD_E(15).PIN AND WR_SYNC AND 
+	NOT timer0/count0(15).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (NOT MIO AND NOT AD_E(15).PIN AND WR_SYNC AND 
+	timer0/count0(15).LFBK AND NOT AQ(5).PIN AND NOT AQ(6).PIN AND AQ(4).PIN AND AQ(3).PIN AND 
+	NOT AQ(1).PIN AND NOT AQ(2).PIN)
+	OR (TIMER_RUN AND NOT WR_SYNC AND timer0/count0(0) AND 
+	timer0/count0(10) AND timer0/count0(13) AND timer0/count0(1) AND 
+	timer0/count0(2) AND timer0/count0(3) AND timer0/count0(4) AND 
+	timer0/count0(5) AND timer0/count0(6) AND timer0/count0(7) AND 
+	timer0/count0(8) AND timer0/count0(9) AND timer0/count0(11).LFBK AND 
+	timer0/count0(12).LFBK AND timer0/count0(14).LFBK)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	timer0/count0(14).LFBK AND AQ(5).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	timer0/count0(14).LFBK AND NOT AQ(4).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	timer0/count0(14).LFBK AND AQ(1).PIN)
+	OR (TIMER_RUN AND timer0/count0(0) AND timer0/count0(10) AND 
+	timer0/count0(13) AND timer0/count0(1) AND timer0/count0(2) AND 
+	timer0/count0(3) AND timer0/count0(4) AND timer0/count0(5) AND 
+	timer0/count0(6) AND timer0/count0(7) AND timer0/count0(8) AND 
+	timer0/count0(9) AND timer0/count0(11).LFBK AND timer0/count0(12).LFBK AND 
+	timer0/count0(14).LFBK AND AQ(2).PIN));
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE); 
+ FTCPE (Q,D,C,CLR,PRE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC95216-10-PQ160
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 VCC                              81 VCC                           
+  2 AQ<8>                            82 PORTB<4>                      
+  3 AQ<7>                            83 PORTB<3>                      
+  4 AQ<6>                            84 PORTB<2>                      
+  5 AQ<5>                            85 PORTB<1>                      
+  6 AQ<0>                            86 PORTB<0>                      
+  7 ROMCS                            87 PORTA<15>                     
+  8 UHE                              88 PORTA<14>                     
+  9 TIE                              89 PORTA<0>                      
+ 10 VCC                              90 PORTA<1>                      
+ 11 ULE                              91 PORTA<2>                      
+ 12 MIDCLK                           92 PORTA<3>                      
+ 13 MIDCS                            93 PORTA<4>                      
+ 14 I2CCS                            94 VCC                           
+ 15 RXA                              95 PORTA<5>                      
+ 16 RXD                              96 PORTA<6>                      
+ 17 IRQ4                             97 PORTA<7>                      
+ 18 UCSD                             98 PORTA<8>                      
+ 19 TXD                              99 GND                           
+ 20 GND                             100 GND                           
+ 21 TXC                             101 PORTA<9>                      
+ 22 UCSC                            102 PORTA<10>                     
+ 23 IRQ3                            103 PORTA<11>                     
+ 24 RXB                             104 PORTA<12>                     
+ 25 NMI                             105 PORTA<13>                     
+ 26 RXC                             106 CPU10                         
+ 27 IRQ1                            107 SYSCLK                        
+ 28 UCSA                            108 ALE                           
+ 29 IRQ2                            109 DEN                           
+ 30 UCSB                            110 GND                           
+ 31 GND                             111 MIO                           
+ 32 TXB                             112 EXTWR                         
+ 33 TXA                             113 EXTRD                         
+ 34 PGMRXD                          114 BHE                           
+ 35 RAMCS                           115 A<19>                         
+ 36 PORTD<15>                       116 A<18>                         
+ 37 PORTD<14>                       117 A<17>                         
+ 38 PORTD<13>                       118 A<16>                         
+ 39 PORTD<12>                       119 AD_E<15>                      
+ 40 GND                             120 GND                           
+ 41 VCC                             121 VCC                           
+ 42 PORTD<11>                       122 AD_E<14>                      
+ 43 PORTD<10>                       123 AD_E<13>                      
+ 44 PORTD<9>                        124 AD_E<12>                      
+ 45 PORTD<8>                        125 AD_E<11>                      
+ 46 VCC                             126 AD_E<10>                      
+ 47 PORTD<7>                        127 GND                           
+ 48 PORTD<6>                        128 AD_E<9>                       
+ 49 PORTD<5>                        129 AD_E<8>                       
+ 50 PORTD<4>                        130 AD_E<7>                       
+ 51 GND                             131 AD_E<6>                       
+ 52 PORTD<3>                        132 AD_E<5>                       
+ 53 PORTD<2>                        133 AD_E<4>                       
+ 54 PORTD<1>                        134 AD_E<3>                       
+ 55 EEWP                            135 AD_E<2>                       
+ 56 MRST                            136 TDO                           
+ 57 PORTD<0>                        137 GND                           
+ 58 PORTC<15>                       138 AD_E<1>                       
+ 59 PORTC<14>                       139 AD_E<0>                       
+ 60 PORTC<13>                       140 CPUCLK                        
+ 61 VCC                             141 VCC                           
+ 62 PORTC<12>                       142 RDY                           
+ 63 PORTC<11>                       143 BHEQ                          
+ 64 PORTC<10>                       144 AQ<18>                        
+ 65 PORTC<9>                        145 AQ<17>                        
+ 66 PORTC<8>                        146 AQ<16>                        
+ 67 PORTC<7>                        147 AQ<15>                        
+ 68 PORTC<6>                        148 AQ<14>                        
+ 69 PORTC<5>                        149 AQ<13>                        
+ 70 GND                             150 AQ<12>                        
+ 71 TDI                             151 AQ<11>                        
+ 72 PORTC<4>                        152 AQ<10>                        
+ 73 TMS                             153 AQ<9>                         
+ 74 PORTC<3>                        154 AQ<1>                         
+ 75 TCK                             155 AQ<2>                         
+ 76 PORTC<2>                        156 AQ<3>                         
+ 77 PORTC<1>                        157 VCC                           
+ 78 PORTC<0>                        158 AQ<4>                         
+ 79 PORTB<5>                        159 RESET                         
+ 80 GND                             160 GND                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc95216-10-PQ160
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+FASTConnect/UIM optimzation                 : ON
+Local Feedback                              : ON
+Pin Feedback                                : ON
+Input Limit                                 : 36
+Pterm Limit                                 : 25
+</pre>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

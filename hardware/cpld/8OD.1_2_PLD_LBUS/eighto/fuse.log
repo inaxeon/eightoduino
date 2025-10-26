@@ -1,0 +1,59 @@
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "N:/Electronics/eightoduino/PLD/eighto/intr_test_isim_beh.exe" -prj "N:/Electronics/eightoduino/PLD/eighto/intr_test_beh.prj" "work.intr_test" 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/timer16.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/portread.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/oport_16.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/ioport_6_umux.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/ioport_16_umux.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/ioport_16.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/intc.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/FD21WB.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/cpuclock.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/configreg.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/biu.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/adecode.vhd" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/main.vhf" into library work
+Parsing VHDL file "N:/Electronics/eightoduino/PLD/eighto/intr_test.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package vcomponents
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity adecode [adecode_default]
+Compiling architecture behavioral of entity biu [biu_default]
+Compiling architecture behavioral of entity intc [intc_default]
+Compiling architecture behavioral of entity ioport_16_umux [ioport_16_umux_default]
+Compiling architecture behavioral of entity ioport_6_umux [ioport_6_umux_default]
+Compiling architecture behavioral of entity ioport_16 [ioport_16_default]
+Compiling architecture behavioral of entity oport_16 [oport_16_default]
+Compiling architecture behavioral of entity portread [portread_default]
+Compiling architecture behavioral of entity timer16 [timer16_default]
+Compiling architecture inv_v of entity INV [inv_default]
+Compiling package textio
+Compiling package vital_timing
+Compiling architecture ibuf_v of entity IBUF [\IBUF("DONT_CARE","0",true,"AUTO...]
+Compiling architecture behavioral of entity IBUF16_MXILINX_main [ibuf16_mxilinx_main_default]
+Compiling architecture obuft_v of entity OBUFT [\OBUFT("DONT_CARE",12,"DEFAULT",...]
+Compiling architecture behavioral of entity OBUFE_MXILINX_main [obufe_mxilinx_main_default]
+Compiling architecture behavioral of entity OBUFE16_MXILINX_main [obufe16_mxilinx_main_default]
+Compiling architecture and2_v of entity AND2 [and2_default]
+Compiling architecture obuf_v of entity OBUF [\OBUF("DONT_CARE",12,"DEFAULT","...]
+Compiling architecture behavioral of entity cpuclock [cpuclock_default]
+Compiling architecture gnd_v of entity GND [gnd_default]
+Compiling architecture behavioral of entity FD21 [fd21_default]
+Compiling architecture behavioral of entity configreg [configreg_default]
+Compiling architecture or4_v of entity OR4 [or4_default]
+Compiling architecture behavioral of entity main [main_default]
+Compiling architecture behavioral of entity intr_test
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 55 VHDL Units
+Built simulation executable N:/Electronics/eightoduino/PLD/eighto/intr_test_isim_beh.exe
+Fuse Memory Usage: 50176 KB
+Fuse CPU Usage: 1921 ms

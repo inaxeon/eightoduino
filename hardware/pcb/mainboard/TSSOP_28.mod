@@ -1,0 +1,217 @@
+PCBNEW-LibModule-V1  14/07/2014 21:49:55
+# encoding utf-8
+Units mm
+$INDEX
+TSSOP-28
+$EndINDEX
+$MODULE TSSOP-28
+Po 0 0 0 15 53C44269 00000000 ~~
+Li TSSOP-28
+Sc 0
+AR 
+Op 0 0 0
+T0 0.254 -0.762 1 1 0 0.15 N V 21 N "TSSOP-28"
+T1 0 1.016 1 1 0 0.15 N I 21 N "VAL**"
+DC -4.318 1.778 -4.572 1.778 0.15 21
+DS 4.85 2.2 -4.85 2.2 0.15 21
+DS -4.85 2.2 -4.85 -2.2 0.15 21
+DS -4.85 -2.2 4.85 -2.2 0.15 21
+DS 4.85 -2.2 4.85 2.2 0.15 21
+$PAD
+Sh "1" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4.225 2.97
+$EndPAD
+$PAD
+Sh "2" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.575 2.97
+$EndPAD
+$PAD
+Sh "3" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.925 2.97
+$EndPAD
+$PAD
+Sh "4" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.275 2.97
+$EndPAD
+$PAD
+Sh "5" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.625 2.97
+$EndPAD
+$PAD
+Sh "6" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.975 2.97
+$EndPAD
+$PAD
+Sh "7" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.325 2.97
+$EndPAD
+$PAD
+Sh "8" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.325 2.97
+$EndPAD
+$PAD
+Sh "9" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.975 2.97
+$EndPAD
+$PAD
+Sh "10" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.625 2.97
+$EndPAD
+$PAD
+Sh "11" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.275 2.97
+$EndPAD
+$PAD
+Sh "12" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.925 2.97
+$EndPAD
+$PAD
+Sh "13" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.575 2.97
+$EndPAD
+$PAD
+Sh "14" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4.225 2.97
+$EndPAD
+$PAD
+Sh "15" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4.225 -2.97
+$EndPAD
+$PAD
+Sh "16" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.575 -2.97
+$EndPAD
+$PAD
+Sh "17" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.925 -2.97
+$EndPAD
+$PAD
+Sh "18" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.275 -2.97
+$EndPAD
+$PAD
+Sh "19" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.625 -2.97
+$EndPAD
+$PAD
+Sh "20" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.975 -2.97
+$EndPAD
+$PAD
+Sh "21" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.325 -2.97
+$EndPAD
+$PAD
+Sh "22" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.325 -2.97
+$EndPAD
+$PAD
+Sh "23" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.975 -2.97
+$EndPAD
+$PAD
+Sh "24" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.625 -2.97
+$EndPAD
+$PAD
+Sh "25" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.275 -2.97
+$EndPAD
+$PAD
+Sh "26" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.925 -2.97
+$EndPAD
+$PAD
+Sh "27" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.575 -2.97
+$EndPAD
+$PAD
+Sh "28" R 0.42 1.78 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4.225 -2.97
+$EndPAD
+$EndMODULE TSSOP-28
+$EndLIBRARY

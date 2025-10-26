@@ -1,0 +1,23 @@
+PCBNEW-LibModule-V1  10/08/2014 21:23:47
+# encoding utf-8
+Units mm
+$INDEX
+SM1
+$EndINDEX
+$MODULE SM1
+Po 0 0 0 15 53E7D481 00000000 ~~
+Li SM1
+Sc 0
+AR 
+Op 0 0 0
+T0 0 0 1 1 0 0.15 N I 21 N ""
+T1 0 0 1 1 0 0.15 N I 21 N ""
+$PAD
+Sh "1" R 1.143 1.143 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE SM1
+$EndLIBRARY

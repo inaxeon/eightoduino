@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="N:/Electronics/eightoduino/PLD/eighto/intr_test_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="intr_test" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="vital_timing" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="42" />
+   <wvobject fp_name="/intr_test/a" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">a[19:16]</obj_property>
+      <obj_property name="ObjectShortName">a[19:16]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/mio" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mio</obj_property>
+      <obj_property name="ObjectShortName">mio</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/extrd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">extrd</obj_property>
+      <obj_property name="ObjectShortName">extrd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/extwr" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">extwr</obj_property>
+      <obj_property name="ObjectShortName">extwr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/ad" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ad[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ad[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/ale" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ale</obj_property>
+      <obj_property name="ObjectShortName">ale</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/aq" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">aq[19:0]</obj_property>
+      <obj_property name="ObjectShortName">aq[19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/romcs" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">romcs</obj_property>
+      <obj_property name="ObjectShortName">romcs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/ramcs" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ramcs</obj_property>
+      <obj_property name="ObjectShortName">ramcs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/ucsa" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ucsa</obj_property>
+      <obj_property name="ObjectShortName">ucsa</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/ucsb" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ucsb</obj_property>
+      <obj_property name="ObjectShortName">ucsb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/ucsc" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ucsc</obj_property>
+      <obj_property name="ObjectShortName">ucsc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/ucsd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ucsd</obj_property>
+      <obj_property name="ObjectShortName">ucsd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/porta" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">porta[15:0]</obj_property>
+      <obj_property name="ObjectShortName">porta[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/portb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">portb[5:0]</obj_property>
+      <obj_property name="ObjectShortName">portb[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/portc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">portc[15:0]</obj_property>
+      <obj_property name="ObjectShortName">portc[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/portd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">portd[15:0]</obj_property>
+      <obj_property name="ObjectShortName">portd[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/txa" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txa</obj_property>
+      <obj_property name="ObjectShortName">txa</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/txd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txd</obj_property>
+      <obj_property name="ObjectShortName">txd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/txb" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txb</obj_property>
+      <obj_property name="ObjectShortName">txb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/txc" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txc</obj_property>
+      <obj_property name="ObjectShortName">txc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/sysclk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sysclk</obj_property>
+      <obj_property name="ObjectShortName">sysclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/cpu10" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cpu10</obj_property>
+      <obj_property name="ObjectShortName">cpu10</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/cpuclk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cpuclk</obj_property>
+      <obj_property name="ObjectShortName">cpuclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/bhe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">bhe</obj_property>
+      <obj_property name="ObjectShortName">bhe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/ule" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ule</obj_property>
+      <obj_property name="ObjectShortName">ule</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/uhe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">uhe</obj_property>
+      <obj_property name="ObjectShortName">uhe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/udir" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">udir</obj_property>
+      <obj_property name="ObjectShortName">udir</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/eewp" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">eewp</obj_property>
+      <obj_property name="ObjectShortName">eewp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/eecs" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">eecs</obj_property>
+      <obj_property name="ObjectShortName">eecs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/adcs" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">adcs</obj_property>
+      <obj_property name="ObjectShortName">adcs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/sck" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sck</obj_property>
+      <obj_property name="ObjectShortName">sck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/mosi" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mosi</obj_property>
+      <obj_property name="ObjectShortName">mosi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/miso" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">miso</obj_property>
+      <obj_property name="ObjectShortName">miso</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/irq1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">irq1</obj_property>
+      <obj_property name="ObjectShortName">irq1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/irq2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">irq2</obj_property>
+      <obj_property name="ObjectShortName">irq2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/irq4" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">irq4</obj_property>
+      <obj_property name="ObjectShortName">irq4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/irq3" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">irq3</obj_property>
+      <obj_property name="ObjectShortName">irq3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/nmi" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nmi</obj_property>
+      <obj_property name="ObjectShortName">nmi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/mrst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mrst</obj_property>
+      <obj_property name="ObjectShortName">mrst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/intr_test/test" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">test</obj_property>
+      <obj_property name="ObjectShortName">test</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,10 @@
+[Inputs]
+reset
+wr
+timercs
+run
+clk
+=d[15:0]=
+[Outputs]
+overflow
+[BiDir]

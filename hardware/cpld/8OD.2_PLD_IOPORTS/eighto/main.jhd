@@ -1,0 +1,27 @@
+MODULE main
+	SUBMODULE adecode
+		INSTANCE XLXI_348
+	SUBMODULE ioport_16
+		INSTANCE ioportc
+	SUBMODULE ioport_6_umux
+		INSTANCE ioportb
+	SUBMODULE timer16
+		INSTANCE timer0
+	SUBMODULE biu
+		INSTANCE businterface
+	SUBMODULE intc
+		INSTANCE intr
+	SUBMODULE cpuclock
+		INSTANCE clockgen
+	SUBMODULE FD21
+		INSTANCE addrdemux
+	SUBMODULE configreg
+		INSTANCE config
+	SUBMODULE portread
+		INSTANCE portreader
+	SUBMODULE ioport_16_umux
+		INSTANCE XLXI_327
+	SUBMODULE oport_16
+		INSTANCE XLXI_341
+	SUBMODULE asplit
+		INSTANCE XLXI_351

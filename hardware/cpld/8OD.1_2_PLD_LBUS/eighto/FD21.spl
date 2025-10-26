@@ -1,0 +1,9 @@
+[Inputs]
+BHE
+E
+=AD[15:0]=
+=A[3:0]=
+[Outputs]
+BHEQ
+=Q[19:0]=
+[BiDir]

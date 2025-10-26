@@ -1,0 +1,12 @@
+vhdtdtfi -lib work FD21WB.vhd -prj eighto -o FD21.spl -module FD21 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 FD21.spl N:/Electronics/eightoduino/PLD/eighto/FD21.sym 
+vhdtdtfi -lib work FD21WB.vhd -prj eighto -o FD21.spl -module FD21 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 FD21.spl N:/Electronics/eightoduino/PLD/eighto/FD21.sym 
+vhdtdtfi -lib work FD21WB.vhd -prj eighto -o FD21.spl -module FD21 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 FD21.spl N:/Electronics/eightoduino/PLD/eighto/FD21.sym 
+vhdtdtfi -lib work FD21WB.vhd -prj eighto -o FD21.spl -module FD21 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 FD21.spl N:/Electronics/eightoduino/PLD/eighto/FD21.sym 
+vhdtdtfi -lib work FD21WB.vhd -prj eighto -o FD21.spl -module FD21 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 FD21.spl N:/Electronics/eightoduino/PLD/eighto/FD21.sym 
+vhdtdtfi -lib work FD21WB.vhd -prj eighto -o FD21.spl -module FD21 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 FD21.spl N:/Electronics/eightoduino/PLD/eighto/FD21.sym 

@@ -1,0 +1,38 @@
+PCBNEW-LibModule-V1  14/07/2014 21:30:23
+# encoding utf-8
+Units mm
+$INDEX
+SMC
+$EndINDEX
+$MODULE SMC
+Po 0 0 0 15 53C43DD9 00000000 ~~
+Li SMC
+Sc 0
+AR 
+Op 0 0 0
+T0 0 1 1 1 0 0.15 N V 21 N "SMC"
+T1 0 -0.5 1 1 0 0.15 N I 21 N "VAL**"
+DS 2.5 -2 2.5 -3 0.15 21
+DS 2.5 3 2.5 2 0.15 21
+DS -3.5 3 -3.5 2 0.15 21
+DS 3.5 -2 3.5 -3 0.15 21
+DS 3.5 -3 -3.5 -3 0.15 21
+DS -3.5 -3 -3.5 -2 0.15 21
+DS 3.5 3 3.5 2 0.15 21
+DS 3.5 3 -3.5 3 0.15 21
+$PAD
+Sh "1" R 2.5 3.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.4 0
+$EndPAD
+$PAD
+Sh "2" R 2.5 3.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.4 0
+$EndPAD
+$EndMODULE SMC
+$EndLIBRARY

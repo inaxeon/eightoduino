@@ -1,0 +1,20 @@
+vhdtdtfi -lib work biu.vhd -prj eighto -o biu.spl -module biu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 biu.spl N:/Electronics/eightoduino/PLD/eighto/biu.sym 
+vhdtdtfi -lib work biu.vhd -prj eighto -o biu.spl -module biu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 biu.spl N:/Electronics/eightoduino/PLD/eighto/biu.sym 
+vhdtdtfi -lib work biu.vhd -prj eighto -o biu.spl -module biu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 biu.spl N:/Electronics/eightoduino/PLD/eighto/biu.sym 
+vhdtdtfi -lib work biu.vhd -prj eighto -o biu.spl -module biu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 biu.spl N:/Electronics/eightoduino/PLD/eighto/biu.sym 
+vhdtdtfi -lib work biu.vhd -prj eighto -o biu.spl -module biu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 biu.spl N:/Electronics/eightoduino/PLD/eighto/biu.sym 
+vhdtdtfi -lib work biu.vhd -prj eighto -o biu.spl -module biu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 biu.spl C:/Projects/PLD_HD44780/eighto/biu.sym 
+vhdtdtfi -lib work biu.vhd -prj eighto -o biu.spl -module biu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 biu.spl C:/Projects/8od_phase_3/8OD.1_PLD_8OD.2COMPAT/eighto/biu.sym 
+vhdtdtfi -lib work biu.vhd -prj eighto -o biu.spl -module biu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 biu.spl N:/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/biu.sym 
+vhdtdtfi -lib work biu.vhd -prj eighto -o biu.spl -module biu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 biu.spl N:/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/biu.sym 
+vhdtdtfi -lib work biu.vhd -prj eighto -o biu.spl -module biu -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 biu.spl N:/Electronics/eightoduino_phase_3/8OD.1_PLD_8OD.2/eighto/biu.sym 

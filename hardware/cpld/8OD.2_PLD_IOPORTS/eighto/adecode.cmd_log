@@ -1,0 +1,27 @@
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl N:/Electronics/8086/PLD/eighto/adecode.sym 
+vhdtdtfi -prj eighto -o N:/Electronics/8086/PLD/eighto/adecode.vhi -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work adecode.vhd 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl C:/Projects/8086/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl C:/Projects/8086/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl C:/Projects/8086/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl C:/Projects/8086/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl N:/Electronics/eightoduino/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl N:/Electronics/eightoduino/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl N:/Electronics/eightoduino/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl N:/Electronics/eightoduino/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl N:/Electronics/eightoduino/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl N:/Electronics/eightoduino/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl N:/Electronics/eightoduino/PLD/eighto/adecode.sym 
+vhdtdtfi -lib work adecode.vhd -prj eighto_12_ioports -o adecode.spl -module adecode -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 adecode.spl N:/Electronics/eightoduino_v3/8OD.1_PLD_8OD.2_IOPORTS/eighto/adecode.sym 

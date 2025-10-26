@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name duino)(type KiCad)(uri "$(KIPRJMOD)\\duino.pretty")(options "")(descr ""))
+  (lib (name PIN_ARRAY_5X2)(type KiCad)(uri "$(KIPRJMOD)\\PIN_ARRAY_5X2.pretty")(options "")(descr ""))
+  (lib (name PIN_ARRAY_9X2)(type KiCad)(uri "$(KIPRJMOD)\\PIN_ARRAY_9X2.pretty")(options "")(descr ""))
+)

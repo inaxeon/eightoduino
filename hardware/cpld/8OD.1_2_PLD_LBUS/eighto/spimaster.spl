@@ -1,0 +1,17 @@
+[Inputs]
+reset
+wr
+rd
+ctrlcs
+wrcs
+rdcs
+miso
+=d[15:0]=
+[Outputs]
+eewp
+eecs
+adcs
+sck
+mosi
+miso_out
+[BiDir]

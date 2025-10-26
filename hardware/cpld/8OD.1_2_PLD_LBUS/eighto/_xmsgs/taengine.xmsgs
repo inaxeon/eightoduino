@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1000</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;9&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1001</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;8&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1002</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;18&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1003</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;17&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1004</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;16&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1005</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;15&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1006</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;14&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1007</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;13&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1008</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;12&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1009</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;11&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1010</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;10&gt;$BUF0.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1011</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;7&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1012</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;9&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1013</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;8&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1014</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;18&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1015</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;17&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1016</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;16&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1017</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;15&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1018</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;14&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1019</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;13&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1020</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;12&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1021</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;11&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1022</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;10&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1023</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_BHEQ_OBUF.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1024</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;19&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1025</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_AL&lt;0&gt;.CLKF:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+<msg type="warning" file="Cpld" num="310" delta="new" >Cannot apply TIMESPEC <arg fmt="%s" index="1">TS1035</arg> = <arg fmt="%s" index="2">PERIOD:PERIOD_RD_SYNC.Q:0.000 nS</arg> because of one of the following: (a) a signal name was not found; (b) a signal was removed or renamed due to optimization; (c) there is no path between the FROM node and TO node in the TIMESPEC.
+</msg>
+
+</messages>
+

@@ -1,0 +1,12 @@
+vhdtdtfi -lib work lcd.vhd -prj eighto -o lcd.spl -module lcd -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lcd.spl C:/Projects/PLD_HD44780/eighto/lcd.sym 
+vhdtdtfi -lib work lcd.vhd -prj eighto -o lcd.spl -module lcd -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lcd.spl C:/Projects/PLD_HD44780/eighto/lcd.sym 
+vhdtdtfi -lib work lcd.vhd -prj eighto -o lcd.spl -module lcd -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lcd.spl C:/Projects/PLD_HD44780/eighto/lcd.sym 
+vhdtdtfi -lib work lcd.vhd -prj eighto -o lcd.spl -module lcd -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lcd.spl C:/Projects/PLD_HD44780/eighto/lcd.sym 
+vhdtdtfi -lib work lcd.vhd -prj eighto -o lcd.spl -module lcd -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lcd.spl C:/Projects/PLD_HD44780/eighto/lcd.sym 
+vhdtdtfi -lib work lcd.vhd -prj eighto -o lcd.spl -module lcd -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 lcd.spl C:/Projects/PLD_HD44780/eighto/lcd.sym 

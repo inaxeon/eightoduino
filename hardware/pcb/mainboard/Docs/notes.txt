@@ -1,0 +1,33 @@
+Done -There appears to be a fuck up of the signalling of the bus steering driver (U9)
+Done -	- Control signals should be driven by DT/R and DEN
+
+DOne - DT/R and DEN should be routed to the CPLD, *With* pullup resistors if necessary (likely)
+
+Done - Also add pullup to M/IO
+
+Done - The primary clock has a lot of overshoot. Consider adding a series terminator
+
+Numerous issues with silk screen - via/overlay
+
+8OD.2 should only have a bus on 36 pin header. Change silk screen to reflect.
+	- DT/R and DEN should be available on 36 pin header (via CPLD ?)
+
+Done - Is there any chance that IRDY# could be made available by routing RDY to the CPLD?
+
+Done - Rotate CPLD by 90 degrees
+
+Silk screen should be black
+
+Scrap the crappy 8OD.1 units and re-use components
+
+Don't do- Provide 8MHz clock with 7W-48.000MAB-T instead of 7W-24.000MAB-T
+
+Done - Add a PCF8584? Probably impossible but worth looking at it.
+Done - 	- Reclaim space from power supply section?
+	- Remove SDA/SCL silk screen from GFP20, 21
+
+Don't do - Bottom 4 pins on 36 pin header should be SPI
+
+Bigger inductor in power supply
+
+Done - Signals on 36 pin header are back arsewards

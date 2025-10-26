@@ -1,0 +1,20 @@
+vhdtdtfi -lib work intc.vhd -prj eighto -o intc.spl -module intc -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 intc.spl N:/Electronics/eightoduino/PLD/eighto/intc.sym 
+vhdtdtfi -lib work intc.vhd -prj eighto -o intc.spl -module intc -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 intc.spl N:/Electronics/eightoduino/PLD/eighto/intc.sym 
+vhdtdtfi -lib work intc.vhd -prj eighto -o intc.spl -module intc -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 intc.spl N:/Electronics/eightoduino/PLD/eighto/intc.sym 
+vhdtdtfi -lib work intc.vhd -prj eighto -o intc.spl -module intc -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 intc.spl N:/Electronics/eightoduino/PLD/eighto/intc.sym 
+vhdtdtfi -lib work intc.vhd -prj eighto -o intc.spl -module intc -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 intc.spl C:/Projects/eightoduino/PLD/eighto/intc.sym 
+vhdtdtfi -lib work intc.vhd -prj eighto -o intc.spl -module intc -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 intc.spl C:/Projects/eightoduino/PLD/eighto/intc.sym 
+vhdtdtfi -lib work intc.vhd -prj eighto -o intc.spl -module intc -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 intc.spl C:/Projects/eightoduino/PLD/eighto/intc.sym 
+vhdtdtfi -lib work intc.vhd -prj eighto -o intc.spl -module intc -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 intc.spl C:/Projects/eightoduino/PLD/eighto/intc.sym 
+vhdtdtfi -lib work intc.vhd -prj eighto -o intc.spl -module intc -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 intc.spl C:/Projects/eightoduino/PLD/eighto/intc.sym 
+vhdtdtfi -lib work intc.vhd -prj eighto -o intc.spl -module intc -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 intc.spl C:/Projects/eightoduino/PLD/eighto/intc.sym 

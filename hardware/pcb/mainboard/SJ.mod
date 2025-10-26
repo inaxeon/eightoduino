@@ -1,0 +1,30 @@
+PCBNEW-LibModule-V1  25/08/2014 09:25:40
+# encoding utf-8
+Units mm
+$INDEX
+SJ
+$EndINDEX
+$MODULE SJ
+Po 0 0 0 15 53FAF27D 00000000 ~~
+Li SJ
+Sc 0
+AR 
+Op 0 0 0
+T0 -0.25 -1.6 1 1 0 0.15 N V 21 N "SJ"
+T1 0.25 2 1 1 0 0.15 N V 21 N "VAL**"
+$PAD
+Sh "1" T 1 0.8 0.5 0 1800
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.625 0
+$EndPAD
+$PAD
+Sh "2" T 1 0.8 0.5 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.625 0
+$EndPAD
+$EndMODULE SJ
+$EndLIBRARY

@@ -1,0 +1,12 @@
+[Inputs]
+portaen
+portben
+portcen
+statusen
+=porta[15:0]=
+=portb[5:0]=
+=portc[15:0]=
+=status[7:0]=
+[Outputs]
+=portout[15:0]=
+[BiDir]

@@ -1,0 +1,8 @@
+[Inputs]
+reset
+wr
+portcs
+=d[15:0]=
+[Outputs]
+=oport[15:0]=
+[BiDir]

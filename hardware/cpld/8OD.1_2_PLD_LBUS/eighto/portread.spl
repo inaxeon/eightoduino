@@ -1,0 +1,13 @@
+[Inputs]
+portaen
+portben
+eightbiten
+lle
+statusen
+=porta[15:0]=
+=portb[5:0]=
+=eightbit[7:0]=
+=status[7:0]=
+[Outputs]
+=portout[15:0]=
+[BiDir]

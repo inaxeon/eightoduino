@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name DIP40)(type KiCad)(uri "$(KIPRJMOD)\\DIP40.pretty")(options "")(descr ""))
+  (lib (name SW_SP3T)(type KiCad)(uri "$(KIPRJMOD)\\SW_SP3T.pretty")(options "")(descr ""))
+)

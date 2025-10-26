@@ -1,0 +1,51 @@
+PCBNEW-LibModule-V1  17/07/2014 18:30:46
+# encoding utf-8
+Units mm
+$INDEX
+OSC_7X5
+$EndINDEX
+$MODULE OSC_7X5
+Po 0 0 0 15 53C80832 00000000 ~~
+Li OSC_7X5
+Sc 0
+AR 
+Op 0 0 0
+T0 0 -4 1 1 0 0.15 N V 21 N "OSC_7X5"
+T1 0 4 1 1 0 0.15 N I 21 N "VAL**"
+DS -3.5 0.5 -1.1 0.5 0.15 21
+DS -1.1 0.5 -1.1 2.5 0.15 21
+DS -3.5 -2.5 3.5 -2.5 0.15 21
+DS 3.5 -2.5 3.5 2.5 0.15 21
+DS 3.5 2.5 0 2.5 0.15 21
+DS 0 2.5 -3.5 2.5 0.15 21
+DS -3.5 2.5 -3.5 -2.5 0.15 21
+$PAD
+Sh "1" R 1.8 2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.54 2.1
+$EndPAD
+$PAD
+Sh "2" R 1.8 2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.54 2.1
+$EndPAD
+$PAD
+Sh "3" R 1.8 2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.54 -2.1
+$EndPAD
+$PAD
+Sh "4" R 1.8 2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.54 -2.1
+$EndPAD
+$EndMODULE OSC_7X5
+$EndLIBRARY

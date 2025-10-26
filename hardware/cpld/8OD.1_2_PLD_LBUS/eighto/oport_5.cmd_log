@@ -1,0 +1,4 @@
+vhdtdtfi -lib work oport_5.vhd -prj eighto -o oport_5.spl -module oport_5 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 oport_5.spl C:/Projects/8086/PLD/eighto/oport_5.sym 
+vhdtdtfi -lib work oport_5.vhd -prj eighto -o oport_5.spl -module oport_5 -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 oport_5.spl C:/Projects/8086/PLD/eighto/oport_5.sym 

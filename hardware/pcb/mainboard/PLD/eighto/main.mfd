@@ -1,0 +1,3693 @@
+MDF Database:  version 1.0
+MDF_INFO | main | XC95216-10-PQ160
+MACROCELL | 0 | 4 | XLXN_255<0>
+ATTRIBUTES | 265986 | 0
+INPUTS | 9 | AQ<5>.PIN  | PORTA<0>.PIN  | AQ<6>.PIN  | MIO  | clockgen/tclk<2>.EXP  | CPUCLK_OBUF.EXP  | AQ<4>.PIN  | EXTRD  | $OpTx$FX_DC$10
+INPUTMC | 3 | 0 | 3 | 0 | 5 | 6 | 16
+INPUTP | 6 | 58 | 171 | 57 | 198 | 51 | 200
+IMPORTS | 2 | 0 | 3 | 0 | 5
+EQ | 16 | 
+   !AD_E<0> = MIO & !PORTA<0>.PIN
+	# !PORTA<0>.PIN & AQ<4>.PIN
+	# !PORTA<0>.PIN & AQ<5>.PIN
+	# !PORTA<0>.PIN & AQ<6>.PIN
+;Imported pterms FB1_4
+	# !PORTA<0>.PIN & AQ<3>.PIN & AQ<1>.PIN
+	# !PORTA<0>.PIN & AQ<1>.PIN & !AQ<2>.PIN
+	# !PORTA<0>.PIN & !AQ<1>.PIN & AQ<2>.PIN
+;Imported pterms FB1_6
+	# !MIO & !STATUS_IOIN<0> & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !PORTB<0>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & !PORTC<0>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   AD_E<0>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 10 | 16 | XLXN_469
+ATTRIBUTES | 8853286 | 0
+OUTPUTMC | 2 | 10 | 17 | 10 | 16
+INPUTS | 15 | AD_E<15>.PIN  | MIO  | timer0/count0<5>.LFBK  | AQ<3>.PIN  | timer0/count0<6>.LFBK  | timer0/count0<7>.LFBK  | AQ<1>.PIN  | XLXN_469.LFBK  | timer0/count0<9>.LFBK  | FC_11_.OUT  | timer0/count0<8>  | AQ<4>.PIN  | FC_12_.OUT  | FC_13_.OUT  | timer0/count0<4>.LFBK
+INPUTMC | 7 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 16 | 10 | 3 | 8 | 3 | 10 | 15
+INPUTP | 5 | 5 | 198 | 50 | 47 | 51
+EXPORTS | 1 | 10 | 17
+EQ | 11 | 
+   MRST.D = !AD_E<15>.PIN;
+   MRST.CLK = !MIO & FC_11_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	AQ<1>.PIN;
+   MRST.AP = RESET;	// GSR
+   MRST.OE = !XLXN_469.LFBK;
+    XLXN_469.EXP  =  timer0/count0<8> & FC_12_.OUT & FC_13_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK & timer0/count0<9>.LFBK & !AQ<3>.PIN
+	# timer0/count0<8> & FC_12_.OUT & FC_13_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK & timer0/count0<9>.LFBK & AQ<1>.PIN
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 7 | 8 | XLXI_327/dq<0>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 7 | AD_E<0>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<0>  | FC_7_.OUT
+INPUTMC | 1 | 9 | 6
+INPUTP | 5 | 25 | 198 | 51 | 47 | 49
+EQ | 5 | 
+   PORTA<0>.D = AD_E<0>.PIN;
+   PORTA<0>.CLK = !MIO & FC_7_.OUT & !AQ<4>.PIN & !AQ<1>.PIN & 
+	AQ<2>.PIN;
+   PORTA<0>.AR = RESET;	// GSR
+   PORTA<0>.OE = !XLXI_327/trishold<0>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 7 | XLXI_327/dq<10>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<10>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<10>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 11 | 3
+INPUTP | 8 | 10 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTA<10>.D = AD_E<10>.PIN;
+   PORTA<10>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   PORTA<10>.AR = RESET;	// GSR
+   PORTA<10>.OE = !XLXI_327/trishold<10>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 8 | XLXI_327/dq<11>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<11>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<11>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 11 | 2
+INPUTP | 8 | 9 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTA<11>.D = AD_E<11>.PIN;
+   PORTA<11>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   PORTA<11>.AR = RESET;	// GSR
+   PORTA<11>.OE = !XLXI_327/trishold<11>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 10 | XLXI_327/dq<12>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<12>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<12>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 11 | 1
+INPUTP | 8 | 8 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTA<12>.D = AD_E<12>.PIN;
+   PORTA<12>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   PORTA<12>.AR = RESET;	// GSR
+   PORTA<12>.OE = !XLXI_327/trishold<12>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 11 | XLXI_327/dq<13>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<13>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<13>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 6 | 13
+INPUTP | 8 | 7 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTA<13>.D = AD_E<13>.PIN;
+   PORTA<13>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   PORTA<13>.AR = RESET;	// GSR
+   PORTA<13>.OE = !XLXI_327/trishold<13>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 7 | 5 | XLXI_327/dq<15>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 7 | AD_E<15>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<15>  | FC_7_.OUT
+INPUTMC | 1 | 8 | 4
+INPUTP | 5 | 5 | 198 | 51 | 47 | 49
+EQ | 5 | 
+   PORTA<15>.D = AD_E<15>.PIN;
+   PORTA<15>.CLK = !MIO & FC_7_.OUT & !AQ<4>.PIN & !AQ<1>.PIN & 
+	AQ<2>.PIN;
+   PORTA<15>.AR = RESET;	// GSR
+   PORTA<15>.OE = !XLXI_327/trishold<15>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 7 | 11 | XLXI_327/dq<2>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 7 | AD_E<2>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<2>  | FC_7_.OUT
+INPUTMC | 1 | 4 | 15
+INPUTP | 5 | 22 | 198 | 51 | 47 | 49
+EQ | 5 | 
+   PORTA<2>.D = AD_E<2>.PIN;
+   PORTA<2>.CLK = !MIO & FC_7_.OUT & !AQ<4>.PIN & !AQ<1>.PIN & 
+	AQ<2>.PIN;
+   PORTA<2>.AR = RESET;	// GSR
+   PORTA<2>.OE = !XLXI_327/trishold<2>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 7 | 13 | XLXI_327/dq<3>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 7 | AD_E<3>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<3>  | FC_7_.OUT
+INPUTMC | 1 | 4 | 9
+INPUTP | 5 | 21 | 198 | 51 | 47 | 49
+EQ | 5 | 
+   PORTA<3>.D = AD_E<3>.PIN;
+   PORTA<3>.CLK = !MIO & FC_7_.OUT & !AQ<4>.PIN & !AQ<1>.PIN & 
+	AQ<2>.PIN;
+   PORTA<3>.AR = RESET;	// GSR
+   PORTA<3>.OE = !XLXI_327/trishold<3>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 7 | 14 | XLXI_327/dq<4>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 7 | AD_E<4>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<4>  | FC_7_.OUT
+INPUTMC | 1 | 2 | 12
+INPUTP | 5 | 20 | 198 | 51 | 47 | 49
+EQ | 5 | 
+   PORTA<4>.D = AD_E<4>.PIN;
+   PORTA<4>.CLK = !MIO & FC_7_.OUT & !AQ<4>.PIN & !AQ<1>.PIN & 
+	AQ<2>.PIN;
+   PORTA<4>.AR = RESET;	// GSR
+   PORTA<4>.OE = !XLXI_327/trishold<4>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 7 | 16 | XLXI_327/dq<5>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 7 | AD_E<5>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<5>  | FC_7_.OUT
+INPUTMC | 1 | 3 | 11
+INPUTP | 5 | 19 | 198 | 51 | 47 | 49
+EQ | 5 | 
+   PORTA<5>.D = AD_E<5>.PIN;
+   PORTA<5>.CLK = !MIO & FC_7_.OUT & !AQ<4>.PIN & !AQ<1>.PIN & 
+	AQ<2>.PIN;
+   PORTA<5>.AR = RESET;	// GSR
+   PORTA<5>.OE = !XLXI_327/trishold<5>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 1 | XLXI_327/dq<6>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<6>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN  | XLXI_327/trishold<6>.LFBK
+INPUTMC | 2 | 0 | 9 | 5 | 17
+INPUTP | 8 | 18 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTA<6>.D = AD_E<6>.PIN;
+   PORTA<6>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   PORTA<6>.AR = RESET;	// GSR
+   PORTA<6>.OE = !XLXI_327/trishold<6>.LFBK;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 2 | XLXI_327/dq<7>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<7>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN  | XLXI_327/trishold<7>.LFBK
+INPUTMC | 2 | 0 | 9 | 5 | 13
+INPUTP | 8 | 17 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTA<7>.D = AD_E<7>.PIN;
+   PORTA<7>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   PORTA<7>.AR = RESET;	// GSR
+   PORTA<7>.OE = !XLXI_327/trishold<7>.LFBK;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 4 | XLXI_327/dq<8>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<8>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN  | XLXI_327/trishold<8>.LFBK
+INPUTMC | 2 | 0 | 9 | 5 | 12
+INPUTP | 8 | 16 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTA<8>.D = AD_E<8>.PIN;
+   PORTA<8>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   PORTA<8>.AR = RESET;	// GSR
+   PORTA<8>.OE = !XLXI_327/trishold<8>.LFBK;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 5 | XLXI_327/dq<9>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<9>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN  | XLXI_327/trishold<9>.LFBK
+INPUTMC | 2 | 0 | 9 | 5 | 9
+INPUTP | 8 | 15 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTA<9>.D = AD_E<9>.PIN;
+   PORTA<9>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   PORTA<9>.AR = RESET;	// GSR
+   PORTA<9>.OE = !XLXI_327/trishold<9>.LFBK;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 7 | 2 | ioportb/dq<1>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 7 | AD_E<1>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportb/trishold<1>  | FC_7_.OUT
+INPUTMC | 1 | 3 | 4
+INPUTP | 5 | 23 | 198 | 51 | 47 | 49
+EQ | 5 | 
+   PORTB<1>.D = AD_E<1>.PIN;
+   PORTB<1>.CLK = !MIO & FC_7_.OUT & !AQ<4>.PIN & AQ<1>.PIN & 
+	AQ<2>.PIN;
+   PORTB<1>.AR = RESET;	// GSR
+   PORTB<1>.OE = !ioportb/trishold<1>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 16 | ioportb/dq<3>
+ATTRIBUTES | 8660770 | 0
+OUTPUTMC | 1 | 9 | 15
+INPUTS | 10 | AD_E<3>.PIN  | MIO  | AD_E<1>.PIN  | AQ<3>.PIN  | AQ<4>.PIN  | timer0/count0<1>.LFBK  | AQ<1>.PIN  | AQ<2>.PIN  | ioportb/trishold<3>  | FC_8_.OUT
+INPUTMC | 2 | 9 | 15 | 2 | 3
+INPUTP | 7 | 21 | 198 | 23 | 50 | 51 | 47 | 49
+EXPORTS | 1 | 9 | 15
+EQ | 9 | 
+   PORTB<3>.D = AD_E<3>.PIN;
+   PORTB<3>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	AQ<1>.PIN & AQ<2>.PIN;
+   PORTB<3>.AR = RESET;	// GSR
+   PORTB<3>.OE = !ioportb/trishold<3>;
+    ioportb/dq<3>.EXP  =  !MIO & AD_E<1>.PIN & FC_8_.OUT & 
+	!timer0/count0<1>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<1>.PIN & FC_8_.OUT & 
+	timer0/count0<1>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 14 | ioportb/dq<4>
+ATTRIBUTES | 8660770 | 0
+OUTPUTMC | 1 | 9 | 15
+INPUTS | 10 | AD_E<4>.PIN  | MIO  | TIMER_RUN  | AQ<3>.PIN  | AQ<4>.PIN  | timer0/count0<0>.LFBK  | AQ<1>.PIN  | AQ<2>.PIN  | ioportb/trishold<4>  | FC_8_.OUT
+INPUTMC | 3 | 0 | 12 | 9 | 0 | 11 | 0
+INPUTP | 6 | 20 | 198 | 50 | 51 | 47 | 49
+EXPORTS | 1 | 9 | 15
+EQ | 7 | 
+   PORTB<4>.D = AD_E<4>.PIN;
+   PORTB<4>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	AQ<1>.PIN & AQ<2>.PIN;
+   PORTB<4>.AR = RESET;	// GSR
+   PORTB<4>.OE = !ioportb/trishold<4>;
+    ioportb/dq<4>.EXP  =  TIMER_RUN & !FC_8_.OUT & timer0/count0<0>.LFBK
+	# TIMER_RUN & timer0/count0<0>.LFBK & AQ<2>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 13 | ioportb/dq<5>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 8 | AD_E<5>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportb/trishold<5>  | FC_8_.OUT
+INPUTMC | 1 | 3 | 3
+INPUTP | 6 | 19 | 198 | 51 | 50 | 47 | 49
+EQ | 5 | 
+   PORTB<5>.D = AD_E<5>.PIN;
+   PORTB<5>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	AQ<1>.PIN & AQ<2>.PIN;
+   PORTB<5>.AR = RESET;	// GSR
+   PORTB<5>.OE = !ioportb/trishold<5>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 10 | ioportc/dq<0>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 8 | AD_E<0>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<0>  | FC_8_.OUT
+INPUTMC | 1 | 3 | 2
+INPUTP | 6 | 25 | 198 | 51 | 50 | 47 | 49
+EQ | 5 | 
+   PORTC<0>.D = AD_E<0>.PIN;
+   PORTC<0>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<0>.AR = RESET;	// GSR
+   PORTC<0>.OE = !ioportc/trishold<0>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 11 | ioportc/dq<10>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<10>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<10>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 8 | 17
+INPUTP | 8 | 10 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTC<10>.D = AD_E<10>.PIN;
+   PORTC<10>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<10>.AR = RESET;	// GSR
+   PORTC<10>.OE = !ioportc/trishold<10>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 13 | ioportc/dq<11>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<11>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<11>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 6 | 12
+INPUTP | 8 | 9 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTC<11>.D = AD_E<11>.PIN;
+   PORTC<11>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<11>.AR = RESET;	// GSR
+   PORTC<11>.OE = !ioportc/trishold<11>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 8 | ioportc/dq<12>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<12>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<12>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 6 | 9
+INPUTP | 8 | 8 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTC<12>.D = AD_E<12>.PIN;
+   PORTC<12>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<12>.AR = RESET;	// GSR
+   PORTC<12>.OE = !ioportc/trishold<12>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 10 | ioportc/dq<13>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<13>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<13>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 6 | 6
+INPUTP | 8 | 7 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTC<13>.D = AD_E<13>.PIN;
+   PORTC<13>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<13>.AR = RESET;	// GSR
+   PORTC<13>.OE = !ioportc/trishold<13>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 5 | ioportc/dq<14>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<14>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<14>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 0 | 0
+INPUTP | 8 | 6 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTC<14>.D = AD_E<14>.PIN;
+   PORTC<14>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<14>.AR = RESET;	// GSR
+   PORTC<14>.OE = !ioportc/trishold<14>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 7 | ioportc/dq<15>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<15>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<15>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 7 | 12
+INPUTP | 8 | 5 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTC<15>.D = AD_E<15>.PIN;
+   PORTC<15>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<15>.AR = RESET;	// GSR
+   PORTC<15>.OE = !ioportc/trishold<15>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 11 | ioportc/dq<1>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 8 | AD_E<1>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<1>  | FC_8_.OUT
+INPUTMC | 1 | 7 | 9
+INPUTP | 6 | 23 | 198 | 51 | 50 | 47 | 49
+EQ | 5 | 
+   PORTC<1>.D = AD_E<1>.PIN;
+   PORTC<1>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<1>.AR = RESET;	// GSR
+   PORTC<1>.OE = !ioportc/trishold<1>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 7 | ioportc/dq<2>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 8 | AD_E<2>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<2>  | FC_8_.OUT
+INPUTMC | 1 | 5 | 0
+INPUTP | 6 | 22 | 198 | 51 | 50 | 47 | 49
+EQ | 5 | 
+   PORTC<2>.D = AD_E<2>.PIN;
+   PORTC<2>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<2>.AR = RESET;	// GSR
+   PORTC<2>.OE = !ioportc/trishold<2>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 8 | ioportc/dq<3>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 8 | AD_E<3>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<3>  | FC_8_.OUT
+INPUTMC | 1 | 4 | 3
+INPUTP | 6 | 21 | 198 | 51 | 50 | 47 | 49
+EQ | 5 | 
+   PORTC<3>.D = AD_E<3>.PIN;
+   PORTC<3>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<3>.AR = RESET;	// GSR
+   PORTC<3>.OE = !ioportc/trishold<3>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 4 | ioportc/dq<4>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 8 | AD_E<4>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<4>  | FC_8_.OUT
+INPUTMC | 1 | 7 | 6
+INPUTP | 6 | 20 | 198 | 51 | 50 | 47 | 49
+EQ | 5 | 
+   PORTC<4>.D = AD_E<4>.PIN;
+   PORTC<4>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<4>.AR = RESET;	// GSR
+   PORTC<4>.OE = !ioportc/trishold<4>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 5 | ioportc/dq<5>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 8 | AD_E<5>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<5>  | FC_8_.OUT
+INPUTMC | 1 | 4 | 0
+INPUTP | 6 | 19 | 198 | 51 | 50 | 47 | 49
+EQ | 5 | 
+   PORTC<5>.D = AD_E<5>.PIN;
+   PORTC<5>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<5>.AR = RESET;	// GSR
+   PORTC<5>.OE = !ioportc/trishold<5>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 1 | ioportc/dq<6>
+ATTRIBUTES | 8660770 | 0
+OUTPUTMC | 1 | 9 | 0
+INPUTS | 10 | AD_E<6>.PIN  | MIO  | AD_E<0>.PIN  | AQ<3>.PIN  | AQ<4>.PIN  | timer0/count0<0>.LFBK  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<6>  | FC_8_.OUT
+INPUTMC | 2 | 9 | 0 | 10 | 0
+INPUTP | 7 | 18 | 198 | 25 | 50 | 51 | 47 | 49
+EXPORTS | 1 | 9 | 0
+EQ | 7 | 
+   PORTC<6>.D = AD_E<6>.PIN;
+   PORTC<6>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<6>.AR = RESET;	// GSR
+   PORTC<6>.OE = !ioportc/trishold<6>;
+    ioportc/dq<6>.EXP  =  !MIO & !AD_E<0>.PIN & FC_8_.OUT & 
+	timer0/count0<0>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 2 | ioportc/dq<7>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 8 | AD_E<7>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<7>  | FC_8_.OUT
+INPUTMC | 1 | 7 | 3
+INPUTP | 6 | 17 | 198 | 51 | 50 | 47 | 49
+EQ | 5 | 
+   PORTC<7>.D = AD_E<7>.PIN;
+   PORTC<7>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<7>.AR = RESET;	// GSR
+   PORTC<7>.OE = !ioportc/trishold<7>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 14 | ioportc/dq<8>
+ATTRIBUTES | 8660770 | 0
+INPUTS | 10 | AD_E<8>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<8>  | AQ<4>.PIN
+INPUTMC | 2 | 0 | 9 | 6 | 5
+INPUTP | 8 | 16 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 5 | 
+   PORTC<8>.D = AD_E<8>.PIN;
+   PORTC<8>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<8>.AR = RESET;	// GSR
+   PORTC<8>.OE = !ioportc/trishold<8>;
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 16 | ioportc/dq<9>
+ATTRIBUTES | 8660770 | 0
+OUTPUTMC | 1 | 11 | 17
+INPUTS | 11 | AD_E<9>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | ioportc/trishold<9>  | TIMER_CLK  | AQ<4>.PIN
+INPUTMC | 3 | 0 | 9 | 6 | 3 | 3 | 12
+INPUTP | 8 | 15 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EXPORTS | 1 | 11 | 17
+EQ | 7 | 
+   PORTC<9>.D = AD_E<9>.PIN;
+   PORTC<9>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   PORTC<9>.AR = RESET;	// GSR
+   PORTC<9>.OE = !ioportc/trishold<9>;
+    ioportc/dq<9>.EXP  =  TIMER_CLK & !AQ<4>.PIN
+	# TIMER_CLK & !AQ<3>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 6 | 17 | AD_E<1>_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 0 | 2
+INPUTS | 8 | AQ<2>.PIN  | PORTA<1>.PIN  | AQ<1>.PIN  | AQ<5>.PIN  | AQ<3>.PIN  | EXP7_.EXP  | $OpTx$FX_DC$10.EXP  | AQ<4>.PIN
+INPUTMC | 2 | 6 | 0 | 6 | 16
+INPUTP | 6 | 49 | 173 | 47 | 58 | 50 | 51
+IMPORTS | 2 | 6 | 0 | 6 | 16
+EQ | 15 | 
+   AD_E<1>_BUFR = PORTA<1>.PIN & AQ<4>.PIN
+	# PORTA<1>.PIN & AQ<5>.PIN
+	# PORTA<1>.PIN & AQ<3>.PIN & AQ<2>.PIN
+	# PORTA<1>.PIN & AQ<1>.PIN & !AQ<2>.PIN
+	# PORTA<1>.PIN & !AQ<1>.PIN & AQ<2>.PIN
+;Imported pterms FB7_1
+	# !MIO & STATUS_IOIN<1> & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & PORTB<1>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<1>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+;Imported pterms FB7_17
+	# MIO & PORTA<1>.PIN
+	# PORTA<1>.PIN & AQ<6>.PIN;
+
+MACROCELL | 5 | 16 | AD_E<2>_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 0 | 1
+INPUTS | 8 | AQ<2>.PIN  | PORTA<2>.PIN  | AQ<1>.PIN  | AQ<5>.PIN  | AQ<3>.PIN  | STATUS_IOIN<6>.EXP  | XLXI_327/trishold<6>.EXP  | AQ<4>.PIN
+INPUTMC | 2 | 5 | 15 | 5 | 17
+INPUTP | 6 | 49 | 174 | 47 | 58 | 50 | 51
+IMPORTS | 2 | 5 | 15 | 5 | 17
+EQ | 15 | 
+   AD_E<2>_BUFR = PORTA<2>.PIN & AQ<4>.PIN
+	# PORTA<2>.PIN & AQ<5>.PIN
+	# PORTA<2>.PIN & AQ<3>.PIN & AQ<2>.PIN
+	# PORTA<2>.PIN & AQ<1>.PIN & !AQ<2>.PIN
+	# PORTA<2>.PIN & !AQ<1>.PIN & AQ<2>.PIN
+;Imported pterms FB6_16
+	# MIO & PORTA<2>.PIN
+	# PORTA<2>.PIN & AQ<6>.PIN
+;Imported pterms FB6_18
+	# !MIO & IRQ1 & !AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & 
+	!AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & PORTB<2>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<2>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+
+MACROCELL | 3 | 0 | AD_E<3>_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 1 | 16
+INPUTS | 8 | AQ<2>.PIN  | PORTA<3>.PIN  | AQ<1>.PIN  | AQ<3>.PIN  | clockgen/tclk<0>.EXP  | AQ<4>.PIN  | MIO  | FC_2_.OUT
+INPUTMC | 1 | 3 | 1
+INPUTP | 6 | 49 | 175 | 47 | 50 | 51 | 198
+IMPORTS | 1 | 3 | 1
+EQ | 13 | 
+   AD_E<3>_BUFR = MIO & PORTA<3>.PIN
+	# PORTA<3>.PIN & !FC_2_.OUT
+	# PORTA<3>.PIN & AQ<4>.PIN
+	# PORTA<3>.PIN & AQ<3>.PIN & AQ<2>.PIN
+	# PORTA<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN
+;Imported pterms FB4_2
+	# PORTA<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & IRQ2 & FC_2_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & PORTB<3>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<3>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+
+MACROCELL | 3 | 15 | AD_E<4>_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 1 | 14
+INPUTS | 9 | AQ<2>.PIN  | PORTA<4>.PIN  | AQ<1>.PIN  | AQ<3>.PIN  | XLXN_255<15>.EXP  | XLXN_255<14>.EXP  | MIO  | AQ<4>.PIN  | FC_2_.OUT
+INPUTMC | 2 | 3 | 14 | 3 | 16
+INPUTP | 6 | 49 | 178 | 47 | 50 | 198 | 51
+IMPORTS | 2 | 3 | 14 | 3 | 16
+EQ | 14 | 
+   AD_E<4>_BUFR = MIO & PORTA<4>.PIN
+	# PORTA<4>.PIN & !FC_2_.OUT
+	# PORTA<4>.PIN & AQ<4>.PIN
+	# PORTA<4>.PIN & AQ<3>.PIN & AQ<2>.PIN
+	# PORTA<4>.PIN & AQ<1>.PIN & !AQ<2>.PIN
+;Imported pterms FB4_15
+	# PORTA<4>.PIN & !AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<4>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+;Imported pterms FB4_17
+	# !MIO & IRQ3 & FC_2_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & PORTB<4>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN;
+
+MACROCELL | 4 | 12 | AD_E<5>_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 1 | 13
+INPUTS | 7 | AQ<2>.PIN  | PORTA<5>.PIN  | AQ<1>.PIN  | AQ<3>.PIN  | AQ<4>.PIN  | MIDCS_OBUF.EXP  | AQ_5_OBUF.LFBK
+INPUTMC | 2 | 4 | 11 | 4 | 1
+INPUTP | 5 | 49 | 179 | 47 | 50 | 51
+IMPORTS | 1 | 4 | 11
+EQ | 14 | 
+   AD_E<5>_BUFR = PORTA<5>.PIN & AQ_5_OBUF.LFBK
+	# PORTA<5>.PIN & AQ<4>.PIN
+	# PORTA<5>.PIN & AQ<3>.PIN & AQ<2>.PIN
+	# PORTA<5>.PIN & AQ<1>.PIN & !AQ<2>.PIN
+	# PORTA<5>.PIN & !AQ<1>.PIN & AQ<2>.PIN
+;Imported pterms FB5_12
+	# MIO & PORTA<5>.PIN
+	# PORTA<5>.PIN & AQ<6>.PIN
+	# !MIO & IRQ4 & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & PORTB<5>.PIN & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<5>.PIN & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+
+MACROCELL | 9 | 12 | STATUS_IOIN<0>
+ATTRIBUTES | 8594336 | 0
+OUTPUTMC | 2 | 0 | 5 | 9 | 12
+INPUTS | 11 | AD_E<0>.PIN  | timer0/count0<0>.LFBK  | MIO  | FC_9_.OUT  | AQ<3>.PIN  | STATUS_IOIN<0>.LFBK  | timer0/count0<1>.LFBK  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN  | FC_8_.OUT
+INPUTMC | 3 | 9 | 0 | 9 | 12 | 9 | 15
+INPUTP | 6 | 25 | 198 | 50 | 47 | 49 | 51
+EQ | 6 | 
+   STATUS_IOIN<0>.D = AD_E<0>.PIN & STATUS_IOIN<0>.LFBK;
+   STATUS_IOIN<0>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN;
+   STATUS_IOIN<0>.AP = FC_9_.OUT & timer0/count0<1>.LFBK & 
+	timer0/count0<0>.LFBK;
+   STATUS_IOIN<0>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 15 | STATUS_IOIN<1>
+ATTRIBUTES | 8594336 | 0
+OUTPUTMC | 3 | 6 | 0 | 6 | 8 | 11 | 15
+INPUTS | 11 | AD_E<1>.PIN  | AQ<4>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | STATUS_IOIN<1>/STATUS_IOIN<1>_SETF  | STATUS_IOIN<1>.LFBK
+INPUTMC | 3 | 0 | 9 | 2 | 15 | 11 | 15
+INPUTP | 8 | 23 | 51 | 198 | 58 | 57 | 50 | 47 | 49
+EQ | 5 | 
+   STATUS_IOIN<1>.D = AD_E<1>.PIN & STATUS_IOIN<1>.LFBK;
+   STATUS_IOIN<1>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   STATUS_IOIN<1>.AP = STATUS_IOIN<1>/STATUS_IOIN<1>_SETF;
+   STATUS_IOIN<1>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 15 | STATUS_IOIN<6>
+ATTRIBUTES | 8594336 | 0
+OUTPUTMC | 3 | 1 | 12 | 5 | 16 | 5 | 15
+INPUTS | 12 | AD_E<6>.PIN  | AQ<4>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT  | PORTA<2>.PIN  | STATUS_IOIN<6>.LFBK
+INPUTMC | 3 | 0 | 9 | 3 | 13 | 5 | 15
+INPUTP | 9 | 18 | 51 | 198 | 58 | 57 | 50 | 47 | 49 | 174
+EXPORTS | 1 | 5 | 16
+EQ | 7 | 
+   STATUS_IOIN<6>.D = AD_E<6>.PIN & STATUS_IOIN<6>.LFBK;
+   STATUS_IOIN<6>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   STATUS_IOIN<6>.AP = !STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT;
+   STATUS_IOIN<6>.AR = RESET;	// GSR
+    STATUS_IOIN<6>.EXP  =  MIO & PORTA<2>.PIN
+	# PORTA<2>.PIN & AQ<6>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 14 | STATUS_IOIN<7>
+ATTRIBUTES | 8594336 | 0
+OUTPUTMC | 2 | 1 | 9 | 5 | 14
+INPUTS | 12 | AD_E<7>.PIN  | AQ<4>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXI_327/trishold<3>  | PORTA<3>.PIN  | STATUS_IOIN<7>.LFBK
+INPUTMC | 3 | 0 | 9 | 4 | 9 | 5 | 14
+INPUTP | 9 | 17 | 51 | 198 | 58 | 57 | 50 | 47 | 49 | 175
+EQ | 5 | 
+   STATUS_IOIN<7>.D = AD_E<7>.PIN & STATUS_IOIN<7>.LFBK;
+   STATUS_IOIN<7>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   STATUS_IOIN<7>.AP = XLXI_327/trishold<3> & PORTA<3>.PIN;
+   STATUS_IOIN<7>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 7 | 7 | XLXI_327/ioport_14_mux0000
+ATTRIBUTES | 265986 | 0
+INPUTS | 4 | UARTD_ENABLE  | TXD  | XLXI_327/trishold<14>  | XLXI_327/dq<14>
+INPUTMC | 3 | 6 | 15 | 8 | 2 | 0 | 6
+INPUTP | 1 | 76
+EQ | 5 | 
+   PORTA<14> = UARTD_ENABLE & TXD
+	# XLXI_327/trishold<14> & TXD
+	# !UARTD_ENABLE & !XLXI_327/trishold<14> & 
+	XLXI_327/dq<14>;
+   PORTA<14>.OE = !XLXI_327/trishold<14>;
+
+MACROCELL | 7 | 10 | XLXI_327/ioport_1_mux0000
+ATTRIBUTES | 265986 | 0
+INPUTS | 4 | UARTA_ENABLE  | TXA  | XLXI_327/trishold<1>  | XLXI_327/dq<1>
+INPUTMC | 3 | 11 | 12 | 9 | 3 | 9 | 9
+INPUTP | 1 | 99
+EQ | 5 | 
+   PORTA<1> = UARTA_ENABLE & TXA
+	# XLXI_327/trishold<1> & TXA
+	# !UARTA_ENABLE & !XLXI_327/trishold<1> & 
+	XLXI_327/dq<1>;
+   PORTA<1>.OE = !XLXI_327/trishold<1>;
+
+MACROCELL | 1 | 5 | XLXN_255<10>
+ATTRIBUTES | 265986 | 0
+INPUTS | 8 | PORTA<10>.PIN  | AQ<3>.PIN  | clockgen/tclk<4>.EXP  | AQ<4>.PIN  | AQ<2>.PIN  | MIO  | EXTRD  | $OpTx$FX_DC$10
+INPUTMC | 2 | 1 | 6 | 6 | 16
+INPUTP | 6 | 187 | 50 | 51 | 49 | 198 | 200
+IMPORTS | 1 | 1 | 6
+EQ | 9 | 
+   AD_E<10> = MIO & PORTA<10>.PIN
+	# PORTA<10>.PIN & AQ<4>.PIN
+	# PORTA<10>.PIN & !AQ<3>.PIN
+	# PORTA<10>.PIN & AQ<2>.PIN
+;Imported pterms FB2_7
+	# PORTA<10>.PIN & !FC_0_.OUT
+	# !MIO & PORTC<10>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN;
+   AD_E<10>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 1 | 4 | XLXN_255<11>
+ATTRIBUTES | 265986 | 0
+INPUTS | 8 | PORTA<11>.PIN  | AQ<3>.PIN  | clockgen/thirdclk<1>.EXP  | AQ<4>.PIN  | AQ<2>.PIN  | MIO  | EXTRD  | $OpTx$FX_DC$10
+INPUTMC | 2 | 1 | 3 | 6 | 16
+INPUTP | 6 | 188 | 50 | 51 | 49 | 198 | 200
+IMPORTS | 1 | 1 | 3
+EQ | 9 | 
+   AD_E<11> = MIO & PORTA<11>.PIN
+	# PORTA<11>.PIN & AQ<4>.PIN
+	# PORTA<11>.PIN & !AQ<3>.PIN
+	# PORTA<11>.PIN & AQ<2>.PIN
+;Imported pterms FB2_4
+	# PORTA<11>.PIN & !FC_0_.OUT
+	# !MIO & PORTC<11>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN;
+   AD_E<11>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 1 | 2 | XLXN_255<12>
+ATTRIBUTES | 265986 | 0
+INPUTS | 8 | AQ<3>.PIN  | PORTA<12>.PIN  | XLXN_255<13>.EXP  | AQ<4>.PIN  | AQ<2>.PIN  | MIO  | EXTRD  | $OpTx$FX_DC$10
+INPUTMC | 2 | 1 | 1 | 6 | 16
+INPUTP | 6 | 50 | 191 | 51 | 49 | 198 | 200
+IMPORTS | 1 | 1 | 1
+EQ | 9 | 
+   AD_E<12> = MIO & PORTA<12>.PIN
+	# PORTA<12>.PIN & AQ<4>.PIN
+	# PORTA<12>.PIN & !AQ<3>.PIN
+	# PORTA<12>.PIN & AQ<2>.PIN
+;Imported pterms FB2_2
+	# PORTA<12>.PIN & !FC_0_.OUT
+	# !MIO & PORTC<12>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN;
+   AD_E<12>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 1 | 1 | XLXN_255<13>
+ATTRIBUTES | 265986 | 0
+OUTPUTMC | 1 | 1 | 2
+INPUTS | 11 | AQ<3>.PIN  | PORTA<13>.PIN  | PORTA<12>.PIN  | FC_0_.OUT  | AQ<2>.PIN  | PORTC<12>.PIN  | MIO  | clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF.EXP  | EXTRD  | $OpTx$FX_DC$10  | AQ<4>.PIN
+INPUTMC | 2 | 1 | 0 | 6 | 16
+INPUTP | 8 | 50 | 192 | 191 | 49 | 137 | 198 | 200 | 51
+EXPORTS | 1 | 1 | 2
+IMPORTS | 1 | 1 | 0
+EQ | 12 | 
+   AD_E<13> = MIO & PORTA<13>.PIN
+	# PORTA<13>.PIN & AQ<4>.PIN
+;Imported pterms FB2_1
+	# PORTA<13>.PIN & !FC_0_.OUT
+	# PORTA<13>.PIN & !AQ<3>.PIN
+	# PORTA<13>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<13>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN;
+   AD_E<13>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+    XLXN_255<13>.EXP  =  PORTA<12>.PIN & !FC_0_.OUT
+	# !MIO & PORTC<12>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN
+
+MACROCELL | 3 | 16 | XLXN_255<14>
+ATTRIBUTES | 265986 | 0
+OUTPUTMC | 1 | 3 | 15
+INPUTS | 12 | AQ<3>.PIN  | PORTA<14>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | PORTB<4>.PIN  | FC_2_.OUT  | MIO  | IRQ3  | EXTRD  | $OpTx$FX_DC$10  | EXP4_.EXP  | AQ<4>.PIN
+INPUTMC | 2 | 6 | 16 | 3 | 17
+INPUTP | 9 | 50 | 170 | 47 | 49 | 160 | 198 | 82 | 200 | 51
+EXPORTS | 1 | 3 | 15
+IMPORTS | 1 | 3 | 17
+EQ | 14 | 
+   AD_E<14> = MIO & PORTA<14>.PIN
+	# PORTA<14>.PIN & AQ<4>.PIN
+;Imported pterms FB4_18
+	# PORTA<14>.PIN & !FC_2_.OUT
+	# PORTA<14>.PIN & !AQ<3>.PIN
+	# PORTA<14>.PIN & AQ<1>.PIN
+	# PORTA<14>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<14>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   AD_E<14>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+    XLXN_255<14>.EXP  =  !MIO & IRQ3 & FC_2_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & PORTB<4>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+
+MACROCELL | 3 | 14 | XLXN_255<15>
+ATTRIBUTES | 265986 | 0
+OUTPUTMC | 1 | 3 | 15
+INPUTS | 12 | AQ<3>.PIN  | PORTA<15>.PIN  | AQ<2>.PIN  | PORTA<4>.PIN  | AQ<1>.PIN  | PORTC<4>.PIN  | MIO  | FC_2_.OUT  | EXTRD  | $OpTx$FX_DC$10  | STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT.EXP  | AQ<4>.PIN
+INPUTMC | 2 | 6 | 16 | 3 | 13
+INPUTP | 9 | 50 | 167 | 49 | 178 | 47 | 149 | 198 | 200 | 51
+EXPORTS | 1 | 3 | 15
+IMPORTS | 1 | 3 | 13
+EQ | 13 | 
+   AD_E<15> = MIO & PORTA<15>.PIN
+	# PORTA<15>.PIN & AQ<4>.PIN
+;Imported pterms FB4_14
+	# PORTA<15>.PIN & !FC_2_.OUT
+	# PORTA<15>.PIN & !AQ<3>.PIN
+	# PORTA<15>.PIN & AQ<1>.PIN
+	# PORTA<15>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<15>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   AD_E<15>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+    XLXN_255<15>.EXP  =  PORTA<4>.PIN & !AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<4>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+
+MACROCELL | 1 | 11 | XLXN_255<6>
+ATTRIBUTES | 265986 | 0
+INPUTS | 8 | AQ<2>.PIN  | PORTA<6>.PIN  | XLXI_327/changehold<2>.EXP  | AQ<4>.PIN  | MIO  | EXTRD  | $OpTx$FX_DC$10  | FC_0_.OUT
+INPUTMC | 2 | 1 | 12 | 6 | 16
+INPUTP | 5 | 49 | 180 | 51 | 198 | 200
+IMPORTS | 1 | 1 | 12
+EQ | 10 | 
+   AD_E<6> = MIO & PORTA<6>.PIN
+	# PORTA<6>.PIN & !FC_0_.OUT
+	# PORTA<6>.PIN & AQ<4>.PIN
+	# PORTA<6>.PIN & AQ<2>.PIN
+;Imported pterms FB2_13
+	# !MIO & STATUS_IOIN<6> & FC_0_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & !AQ<2>.PIN
+	# !MIO & PORTC<6>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN;
+   AD_E<6>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 1 | 10 | XLXN_255<7>
+ATTRIBUTES | 265986 | 0
+INPUTS | 8 | AQ<2>.PIN  | PORTA<7>.PIN  | XLXI_327/changehold<3>.EXP  | AQ<4>.PIN  | MIO  | EXTRD  | $OpTx$FX_DC$10  | FC_0_.OUT
+INPUTMC | 2 | 1 | 9 | 6 | 16
+INPUTP | 5 | 49 | 182 | 51 | 198 | 200
+IMPORTS | 1 | 1 | 9
+EQ | 10 | 
+   AD_E<7> = MIO & PORTA<7>.PIN
+	# PORTA<7>.PIN & !FC_0_.OUT
+	# PORTA<7>.PIN & AQ<4>.PIN
+	# PORTA<7>.PIN & AQ<2>.PIN
+;Imported pterms FB2_10
+	# !MIO & STATUS_IOIN<7> & FC_0_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & !AQ<2>.PIN
+	# !MIO & PORTC<7>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN;
+   AD_E<7>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 1 | 8 | XLXN_255<8>
+ATTRIBUTES | 265986 | 0
+INPUTS | 8 | PORTA<8>.PIN  | AQ<3>.PIN  | _19_.EXP  | AQ<4>.PIN  | AQ<2>.PIN  | MIO  | EXTRD  | $OpTx$FX_DC$10
+INPUTMC | 2 | 1 | 7 | 6 | 16
+INPUTP | 6 | 185 | 50 | 51 | 49 | 198 | 200
+IMPORTS | 1 | 1 | 7
+EQ | 9 | 
+   AD_E<8> = MIO & PORTA<8>.PIN
+	# PORTA<8>.PIN & AQ<4>.PIN
+	# PORTA<8>.PIN & !AQ<3>.PIN
+	# PORTA<8>.PIN & AQ<2>.PIN
+;Imported pterms FB2_8
+	# PORTA<8>.PIN & !FC_0_.OUT
+	# !MIO & PORTC<8>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN;
+   AD_E<8>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 2 | 17 | AD_E<9>_BUFR.MC
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 1 | 7
+INPUTS | 7 | PORTA<9>.PIN  | AQ_6_OBUF.LFBK  | AQ_3_OBUF.LFBK  | AQ_1_OBUF.LFBK  | AQ<5>.PIN  | clockgen/inclkd4.EXP  | AQ_4_OBUF.LFBK
+INPUTMC | 5 | 2 | 16 | 2 | 10 | 2 | 7 | 2 | 0 | 2 | 11
+INPUTP | 2 | 186 | 58
+IMPORTS | 1 | 2 | 0
+EQ | 11 | 
+   AD_E<9>_BUFR = PORTA<9>.PIN & AQ_4_OBUF.LFBK
+	# PORTA<9>.PIN & AQ_6_OBUF.LFBK
+	# PORTA<9>.PIN & !AQ_3_OBUF.LFBK
+	# PORTA<9>.PIN & AQ_1_OBUF.LFBK
+	# PORTA<9>.PIN & AQ<5>.PIN
+;Imported pterms FB3_1
+	# MIO & PORTA<9>.PIN
+	# PORTA<9>.PIN & AQ_2_OBUF.LFBK
+	# !MIO & PORTC<9>.PIN & !AQ_4_OBUF.LFBK & 
+	!AQ_6_OBUF.LFBK & AQ_3_OBUF.LFBK & !AQ_1_OBUF.LFBK & !AQ_2_OBUF.LFBK & 
+	!AQ<5>.PIN;
+
+MACROCELL | 7 | 4 | ioportb/ioport_0_mux0000
+ATTRIBUTES | 265986 | 0
+INPUTS | 4 | UARTC_ENABLE  | TXC  | ioportb/trishold<0>  | ioportb/dq<0>
+INPUTMC | 3 | 11 | 6 | 3 | 5 | 3 | 6
+INPUTP | 1 | 77
+EQ | 5 | 
+   PORTB<0> = UARTC_ENABLE & TXC
+	# ioportb/trishold<0> & TXC
+	# !UARTC_ENABLE & !ioportb/trishold<0> & 
+	ioportb/dq<0>;
+   PORTB<0>.OE = !ioportb/trishold<0>;
+
+MACROCELL | 7 | 1 | ioportb/ioport_2_mux0000
+ATTRIBUTES | 265986 | 0
+INPUTS | 4 | UARTB_ENABLE  | TXB  | ioportb/trishold<2>  | ioportb/dq<2>.LFBK
+INPUTMC | 3 | 11 | 9 | 2 | 6 | 7 | 15
+INPUTP | 1 | 97
+EQ | 5 | 
+   PORTB<2> = UARTB_ENABLE & TXB
+	# ioportb/trishold<2> & TXB
+	# !UARTB_ENABLE & !ioportb/trishold<2> & 
+	ioportb/dq<2>.LFBK;
+   PORTB<2>.OE = !ioportb/trishold<2>;
+
+MACROCELL | 0 | 12 | TIMER_RUN
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 27 | 9 | 0 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 13 | 8 | 9 | 9 | 15 | 4 | 17 | 4 | 14 | 9 | 17 | 9 | 14 | 8 | 17 | 8 | 16 | 8 | 3 | 8 | 14 | 8 | 6 | 4 | 13 | 4 | 15 | 4 | 16 | 8 | 1 | 8 | 2 | 8 | 4 | 8 | 5 | 8 | 7 | 8 | 8 | 8 | 10 | 8 | 11
+INPUTS | 9 | AD_E<14>.PIN  | MIO  | AQ<4>.PIN  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | WR_SYNC.LFBK
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 6 | 198 | 51 | 58 | 57 | 50 | 47 | 49
+EQ | 4 | 
+   TIMER_RUN.D = AD_E<14>.PIN;
+   TIMER_RUN.CLK = !MIO & WR_SYNC.LFBK & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   TIMER_RUN.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 0 | 9 | WR_SYNC
+ATTRIBUTES | 4391728 | 0
+OUTPUTMC | 75 | 11 | 0 | 3 | 9 | 5 | 7 | 5 | 8 | 5 | 10 | 5 | 11 | 8 | 16 | 3 | 8 | 3 | 7 | 8 | 11 | 4 | 6 | 5 | 1 | 5 | 2 | 5 | 4 | 5 | 5 | 3 | 6 | 6 | 5 | 8 | 8 | 3 | 11 | 11 | 11 | 11 | 13 | 11 | 8 | 11 | 10 | 11 | 5 | 11 | 7 | 4 | 0 | 8 | 7 | 4 | 3 | 5 | 0 | 8 | 10 | 11 | 4 | 11 | 1 | 11 | 14 | 11 | 16 | 3 | 3 | 11 | 15 | 5 | 15 | 5 | 14 | 8 | 4 | 6 | 15 | 8 | 17 | 8 | 14 | 6 | 3 | 2 | 3 | 5 | 17 | 3 | 4 | 3 | 2 | 4 | 16 | 2 | 12 | 4 | 7 | 5 | 3 | 5 | 6 | 3 | 10 | 8 | 1 | 5 | 13 | 11 | 12 | 11 | 9 | 11 | 6 | 8 | 2 | 6 | 6 | 3 | 5 | 2 | 6 | 8 | 13 | 11 | 3 | 11 | 2 | 4 | 15 | 4 | 9 | 5 | 12 | 5 | 9 | 6 | 13 | 6 | 12 | 6 | 9 | 0 | 12 | 0 | 6 | 0 | 0
+INPUTS | 3 | EXTWR  | ALE  | CPUCLK_OBUF.LFBK
+INPUTMC | 1 | 0 | 5
+INPUTP | 2 | 199 | 197
+EQ | 3 | 
+   WR_SYNC.T = Vcc;
+   WR_SYNC.CLK = !EXTWR & CPUCLK_OBUF.LFBK;
+   WR_SYNC.AR = ALE;
+
+MACROCELL | 6 | 15 | UARTD_ENABLE
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 2 | 7 | 7 | 4 | 13
+INPUTS | 9 | AD_E<13>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 7 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   UARTD_ENABLE.D = AD_E<13>.PIN;
+   UARTD_ENABLE.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   UARTD_ENABLE.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 0 | timer0/count0<0>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 28 | 8 | 8 | 8 | 17 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 13 | 8 | 9 | 8 | 7 | 4 | 17 | 4 | 14 | 8 | 5 | 8 | 11 | 8 | 10 | 8 | 16 | 8 | 3 | 8 | 14 | 8 | 6 | 4 | 13 | 4 | 15 | 4 | 16 | 8 | 1 | 8 | 2 | 8 | 4 | 9 | 14 | 9 | 1 | 9 | 12 | 9 | 15 | 9 | 17
+INPUTS | 8 | TIMER_RUN  | ioportc/dq<6>.EXP  | clockgen/tclk<3>.EXP  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<4>.PIN  | MIO  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 4 | 0 | 12 | 9 | 1 | 9 | 17 | 11 | 17
+INPUTP | 4 | 50 | 47 | 51 | 198
+IMPORTS | 2 | 9 | 1 | 9 | 17
+EQ | 14 | 
+   timer0/count0<0>.T = MIO & TIMER_RUN
+	# TIMER_RUN & !AQ<4>.PIN
+	# TIMER_RUN & !AQ<3>.PIN
+	# TIMER_RUN & AQ<1>.PIN
+;Imported pterms FB10_2
+	# !MIO & !AD_E<0>.PIN & FC_8_.OUT & 
+	timer0/count0<0>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+;Imported pterms FB10_18
+	# TIMER_RUN & !FC_8_.OUT
+	# TIMER_RUN & AQ<2>.PIN
+	# !MIO & AD_E<0>.PIN & FC_8_.OUT & 
+	!timer0/count0<0>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   timer0/count0<0>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<0>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 0 | timer0/count0<10>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 13 | 8 | 15 | 8 | 12 | 8 | 9 | 8 | 6 | 8 | 13 | 8 | 14 | 8 | 10 | 8 | 11 | 8 | 7 | 8 | 8 | 8 | 16 | 8 | 5 | 8 | 1
+INPUTS | 18 | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<5>.PIN  | UCSB_OBUF.EXP  | ioportc/trishold<10>.EXP  | timer0/count0<8>.LFBK  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 14 | 0 | 12 | 9 | 0 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 1 | 8 | 17 | 8 | 3 | 11 | 17
+INPUTP | 4 | 51 | 47 | 49 | 58
+IMPORTS | 2 | 8 | 1 | 8 | 17
+EQ | 42 | 
+   timer0/count0<10>.T = TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & !AQ<4>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & AQ<5>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & AQ<1>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & AQ<2>.PIN
+;Imported pterms FB9_2
+	# !MIO & AD_E<10>.PIN & WR_SYNC & 
+	!timer0/count0<10>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<10>.PIN & WR_SYNC & 
+	timer0/count0<10>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK
+;Imported pterms FB9_18
+	# MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & !AQ<3>.PIN;
+   timer0/count0<10>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<10>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 15 | timer0/count0<11>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 10 | 8 | 12 | 8 | 9 | 8 | 6 | 8 | 13 | 8 | 10 | 8 | 11 | 8 | 7 | 8 | 8 | 8 | 16 | 8 | 5
+INPUTS | 19 | TIMER_RUN  | timer0/count0<0>  | timer0/count0<8>.LFBK  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<5>.PIN  | PORTD_11_OBUF.EXP  | PORTD_8_OBUF.EXP  | timer0/count0<10>.LFBK  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 15 | 0 | 12 | 9 | 0 | 8 | 3 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 14 | 8 | 16 | 8 | 0 | 11 | 17
+INPUTP | 4 | 51 | 47 | 49 | 58
+IMPORTS | 2 | 8 | 14 | 8 | 16
+EQ | 50 | 
+   timer0/count0<11>.T = TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	!AQ<4>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	AQ<5>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	AQ<1>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	AQ<2>.PIN
+;Imported pterms FB9_15
+	# MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	!AQ<3>.PIN
+;Imported pterms FB9_17
+	# !MIO & AD_E<11>.PIN & WR_SYNC & 
+	!timer0/count0<11>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<11>.PIN & WR_SYNC & 
+	timer0/count0<11>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK;
+   timer0/count0<11>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<11>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 12 | timer0/count0<12>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 7 | 8 | 9 | 8 | 6 | 8 | 13 | 8 | 10 | 8 | 7 | 8 | 8 | 8 | 5
+INPUTS | 20 | TIMER_RUN  | timer0/count0<0>  | timer0/count0<11>.LFBK  | timer0/count0<8>.LFBK  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<5>.PIN  | PORTD_13_OBUF.EXP  | PORTD_10_OBUF.EXP  | timer0/count0<10>.LFBK  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 16 | 0 | 12 | 9 | 0 | 8 | 15 | 8 | 3 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 11 | 8 | 13 | 8 | 0 | 11 | 17
+INPUTP | 4 | 51 | 47 | 49 | 58
+IMPORTS | 2 | 8 | 11 | 8 | 13
+EQ | 50 | 
+   timer0/count0<12>.T = TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	timer0/count0<11>.LFBK & !AQ<4>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	timer0/count0<11>.LFBK & AQ<5>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	timer0/count0<11>.LFBK & AQ<1>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	timer0/count0<11>.LFBK & AQ<2>.PIN
+;Imported pterms FB9_12
+	# MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	timer0/count0<11>.LFBK & AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	timer0/count0<11>.LFBK & !AQ<3>.PIN
+;Imported pterms FB9_14
+	# !MIO & AD_E<12>.PIN & WR_SYNC & 
+	!timer0/count0<12>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<12>.PIN & WR_SYNC & 
+	timer0/count0<12>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK;
+   timer0/count0<12>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<12>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 17 | timer0/count0<13>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 7 | 8 | 10 | 8 | 8 | 8 | 9 | 8 | 6 | 8 | 5 | 8 | 7 | 10 | 17
+INPUTS | 18 | FC_13_.OUT  | ioportc/trishold<6>.EXP  | XLXN_469.EXP  | timer0/count0<4>.LFBK  | timer0/count0<5>.LFBK  | timer0/count0<6>.LFBK  | timer0/count0<7>.LFBK  | timer0/count0<9>.LFBK  | timer0/count0<13>.LFBK  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | timer0/count0<8>  | FC_12_.OUT  | MIO  | AD_E<13>.PIN  | timer0/count0<9>/timer0/count0<9>_CLKF  | FC_11_.OUT
+INPUTMC | 10 | 10 | 0 | 10 | 16 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 10 | 17 | 8 | 3 | 11 | 17
+INPUTP | 5 | 51 | 50 | 47 | 198 | 7
+IMPORTS | 2 | 10 | 0 | 10 | 16
+EQ | 23 | 
+   timer0/count0<13>.T = !MIO & AD_E<13>.PIN & FC_11_.OUT & 
+	!timer0/count0<13>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+	# !MIO & !AD_E<13>.PIN & FC_11_.OUT & 
+	timer0/count0<13>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+	# MIO & timer0/count0<8> & FC_12_.OUT & 
+	FC_13_.OUT & timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & 
+	timer0/count0<6>.LFBK & timer0/count0<7>.LFBK & timer0/count0<9>.LFBK
+	# timer0/count0<8> & FC_12_.OUT & FC_13_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK & timer0/count0<9>.LFBK & !AQ<4>.PIN
+;Imported pterms FB11_1
+	# timer0/count0<8> & !FC_11_.OUT & FC_12_.OUT & 
+	FC_13_.OUT & timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & 
+	timer0/count0<6>.LFBK & timer0/count0<7>.LFBK & timer0/count0<9>.LFBK
+;Imported pterms FB11_17
+	# timer0/count0<8> & FC_12_.OUT & FC_13_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK & timer0/count0<9>.LFBK & !AQ<3>.PIN
+	# timer0/count0<8> & FC_12_.OUT & FC_13_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK & timer0/count0<9>.LFBK & AQ<1>.PIN;
+   timer0/count0<13>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<13>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 9 | timer0/count0<14>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 4 | 8 | 6 | 8 | 10 | 8 | 7 | 8 | 5
+INPUTS | 22 | TIMER_RUN  | timer0/count0<0>  | timer0/count0<11>.LFBK  | timer0/count0<12>.LFBK  | timer0/count0<8>.LFBK  | timer0/count0<13>  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<5>.PIN  | PORTD_15_OBUF.EXP  | PORTD_12_OBUF.EXP  | timer0/count0<10>.LFBK  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 18 | 0 | 12 | 9 | 0 | 8 | 15 | 8 | 12 | 8 | 3 | 10 | 17 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 8 | 8 | 10 | 8 | 0 | 11 | 17
+INPUTP | 4 | 51 | 47 | 49 | 58
+IMPORTS | 2 | 8 | 8 | 8 | 10
+EQ | 58 | 
+   timer0/count0<14>.T = TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	!AQ<4>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	AQ<5>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	AQ<1>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	AQ<2>.PIN
+;Imported pterms FB9_9
+	# MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<13> & timer0/count0<1> & timer0/count0<2> & 
+	timer0/count0<3> & timer0/count0<4> & timer0/count0<5> & 
+	timer0/count0<6> & timer0/count0<7> & timer0/count0<9> & 
+	timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & 
+	timer0/count0<12>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	!AQ<3>.PIN
+;Imported pterms FB9_11
+	# !MIO & AD_E<14>.PIN & WR_SYNC & 
+	!timer0/count0<14>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<14>.PIN & WR_SYNC & 
+	timer0/count0<14>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<13> & timer0/count0<1> & timer0/count0<2> & 
+	timer0/count0<3> & timer0/count0<4> & timer0/count0<5> & 
+	timer0/count0<6> & timer0/count0<7> & timer0/count0<9> & 
+	timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & 
+	timer0/count0<12>.LFBK;
+   timer0/count0<14>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<14>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 15 | timer0/count0<1>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 25 | 8 | 7 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 10 | 8 | 9 | 8 | 17 | 4 | 17 | 4 | 14 | 8 | 8 | 8 | 16 | 8 | 14 | 8 | 13 | 8 | 3 | 8 | 11 | 8 | 6 | 4 | 13 | 4 | 15 | 4 | 16 | 8 | 1 | 8 | 2 | 8 | 4 | 8 | 5 | 9 | 16 | 9 | 12
+INPUTS | 9 | TIMER_RUN  | AQ<4>.PIN  | ioportb/dq<4>.EXP  | ioportb/dq<3>.EXP  | AQ<3>.PIN  | AQ<1>.PIN  | timer0/count0<0>.LFBK  | MIO  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 5 | 0 | 12 | 9 | 14 | 9 | 16 | 9 | 0 | 11 | 17
+INPUTP | 4 | 51 | 50 | 47 | 198
+IMPORTS | 2 | 9 | 14 | 9 | 16
+EQ | 14 | 
+   timer0/count0<1>.T = MIO & TIMER_RUN & timer0/count0<0>.LFBK
+	# TIMER_RUN & timer0/count0<0>.LFBK & !AQ<4>.PIN
+	# TIMER_RUN & timer0/count0<0>.LFBK & !AQ<3>.PIN
+	# TIMER_RUN & timer0/count0<0>.LFBK & AQ<1>.PIN
+;Imported pterms FB10_15
+	# TIMER_RUN & !FC_8_.OUT & timer0/count0<0>.LFBK
+	# TIMER_RUN & timer0/count0<0>.LFBK & AQ<2>.PIN
+;Imported pterms FB10_17
+	# !MIO & AD_E<1>.PIN & FC_8_.OUT & 
+	!timer0/count0<1>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<1>.PIN & FC_8_.OUT & 
+	timer0/count0<1>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   timer0/count0<1>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<1>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 4 | 17 | timer0/count0<2>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 22 | 8 | 17 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 10 | 8 | 9 | 8 | 7 | 8 | 8 | 8 | 16 | 8 | 14 | 8 | 13 | 8 | 3 | 8 | 11 | 8 | 6 | 8 | 5 | 8 | 4 | 8 | 1 | 8 | 2 | 4 | 14 | 4 | 15 | 4 | 0 | 4 | 13
+INPUTS | 10 | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | AQ<4>.PIN  | AQ<2>.PIN  | AQ<1>.PIN  | ioportc/trishold<5>.EXP  | UCSD_OBUF.EXP  | AQ_5_OBUF.LFBK  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 7 | 0 | 12 | 9 | 0 | 9 | 15 | 4 | 0 | 4 | 16 | 4 | 1 | 11 | 17
+INPUTP | 3 | 51 | 49 | 47
+IMPORTS | 2 | 4 | 0 | 4 | 16
+EQ | 26 | 
+   timer0/count0<2>.T = TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	AQ_5_OBUF.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	!AQ<4>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	AQ<1>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	AQ<2>.PIN
+;Imported pterms FB5_1
+	# !MIO & AD_E<2>.PIN & WR_SYNC & !AQ_5_OBUF.LFBK & 
+	!timer0/count0<2>.LFBK & AQ<4>.PIN & !AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN
+	# !MIO & !AD_E<2>.PIN & WR_SYNC & !AQ_5_OBUF.LFBK & 
+	timer0/count0<2>.LFBK & AQ<4>.PIN & !AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN
+;Imported pterms FB5_17
+	# MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1>
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1>
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	!AQ<3>.PIN;
+   timer0/count0<2>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<2>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 4 | 14 | timer0/count0<3>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 19 | 8 | 17 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 10 | 8 | 9 | 8 | 6 | 8 | 16 | 8 | 14 | 8 | 13 | 8 | 3 | 8 | 11 | 8 | 8 | 8 | 1 | 8 | 2 | 8 | 4 | 8 | 5 | 8 | 7 | 4 | 15
+INPUTS | 11 | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | AQ_5_OBUF.LFBK  | AQ<4>.PIN  | AQ<2>.PIN  | AQ<1>.PIN  | RXD_OBUF.EXP  | XLXI_327/trishold<2>.EXP  | timer0/count0<2>.LFBK  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 8 | 0 | 12 | 9 | 0 | 9 | 15 | 4 | 1 | 4 | 13 | 4 | 15 | 4 | 17 | 11 | 17
+INPUTP | 3 | 51 | 49 | 47
+IMPORTS | 2 | 4 | 13 | 4 | 15
+EQ | 26 | 
+   timer0/count0<3>.T = TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	AQ_5_OBUF.LFBK & timer0/count0<2>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2>.LFBK & !AQ<4>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2>.LFBK & AQ<1>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2>.LFBK & AQ<2>.PIN
+;Imported pterms FB5_14
+	# MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2>.LFBK & AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2>.LFBK & !AQ<3>.PIN
+;Imported pterms FB5_16
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2>.LFBK
+	# !MIO & AD_E<3>.PIN & WR_SYNC & !AQ_5_OBUF.LFBK & 
+	!timer0/count0<3>.LFBK & AQ<4>.PIN & !AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN
+	# !MIO & !AD_E<3>.PIN & WR_SYNC & !AQ_5_OBUF.LFBK & 
+	timer0/count0<3>.LFBK & AQ<4>.PIN & !AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN;
+   timer0/count0<3>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<3>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 15 | timer0/count0<4>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 31 | 8 | 17 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 14 | 8 | 9 | 8 | 16 | 8 | 13 | 8 | 11 | 8 | 8 | 8 | 3 | 8 | 10 | 8 | 6 | 8 | 1 | 8 | 2 | 8 | 4 | 8 | 5 | 8 | 7 | 10 | 16 | 10 | 17 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 10 | 0 | 10 | 14 | 10 | 11 | 10 | 8 | 10 | 5 | 10 | 2 | 10 | 4
+INPUTS | 7 | EEWP_OBUF.EXP  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | FC_12_.OUT  | MIO  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 2 | 10 | 14 | 11 | 17
+INPUTP | 4 | 51 | 50 | 47 | 198
+IMPORTS | 1 | 10 | 14
+EQ | 12 | 
+   timer0/count0<4>.T = MIO & FC_12_.OUT
+	# FC_12_.OUT & !AQ<4>.PIN
+	# FC_12_.OUT & !AQ<3>.PIN
+	# FC_12_.OUT & AQ<1>.PIN
+;Imported pterms FB11_15
+	# !FC_11_.OUT & FC_12_.OUT
+	# !MIO & AD_E<4>.PIN & FC_11_.OUT & 
+	!timer0/count0<4>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+	# !MIO & !AD_E<4>.PIN & FC_11_.OUT & 
+	timer0/count0<4>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN;
+   timer0/count0<4>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<4>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 12 | timer0/count0<5>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 30 | 8 | 17 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 10 | 8 | 9 | 8 | 13 | 8 | 16 | 8 | 14 | 8 | 3 | 8 | 11 | 8 | 6 | 8 | 1 | 8 | 2 | 8 | 4 | 8 | 5 | 8 | 7 | 8 | 8 | 10 | 16 | 10 | 17 | 10 | 9 | 10 | 6 | 10 | 3 | 10 | 0 | 10 | 11 | 10 | 8 | 10 | 5 | 10 | 2 | 10 | 4 | 10 | 13
+INPUTS | 9 | PORTD_0_OBUF.EXP  | ALE_IBUF$BUF0.EXP  | timer0/count0<4>.LFBK  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | FC_12_.OUT  | MIO  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 4 | 10 | 11 | 10 | 13 | 10 | 15 | 11 | 17
+INPUTP | 4 | 51 | 50 | 47 | 198
+IMPORTS | 2 | 10 | 11 | 10 | 13
+EQ | 13 | 
+   timer0/count0<5>.T = MIO & FC_12_.OUT & timer0/count0<4>.LFBK
+	# FC_12_.OUT & timer0/count0<4>.LFBK & !AQ<4>.PIN
+	# FC_12_.OUT & timer0/count0<4>.LFBK & !AQ<3>.PIN
+	# FC_12_.OUT & timer0/count0<4>.LFBK & AQ<1>.PIN
+;Imported pterms FB11_12
+	# !FC_11_.OUT & FC_12_.OUT & timer0/count0<4>.LFBK
+	# !MIO & AD_E<5>.PIN & FC_11_.OUT & 
+	!timer0/count0<5>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+;Imported pterms FB11_14
+	# !MIO & !AD_E<5>.PIN & FC_11_.OUT & 
+	timer0/count0<5>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN;
+   timer0/count0<5>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<5>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 9 | timer0/count0<6>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 28 | 8 | 17 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 16 | 8 | 9 | 8 | 13 | 8 | 14 | 8 | 3 | 8 | 11 | 8 | 6 | 8 | 1 | 8 | 2 | 8 | 4 | 8 | 5 | 8 | 7 | 8 | 8 | 8 | 10 | 10 | 16 | 10 | 17 | 10 | 6 | 10 | 3 | 10 | 0 | 10 | 8 | 10 | 10 | 10 | 5 | 10 | 2 | 10 | 4
+INPUTS | 10 | PORTD_2_OBUF.EXP  | PORTD_3_OBUF.EXP  | timer0/count0<4>.LFBK  | timer0/count0<5>.LFBK  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | FC_12_.OUT  | MIO  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 5 | 10 | 8 | 10 | 10 | 10 | 15 | 10 | 12 | 11 | 17
+INPUTP | 4 | 51 | 50 | 47 | 198
+IMPORTS | 2 | 10 | 8 | 10 | 10
+EQ | 18 | 
+   timer0/count0<6>.T = MIO & FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK
+	# FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK & !AQ<4>.PIN
+	# FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK & !AQ<3>.PIN
+	# FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK & AQ<1>.PIN
+;Imported pterms FB11_9
+	# !FC_11_.OUT & FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK
+	# !MIO & AD_E<6>.PIN & FC_11_.OUT & 
+	!timer0/count0<6>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+;Imported pterms FB11_11
+	# !MIO & !AD_E<6>.PIN & FC_11_.OUT & 
+	timer0/count0<6>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN;
+   timer0/count0<6>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<6>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 6 | timer0/count0<7>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 26 | 8 | 17 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 16 | 8 | 9 | 8 | 14 | 8 | 3 | 8 | 13 | 8 | 6 | 8 | 1 | 8 | 2 | 8 | 4 | 8 | 5 | 8 | 7 | 8 | 8 | 8 | 10 | 8 | 11 | 10 | 16 | 10 | 17 | 10 | 3 | 10 | 0 | 10 | 5 | 10 | 7 | 10 | 2 | 10 | 4
+INPUTS | 11 | PORTD_4_OBUF.EXP  | PORTD_5_OBUF.EXP  | timer0/count0<4>.LFBK  | timer0/count0<5>.LFBK  | timer0/count0<6>.LFBK  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | FC_12_.OUT  | MIO  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 6 | 10 | 5 | 10 | 7 | 10 | 15 | 10 | 12 | 10 | 9 | 11 | 17
+INPUTP | 4 | 51 | 50 | 47 | 198
+IMPORTS | 2 | 10 | 5 | 10 | 7
+EQ | 18 | 
+   timer0/count0<7>.T = MIO & FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK & timer0/count0<6>.LFBK
+	# FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & !AQ<4>.PIN
+	# FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & !AQ<3>.PIN
+	# FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & AQ<1>.PIN
+;Imported pterms FB11_6
+	# !FC_11_.OUT & FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK & timer0/count0<6>.LFBK
+	# !MIO & AD_E<7>.PIN & FC_11_.OUT & 
+	!timer0/count0<7>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+;Imported pterms FB11_8
+	# !MIO & !AD_E<7>.PIN & FC_11_.OUT & 
+	timer0/count0<7>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN;
+   timer0/count0<7>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<7>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 3 | timer0/count0<8>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 22 | 10 | 3 | 10 | 16 | 10 | 4 | 10 | 2 | 10 | 17 | 10 | 0 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 9 | 8 | 6 | 8 | 4 | 8 | 17 | 8 | 13 | 8 | 14 | 8 | 10 | 8 | 11 | 8 | 7 | 8 | 8 | 8 | 16 | 8 | 5 | 8 | 1
+INPUTS | 16 | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<5>.PIN  | XLXI_327/trishold<14>.EXP  | XLXI_327/trishold<15>.EXP  | AQ<4>.PIN  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 12 | 0 | 12 | 9 | 0 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 8 | 2 | 8 | 4 | 11 | 17
+INPUTP | 4 | 47 | 49 | 58 | 51
+IMPORTS | 2 | 8 | 2 | 8 | 4
+EQ | 36 | 
+   timer0/count0<8>.T = TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & !AQ<4>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & AQ<5>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & AQ<1>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & AQ<2>.PIN
+;Imported pterms FB9_3
+	# MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7>
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & !AQ<3>.PIN
+;Imported pterms FB9_5
+	# !MIO & AD_E<8>.PIN & WR_SYNC & 
+	!timer0/count0<8>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<8>.PIN & WR_SYNC & 
+	timer0/count0<8>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7>;
+   timer0/count0<8>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<8>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 3 | timer0/count0<9>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 19 | 8 | 17 | 8 | 0 | 8 | 15 | 8 | 12 | 8 | 14 | 8 | 9 | 8 | 16 | 8 | 6 | 8 | 1 | 8 | 5 | 8 | 7 | 8 | 8 | 8 | 10 | 8 | 11 | 8 | 13 | 10 | 16 | 10 | 17 | 10 | 3 | 10 | 0
+INPUTS | 16 | PORTD_6_OBUF.EXP  | PORTD_7_OBUF.EXP  | timer0/count0<4>.LFBK  | timer0/count0<5>.LFBK  | timer0/count0<6>.LFBK  | timer0/count0<7>.LFBK  | timer0/count0<9>.LFBK  | AQ<4>.PIN  | AQ<3>.PIN  | timer0/count0<8>  | FC_12_.OUT  | AQ<1>.PIN  | MIO  | AD_E<9>.PIN  | timer0/count0<9>/timer0/count0<9>_CLKF  | FC_11_.OUT
+INPUTMC | 9 | 10 | 2 | 10 | 4 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 3 | 11 | 17
+INPUTP | 5 | 51 | 50 | 47 | 198 | 15
+IMPORTS | 2 | 10 | 2 | 10 | 4
+EQ | 23 | 
+   timer0/count0<9>.T = MIO & timer0/count0<8> & FC_12_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK
+	# !MIO & AD_E<9>.PIN & FC_11_.OUT & 
+	!timer0/count0<9>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+	# !MIO & !AD_E<9>.PIN & FC_11_.OUT & 
+	timer0/count0<9>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+	# timer0/count0<8> & FC_12_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK & !AQ<4>.PIN
+;Imported pterms FB11_3
+	# timer0/count0<8> & FC_12_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK & !AQ<3>.PIN
+	# timer0/count0<8> & FC_12_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK & AQ<1>.PIN
+;Imported pterms FB11_5
+	# timer0/count0<8> & !FC_11_.OUT & FC_12_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK;
+   timer0/count0<9>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<9>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 12 | UARTA_ENABLE
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 2 | 7 | 10 | 6 | 11
+INPUTS | 9 | AD_E<10>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 10 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   UARTA_ENABLE.D = AD_E<10>.PIN;
+   UARTA_ENABLE.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   UARTA_ENABLE.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 9 | UARTB_ENABLE
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 2 | 7 | 1 | 6 | 10
+INPUTS | 9 | AD_E<11>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 9 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   UARTB_ENABLE.D = AD_E<11>.PIN;
+   UARTB_ENABLE.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   UARTB_ENABLE.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 6 | UARTC_ENABLE
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 2 | 7 | 4 | 6 | 7
+INPUTS | 9 | AD_E<12>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 8 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   UARTC_ENABLE.D = AD_E<12>.PIN;
+   UARTC_ENABLE.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   UARTC_ENABLE.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 2 | XLXI_327/trishold<14>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 2 | 7 | 7 | 8 | 3
+INPUTS | 18 | AD_E<14>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN
+INPUTMC | 10 | 0 | 9 | 0 | 12 | 9 | 0 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6
+INPUTP | 8 | 6 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EXPORTS | 1 | 8 | 3
+EQ | 14 | 
+   XLXI_327/trishold<14>.D = AD_E<14>.PIN;
+   XLXI_327/trishold<14>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<14>.AP = RESET;	// GSR
+    XLXI_327/trishold<14>.EXP  =  MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7>
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & !AQ<3>.PIN
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 9 | 3 | XLXI_327/trishold<1>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 7 | 10
+INPUTS | 7 | AD_E<1>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_8_.OUT
+INPUTP | 6 | 23 | 198 | 51 | 50 | 47 | 49
+EQ | 4 | 
+   XLXI_327/trishold<1>.D = AD_E<1>.PIN;
+   XLXI_327/trishold<1>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<1>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 3 | 5 | ioportb/trishold<0>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 7 | 4
+INPUTS | 8 | AD_E<0>.PIN  | MIO  | WR_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_2_.OUT
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 25 | 198 | 50 | 51 | 47 | 49
+EQ | 4 | 
+   ioportb/trishold<0>.D = AD_E<0>.PIN;
+   ioportb/trishold<0>.CLK = !MIO & WR_SYNC & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN;
+   ioportb/trishold<0>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 2 | 6 | ioportb/trishold<2>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 7 | 1
+INPUTS | 9 | AD_E<2>.PIN  | MIO  | WR_SYNC  | AQ_6_OBUF.LFBK  | AQ_3_OBUF.LFBK  | AQ_1_OBUF.LFBK  | AQ_2_OBUF.LFBK  | AQ<5>.PIN  | AQ_4_OBUF.LFBK
+INPUTMC | 6 | 0 | 9 | 2 | 16 | 2 | 10 | 2 | 7 | 2 | 8 | 2 | 11
+INPUTP | 3 | 22 | 198 | 58
+EQ | 4 | 
+   ioportb/trishold<2>.D = AD_E<2>.PIN;
+   ioportb/trishold<2>.CLK = !MIO & WR_SYNC & !AQ_4_OBUF.LFBK & !AQ_6_OBUF.LFBK & 
+	AQ_3_OBUF.LFBK & AQ_1_OBUF.LFBK & AQ_2_OBUF.LFBK & !AQ<5>.PIN;
+   ioportb/trishold<2>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 8 | 6 | timer0/count0<15>
+ATTRIBUTES | 4399904 | 0
+OUTPUTMC | 1 | 8 | 7
+INPUTS | 23 | TIMER_RUN  | timer0/count0<0>  | timer0/count0<11>.LFBK  | timer0/count0<12>.LFBK  | timer0/count0<14>.LFBK  | timer0/count0<13>  | timer0/count0<8>.LFBK  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<5>.PIN  | RAMCS_OBUF.EXP  | PORTD_14_OBUF.EXP  | timer0/count0<10>.LFBK  | timer0/count0<9>/timer0/count0<9>_CLKF
+INPUTMC | 19 | 0 | 12 | 9 | 0 | 8 | 15 | 8 | 12 | 8 | 9 | 10 | 17 | 8 | 3 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 5 | 8 | 7 | 8 | 0 | 11 | 17
+INPUTP | 4 | 51 | 47 | 49 | 58
+IMPORTS | 2 | 8 | 5 | 8 | 7
+EQ | 58 | 
+   timer0/count0<15>.T = TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	timer0/count0<14>.LFBK & !AQ<4>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	timer0/count0<14>.LFBK & AQ<5>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	timer0/count0<14>.LFBK & AQ<1>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	timer0/count0<14>.LFBK & AQ<2>.PIN
+;Imported pterms FB9_6
+	# MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<13> & timer0/count0<1> & timer0/count0<2> & 
+	timer0/count0<3> & timer0/count0<4> & timer0/count0<5> & 
+	timer0/count0<6> & timer0/count0<7> & timer0/count0<9> & 
+	timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & 
+	timer0/count0<12>.LFBK & timer0/count0<14>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	timer0/count0<14>.LFBK & AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	timer0/count0<14>.LFBK & !AQ<3>.PIN
+;Imported pterms FB9_8
+	# !MIO & AD_E<15>.PIN & WR_SYNC & 
+	!timer0/count0<15>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<15>.PIN & WR_SYNC & 
+	timer0/count0<15>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<13> & timer0/count0<1> & timer0/count0<2> & 
+	timer0/count0<3> & timer0/count0<4> & timer0/count0<5> & 
+	timer0/count0<6> & timer0/count0<7> & timer0/count0<9> & 
+	timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & 
+	timer0/count0<12>.LFBK & timer0/count0<14>.LFBK;
+   timer0/count0<15>.CLK = timer0/count0<9>/timer0/count0<9>_CLKF;
+   timer0/count0<15>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 0 | 17 | RD_SYNC
+ATTRIBUTES | 4326192 | 0
+OUTPUTMC | 4 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 9
+INPUTS | 3 | EXTRD  | ALE  | CPUCLK_OBUF.LFBK
+INPUTMC | 1 | 0 | 5
+INPUTP | 2 | 200 | 197
+EQ | 3 | 
+   RD_SYNC.T = Vcc;
+   RD_SYNC.CLK = !EXTRD & CPUCLK_OBUF.LFBK;
+   RD_SYNC.AR = ALE;
+
+MACROCELL | 11 | 3 | XLXI_327/trishold<10>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 3 | 5 | 7 | 2 | 15 | 2 | 14
+INPUTS | 9 | AD_E<10>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 10 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   XLXI_327/trishold<10>.D = AD_E<10>.PIN;
+   XLXI_327/trishold<10>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<10>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 11 | 2 | XLXI_327/trishold<11>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 2 | 5 | 8 | 2 | 15
+INPUTS | 9 | AD_E<11>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 9 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   XLXI_327/trishold<11>.D = AD_E<11>.PIN;
+   XLXI_327/trishold<11>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<11>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 4 | 15 | XLXI_327/trishold<2>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 3 | 7 | 11 | 3 | 12 | 4 | 14
+INPUTS | 15 | AD_E<2>.PIN  | MIO  | WR_SYNC  | AQ<6>.PIN  | timer0/count0<2>.LFBK  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | timer0/count0<3>.LFBK  | AD_E<3>.PIN  | AQ<4>.PIN  | AQ_5_OBUF.LFBK
+INPUTMC | 7 | 0 | 9 | 4 | 17 | 0 | 12 | 9 | 0 | 9 | 15 | 4 | 14 | 4 | 1
+INPUTP | 8 | 22 | 198 | 57 | 50 | 47 | 49 | 21 | 51
+EXPORTS | 1 | 4 | 14
+EQ | 12 | 
+   XLXI_327/trishold<2>.D = AD_E<2>.PIN;
+   XLXI_327/trishold<2>.CLK = !MIO & WR_SYNC & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<2>.AP = RESET;	// GSR
+    XLXI_327/trishold<2>.EXP  =  TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2>.LFBK
+	# !MIO & AD_E<3>.PIN & WR_SYNC & !AQ_5_OBUF.LFBK & 
+	!timer0/count0<3>.LFBK & AQ<4>.PIN & !AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN
+	# !MIO & !AD_E<3>.PIN & WR_SYNC & !AQ_5_OBUF.LFBK & 
+	timer0/count0<3>.LFBK & AQ<4>.PIN & !AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 4 | 9 | XLXI_327/trishold<3>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 2 | 7 | 13 | 5 | 14
+INPUTS | 9 | AD_E<3>.PIN  | MIO  | WR_SYNC  | AQ<6>.PIN  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ_5_OBUF.LFBK
+INPUTMC | 2 | 0 | 9 | 4 | 1
+INPUTP | 7 | 21 | 198 | 57 | 51 | 50 | 47 | 49
+EQ | 4 | 
+   XLXI_327/trishold<3>.D = AD_E<3>.PIN;
+   XLXI_327/trishold<3>.CLK = !MIO & WR_SYNC & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<3>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 5 | 12 | XLXI_327/trishold<8>
+ATTRIBUTES | 8590112 | 0
+OUTPUTMC | 3 | 2 | 16 | 2 | 14 | 5 | 4
+INPUTS | 9 | AD_E<8>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 16 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   XLXI_327/trishold<8>.D = AD_E<8>.PIN;
+   XLXI_327/trishold<8>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<8>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 5 | 9 | XLXI_327/trishold<9>
+ATTRIBUTES | 8590112 | 0
+OUTPUTMC | 2 | 2 | 15 | 5 | 5
+INPUTS | 9 | AD_E<9>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 15 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   XLXI_327/trishold<9>.D = AD_E<9>.PIN;
+   XLXI_327/trishold<9>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<9>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 1 | 17 | XLXI_327/changehold<0>
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 3 | 2 | 14 | 2 | 16 | 1 | 0
+INPUTS | 9 | PORTA<8>.PIN  | MIO  | RD_SYNC  | AQ<3>.PIN  | SYSCLK  | CPU10  | AQ<2>.PIN  | AQ<4>.PIN  | FC_0_.OUT
+INPUTMC | 1 | 0 | 17
+INPUTP | 7 | 185 | 198 | 50 | 194 | 193 | 49 | 51
+EXPORTS | 1 | 1 | 0
+EQ | 5 | 
+   XLXI_327/changehold<0>.D = PORTA<8>.PIN;
+   XLXI_327/changehold<0>.CLK = !MIO & RD_SYNC & FC_0_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<2>.PIN;
+   XLXI_327/changehold<0>.AR = RESET;	// GSR
+    XLXI_327/changehold<0>.EXP  =  SYSCLK & CPU10
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 1 | 15 | XLXI_327/changehold<1>
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 1 | 2 | 15
+INPUTS | 7 | PORTA<9>.PIN  | MIO  | RD_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<2>.PIN  | FC_0_.OUT
+INPUTMC | 1 | 0 | 17
+INPUTP | 5 | 186 | 198 | 50 | 51 | 49
+EQ | 4 | 
+   XLXI_327/changehold<1>.D = PORTA<9>.PIN;
+   XLXI_327/changehold<1>.CLK = !MIO & RD_SYNC & FC_0_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<2>.PIN;
+   XLXI_327/changehold<1>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 1 | 12 | XLXI_327/changehold<2>
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 3 | 2 | 15 | 2 | 14 | 1 | 11
+INPUTS | 9 | PORTA<10>.PIN  | MIO  | RD_SYNC  | AQ<3>.PIN  | STATUS_IOIN<6>  | PORTC<6>.PIN  | AQ<2>.PIN  | AQ<4>.PIN  | FC_0_.OUT
+INPUTMC | 2 | 0 | 17 | 5 | 15
+INPUTP | 6 | 187 | 198 | 50 | 147 | 49 | 51
+EXPORTS | 1 | 1 | 11
+EQ | 8 | 
+   XLXI_327/changehold<2>.D = PORTA<10>.PIN;
+   XLXI_327/changehold<2>.CLK = !MIO & RD_SYNC & FC_0_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<2>.PIN;
+   XLXI_327/changehold<2>.AR = RESET;	// GSR
+    XLXI_327/changehold<2>.EXP  =  !MIO & STATUS_IOIN<6> & FC_0_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & !AQ<2>.PIN
+	# !MIO & PORTC<6>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 1 | 9 | XLXI_327/changehold<3>
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 2 | 2 | 15 | 1 | 10
+INPUTS | 9 | PORTA<11>.PIN  | MIO  | RD_SYNC  | AQ<3>.PIN  | STATUS_IOIN<7>  | PORTC<7>.PIN  | AQ<2>.PIN  | AQ<4>.PIN  | FC_0_.OUT
+INPUTMC | 2 | 0 | 17 | 5 | 14
+INPUTP | 6 | 188 | 198 | 50 | 148 | 49 | 51
+EXPORTS | 1 | 1 | 10
+EQ | 8 | 
+   XLXI_327/changehold<3>.D = PORTA<11>.PIN;
+   XLXI_327/changehold<3>.CLK = !MIO & RD_SYNC & FC_0_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<2>.PIN;
+   XLXI_327/changehold<3>.AR = RESET;	// GSR
+    XLXI_327/changehold<3>.EXP  =  !MIO & STATUS_IOIN<7> & FC_0_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & !AQ<2>.PIN
+	# !MIO & PORTC<7>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 0 | 6 | XLXI_327/dq<14>
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 1 | 7 | 7
+INPUTS | 9 | AD_E<14>.PIN  | MIO  | AQ<4>.PIN  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | WR_SYNC.LFBK
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 6 | 198 | 51 | 58 | 57 | 50 | 47 | 49
+EQ | 4 | 
+   XLXI_327/dq<14>.D = AD_E<14>.PIN;
+   XLXI_327/dq<14>.CLK = !MIO & WR_SYNC.LFBK & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/dq<14>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 9 | XLXI_327/dq<1>
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 1 | 7 | 10
+INPUTS | 7 | AD_E<1>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_8_.OUT
+INPUTP | 6 | 23 | 198 | 51 | 50 | 47 | 49
+EQ | 4 | 
+   XLXI_327/dq<1>.D = AD_E<1>.PIN;
+   XLXI_327/dq<1>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	!AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/dq<1>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 9 | 6 | XLXI_327/trishold<0>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 7 | 8
+INPUTS | 7 | AD_E<0>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_8_.OUT
+INPUTP | 6 | 25 | 198 | 51 | 50 | 47 | 49
+EQ | 4 | 
+   XLXI_327/trishold<0>.D = AD_E<0>.PIN;
+   XLXI_327/trishold<0>.CLK = !MIO & FC_8_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<0>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 11 | 1 | XLXI_327/trishold<12>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 5 | 10
+INPUTS | 9 | AD_E<12>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 8 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   XLXI_327/trishold<12>.D = AD_E<12>.PIN;
+   XLXI_327/trishold<12>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<12>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 6 | 13 | XLXI_327/trishold<13>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 5 | 11
+INPUTS | 9 | AD_E<13>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 7 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   XLXI_327/trishold<13>.D = AD_E<13>.PIN;
+   XLXI_327/trishold<13>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<13>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 8 | 4 | XLXI_327/trishold<15>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 2 | 7 | 5 | 8 | 3
+INPUTS | 20 | AD_E<15>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AD_E<8>.PIN  | AQ<4>.PIN  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | timer0/count0<8>.LFBK
+INPUTMC | 11 | 0 | 9 | 0 | 12 | 9 | 0 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 8 | 3
+INPUTP | 9 | 5 | 198 | 58 | 57 | 50 | 47 | 49 | 16 | 51
+EXPORTS | 1 | 8 | 3
+EQ | 14 | 
+   XLXI_327/trishold<15>.D = AD_E<15>.PIN;
+   XLXI_327/trishold<15>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<15>.AP = RESET;	// GSR
+    XLXI_327/trishold<15>.EXP  =  !MIO & AD_E<8>.PIN & WR_SYNC & 
+	!timer0/count0<8>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<8>.PIN & WR_SYNC & 
+	timer0/count0<8>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7>
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 2 | 12 | XLXI_327/trishold<4>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 7 | 14
+INPUTS | 9 | AD_E<4>.PIN  | MIO  | WR_SYNC  | AQ_6_OBUF.LFBK  | AQ_3_OBUF.LFBK  | AQ_1_OBUF.LFBK  | AQ_2_OBUF.LFBK  | AQ<5>.PIN  | AQ_4_OBUF.LFBK
+INPUTMC | 6 | 0 | 9 | 2 | 16 | 2 | 10 | 2 | 7 | 2 | 8 | 2 | 11
+INPUTP | 3 | 20 | 198 | 58
+EQ | 4 | 
+   XLXI_327/trishold<4>.D = AD_E<4>.PIN;
+   XLXI_327/trishold<4>.CLK = !MIO & WR_SYNC & !AQ_4_OBUF.LFBK & !AQ_6_OBUF.LFBK & 
+	AQ_3_OBUF.LFBK & !AQ_1_OBUF.LFBK & AQ_2_OBUF.LFBK & !AQ<5>.PIN;
+   XLXI_327/trishold<4>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 3 | 11 | XLXI_327/trishold<5>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 7 | 16
+INPUTS | 8 | AD_E<5>.PIN  | MIO  | WR_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_2_.OUT
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 19 | 198 | 50 | 51 | 47 | 49
+EQ | 4 | 
+   XLXI_327/trishold<5>.D = AD_E<5>.PIN;
+   XLXI_327/trishold<5>.CLK = !MIO & WR_SYNC & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<5>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 5 | 17 | XLXI_327/trishold<6>
+ATTRIBUTES | 8590112 | 0
+OUTPUTMC | 2 | 5 | 16 | 5 | 1
+INPUTS | 12 | AD_E<6>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | PORTC<2>.PIN  | PORTB<2>.PIN  | IRQ1  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 11 | 18 | 198 | 58 | 57 | 50 | 47 | 49 | 152 | 162 | 87 | 51
+EXPORTS | 1 | 5 | 16
+EQ | 10 | 
+   XLXI_327/trishold<6>.D = AD_E<6>.PIN;
+   XLXI_327/trishold<6>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<6>.AP = RESET;	// GSR
+    XLXI_327/trishold<6>.EXP  =  !MIO & IRQ1 & !AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & 
+	!AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & PORTB<2>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<2>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 5 | 13 | XLXI_327/trishold<7>
+ATTRIBUTES | 8590112 | 0
+OUTPUTMC | 1 | 5 | 2
+INPUTS | 9 | AD_E<7>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 17 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   XLXI_327/trishold<7>.D = AD_E<7>.PIN;
+   XLXI_327/trishold<7>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN;
+   XLXI_327/trishold<7>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 3 | 10 | XLXN_2860
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 3 | 6 | 8 | 6 | 7 | 6 | 9
+INPUTS | 8 | AD_E<0>.PIN  | MIO  | WR_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_2_.OUT
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 25 | 198 | 50 | 51 | 47 | 49
+EQ | 4 | 
+   XLXN_2860.D = AD_E<0>.PIN;
+   XLXN_2860.CLK = !MIO & WR_SYNC & FC_2_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   XLXN_2860.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 6 | XLXN_2861
+ATTRIBUTES | 8528672 | 0
+INPUTS | 9 | AD_E<8>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 16 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   XLXN_2861.D = AD_E<8>.PIN;
+   XLXN_2861.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   XLXN_2861.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 5 | 3 | XLXN_2862
+ATTRIBUTES | 8528672 | 0
+INPUTS | 9 | AD_E<7>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 17 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   XLXN_2862.D = AD_E<7>.PIN;
+   XLXN_2862.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   XLXN_2862.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 4 | 7 | XLXN_2863
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 1 | 6 | 8
+INPUTS | 9 | AD_E<2>.PIN  | MIO  | WR_SYNC  | AQ<6>.PIN  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ_5_OBUF.LFBK
+INPUTMC | 2 | 0 | 9 | 4 | 1
+INPUTP | 7 | 22 | 198 | 57 | 51 | 50 | 47 | 49
+EQ | 4 | 
+   XLXN_2863.D = AD_E<2>.PIN;
+   XLXN_2863.CLK = !MIO & WR_SYNC & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   XLXN_2863.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 3 | 9 | XLXN_2864
+ATTRIBUTES | 8528672 | 0
+INPUTS | 8 | AD_E<1>.PIN  | MIO  | WR_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_2_.OUT
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 23 | 198 | 50 | 51 | 47 | 49
+EQ | 4 | 
+   XLXN_2864.D = AD_E<1>.PIN;
+   XLXN_2864.CLK = !MIO & WR_SYNC & FC_2_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   XLXN_2864.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 3 | 8 | XLXN_2865
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 1 | 6 | 8
+INPUTS | 8 | AD_E<6>.PIN  | MIO  | WR_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_2_.OUT
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 18 | 198 | 50 | 51 | 47 | 49
+EQ | 4 | 
+   XLXN_2865.D = AD_E<6>.PIN;
+   XLXN_2865.CLK = !MIO & WR_SYNC & FC_2_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   XLXN_2865.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 3 | 7 | XLXN_2866
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 1 | 6 | 7
+INPUTS | 8 | AD_E<5>.PIN  | MIO  | WR_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_2_.OUT
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 19 | 198 | 50 | 51 | 47 | 49
+EQ | 4 | 
+   XLXN_2866.D = AD_E<5>.PIN;
+   XLXN_2866.CLK = !MIO & WR_SYNC & FC_2_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   XLXN_2866.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 7 | 17 | XLXN_2867
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 1 | 6 | 7
+INPUTS | 6 | AD_E<4>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_7_.OUT
+INPUTP | 5 | 20 | 198 | 51 | 47 | 49
+EQ | 4 | 
+   XLXN_2867.D = AD_E<4>.PIN;
+   XLXN_2867.CLK = !MIO & FC_7_.OUT & !AQ<4>.PIN & AQ<1>.PIN & 
+	!AQ<2>.PIN;
+   XLXN_2867.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 4 | 6 | XLXN_2872
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 1 | 6 | 9
+INPUTS | 9 | AD_E<3>.PIN  | MIO  | WR_SYNC  | AQ<6>.PIN  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ_5_OBUF.LFBK
+INPUTMC | 2 | 0 | 9 | 4 | 1
+INPUTP | 7 | 21 | 198 | 57 | 51 | 50 | 47 | 49
+EQ | 4 | 
+   XLXN_2872.D = AD_E<3>.PIN;
+   XLXN_2872.CLK = !MIO & WR_SYNC & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   XLXN_2872.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 3 | 6 | ioportb/dq<0>
+ATTRIBUTES | 8528672 | 0
+OUTPUTMC | 1 | 7 | 4
+INPUTS | 8 | AD_E<0>.PIN  | MIO  | WR_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_2_.OUT
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 25 | 198 | 50 | 51 | 47 | 49
+EQ | 4 | 
+   ioportb/dq<0>.D = AD_E<0>.PIN;
+   ioportb/dq<0>.CLK = !MIO & WR_SYNC & FC_2_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN;
+   ioportb/dq<0>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 7 | 15 | ioportb/dq<2>
+ATTRIBUTES | 8594208 | 0
+OUTPUTMC | 1 | 7 | 1
+INPUTS | 6 | AD_E<2>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_7_.OUT
+INPUTP | 5 | 22 | 198 | 51 | 47 | 49
+EQ | 4 | 
+   ioportb/dq<2>.D = AD_E<2>.PIN;
+   ioportb/dq<2>.CLK = !MIO & FC_7_.OUT & !AQ<4>.PIN & AQ<1>.PIN & 
+	AQ<2>.PIN;
+   ioportb/dq<2>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 3 | 4 | ioportb/trishold<1>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 7 | 2
+INPUTS | 8 | AD_E<1>.PIN  | MIO  | WR_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_2_.OUT
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 23 | 198 | 50 | 51 | 47 | 49
+EQ | 4 | 
+   ioportb/trishold<1>.D = AD_E<1>.PIN;
+   ioportb/trishold<1>.CLK = !MIO & WR_SYNC & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN;
+   ioportb/trishold<1>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 2 | 3 | ioportb/trishold<3>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 9 | 16
+INPUTS | 9 | AD_E<3>.PIN  | MIO  | WR_SYNC  | AQ_6_OBUF.LFBK  | AQ_3_OBUF.LFBK  | AQ_1_OBUF.LFBK  | AQ_2_OBUF.LFBK  | AQ<5>.PIN  | AQ_4_OBUF.LFBK
+INPUTMC | 6 | 0 | 9 | 2 | 16 | 2 | 10 | 2 | 7 | 2 | 8 | 2 | 11
+INPUTP | 3 | 21 | 198 | 58
+EQ | 4 | 
+   ioportb/trishold<3>.D = AD_E<3>.PIN;
+   ioportb/trishold<3>.CLK = !MIO & WR_SYNC & !AQ_4_OBUF.LFBK & !AQ_6_OBUF.LFBK & 
+	AQ_3_OBUF.LFBK & AQ_1_OBUF.LFBK & AQ_2_OBUF.LFBK & !AQ<5>.PIN;
+   ioportb/trishold<3>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 11 | 0 | ioportb/trishold<4>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 2 | 9 | 14 | 11 | 17
+INPUTS | 9 | AD_E<4>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 20 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EXPORTS | 1 | 11 | 17
+EQ | 6 | 
+   ioportb/trishold<4>.D = AD_E<4>.PIN;
+   ioportb/trishold<4>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN;
+   ioportb/trishold<4>.AP = RESET;	// GSR
+    ioportb/trishold<4>.EXP  =  !MIO & WR_SYNC & AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 3 | 3 | ioportb/trishold<5>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 9 | 13
+INPUTS | 8 | AD_E<5>.PIN  | MIO  | WR_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_2_.OUT
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 19 | 198 | 50 | 51 | 47 | 49
+EQ | 4 | 
+   ioportb/trishold<5>.D = AD_E<5>.PIN;
+   ioportb/trishold<5>.CLK = !MIO & WR_SYNC & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN;
+   ioportb/trishold<5>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 3 | 2 | ioportc/trishold<0>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 9 | 10
+INPUTS | 8 | AD_E<0>.PIN  | MIO  | WR_SYNC  | AQ<3>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_2_.OUT
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 25 | 198 | 50 | 51 | 47 | 49
+EQ | 4 | 
+   ioportc/trishold<0>.D = AD_E<0>.PIN;
+   ioportc/trishold<0>.CLK = !MIO & WR_SYNC & FC_2_.OUT & AQ<4>.PIN & 
+	!AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<0>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 8 | 17 | ioportc/trishold<10>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 2 | 11 | 11 | 8 | 0
+INPUTS | 20 | AD_E<10>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | timer0/count0<8>.LFBK
+INPUTMC | 12 | 0 | 9 | 0 | 12 | 9 | 0 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 3
+INPUTP | 8 | 10 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EXPORTS | 1 | 8 | 0
+EQ | 16 | 
+   ioportc/trishold<10>.D = AD_E<10>.PIN;
+   ioportc/trishold<10>.CLK = !MIO & WR_SYNC & AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<10>.AP = RESET;	// GSR
+    ioportc/trishold<10>.EXP  =  MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & !AQ<3>.PIN
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 6 | 12 | ioportc/trishold<11>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 11 | 13
+INPUTS | 9 | AD_E<11>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 9 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   ioportc/trishold<11>.D = AD_E<11>.PIN;
+   ioportc/trishold<11>.CLK = !MIO & WR_SYNC & AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<11>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 6 | 9 | ioportc/trishold<12>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 2 | 11 | 8 | 6 | 8
+INPUTS | 12 | AD_E<12>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | XLXN_2860  | XLXN_2872  | IRQ1  | AQ<4>.PIN
+INPUTMC | 3 | 0 | 9 | 3 | 10 | 4 | 6
+INPUTP | 9 | 8 | 198 | 58 | 57 | 50 | 47 | 49 | 87 | 51
+EXPORTS | 1 | 6 | 8
+EQ | 5 | 
+   ioportc/trishold<12>.D = AD_E<12>.PIN;
+   ioportc/trishold<12>.CLK = !MIO & WR_SYNC & AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<12>.AP = RESET;	// GSR
+    ioportc/trishold<12>.EXP  =  XLXN_2860 & XLXN_2872 & IRQ1
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 6 | 6 | ioportc/trishold<13>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 11 | 10
+INPUTS | 9 | AD_E<13>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 7 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   ioportc/trishold<13>.D = AD_E<13>.PIN;
+   ioportc/trishold<13>.CLK = !MIO & WR_SYNC & AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<13>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 0 | 0 | ioportc/trishold<14>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 11 | 5
+INPUTS | 9 | AD_E<14>.PIN  | MIO  | AQ<4>.PIN  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | WR_SYNC.LFBK
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 6 | 198 | 51 | 58 | 57 | 50 | 47 | 49
+EQ | 4 | 
+   ioportc/trishold<14>.D = AD_E<14>.PIN;
+   ioportc/trishold<14>.CLK = !MIO & WR_SYNC.LFBK & AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<14>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 7 | 12 | ioportc/trishold<15>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 11 | 7
+INPUTS | 6 | AD_E<15>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_7_.OUT
+INPUTP | 5 | 5 | 198 | 51 | 47 | 49
+EQ | 4 | 
+   ioportc/trishold<15>.D = AD_E<15>.PIN;
+   ioportc/trishold<15>.CLK = !MIO & FC_7_.OUT & AQ<4>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN;
+   ioportc/trishold<15>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 7 | 9 | ioportc/trishold<1>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 9 | 11
+INPUTS | 6 | AD_E<1>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_7_.OUT
+INPUTP | 5 | 23 | 198 | 51 | 47 | 49
+EQ | 4 | 
+   ioportc/trishold<1>.D = AD_E<1>.PIN;
+   ioportc/trishold<1>.CLK = !MIO & FC_7_.OUT & AQ<4>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN;
+   ioportc/trishold<1>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 5 | 0 | ioportc/trishold<2>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 9 | 7
+INPUTS | 9 | AD_E<2>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 22 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   ioportc/trishold<2>.D = AD_E<2>.PIN;
+   ioportc/trishold<2>.CLK = !MIO & WR_SYNC & AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<2>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 4 | 3 | ioportc/trishold<3>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 9 | 8
+INPUTS | 9 | AD_E<3>.PIN  | MIO  | WR_SYNC  | AQ<6>.PIN  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ_5_OBUF.LFBK
+INPUTMC | 2 | 0 | 9 | 4 | 1
+INPUTP | 7 | 21 | 198 | 57 | 51 | 50 | 47 | 49
+EQ | 4 | 
+   ioportc/trishold<3>.D = AD_E<3>.PIN;
+   ioportc/trishold<3>.CLK = !MIO & WR_SYNC & !AQ_5_OBUF.LFBK & AQ<4>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<3>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 7 | 6 | ioportc/trishold<4>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 9 | 4
+INPUTS | 6 | AD_E<4>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_7_.OUT
+INPUTP | 5 | 20 | 198 | 51 | 47 | 49
+EQ | 4 | 
+   ioportc/trishold<4>.D = AD_E<4>.PIN;
+   ioportc/trishold<4>.CLK = !MIO & FC_7_.OUT & AQ<4>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN;
+   ioportc/trishold<4>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 4 | 0 | ioportc/trishold<5>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 2 | 9 | 5 | 4 | 17
+INPUTS | 11 | AD_E<5>.PIN  | MIO  | WR_SYNC  | AQ<6>.PIN  | timer0/count0<2>.LFBK  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AD_E<2>.PIN  | AQ<4>.PIN  | AQ_5_OBUF.LFBK
+INPUTMC | 3 | 0 | 9 | 4 | 17 | 4 | 1
+INPUTP | 8 | 19 | 198 | 57 | 50 | 47 | 49 | 22 | 51
+EXPORTS | 1 | 4 | 17
+EQ | 10 | 
+   ioportc/trishold<5>.D = AD_E<5>.PIN;
+   ioportc/trishold<5>.CLK = !MIO & WR_SYNC & !AQ_5_OBUF.LFBK & AQ<4>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<5>.AP = RESET;	// GSR
+    ioportc/trishold<5>.EXP  =  !MIO & AD_E<2>.PIN & WR_SYNC & !AQ_5_OBUF.LFBK & 
+	!timer0/count0<2>.LFBK & AQ<4>.PIN & !AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN
+	# !MIO & !AD_E<2>.PIN & WR_SYNC & !AQ_5_OBUF.LFBK & 
+	timer0/count0<2>.LFBK & AQ<4>.PIN & !AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 10 | 0 | ioportc/trishold<6>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 2 | 9 | 1 | 10 | 17
+INPUTS | 14 | AD_E<6>.PIN  | MIO  | timer0/count0<5>.LFBK  | AQ<3>.PIN  | timer0/count0<6>.LFBK  | timer0/count0<7>.LFBK  | AQ<1>.PIN  | timer0/count0<9>.LFBK  | FC_11_.OUT  | timer0/count0<8>  | AQ<4>.PIN  | FC_12_.OUT  | FC_13_.OUT  | timer0/count0<4>.LFBK
+INPUTMC | 6 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 3 | 10 | 15
+INPUTP | 5 | 18 | 198 | 50 | 47 | 51
+EXPORTS | 1 | 10 | 17
+EQ | 7 | 
+   ioportc/trishold<6>.D = AD_E<6>.PIN;
+   ioportc/trishold<6>.CLK = !MIO & FC_11_.OUT & AQ<4>.PIN & !AQ<3>.PIN & 
+	!AQ<1>.PIN;
+   ioportc/trishold<6>.AP = RESET;	// GSR
+    ioportc/trishold<6>.EXP  =  timer0/count0<8> & !FC_11_.OUT & FC_12_.OUT & 
+	FC_13_.OUT & timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & 
+	timer0/count0<6>.LFBK & timer0/count0<7>.LFBK & timer0/count0<9>.LFBK
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 7 | 3 | ioportc/trishold<7>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 9 | 2
+INPUTS | 6 | AD_E<7>.PIN  | MIO  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | FC_7_.OUT
+INPUTP | 5 | 17 | 198 | 51 | 47 | 49
+EQ | 4 | 
+   ioportc/trishold<7>.D = AD_E<7>.PIN;
+   ioportc/trishold<7>.CLK = !MIO & FC_7_.OUT & AQ<4>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN;
+   ioportc/trishold<7>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 6 | 5 | ioportc/trishold<8>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 11 | 14
+INPUTS | 9 | AD_E<8>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 16 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   ioportc/trishold<8>.D = AD_E<8>.PIN;
+   ioportc/trishold<8>.CLK = !MIO & WR_SYNC & AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<8>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 6 | 3 | ioportc/trishold<9>
+ATTRIBUTES | 8524576 | 0
+OUTPUTMC | 1 | 11 | 16
+INPUTS | 9 | AD_E<9>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 15 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   ioportc/trishold<9>.D = AD_E<9>.PIN;
+   ioportc/trishold<9>.CLK = !MIO & WR_SYNC & AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN;
+   ioportc/trishold<9>.AP = RESET;	// GSR
+GLOBALS | 1 | 1 | RESET
+
+MACROCELL | 10 | 14 | EEWP_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 10 | 15
+INPUTS | 9 | AD_E<9>.PIN  | MIO  | FC_12_.OUT  | AQ<3>.PIN  | AD_E<4>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | timer0/count0<4>.LFBK  | FC_11_.OUT
+INPUTMC | 1 | 10 | 15
+INPUTP | 6 | 15 | 198 | 50 | 20 | 51 | 47
+EXPORTS | 1 | 10 | 15
+EQ | 9 | 
+   EEWP.D = AD_E<9>.PIN;
+   EEWP.CLK = !MIO & FC_11_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	AQ<1>.PIN;
+   EEWP.AR = RESET;	// GSR
+    EEWP_OBUF.EXP  =  !FC_11_.OUT & FC_12_.OUT
+	# !MIO & AD_E<4>.PIN & FC_11_.OUT & 
+	!timer0/count0<4>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+	# !MIO & !AD_E<4>.PIN & FC_11_.OUT & 
+	timer0/count0<4>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 11 | PORTD_0_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 10 | 12
+INPUTS | 10 | AD_E<0>.PIN  | MIO  | timer0/count0<5>.LFBK  | AQ<3>.PIN  | FC_12_.OUT  | AD_E<5>.PIN  | AQ<1>.PIN  | AQ<4>.PIN  | FC_11_.OUT  | timer0/count0<4>.LFBK
+INPUTMC | 2 | 10 | 12 | 10 | 15
+INPUTP | 6 | 25 | 198 | 50 | 19 | 47 | 51
+EXPORTS | 1 | 10 | 12
+EQ | 7 | 
+   PORTD<0>.D = AD_E<0>.PIN;
+   PORTD<0>.CLK = !MIO & FC_11_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	AQ<1>.PIN;
+   PORTD<0>.AR = RESET;	// GSR
+    PORTD_0_OBUF.EXP  =  !FC_11_.OUT & FC_12_.OUT & timer0/count0<4>.LFBK
+	# !MIO & AD_E<5>.PIN & FC_11_.OUT & 
+	!timer0/count0<5>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 13 | PORTD_10_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 8 | 12
+INPUTS | 24 | AD_E<10>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AD_E<12>.PIN  | timer0/count0<10>.LFBK  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<11>.LFBK  | timer0/count0<8>.LFBK  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | timer0/count0<12>.LFBK
+INPUTMC | 15 | 0 | 9 | 8 | 0 | 0 | 12 | 9 | 0 | 8 | 15 | 8 | 3 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 12
+INPUTP | 9 | 10 | 198 | 58 | 57 | 50 | 47 | 49 | 8 | 51
+EXPORTS | 1 | 8 | 12
+EQ | 15 | 
+   PORTD<10>.D = AD_E<10>.PIN;
+   PORTD<10>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   PORTD<10>.AR = RESET;	// GSR
+    PORTD_10_OBUF.EXP  =  !MIO & AD_E<12>.PIN & WR_SYNC & 
+	!timer0/count0<12>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<12>.PIN & WR_SYNC & 
+	timer0/count0<12>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 14 | PORTD_11_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 8 | 15
+INPUTS | 21 | AD_E<11>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<8>.LFBK  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | timer0/count0<10>.LFBK
+INPUTMC | 13 | 0 | 9 | 0 | 12 | 9 | 0 | 8 | 3 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 0
+INPUTP | 8 | 9 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EXPORTS | 1 | 8 | 15
+EQ | 19 | 
+   PORTD<11>.D = AD_E<11>.PIN;
+   PORTD<11>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   PORTD<11>.AR = RESET;	// GSR
+    PORTD_11_OBUF.EXP  =  MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	!AQ<3>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 10 | PORTD_12_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 8 | 9
+INPUTS | 26 | AD_E<12>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AD_E<14>.PIN  | timer0/count0<10>.LFBK  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<11>.LFBK  | timer0/count0<12>.LFBK  | timer0/count0<8>.LFBK  | timer0/count0<13>  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | timer0/count0<14>.LFBK
+INPUTMC | 17 | 0 | 9 | 8 | 0 | 0 | 12 | 9 | 0 | 8 | 15 | 8 | 12 | 8 | 3 | 10 | 17 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 9
+INPUTP | 9 | 8 | 198 | 58 | 57 | 50 | 47 | 49 | 6 | 51
+EXPORTS | 1 | 8 | 9
+EQ | 16 | 
+   PORTD<12>.D = AD_E<12>.PIN;
+   PORTD<12>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   PORTD<12>.AR = RESET;	// GSR
+    PORTD_12_OBUF.EXP  =  !MIO & AD_E<14>.PIN & WR_SYNC & 
+	!timer0/count0<14>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<14>.PIN & WR_SYNC & 
+	timer0/count0<14>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<13> & timer0/count0<1> & timer0/count0<2> & 
+	timer0/count0<3> & timer0/count0<4> & timer0/count0<5> & 
+	timer0/count0<6> & timer0/count0<7> & timer0/count0<9> & 
+	timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & 
+	timer0/count0<12>.LFBK
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 11 | PORTD_13_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 8 | 12
+INPUTS | 22 | AD_E<13>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<11>.LFBK  | timer0/count0<8>.LFBK  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | timer0/count0<10>.LFBK
+INPUTMC | 14 | 0 | 9 | 0 | 12 | 9 | 0 | 8 | 15 | 8 | 3 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 0
+INPUTP | 8 | 7 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EXPORTS | 1 | 8 | 12
+EQ | 19 | 
+   PORTD<13>.D = AD_E<13>.PIN;
+   PORTD<13>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   PORTD<13>.AR = RESET;	// GSR
+    PORTD_13_OBUF.EXP  =  MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	timer0/count0<11>.LFBK & AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2> & timer0/count0<3> & timer0/count0<4> & 
+	timer0/count0<5> & timer0/count0<6> & timer0/count0<7> & 
+	timer0/count0<9> & timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & 
+	timer0/count0<11>.LFBK & !AQ<3>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 7 | PORTD_14_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 8 | 6
+INPUTS | 27 | AD_E<14>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AD_E<15>.PIN  | timer0/count0<10>.LFBK  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<11>.LFBK  | timer0/count0<12>.LFBK  | timer0/count0<14>.LFBK  | timer0/count0<13>  | timer0/count0<8>.LFBK  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | timer0/count0<15>.LFBK
+INPUTMC | 18 | 0 | 9 | 8 | 0 | 0 | 12 | 9 | 0 | 8 | 15 | 8 | 12 | 8 | 9 | 10 | 17 | 8 | 3 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 6
+INPUTP | 9 | 6 | 198 | 58 | 57 | 50 | 47 | 49 | 5 | 51
+EXPORTS | 1 | 8 | 6
+EQ | 16 | 
+   PORTD<14>.D = AD_E<14>.PIN;
+   PORTD<14>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   PORTD<14>.AR = RESET;	// GSR
+    PORTD_14_OBUF.EXP  =  !MIO & AD_E<15>.PIN & WR_SYNC & 
+	!timer0/count0<15>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<15>.PIN & WR_SYNC & 
+	timer0/count0<15>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<13> & timer0/count0<1> & timer0/count0<2> & 
+	timer0/count0<3> & timer0/count0<4> & timer0/count0<5> & 
+	timer0/count0<6> & timer0/count0<7> & timer0/count0<9> & 
+	timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & 
+	timer0/count0<12>.LFBK & timer0/count0<14>.LFBK
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 8 | PORTD_15_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 8 | 9
+INPUTS | 24 | AD_E<15>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<11>.LFBK  | timer0/count0<12>.LFBK  | timer0/count0<8>.LFBK  | timer0/count0<13>  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | timer0/count0<10>.LFBK
+INPUTMC | 16 | 0 | 9 | 0 | 12 | 9 | 0 | 8 | 15 | 8 | 12 | 8 | 3 | 10 | 17 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 0
+INPUTP | 8 | 5 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EXPORTS | 1 | 8 | 9
+EQ | 22 | 
+   PORTD<15>.D = AD_E<15>.PIN;
+   PORTD<15>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   PORTD<15>.AR = RESET;	// GSR
+    PORTD_15_OBUF.EXP  =  MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<13> & timer0/count0<1> & timer0/count0<2> & 
+	timer0/count0<3> & timer0/count0<4> & timer0/count0<5> & 
+	timer0/count0<6> & timer0/count0<7> & timer0/count0<9> & 
+	timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & 
+	timer0/count0<12>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	!AQ<3>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 11 | 4 | PORTD_1_OBUF
+ATTRIBUTES | 8790818 | 0
+INPUTS | 9 | AD_E<1>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 0 | 9
+INPUTP | 8 | 23 | 198 | 58 | 57 | 50 | 47 | 49 | 51
+EQ | 4 | 
+   PORTD<1>.D = AD_E<1>.PIN;
+   PORTD<1>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   PORTD<1>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 8 | PORTD_2_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 10 | 9
+INPUTS | 11 | AD_E<2>.PIN  | MIO  | timer0/count0<5>.LFBK  | AQ<3>.PIN  | timer0/count0<6>.LFBK  | FC_12_.OUT  | AQ<1>.PIN  | AD_E<6>.PIN  | FC_11_.OUT  | AQ<4>.PIN  | timer0/count0<4>.LFBK
+INPUTMC | 3 | 10 | 12 | 10 | 9 | 10 | 15
+INPUTP | 6 | 22 | 198 | 50 | 47 | 18 | 51
+EXPORTS | 1 | 10 | 9
+EQ | 8 | 
+   PORTD<2>.D = AD_E<2>.PIN;
+   PORTD<2>.CLK = !MIO & FC_11_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	AQ<1>.PIN;
+   PORTD<2>.AR = RESET;	// GSR
+    PORTD_2_OBUF.EXP  =  !FC_11_.OUT & FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK
+	# !MIO & AD_E<6>.PIN & FC_11_.OUT & 
+	!timer0/count0<6>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 10 | PORTD_3_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 10 | 9
+INPUTS | 8 | AD_E<3>.PIN  | MIO  | AD_E<6>.PIN  | AQ<3>.PIN  | AQ<4>.PIN  | timer0/count0<6>.LFBK  | AQ<1>.PIN  | FC_11_.OUT
+INPUTMC | 1 | 10 | 9
+INPUTP | 6 | 21 | 198 | 18 | 50 | 51 | 47
+EXPORTS | 1 | 10 | 9
+EQ | 6 | 
+   PORTD<3>.D = AD_E<3>.PIN;
+   PORTD<3>.CLK = !MIO & FC_11_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	AQ<1>.PIN;
+   PORTD<3>.AR = RESET;	// GSR
+    PORTD_3_OBUF.EXP  =  !MIO & !AD_E<6>.PIN & FC_11_.OUT & 
+	timer0/count0<6>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 5 | PORTD_4_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 10 | 6
+INPUTS | 12 | AD_E<4>.PIN  | MIO  | timer0/count0<5>.LFBK  | AQ<3>.PIN  | timer0/count0<6>.LFBK  | timer0/count0<7>.LFBK  | AQ<1>.PIN  | FC_12_.OUT  | FC_11_.OUT  | AD_E<7>.PIN  | AQ<4>.PIN  | timer0/count0<4>.LFBK
+INPUTMC | 4 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 15
+INPUTP | 6 | 20 | 198 | 50 | 47 | 17 | 51
+EXPORTS | 1 | 10 | 6
+EQ | 8 | 
+   PORTD<4>.D = AD_E<4>.PIN;
+   PORTD<4>.CLK = !MIO & FC_11_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	AQ<1>.PIN;
+   PORTD<4>.AR = RESET;	// GSR
+    PORTD_4_OBUF.EXP  =  !FC_11_.OUT & FC_12_.OUT & timer0/count0<4>.LFBK & 
+	timer0/count0<5>.LFBK & timer0/count0<6>.LFBK
+	# !MIO & AD_E<7>.PIN & FC_11_.OUT & 
+	!timer0/count0<7>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 7 | PORTD_5_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 10 | 6
+INPUTS | 8 | AD_E<5>.PIN  | MIO  | AD_E<7>.PIN  | AQ<3>.PIN  | AQ<4>.PIN  | timer0/count0<7>.LFBK  | AQ<1>.PIN  | FC_11_.OUT
+INPUTMC | 1 | 10 | 6
+INPUTP | 6 | 19 | 198 | 17 | 50 | 51 | 47
+EXPORTS | 1 | 10 | 6
+EQ | 6 | 
+   PORTD<5>.D = AD_E<5>.PIN;
+   PORTD<5>.CLK = !MIO & FC_11_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	AQ<1>.PIN;
+   PORTD<5>.AR = RESET;	// GSR
+    PORTD_5_OBUF.EXP  =  !MIO & !AD_E<7>.PIN & FC_11_.OUT & 
+	timer0/count0<7>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 2 | PORTD_6_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 10 | 3
+INPUTS | 12 | AD_E<6>.PIN  | MIO  | timer0/count0<5>.LFBK  | AQ<3>.PIN  | timer0/count0<6>.LFBK  | timer0/count0<7>.LFBK  | AQ<1>.PIN  | AQ<4>.PIN  | FC_11_.OUT  | timer0/count0<8>  | FC_12_.OUT  | timer0/count0<4>.LFBK
+INPUTMC | 5 | 10 | 12 | 10 | 9 | 10 | 6 | 8 | 3 | 10 | 15
+INPUTP | 5 | 18 | 198 | 50 | 47 | 51
+EXPORTS | 1 | 10 | 3
+EQ | 10 | 
+   PORTD<6>.D = AD_E<6>.PIN;
+   PORTD<6>.CLK = !MIO & FC_11_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	AQ<1>.PIN;
+   PORTD<6>.AR = RESET;	// GSR
+    PORTD_6_OBUF.EXP  =  timer0/count0<8> & FC_12_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK & !AQ<3>.PIN
+	# timer0/count0<8> & FC_12_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK & AQ<1>.PIN
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 4 | PORTD_7_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 10 | 3
+INPUTS | 12 | AD_E<7>.PIN  | MIO  | timer0/count0<5>.LFBK  | AQ<3>.PIN  | timer0/count0<6>.LFBK  | timer0/count0<7>.LFBK  | AQ<1>.PIN  | AQ<4>.PIN  | FC_11_.OUT  | timer0/count0<8>  | FC_12_.OUT  | timer0/count0<4>.LFBK
+INPUTMC | 5 | 10 | 12 | 10 | 9 | 10 | 6 | 8 | 3 | 10 | 15
+INPUTP | 5 | 17 | 198 | 50 | 47 | 51
+EXPORTS | 1 | 10 | 3
+EQ | 7 | 
+   PORTD<7>.D = AD_E<7>.PIN;
+   PORTD<7>.CLK = !MIO & FC_11_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	AQ<1>.PIN;
+   PORTD<7>.AR = RESET;	// GSR
+    PORTD_7_OBUF.EXP  =  timer0/count0<8> & !FC_11_.OUT & FC_12_.OUT & 
+	timer0/count0<4>.LFBK & timer0/count0<5>.LFBK & timer0/count0<6>.LFBK & 
+	timer0/count0<7>.LFBK
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 8 | 16 | PORTD_8_OBUF
+ATTRIBUTES | 8790818 | 0
+OUTPUTMC | 1 | 8 | 15
+INPUTS | 23 | AD_E<8>.PIN  | MIO  | WR_SYNC  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | AD_E<11>.PIN  | timer0/count0<10>.LFBK  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<8>.LFBK  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | timer0/count0<11>.LFBK
+INPUTMC | 14 | 0 | 9 | 8 | 0 | 0 | 12 | 9 | 0 | 8 | 3 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 15
+INPUTP | 9 | 16 | 198 | 58 | 57 | 50 | 47 | 49 | 9 | 51
+EXPORTS | 1 | 8 | 15
+EQ | 15 | 
+   PORTD<8>.D = AD_E<8>.PIN;
+   PORTD<8>.CLK = !MIO & WR_SYNC & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & AQ<1>.PIN & !AQ<2>.PIN;
+   PORTD<8>.AR = RESET;	// GSR
+    PORTD_8_OBUF.EXP  =  !MIO & AD_E<11>.PIN & WR_SYNC & 
+	!timer0/count0<11>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<11>.PIN & WR_SYNC & 
+	timer0/count0<11>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 10 | 1 | PORTD_9_OBUF
+ATTRIBUTES | 8790818 | 0
+INPUTS | 6 | AD_E<9>.PIN  | MIO  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | FC_11_.OUT
+INPUTP | 5 | 15 | 198 | 51 | 50 | 47
+EQ | 4 | 
+   PORTD<9>.D = AD_E<9>.PIN;
+   PORTD<9>.CLK = !MIO & FC_11_.OUT & !AQ<4>.PIN & AQ<3>.PIN & 
+	AQ<1>.PIN;
+   PORTD<9>.AR = RESET;	// GSR
+GLOBALS | 1 | 4 | RESET
+
+MACROCELL | 2 | 11 | AQ_4_OBUF
+ATTRIBUTES | 8848306 | 0
+OUTPUTMC | 5 | 2 | 17 | 2 | 6 | 2 | 12 | 2 | 3 | 2 | 0
+INPUTS | 2 | AD_E<4>.PIN  | ALE
+INPUTP | 2 | 20 | 197
+EQ | 4 | 
+   AQ<4>.D = Gnd;
+   AQ<4>.CLK = Gnd;
+   AQ<4>.AP = AD_E<4>.PIN & ALE;
+   AQ<4>.AR = !AD_E<4>.PIN & ALE;
+
+MACROCELL | 4 | 1 | AQ_5_OBUF
+ATTRIBUTES | 8848306 | 0
+OUTPUTMC | 14 | 4 | 12 | 4 | 17 | 4 | 14 | 4 | 15 | 4 | 9 | 4 | 7 | 4 | 6 | 4 | 3 | 4 | 0 | 4 | 10 | 4 | 11 | 4 | 16 | 4 | 5 | 4 | 8
+INPUTS | 2 | AD_E<5>.PIN  | ALE
+INPUTP | 2 | 19 | 197
+EQ | 4 | 
+   AQ<5>.D = Gnd;
+   AQ<5>.CLK = Gnd;
+   AQ<5>.AP = AD_E<5>.PIN & ALE;
+   AQ<5>.AR = !AD_E<5>.PIN & ALE;
+
+MACROCELL | 2 | 16 | AQ_6_OBUF
+ATTRIBUTES | 8848306 | 0
+OUTPUTMC | 6 | 2 | 15 | 2 | 17 | 2 | 6 | 2 | 12 | 2 | 3 | 2 | 0
+INPUTS | 5 | AD_E<6>.PIN  | ALE  | XLXI_327/trishold<8>  | PORTA<8>.PIN  | XLXI_327/changehold<0>
+INPUTMC | 2 | 5 | 12 | 1 | 17
+INPUTP | 3 | 18 | 197 | 185
+EXPORTS | 1 | 2 | 15
+EQ | 6 | 
+   AQ<6>.D = Gnd;
+   AQ<6>.CLK = Gnd;
+   AQ<6>.AP = AD_E<6>.PIN & ALE;
+   AQ<6>.AR = !AD_E<6>.PIN & ALE;
+    AQ_6_OBUF.EXP  =  XLXI_327/trishold<8> & PORTA<8>.PIN & 
+	!XLXI_327/changehold<0>
+
+MACROCELL | 2 | 10 | AQ_3_OBUF
+ATTRIBUTES | 8848306 | 0
+OUTPUTMC | 5 | 2 | 17 | 2 | 6 | 2 | 12 | 2 | 3 | 2 | 0
+INPUTS | 2 | AD_E<3>.PIN  | ALE
+INPUTP | 2 | 21 | 197
+EQ | 4 | 
+   AQ<3>.D = Gnd;
+   AQ<3>.CLK = Gnd;
+   AQ<3>.AP = AD_E<3>.PIN & ALE;
+   AQ<3>.AR = !AD_E<3>.PIN & ALE;
+
+MACROCELL | 0 | 5 | CPUCLK_OBUF
+ATTRIBUTES | 8848162 | 0
+OUTPUTMC | 5 | 0 | 4 | 0 | 9 | 0 | 17 | 0 | 5 | 0 | 3
+INPUTS | 13 | AQ<4>.PIN  | clockgen/thirdclk<1>  | clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF  | MIO  | STATUS_IOIN<0>  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | PORTC<0>.PIN  | PORTB<0>.PIN  | CPUCLK_OBUF.LFBK
+INPUTMC | 4 | 1 | 3 | 1 | 0 | 9 | 12 | 0 | 5
+INPUTP | 9 | 51 | 198 | 58 | 57 | 50 | 47 | 49 | 155 | 166
+EXPORTS | 1 | 0 | 4
+EQ | 8 | 
+   CPUCLK.D = !clockgen/thirdclk<1> & !CPUCLK_OBUF.LFBK;
+   CPUCLK.CLK = clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF;
+    CPUCLK_OBUF.EXP  =  !MIO & !STATUS_IOIN<0> & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !PORTB<0>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & !PORTC<0>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+
+MACROCELL | 2 | 7 | AQ_1_OBUF
+ATTRIBUTES | 8848306 | 0
+OUTPUTMC | 5 | 2 | 17 | 2 | 6 | 2 | 12 | 2 | 3 | 2 | 0
+INPUTS | 2 | AD_E<1>.PIN  | ALE
+INPUTP | 2 | 23 | 197
+EQ | 4 | 
+   AQ<1>.D = Gnd;
+   AQ<1>.CLK = Gnd;
+   AQ<1>.AP = AD_E<1>.PIN & ALE;
+   AQ<1>.AR = !AD_E<1>.PIN & ALE;
+
+MACROCELL | 2 | 8 | AQ_2_OBUF
+ATTRIBUTES | 8848306 | 0
+OUTPUTMC | 4 | 2 | 6 | 2 | 12 | 2 | 3 | 2 | 0
+INPUTS | 2 | AD_E<2>.PIN  | ALE
+INPUTP | 2 | 22 | 197
+EQ | 4 | 
+   AQ<2>.D = Gnd;
+   AQ<2>.CLK = Gnd;
+   AQ<2>.AP = AD_E<2>.PIN & ALE;
+   AQ<2>.AR = !AD_E<2>.PIN & ALE;
+
+MACROCELL | 4 | 2 | AQ_0_OBUF
+ATTRIBUTES | 8848306 | 0
+OUTPUTMC | 2 | 4 | 5 | 4 | 8
+INPUTS | 2 | AD_E<0>.PIN  | ALE
+INPUTP | 2 | 25 | 197
+EQ | 4 | 
+   AQ<0>.D = Gnd;
+   AQ<0>.CLK = Gnd;
+   AQ<0>.AP = AD_E<0>.PIN & ALE;
+   AQ<0>.AR = !AD_E<0>.PIN & ALE;
+
+MACROCELL | 0 | 8 | AQ_19_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | ALE  | A<19>
+INPUTP | 2 | 197 | 202
+EQ | 4 | 
+   AQ<19>.D = Gnd;
+   AQ<19>.CLK = Gnd;
+   AQ<19>.AP = ALE & A<19>;
+   AQ<19>.AR = ALE & !A<19>;
+
+MACROCELL | 0 | 7 | BHEQ_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | ALE  | BHE
+INPUTP | 2 | 197 | 201
+EQ | 4 | 
+   BHEQ.D = Gnd;
+   BHEQ.CLK = Gnd;
+   BHEQ.AP = ALE & BHE;
+   BHEQ.AR = ALE & !BHE;
+
+MACROCELL | 6 | 2 | clockgen/inclkd2
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 3 | 2 | 0 | 4 | 10 | 1 | 0
+INPUTS | 1 | SYSCLK
+INPUTP | 1 | 194
+EQ | 2 | 
+   clockgen/inclkd2.T = Vcc;
+   clockgen/inclkd2.CLK = SYSCLK;
+
+MACROCELL | 3 | 1 | clockgen/tclk<0>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 3 | 2 | 9 | 0 | 3 | 3 | 0
+INPUTS | 11 | AQ<1>.PIN  | AQ<2>.PIN  | PORTA<3>.PIN  | MIO  | AQ<3>.PIN  | CPUCLK.PIN  | PORTC<3>.PIN  | FC_2_.OUT  | PORTB<3>.PIN  | IRQ2  | AQ<4>.PIN
+INPUTP | 10 | 47 | 49 | 175 | 198 | 50 | 30 | 154 | 161 | 89 | 51
+EXPORTS | 1 | 3 | 0
+EQ | 9 | 
+   clockgen/tclk<0>.T = Vcc;
+   clockgen/tclk<0>.CLK = CPUCLK.PIN;
+    clockgen/tclk<0>.EXP  =  PORTA<3>.PIN & !AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & IRQ2 & FC_2_.OUT & !AQ<4>.PIN & !AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & PORTB<3>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	!AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<3>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+
+MACROCELL | 3 | 12 | TIMER_CLK
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 3 | 11 | 17 | 11 | 16 | 3 | 13
+INPUTS | 4 | XLXI_327/trishold<2>  | PORTA<2>.PIN  | CPUCLK.PIN  | FC_3_.OUT
+INPUTMC | 1 | 4 | 15
+INPUTP | 2 | 174 | 30
+EXPORTS | 1 | 3 | 13
+EQ | 3 | 
+   TIMER_CLK.T = FC_3_.OUT;
+   TIMER_CLK.CLK = CPUCLK.PIN;
+    TIMER_CLK.EXP  =  XLXI_327/trishold<2> & PORTA<2>.PIN
+
+MACROCELL | 2 | 0 | clockgen/inclkd4
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 4 | 10 | 2 | 17
+INPUTS | 10 | clockgen/inclkd2  | MIO  | PORTA<9>.PIN  | AQ_4_OBUF.LFBK  | AQ_6_OBUF.LFBK  | AQ_3_OBUF.LFBK  | AQ_1_OBUF.LFBK  | AQ<5>.PIN  | PORTC<9>.PIN  | AQ_2_OBUF.LFBK
+INPUTMC | 6 | 6 | 2 | 2 | 11 | 2 | 16 | 2 | 10 | 2 | 7 | 2 | 8
+INPUTP | 4 | 198 | 186 | 58 | 146
+EXPORTS | 1 | 2 | 17
+EQ | 7 | 
+   clockgen/inclkd4.T = Vcc;
+   clockgen/inclkd4.CLK = clockgen/inclkd2;
+    clockgen/inclkd4.EXP  =  MIO & PORTA<9>.PIN
+	# PORTA<9>.PIN & AQ_2_OBUF.LFBK
+	# !MIO & PORTC<9>.PIN & !AQ_4_OBUF.LFBK & 
+	!AQ_6_OBUF.LFBK & AQ_3_OBUF.LFBK & !AQ_1_OBUF.LFBK & !AQ_2_OBUF.LFBK & 
+	!AQ<5>.PIN
+
+MACROCELL | 2 | 9 | clockgen/tclk<1>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 1 | 0 | 3
+INPUTS | 2 | clockgen/tclk<0>  | CPUCLK.PIN
+INPUTMC | 1 | 3 | 1
+INPUTP | 1 | 30
+EQ | 2 | 
+   clockgen/tclk<1>.T = clockgen/tclk<0>;
+   clockgen/tclk<1>.CLK = CPUCLK.PIN;
+
+MACROCELL | 0 | 3 | clockgen/tclk<2>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 1 | 0 | 4
+INPUTS | 7 | clockgen/tclk<0>  | clockgen/tclk<1>  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | PORTA<0>.PIN  | CPUCLK_OBUF.LFBK
+INPUTMC | 3 | 3 | 1 | 2 | 9 | 0 | 5
+INPUTP | 4 | 50 | 47 | 49 | 171
+EXPORTS | 1 | 0 | 4
+EQ | 5 | 
+   clockgen/tclk<2>.T = clockgen/tclk<0> & clockgen/tclk<1>;
+   clockgen/tclk<2>.CLK = CPUCLK_OBUF.LFBK;
+    clockgen/tclk<2>.EXP  =  !PORTA<0>.PIN & AQ<3>.PIN & AQ<1>.PIN
+	# !PORTA<0>.PIN & AQ<1>.PIN & !AQ<2>.PIN
+	# !PORTA<0>.PIN & !AQ<1>.PIN & AQ<2>.PIN
+
+MACROCELL | 9 | 17 | clockgen/tclk<3>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 1 | 9 | 0
+INPUTS | 11 | TIMER_RUN  | FC_8_.OUT  | AQ<1>.PIN  | FC_10_.OUT  | MIO  | AD_E<0>.PIN  | AQ<4>.PIN  | AQ<3>.PIN  | CPUCLK.PIN  | AQ<2>.PIN  | timer0/count0<0>.LFBK
+INPUTMC | 2 | 0 | 12 | 9 | 0
+INPUTP | 7 | 47 | 198 | 25 | 51 | 50 | 30 | 49
+EXPORTS | 1 | 9 | 0
+EQ | 6 | 
+   clockgen/tclk<3>.T = FC_10_.OUT;
+   clockgen/tclk<3>.CLK = CPUCLK.PIN;
+    clockgen/tclk<3>.EXP  =  TIMER_RUN & !FC_8_.OUT
+	# TIMER_RUN & AQ<2>.PIN
+	# !MIO & AD_E<0>.PIN & FC_8_.OUT & 
+	!timer0/count0<0>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+
+MACROCELL | 1 | 6 | clockgen/tclk<4>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 1 | 1 | 5
+INPUTS | 9 | PORTA<10>.PIN  | FC_0_.OUT  | MIO  | AQ<3>.PIN  | AQ<2>.PIN  | FC_1_.OUT  | CPUCLK.PIN  | PORTC<10>.PIN  | AQ<4>.PIN
+INPUTP | 7 | 187 | 198 | 50 | 49 | 30 | 139 | 51
+EXPORTS | 1 | 1 | 5
+EQ | 5 | 
+   clockgen/tclk<4>.T = FC_1_.OUT;
+   clockgen/tclk<4>.CLK = CPUCLK.PIN;
+    clockgen/tclk<4>.EXP  =  PORTA<10>.PIN & !FC_0_.OUT
+	# !MIO & PORTC<10>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN
+
+MACROCELL | 1 | 3 | clockgen/thirdclk<1>
+ATTRIBUTES | 8586016 | 0
+OUTPUTMC | 3 | 0 | 5 | 1 | 4 | 1 | 3
+INPUTS | 10 | AQ<2>.PIN  | clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF.LFBK  | AQ<4>.PIN  | PORTA<11>.PIN  | FC_0_.OUT  | MIO  | AQ<3>.PIN  | CPUCLK.PIN  | PORTC<11>.PIN  | clockgen/thirdclk<1>.LFBK
+INPUTMC | 2 | 1 | 0 | 1 | 3
+INPUTP | 7 | 49 | 51 | 188 | 198 | 50 | 30 | 140
+EXPORTS | 1 | 1 | 4
+EQ | 6 | 
+   clockgen/thirdclk<1>.D = !clockgen/thirdclk<1>.LFBK & CPUCLK.PIN;
+   clockgen/thirdclk<1>.CLK = 
+	clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF.LFBK;
+    clockgen/thirdclk<1>.EXP  =  PORTA<11>.PIN & !FC_0_.OUT
+	# !MIO & PORTC<11>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN
+
+MACROCELL | 2 | 4 | AQ_10_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | AD_E<10>.PIN  | ALE
+INPUTP | 2 | 10 | 197
+EQ | 4 | 
+   AQ<10>.D = Gnd;
+   AQ<10>.CLK = Gnd;
+   AQ<10>.AP = AD_E<10>.PIN & ALE;
+   AQ<10>.AR = !AD_E<10>.PIN & ALE;
+
+MACROCELL | 2 | 2 | AQ_11_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | AD_E<11>.PIN  | ALE
+INPUTP | 2 | 9 | 197
+EQ | 4 | 
+   AQ<11>.D = Gnd;
+   AQ<11>.CLK = Gnd;
+   AQ<11>.AP = AD_E<11>.PIN & ALE;
+   AQ<11>.AR = !AD_E<11>.PIN & ALE;
+
+MACROCELL | 2 | 1 | AQ_12_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | AD_E<12>.PIN  | ALE
+INPUTP | 2 | 8 | 197
+EQ | 4 | 
+   AQ<12>.D = Gnd;
+   AQ<12>.CLK = Gnd;
+   AQ<12>.AP = AD_E<12>.PIN & ALE;
+   AQ<12>.AR = !AD_E<12>.PIN & ALE;
+
+MACROCELL | 0 | 16 | AQ_13_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | AD_E<13>.PIN  | ALE
+INPUTP | 2 | 7 | 197
+EQ | 4 | 
+   AQ<13>.D = Gnd;
+   AQ<13>.CLK = Gnd;
+   AQ<13>.AP = AD_E<13>.PIN & ALE;
+   AQ<13>.AR = !AD_E<13>.PIN & ALE;
+
+MACROCELL | 0 | 15 | AQ_14_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | AD_E<14>.PIN  | ALE
+INPUTP | 2 | 6 | 197
+EQ | 4 | 
+   AQ<14>.D = Gnd;
+   AQ<14>.CLK = Gnd;
+   AQ<14>.AP = AD_E<14>.PIN & ALE;
+   AQ<14>.AR = !AD_E<14>.PIN & ALE;
+
+MACROCELL | 0 | 14 | AQ_15_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | AD_E<15>.PIN  | ALE
+INPUTP | 2 | 5 | 197
+EQ | 4 | 
+   AQ<15>.D = Gnd;
+   AQ<15>.CLK = Gnd;
+   AQ<15>.AP = AD_E<15>.PIN & ALE;
+   AQ<15>.AR = !AD_E<15>.PIN & ALE;
+
+MACROCELL | 0 | 13 | AQ_16_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | ALE  | A<16>
+INPUTP | 2 | 197 | 4
+EQ | 4 | 
+   AQ<16>.D = Gnd;
+   AQ<16>.CLK = Gnd;
+   AQ<16>.AP = ALE & A<16>;
+   AQ<16>.AR = ALE & !A<16>;
+
+MACROCELL | 0 | 11 | AQ_17_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | ALE  | A<17>
+INPUTP | 2 | 197 | 3
+EQ | 4 | 
+   AQ<17>.D = Gnd;
+   AQ<17>.CLK = Gnd;
+   AQ<17>.AP = ALE & A<17>;
+   AQ<17>.AR = ALE & !A<17>;
+
+MACROCELL | 0 | 10 | AQ_18_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | ALE  | A<18>
+INPUTP | 2 | 197 | 205
+EQ | 4 | 
+   AQ<18>.D = Gnd;
+   AQ<18>.CLK = Gnd;
+   AQ<18>.AP = ALE & A<18>;
+   AQ<18>.AR = ALE & !A<18>;
+
+MACROCELL | 2 | 14 | AQ_7_OBUF
+ATTRIBUTES | 8782770 | 0
+OUTPUTMC | 1 | 2 | 15
+INPUTS | 8 | AD_E<7>.PIN  | ALE  | XLXI_327/trishold<10>  | PORTA<10>.PIN  | XLXI_327/changehold<2>  | XLXI_327/trishold<8>  | PORTA<8>.PIN  | XLXI_327/changehold<0>
+INPUTMC | 4 | 11 | 3 | 1 | 12 | 5 | 12 | 1 | 17
+INPUTP | 4 | 17 | 197 | 187 | 185
+EXPORTS | 1 | 2 | 15
+EQ | 8 | 
+   AQ<7>.D = Gnd;
+   AQ<7>.CLK = Gnd;
+   AQ<7>.AP = AD_E<7>.PIN & ALE;
+   AQ<7>.AR = !AD_E<7>.PIN & ALE;
+    AQ_7_OBUF.EXP  =  XLXI_327/trishold<10> & PORTA<10>.PIN & 
+	!XLXI_327/changehold<2>
+	# XLXI_327/trishold<8> & !PORTA<8>.PIN & 
+	XLXI_327/changehold<0>
+
+MACROCELL | 2 | 13 | AQ_8_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | AD_E<8>.PIN  | ALE
+INPUTP | 2 | 16 | 197
+EQ | 4 | 
+   AQ<8>.D = Gnd;
+   AQ<8>.CLK = Gnd;
+   AQ<8>.AP = AD_E<8>.PIN & ALE;
+   AQ<8>.AR = !AD_E<8>.PIN & ALE;
+
+MACROCELL | 2 | 5 | AQ_9_OBUF
+ATTRIBUTES | 8782770 | 0
+INPUTS | 2 | AD_E<9>.PIN  | ALE
+INPUTP | 2 | 15 | 197
+EQ | 4 | 
+   AQ<9>.D = Gnd;
+   AQ<9>.CLK = Gnd;
+   AQ<9>.AP = AD_E<9>.PIN & ALE;
+   AQ<9>.AR = !AD_E<9>.PIN & ALE;
+
+MACROCELL | 4 | 10 | MIDCLK_OBUF
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 4 | 11
+INPUTS | 7 | clockgen/inclkd4  | CPU10  | clockgen/inclkd2  | MIO  | AQ<6>.PIN  | AQ<4>.PIN  | AQ_5_OBUF.LFBK
+INPUTMC | 3 | 2 | 0 | 6 | 2 | 4 | 1
+INPUTP | 4 | 193 | 198 | 57 | 51
+EXPORTS | 1 | 4 | 11
+EQ | 3 | 
+   MIDCLK = clockgen/inclkd2 & CPU10
+	# clockgen/inclkd4 & !CPU10;
+    MIDCLK_OBUF.EXP  =  !MIO & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & AQ<6>.PIN
+
+MACROCELL | 6 | 11 | RXA_OBUF
+ATTRIBUTES | 396034 | 0
+INPUTS | 2 | UARTA_ENABLE  | PORTA<0>.PIN
+INPUTMC | 1 | 11 | 12
+INPUTP | 1 | 171
+EQ | 1 | 
+   !RXA = UARTA_ENABLE & !PORTA<0>.PIN;
+
+MACROCELL | 6 | 10 | RXB_OBUF
+ATTRIBUTES | 396034 | 0
+INPUTS | 2 | UARTB_ENABLE  | PORTB<3>.PIN
+INPUTMC | 1 | 11 | 9
+INPUTP | 1 | 161
+EQ | 1 | 
+   !RXB = UARTB_ENABLE & !PORTB<3>.PIN;
+
+MACROCELL | 6 | 7 | RXC_OBUF
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 6 | 8
+INPUTS | 7 | UARTC_ENABLE  | PORTB<1>.PIN  | XLXN_2860  | XLXN_2866  | IRQ3  | XLXN_2867  | IRQ2
+INPUTMC | 4 | 11 | 6 | 3 | 10 | 3 | 7 | 7 | 17
+INPUTP | 3 | 164 | 82 | 89
+EXPORTS | 1 | 6 | 8
+EQ | 3 | 
+   !RXC = UARTC_ENABLE & !PORTB<1>.PIN;
+    RXC_OBUF.EXP  =  XLXN_2860 & XLXN_2866 & IRQ3
+	# XLXN_2860 & XLXN_2867 & IRQ2
+
+MACROCELL | 4 | 13 | RXD_OBUF
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 4 | 14
+INPUTS | 10 | UARTD_ENABLE  | PGMRXD  | PORTA<15>.PIN  | MIO  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | AQ<6>.PIN  | AQ<3>.PIN  | timer0/count0<2>.LFBK
+INPUTMC | 5 | 6 | 15 | 0 | 12 | 9 | 0 | 9 | 15 | 4 | 17
+INPUTP | 5 | 131 | 167 | 198 | 57 | 50
+EXPORTS | 1 | 4 | 14
+EQ | 8 | 
+   RXD = UARTD_ENABLE & PORTA<15>.PIN
+	# !UARTD_ENABLE & PGMRXD;
+    RXD_OBUF.EXP  =  MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2>.LFBK & AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	timer0/count0<2>.LFBK & !AQ<3>.PIN
+
+MACROCELL | 6 | 8 | NMI_OBUF
+ATTRIBUTES | 396034 | 0
+INPUTS | 10 | XLXN_2860  | XLXN_2865  | IRQ4  | RXC_OBUF.EXP  | ioportc/trishold<12>.EXP  | FC_5_.OUT  | FC_6_.OUT  | STATUS_IOIN<1>  | XLXN_2863  | FC_4_.OUT
+INPUTMC | 6 | 3 | 10 | 3 | 8 | 6 | 7 | 6 | 9 | 11 | 15 | 4 | 7
+INPUTP | 1 | 74
+IMPORTS | 2 | 6 | 7 | 6 | 9
+EQ | 10 | 
+   NMI = XLXN_2860 & FC_4_.OUT
+	# XLXN_2860 & FC_5_.OUT
+	# XLXN_2860 & FC_6_.OUT
+	# STATUS_IOIN<1> & XLXN_2860 & XLXN_2863
+	# XLXN_2860 & XLXN_2865 & IRQ4
+;Imported pterms FB7_8
+	# XLXN_2860 & XLXN_2866 & IRQ3
+	# XLXN_2860 & XLXN_2867 & IRQ2
+;Imported pterms FB7_10
+	# XLXN_2860 & XLXN_2872 & IRQ1;
+
+MACROCELL | 10 | 13 | ALE_IBUF$BUF0
+ATTRIBUTES | 264960 | 0
+OUTPUTMC | 1 | 10 | 12
+INPUTS | 8 | ALE  | MIO  | AD_E<5>.PIN  | AQ<4>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | FC_11_.OUT  | timer0/count0<5>.LFBK
+INPUTMC | 1 | 10 | 12
+INPUTP | 6 | 197 | 198 | 19 | 51 | 50 | 47
+EXPORTS | 1 | 10 | 12
+EQ | 3 | 
+   WDI = ALE;
+    ALE_IBUF$BUF0.EXP  =  !MIO & !AD_E<5>.PIN & FC_11_.OUT & 
+	timer0/count0<5>.LFBK & AQ<4>.PIN & AQ<3>.PIN & !AQ<1>.PIN
+
+MACROCELL | 4 | 11 | MIDCS_OBUF
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 4 | 12
+INPUTS | 12 | MIO  | PORTA<5>.PIN  | AQ<3>.PIN  | AQ<6>.PIN  | AQ<4>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | PORTC<5>.PIN  | PORTB<5>.PIN  | IRQ4  | MIDCLK_OBUF.EXP  | AQ_5_OBUF.LFBK
+INPUTMC | 2 | 4 | 10 | 4 | 1
+INPUTP | 10 | 198 | 179 | 50 | 57 | 51 | 47 | 49 | 150 | 159 | 74
+EXPORTS | 1 | 4 | 12
+IMPORTS | 1 | 4 | 10
+EQ | 10 | 
+   !MIDCS = ;Imported pterms FB5_11
+	  !MIO & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & AQ<6>.PIN;
+    MIDCS_OBUF.EXP  =  MIO & PORTA<5>.PIN
+	# PORTA<5>.PIN & AQ<6>.PIN
+	# !MIO & IRQ4 & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & PORTB<5>.PIN & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<5>.PIN & !AQ_5_OBUF.LFBK & !AQ<4>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+
+MACROCELL | 8 | 5 | RAMCS_OBUF
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 8 | 6
+INPUTS | 20 | MIO  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<11>.LFBK  | timer0/count0<12>.LFBK  | timer0/count0<14>.LFBK  | timer0/count0<13>  | timer0/count0<8>.LFBK  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<6>.PIN  | timer0/count0<9>  | AQ<3>.PIN  | AQ<19>.PIN  | timer0/count0<10>.LFBK
+INPUTMC | 16 | 0 | 12 | 9 | 0 | 8 | 15 | 8 | 12 | 8 | 9 | 10 | 17 | 8 | 3 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 0
+INPUTP | 4 | 198 | 57 | 50 | 32
+EXPORTS | 1 | 8 | 6
+EQ | 19 | 
+   !RAMCS = MIO & !AQ<19>.PIN;
+    RAMCS_OBUF.EXP  =  MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<13> & timer0/count0<1> & timer0/count0<2> & 
+	timer0/count0<3> & timer0/count0<4> & timer0/count0<5> & 
+	timer0/count0<6> & timer0/count0<7> & timer0/count0<9> & 
+	timer0/count0<8>.LFBK & timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & 
+	timer0/count0<12>.LFBK & timer0/count0<14>.LFBK
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	timer0/count0<14>.LFBK & AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<13> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK & 
+	timer0/count0<10>.LFBK & timer0/count0<11>.LFBK & timer0/count0<12>.LFBK & 
+	timer0/count0<14>.LFBK & !AQ<3>.PIN
+
+MACROCELL | 4 | 4 | ROMCS_OBUF
+ATTRIBUTES | 396034 | 0
+INPUTS | 2 | MIO  | AQ<19>.PIN
+INPUTP | 2 | 198 | 32
+EQ | 1 | 
+   !ROMCS = MIO & AQ<19>.PIN;
+
+MACROCELL | 6 | 14 | UCSA_OBUF
+ATTRIBUTES | 396034 | 0
+INPUTS | 5 | MIO  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<4>.PIN
+INPUTP | 5 | 198 | 58 | 57 | 50 | 51
+EQ | 2 | 
+   !UCSA = !MIO & !AQ<4>.PIN & AQ<5>.PIN & !AQ<6>.PIN & 
+	!AQ<3>.PIN;
+
+MACROCELL | 8 | 1 | UCSB_OBUF
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 8 | 0
+INPUTS | 21 | MIO  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AD_E<10>.PIN  | WR_SYNC  | timer0/count0<8>.LFBK  | AQ<2>.PIN  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | timer0/count0<2>  | timer0/count0<3>  | timer0/count0<4>  | timer0/count0<5>  | timer0/count0<6>  | timer0/count0<7>  | AQ<4>.PIN  | timer0/count0<9>  | timer0/count0<10>.LFBK
+INPUTMC | 13 | 0 | 9 | 8 | 3 | 0 | 12 | 9 | 0 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 10 | 3 | 8 | 0
+INPUTP | 8 | 198 | 58 | 57 | 50 | 47 | 10 | 49 | 51
+EXPORTS | 1 | 8 | 0
+EQ | 12 | 
+   !UCSB = !MIO & !AQ<4>.PIN & AQ<5>.PIN & !AQ<6>.PIN & 
+	AQ<3>.PIN;
+    UCSB_OBUF.EXP  =  !MIO & AD_E<10>.PIN & WR_SYNC & 
+	!timer0/count0<10>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & !AD_E<10>.PIN & WR_SYNC & 
+	timer0/count0<10>.LFBK & AQ<4>.PIN & !AQ<5>.PIN & !AQ<6>.PIN & AQ<3>.PIN & 
+	!AQ<1>.PIN & !AQ<2>.PIN
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1> & timer0/count0<2> & timer0/count0<3> & 
+	timer0/count0<4> & timer0/count0<5> & timer0/count0<6> & 
+	timer0/count0<7> & timer0/count0<9> & timer0/count0<8>.LFBK
+
+MACROCELL | 6 | 4 | UCSC_OBUF
+ATTRIBUTES | 396034 | 0
+INPUTS | 5 | MIO  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<4>.PIN
+INPUTP | 5 | 198 | 58 | 57 | 50 | 51
+EQ | 2 | 
+   !UCSC = !MIO & AQ<4>.PIN & AQ<5>.PIN & !AQ<6>.PIN & 
+	!AQ<3>.PIN;
+
+MACROCELL | 4 | 16 | UCSD_OBUF
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 1 | 4 | 17
+INPUTS | 9 | MIO  | AQ<6>.PIN  | AQ<4>.PIN  | AQ<3>.PIN  | TIMER_RUN  | timer0/count0<0>  | timer0/count0<1>  | WR_SYNC  | AQ_5_OBUF.LFBK
+INPUTMC | 5 | 0 | 12 | 9 | 0 | 9 | 15 | 0 | 9 | 4 | 1
+INPUTP | 4 | 198 | 57 | 51 | 50
+EXPORTS | 1 | 4 | 17
+EQ | 10 | 
+   !UCSD = !MIO & AQ_5_OBUF.LFBK & AQ<4>.PIN & !AQ<6>.PIN & 
+	AQ<3>.PIN;
+    UCSD_OBUF.EXP  =  MIO & TIMER_RUN & timer0/count0<0> & 
+	timer0/count0<1>
+	# TIMER_RUN & !WR_SYNC & timer0/count0<0> & 
+	timer0/count0<1>
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	AQ<6>.PIN
+	# TIMER_RUN & timer0/count0<0> & timer0/count0<1> & 
+	!AQ<3>.PIN
+
+MACROCELL | 4 | 5 | UHE_OBUF
+ATTRIBUTES | 396034 | 0
+INPUTS | 7 | MIO  | AQ_0_OBUF.LFBK  | BHEQ.PIN  | AQ<4>.PIN  | DEN  | AQ<6>.PIN  | AQ_5_OBUF.LFBK
+INPUTMC | 2 | 4 | 2 | 4 | 1
+INPUTP | 5 | 198 | 31 | 51 | 133 | 57
+EQ | 4 | 
+   !UHE = !MIO & !DEN & AQ_5_OBUF.LFBK & AQ_0_OBUF.LFBK & 
+	!AQ<6>.PIN & !BHEQ.PIN
+	# !MIO & !DEN & !AQ_5_OBUF.LFBK & AQ_0_OBUF.LFBK & 
+	!AQ<4>.PIN & AQ<6>.PIN & !BHEQ.PIN;
+
+MACROCELL | 4 | 8 | ULE_OBUF
+ATTRIBUTES | 396034 | 0
+INPUTS | 7 | MIO  | AQ_0_OBUF.LFBK  | BHEQ.PIN  | AQ<4>.PIN  | DEN  | AQ<6>.PIN  | AQ_5_OBUF.LFBK
+INPUTMC | 2 | 4 | 2 | 4 | 1
+INPUTP | 5 | 198 | 31 | 51 | 133 | 57
+EQ | 4 | 
+   !ULE = !MIO & !DEN & AQ_5_OBUF.LFBK & !AQ_0_OBUF.LFBK & 
+	!AQ<6>.PIN & BHEQ.PIN
+	# !MIO & !DEN & !AQ_5_OBUF.LFBK & !AQ_0_OBUF.LFBK & 
+	!AQ<4>.PIN & AQ<6>.PIN & BHEQ.PIN;
+
+MACROCELL | 6 | 16 | $OpTx$FX_DC$10
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 17 | 0 | 4 | 0 | 2 | 0 | 1 | 1 | 16 | 1 | 14 | 1 | 13 | 1 | 5 | 1 | 4 | 1 | 2 | 1 | 1 | 3 | 16 | 3 | 14 | 1 | 11 | 1 | 10 | 1 | 8 | 1 | 7 | 6 | 17
+INPUTS | 7 | MIO  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | PORTA<1>.PIN  | AQ<5>.PIN
+INPUTP | 7 | 198 | 57 | 50 | 47 | 49 | 173 | 58
+EXPORTS | 1 | 6 | 17
+EQ | 6 | 
+   $OpTx$FX_DC$10 = !MIO & !AQ<5>.PIN & !AQ<6>.PIN & !AQ<3>.PIN & 
+	AQ<2>.PIN
+	# !MIO & !AQ<5>.PIN & !AQ<6>.PIN & !AQ<1>.PIN & 
+	!AQ<2>.PIN;
+    $OpTx$FX_DC$10.EXP  =  MIO & PORTA<1>.PIN
+	# PORTA<1>.PIN & AQ<6>.PIN
+
+MACROCELL | 2 | 15 | STATUS_IOIN<1>/STATUS_IOIN<1>_SETF
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 11 | 15
+INPUTS | 11 | XLXI_327/trishold<11>  | PORTA<11>.PIN  | XLXI_327/changehold<3>  | XLXI_327/trishold<9>  | PORTA<9>.PIN  | XLXI_327/changehold<1>  | XLXI_327/trishold<10>  | PORTA<10>.PIN  | XLXI_327/changehold<2>  | AQ_7_OBUF.EXP  | AQ_6_OBUF.EXP
+INPUTMC | 8 | 11 | 2 | 1 | 9 | 5 | 9 | 1 | 15 | 11 | 3 | 1 | 12 | 2 | 14 | 2 | 16
+INPUTP | 3 | 188 | 186 | 187
+IMPORTS | 2 | 2 | 14 | 2 | 16
+EQ | 18 | 
+   STATUS_IOIN<1>/STATUS_IOIN<1>_SETF = XLXI_327/trishold<10> & !PORTA<10>.PIN & 
+	XLXI_327/changehold<2>
+	# XLXI_327/trishold<11> & PORTA<11>.PIN & 
+	!XLXI_327/changehold<3>
+	# XLXI_327/trishold<11> & !PORTA<11>.PIN & 
+	XLXI_327/changehold<3>
+	# XLXI_327/trishold<9> & PORTA<9>.PIN & 
+	!XLXI_327/changehold<1>
+	# XLXI_327/trishold<9> & !PORTA<9>.PIN & 
+	XLXI_327/changehold<1>
+;Imported pterms FB3_15
+	# XLXI_327/trishold<10> & PORTA<10>.PIN & 
+	!XLXI_327/changehold<2>
+	# XLXI_327/trishold<8> & !PORTA<8>.PIN & 
+	XLXI_327/changehold<0>
+;Imported pterms FB3_17
+	# XLXI_327/trishold<8> & PORTA<8>.PIN & 
+	!XLXI_327/changehold<0>;
+
+MACROCELL | 3 | 13 | STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 2 | 5 | 15 | 3 | 14
+INPUTS | 9 | AQ<1>.PIN  | PORTA<15>.PIN  | AQ<2>.PIN  | FC_2_.OUT  | MIO  | AQ<3>.PIN  | PORTC<15>.PIN  | TIMER_CLK.EXP  | AQ<4>.PIN
+INPUTMC | 1 | 3 | 12
+INPUTP | 7 | 47 | 167 | 49 | 198 | 50 | 136 | 51
+EXPORTS | 1 | 3 | 14
+IMPORTS | 1 | 3 | 12
+EQ | 8 | 
+   STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT = ;Imported pterms FB4_13
+	  XLXI_327/trishold<2> & PORTA<2>.PIN;
+    STATUS_IOIN<6>/STATUS_IOIN<6>_SETF__$INT.EXP  =  PORTA<15>.PIN & !FC_2_.OUT
+	# PORTA<15>.PIN & !AQ<3>.PIN
+	# PORTA<15>.PIN & AQ<1>.PIN
+	# PORTA<15>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<15>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+
+MACROCELL | 11 | 17 | timer0/count0<9>/timer0/count0<9>_CLKF
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 16 | 9 | 0 | 8 | 0 | 8 | 15 | 8 | 12 | 10 | 17 | 8 | 9 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 8 | 3 | 10 | 3 | 8 | 6
+INPUTS | 8 | AQ<2>.PIN  | TIMER_CLK  | MIO  | AQ<6>.PIN  | AQ<1>.PIN  | ioportb/trishold<4>.EXP  | ioportc/dq<9>.EXP  | AQ<5>.PIN
+INPUTMC | 3 | 3 | 12 | 11 | 0 | 11 | 16
+INPUTP | 5 | 49 | 198 | 57 | 47 | 58
+IMPORTS | 2 | 11 | 0 | 11 | 16
+EQ | 11 | 
+   timer0/count0<9>/timer0/count0<9>_CLKF = MIO & TIMER_CLK
+	# TIMER_CLK & AQ<5>.PIN
+	# TIMER_CLK & AQ<6>.PIN
+	# TIMER_CLK & AQ<1>.PIN
+	# TIMER_CLK & AQ<2>.PIN
+;Imported pterms FB12_1
+	# !MIO & WR_SYNC & AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+;Imported pterms FB12_17
+	# TIMER_CLK & !AQ<4>.PIN
+	# TIMER_CLK & !AQ<3>.PIN;
+
+MACROCELL | 1 | 0 | clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF
+ATTRIBUTES | 199424 | 0
+OUTPUTMC | 3 | 0 | 5 | 1 | 1 | 1 | 3
+INPUTS | 10 | clockgen/inclkd2  | CPU10  | AQ<2>.PIN  | PORTA<13>.PIN  | FC_0_.OUT  | MIO  | AQ<3>.PIN  | PORTC<13>.PIN  | XLXI_327/changehold<0>.EXP  | AQ<4>.PIN
+INPUTMC | 2 | 6 | 2 | 1 | 17
+INPUTP | 7 | 193 | 49 | 192 | 198 | 50 | 138 | 51
+EXPORTS | 1 | 1 | 1
+IMPORTS | 1 | 1 | 17
+EQ | 8 | 
+   clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF = clockgen/inclkd2 & !CPU10
+;Imported pterms FB2_18
+	# SYSCLK & CPU10;
+    clockgen/thirdclk<1>/clockgen/thirdclk<1>_CLKF.EXP  =  PORTA<13>.PIN & !FC_0_.OUT
+	# PORTA<13>.PIN & !AQ<3>.PIN
+	# PORTA<13>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<13>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN
+
+MACROCELL | 0 | 1 | _14_
+ATTRIBUTES | 265986 | 0
+INPUTS | 4 | EXTRD  | $OpTx$FX_DC$10  | AD_E<2>_BUFR  | AQ<4>.PIN
+INPUTMC | 2 | 6 | 16 | 5 | 16
+INPUTP | 2 | 200 | 51
+EQ | 2 | 
+   AD_E<2> = AD_E<2>_BUFR;
+   AD_E<2>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 0 | 2 | _15_
+ATTRIBUTES | 265986 | 0
+INPUTS | 4 | EXTRD  | $OpTx$FX_DC$10  | AD_E<1>_BUFR  | AQ<4>.PIN
+INPUTMC | 2 | 6 | 16 | 6 | 17
+INPUTP | 2 | 200 | 51
+EQ | 2 | 
+   AD_E<1> = AD_E<1>_BUFR;
+   AD_E<1>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 1 | 13 | _16_
+ATTRIBUTES | 265986 | 0
+INPUTS | 4 | EXTRD  | $OpTx$FX_DC$10  | AD_E<5>_BUFR  | AQ<4>.PIN
+INPUTMC | 2 | 6 | 16 | 4 | 12
+INPUTP | 2 | 200 | 51
+EQ | 2 | 
+   AD_E<5> = AD_E<5>_BUFR;
+   AD_E<5>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 1 | 14 | _17_
+ATTRIBUTES | 265986 | 0
+INPUTS | 4 | EXTRD  | $OpTx$FX_DC$10  | AD_E<4>_BUFR  | AQ<4>.PIN
+INPUTMC | 2 | 6 | 16 | 3 | 15
+INPUTP | 2 | 200 | 51
+EQ | 2 | 
+   AD_E<4> = AD_E<4>_BUFR;
+   AD_E<4>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 1 | 16 | _18_
+ATTRIBUTES | 265986 | 0
+INPUTS | 4 | EXTRD  | $OpTx$FX_DC$10  | AD_E<3>_BUFR  | AQ<4>.PIN
+INPUTMC | 2 | 6 | 16 | 3 | 0
+INPUTP | 2 | 200 | 51
+EQ | 2 | 
+   AD_E<3> = AD_E<3>_BUFR;
+   AD_E<3>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+
+MACROCELL | 1 | 7 | _19_
+ATTRIBUTES | 265986 | 0
+OUTPUTMC | 1 | 1 | 8
+INPUTS | 10 | AQ<3>.PIN  | EXTRD  | $OpTx$FX_DC$10  | AD_E<9>_BUFR  | PORTA<8>.PIN  | FC_0_.OUT  | MIO  | AQ<2>.PIN  | PORTC<8>.PIN  | AQ<4>.PIN
+INPUTMC | 2 | 6 | 16 | 2 | 17
+INPUTP | 7 | 50 | 200 | 185 | 198 | 49 | 145 | 51
+EXPORTS | 1 | 1 | 8
+EQ | 5 | 
+   AD_E<9> = AD_E<9>_BUFR;
+   AD_E<9>.OE = !EXTRD & $OpTx$FX_DC$10 & !AQ<4>.PIN;
+    _19_.EXP  =  PORTA<8>.PIN & !FC_0_.OUT
+	# !MIO & PORTC<8>.PIN & FC_0_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<2>.PIN
+
+MACROCELL | 3 | 17 | EXP4_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 16
+INPUTS | 8 | AQ<1>.PIN  | PORTA<14>.PIN  | AQ<2>.PIN  | FC_2_.OUT  | MIO  | AQ<3>.PIN  | PORTC<14>.PIN  | AQ<4>.PIN
+INPUTP | 7 | 47 | 170 | 49 | 198 | 50 | 135 | 51
+EXPORTS | 1 | 3 | 16
+EQ | 6 | 
+       EXP4_.EXP  =  PORTA<14>.PIN & !FC_2_.OUT
+	# PORTA<14>.PIN & !AQ<3>.PIN
+	# PORTA<14>.PIN & AQ<1>.PIN
+	# PORTA<14>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<14>.PIN & FC_2_.OUT & !AQ<4>.PIN & 
+	AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+
+MACROCELL | 6 | 0 | EXP7_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 17
+INPUTS | 10 | MIO  | STATUS_IOIN<1>  | AQ<5>.PIN  | AQ<6>.PIN  | AQ<3>.PIN  | AQ<1>.PIN  | AQ<2>.PIN  | PORTC<1>.PIN  | PORTB<1>.PIN  | AQ<4>.PIN
+INPUTMC | 1 | 11 | 15
+INPUTP | 9 | 198 | 58 | 57 | 50 | 47 | 49 | 158 | 164 | 51
+EXPORTS | 1 | 6 | 17
+EQ | 6 | 
+       EXP7_.EXP  =  !MIO & STATUS_IOIN<1> & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+	# !MIO & PORTB<1>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & !AQ<3>.PIN & AQ<1>.PIN & AQ<2>.PIN
+	# !MIO & PORTC<1>.PIN & !AQ<4>.PIN & !AQ<5>.PIN & 
+	!AQ<6>.PIN & AQ<3>.PIN & !AQ<1>.PIN & !AQ<2>.PIN
+
+PIN | MIO | 64 | 0 | N/A | 198 | 161 | 0 | 4 | 10 | 16 | 7 | 8 | 5 | 7 | 5 | 8 | 5 | 10 | 5 | 11 | 7 | 5 | 7 | 11 | 7 | 13 | 7 | 14 | 7 | 16 | 5 | 1 | 5 | 2 | 5 | 4 | 5 | 5 | 7 | 2 | 9 | 16 | 9 | 14 | 9 | 13 | 9 | 10 | 11 | 11 | 11 | 13 | 11 | 8 | 11 | 10 | 11 | 5 | 11 | 7 | 9 | 11 | 9 | 7 | 9 | 8 | 9 | 4 | 9 | 5 | 9 | 1 | 9 | 2 | 11 | 14 | 11 | 16 | 6 | 0 | 3 | 13 | 3 | 0 | 3 | 15 | 4 | 11 | 9 | 12 | 11 | 15 | 5 | 15 | 5 | 14 | 1 | 5 | 1 | 4 | 1 | 2 | 1 | 1 | 3 | 16 | 3 | 14 | 1 | 11 | 1 | 10 | 1 | 8 | 2 | 0 | 0 | 12 | 6 | 15 | 9 | 0 | 3 | 1 | 0 | 5 | 1 | 0 | 10 | 17 | 1 | 3 | 9 | 15 | 3 | 17 | 4 | 13 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 1 | 7 | 10 | 3 | 11 | 12 | 11 | 9 | 11 | 6 | 8 | 2 | 9 | 3 | 3 | 5 | 2 | 6 | 1 | 6 | 11 | 3 | 11 | 2 | 4 | 15 | 4 | 9 | 5 | 12 | 5 | 9 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 9 | 0 | 6 | 9 | 9 | 9 | 6 | 11 | 1 | 6 | 13 | 8 | 4 | 2 | 12 | 3 | 11 | 5 | 17 | 5 | 13 | 3 | 10 | 5 | 6 | 5 | 3 | 4 | 7 | 3 | 9 | 3 | 8 | 3 | 7 | 7 | 17 | 4 | 6 | 3 | 6 | 7 | 15 | 3 | 4 | 2 | 3 | 11 | 0 | 3 | 3 | 3 | 2 | 8 | 17 | 6 | 12 | 6 | 9 | 6 | 6 | 0 | 0 | 7 | 12 | 7 | 9 | 5 | 0 | 4 | 3 | 7 | 6 | 4 | 0 | 10 | 0 | 7 | 3 | 6 | 5 | 6 | 3 | 10 | 14 | 10 | 11 | 8 | 13 | 8 | 14 | 8 | 10 | 8 | 11 | 8 | 7 | 8 | 8 | 11 | 4 | 10 | 8 | 10 | 10 | 10 | 5 | 10 | 7 | 10 | 2 | 10 | 4 | 8 | 16 | 10 | 1 | 4 | 10 | 8 | 5 | 4 | 4 | 6 | 14 | 8 | 1 | 6 | 4 | 4 | 16 | 4 | 5 | 4 | 8 | 6 | 16 | 11 | 17 | 9 | 17 | 10 | 13
+PIN | EXTRD | 64 | 0 | N/A | 200 | 17 | 0 | 4 | 0 | 2 | 0 | 1 | 1 | 16 | 1 | 14 | 1 | 13 | 1 | 5 | 1 | 4 | 1 | 2 | 1 | 1 | 3 | 16 | 3 | 14 | 1 | 11 | 1 | 10 | 1 | 8 | 1 | 7 | 0 | 17
+PIN | RESET | 65536 | 0 | N/A | 206 | 132 | 10 | 16 | 7 | 8 | 5 | 7 | 5 | 8 | 5 | 10 | 5 | 11 | 7 | 5 | 7 | 11 | 7 | 13 | 7 | 14 | 7 | 16 | 5 | 1 | 5 | 2 | 5 | 4 | 5 | 5 | 7 | 2 | 9 | 16 | 9 | 14 | 9 | 13 | 9 | 10 | 11 | 11 | 11 | 13 | 11 | 8 | 11 | 10 | 11 | 5 | 11 | 7 | 9 | 11 | 9 | 7 | 9 | 8 | 9 | 4 | 9 | 5 | 9 | 1 | 9 | 2 | 11 | 14 | 11 | 16 | 9 | 12 | 11 | 15 | 5 | 15 | 5 | 14 | 0 | 12 | 6 | 15 | 9 | 0 | 8 | 0 | 8 | 15 | 8 | 12 | 10 | 17 | 8 | 9 | 9 | 15 | 4 | 17 | 4 | 14 | 10 | 15 | 10 | 12 | 10 | 9 | 10 | 6 | 8 | 3 | 10 | 3 | 11 | 12 | 11 | 9 | 11 | 6 | 8 | 2 | 9 | 3 | 3 | 5 | 2 | 6 | 8 | 6 | 11 | 3 | 11 | 2 | 4 | 15 | 4 | 9 | 5 | 12 | 5 | 9 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 9 | 0 | 6 | 9 | 9 | 9 | 6 | 11 | 1 | 6 | 13 | 8 | 4 | 2 | 12 | 3 | 11 | 5 | 17 | 5 | 13 | 3 | 10 | 5 | 6 | 5 | 3 | 4 | 7 | 3 | 9 | 3 | 8 | 3 | 7 | 7 | 17 | 4 | 6 | 3 | 6 | 7 | 15 | 3 | 4 | 2 | 3 | 11 | 0 | 3 | 3 | 3 | 2 | 8 | 17 | 6 | 12 | 6 | 9 | 6 | 6 | 0 | 0 | 7 | 12 | 7 | 9 | 5 | 0 | 4 | 3 | 7 | 6 | 4 | 0 | 10 | 0 | 7 | 3 | 6 | 5 | 6 | 3 | 10 | 14 | 10 | 11 | 8 | 13 | 8 | 14 | 8 | 10 | 8 | 11 | 8 | 7 | 8 | 8 | 11 | 4 | 10 | 8 | 10 | 10 | 10 | 5 | 10 | 7 | 10 | 2 | 10 | 4 | 8 | 16 | 10 | 1
+PIN | IRQ1 | 64 | 0 | N/A | 87 | 2 | 5 | 17 | 6 | 9
+PIN | IRQ2 | 64 | 0 | N/A | 89 | 2 | 6 | 7 | 3 | 1
+PIN | IRQ3 | 64 | 0 | N/A | 82 | 2 | 6 | 7 | 3 | 16
+PIN | IRQ4 | 64 | 0 | N/A | 74 | 2 | 4 | 11 | 6 | 8
+PIN | TXD | 64 | 0 | N/A | 76 | 1 | 7 | 7
+PIN | TXA | 64 | 0 | N/A | 99 | 1 | 7 | 10
+PIN | TXC | 64 | 0 | N/A | 77 | 1 | 7 | 4
+PIN | TXB | 64 | 0 | N/A | 97 | 1 | 7 | 1
+PIN | ALE | 64 | 0 | N/A | 197 | 24 | 0 | 9 | 0 | 17 | 2 | 11 | 4 | 1 | 2 | 16 | 2 | 10 | 2 | 7 | 2 | 8 | 4 | 2 | 0 | 8 | 0 | 7 | 2 | 4 | 2 | 2 | 2 | 1 | 0 | 16 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 11 | 0 | 10 | 2 | 14 | 2 | 13 | 2 | 5 | 10 | 13
+PIN | EXTWR | 64 | 0 | N/A | 199 | 1 | 0 | 9
+PIN | A<19> | 64 | 0 | N/A | 202 | 1 | 0 | 8
+PIN | BHE | 64 | 0 | N/A | 201 | 1 | 0 | 7
+PIN | SYSCLK | 64 | 0 | N/A | 194 | 2 | 6 | 2 | 1 | 17
+PIN | PGMRXD | 64 | 0 | N/A | 131 | 1 | 4 | 13
+PIN | DEN | 64 | 0 | N/A | 133 | 2 | 4 | 5 | 4 | 8
+PIN | A<16> | 64 | 0 | N/A | 4 | 1 | 0 | 13
+PIN | A<17> | 64 | 0 | N/A | 3 | 1 | 0 | 11
+PIN | A<18> | 64 | 0 | N/A | 205 | 1 | 0 | 10
+PIN | CPU10 | 64 | 0 | N/A | 193 | 3 | 4 | 10 | 1 | 0 | 1 | 17
+PIN | MRST | 536871040 | 0 | N/A | 128
+PIN | EEWP | 536871040 | 0 | N/A | 127
+PIN | PORTD<0> | 536871040 | 0 | N/A | 125
+PIN | PORTD<10> | 536871040 | 0 | N/A | 112
+PIN | PORTD<11> | 536871040 | 0 | N/A | 113
+PIN | PORTD<12> | 536871040 | 0 | N/A | 110
+PIN | PORTD<13> | 536871040 | 0 | N/A | 111
+PIN | PORTD<14> | 536871040 | 0 | N/A | 102
+PIN | PORTD<15> | 536871040 | 0 | N/A | 103
+PIN | PORTD<1> | 536871040 | 0 | N/A | 134
+PIN | PORTD<2> | 536871040 | 0 | N/A | 122
+PIN | PORTD<3> | 536871040 | 0 | N/A | 123
+PIN | PORTD<4> | 536871040 | 0 | N/A | 118
+PIN | PORTD<5> | 536871040 | 0 | N/A | 121
+PIN | PORTD<6> | 536871040 | 0 | N/A | 116
+PIN | PORTD<7> | 536871040 | 0 | N/A | 117
+PIN | PORTD<8> | 536871040 | 0 | N/A | 114
+PIN | PORTD<9> | 536871040 | 0 | N/A | 115
+PIN | AQ<0> | 536871040 | 0 | N/A | 60
+PIN | AQ<10> | 536871040 | 0 | N/A | 45
+PIN | AQ<11> | 536871040 | 0 | N/A | 44
+PIN | AQ<12> | 536871040 | 0 | N/A | 43
+PIN | AQ<13> | 536871040 | 0 | N/A | 38
+PIN | AQ<14> | 536871040 | 0 | N/A | 37
+PIN | AQ<15> | 536871040 | 0 | N/A | 36
+PIN | AQ<16> | 536871040 | 0 | N/A | 35
+PIN | AQ<17> | 536871040 | 0 | N/A | 34
+PIN | AQ<18> | 536871040 | 0 | N/A | 33
+PIN | AQ<7> | 536871040 | 0 | N/A | 56
+PIN | AQ<8> | 536871040 | 0 | N/A | 55
+PIN | AQ<9> | 536871040 | 0 | N/A | 46
+PIN | MIDCLK | 536871040 | 0 | N/A | 71
+PIN | RXA | 536871040 | 0 | N/A | 86
+PIN | RXB | 536871040 | 0 | N/A | 85
+PIN | RXC | 536871040 | 0 | N/A | 83
+PIN | RXD | 536871040 | 0 | N/A | 73
+PIN | NMI | 536871040 | 0 | N/A | 84
+PIN | WDI | 128 | 0 | N/A | 126
+PIN | MIDCS | 536871040 | 0 | N/A | 72
+PIN | RAMCS | 536871040 | 0 | N/A | 100
+PIN | ROMCS | 536871040 | 0 | N/A | 61
+PIN | UCSA | 536871040 | 0 | N/A | 88
+PIN | UCSB | 536871040 | 0 | N/A | 95
+PIN | UCSC | 536871040 | 0 | N/A | 78
+PIN | UCSD | 536871040 | 0 | N/A | 75
+PIN | UHE | 536871040 | 0 | N/A | 63
+PIN | ULE | 536871040 | 0 | N/A | 70
+PIN | AD_E<0> | 536870976 | 0 | N/A | 25 | 12 | 7 | 8 | 9 | 10 | 9 | 12 | 4 | 2 | 3 | 5 | 9 | 6 | 3 | 10 | 3 | 6 | 3 | 2 | 10 | 11 | 9 | 1 | 9 | 17
+PIN | PORTA<0> | 536870976 | 0 | N/A | 171 | 3 | 0 | 4 | 6 | 11 | 0 | 3
+PIN | PORTA<10> | 536870976 | 0 | N/A | 187 | 5 | 1 | 5 | 1 | 12 | 2 | 15 | 1 | 6 | 2 | 14
+PIN | PORTA<11> | 536870976 | 0 | N/A | 188 | 4 | 1 | 4 | 1 | 9 | 2 | 15 | 1 | 3
+PIN | PORTA<12> | 536870976 | 0 | N/A | 191 | 2 | 1 | 2 | 1 | 1
+PIN | PORTA<13> | 536870976 | 0 | N/A | 192 | 2 | 1 | 1 | 1 | 0
+PIN | PORTA<15> | 536870976 | 0 | N/A | 167 | 3 | 3 | 14 | 4 | 13 | 3 | 13
+PIN | PORTA<2> | 536870976 | 0 | N/A | 174 | 3 | 5 | 16 | 3 | 12 | 5 | 15
+PIN | PORTA<3> | 536870976 | 0 | N/A | 175 | 3 | 3 | 0 | 5 | 14 | 3 | 1
+PIN | PORTA<4> | 536870976 | 0 | N/A | 178 | 2 | 3 | 15 | 3 | 14
+PIN | PORTA<5> | 536870976 | 0 | N/A | 179 | 2 | 4 | 12 | 4 | 11
+PIN | PORTA<6> | 536870976 | 0 | N/A | 180 | 1 | 1 | 11
+PIN | PORTA<7> | 536870976 | 0 | N/A | 182 | 1 | 1 | 10
+PIN | PORTA<8> | 536870976 | 0 | N/A | 185 | 5 | 1 | 8 | 1 | 17 | 2 | 14 | 1 | 7 | 2 | 16
+PIN | PORTA<9> | 536870976 | 0 | N/A | 186 | 4 | 2 | 17 | 1 | 15 | 2 | 15 | 2 | 0
+PIN | PORTB<1> | 536870976 | 0 | N/A | 164 | 2 | 6 | 0 | 6 | 7
+PIN | PORTB<3> | 536870976 | 0 | N/A | 161 | 2 | 6 | 10 | 3 | 1
+PIN | PORTB<4> | 536870976 | 0 | N/A | 160 | 1 | 3 | 16
+PIN | PORTB<5> | 536870976 | 0 | N/A | 159 | 1 | 4 | 11
+PIN | PORTC<0> | 536870976 | 0 | N/A | 155 | 1 | 0 | 5
+PIN | PORTC<10> | 536870976 | 0 | N/A | 139 | 1 | 1 | 6
+PIN | PORTC<11> | 536870976 | 0 | N/A | 140 | 1 | 1 | 3
+PIN | PORTC<12> | 536870976 | 0 | N/A | 137 | 1 | 1 | 1
+PIN | PORTC<13> | 536870976 | 0 | N/A | 138 | 1 | 1 | 0
+PIN | PORTC<14> | 536870976 | 0 | N/A | 135 | 1 | 3 | 17
+PIN | PORTC<15> | 536870976 | 0 | N/A | 136 | 1 | 3 | 13
+PIN | PORTC<1> | 536870976 | 0 | N/A | 158 | 1 | 6 | 0
+PIN | PORTC<2> | 536870976 | 0 | N/A | 152 | 1 | 5 | 17
+PIN | PORTC<3> | 536870976 | 0 | N/A | 154 | 1 | 3 | 1
+PIN | PORTC<4> | 536870976 | 0 | N/A | 149 | 1 | 3 | 14
+PIN | PORTC<5> | 536870976 | 0 | N/A | 150 | 1 | 4 | 11
+PIN | PORTC<6> | 536870976 | 0 | N/A | 147 | 1 | 1 | 12
+PIN | PORTC<7> | 536870976 | 0 | N/A | 148 | 1 | 1 | 9
+PIN | PORTC<8> | 536870976 | 0 | N/A | 145 | 1 | 1 | 7
+PIN | PORTC<9> | 536870976 | 0 | N/A | 146 | 1 | 2 | 0
+PIN | AD_E<1> | 536870976 | 0 | N/A | 23 | 11 | 7 | 2 | 9 | 11 | 11 | 15 | 2 | 7 | 9 | 3 | 9 | 9 | 3 | 9 | 3 | 4 | 7 | 9 | 11 | 4 | 9 | 16
+PIN | AD_E<2> | 536870976 | 0 | N/A | 22 | 10 | 7 | 11 | 9 | 7 | 4 | 0 | 2 | 6 | 4 | 15 | 4 | 7 | 7 | 15 | 5 | 0 | 10 | 8 | 2 | 8
+PIN | AD_E<3> | 536870976 | 0 | N/A | 21 | 10 | 7 | 13 | 9 | 16 | 9 | 8 | 2 | 10 | 4 | 9 | 4 | 6 | 2 | 3 | 4 | 3 | 10 | 10 | 4 | 15
+PIN | AD_E<4> | 536870976 | 0 | N/A | 20 | 10 | 7 | 14 | 9 | 14 | 9 | 4 | 10 | 14 | 2 | 12 | 7 | 17 | 11 | 0 | 7 | 6 | 10 | 5 | 2 | 11
+PIN | AD_E<5> | 536870976 | 0 | N/A | 19 | 11 | 7 | 16 | 9 | 13 | 9 | 5 | 10 | 11 | 3 | 11 | 3 | 7 | 3 | 3 | 4 | 0 | 10 | 7 | 4 | 1 | 10 | 13
+PIN | PORTA<14> | 536870976 | 0 | N/A | 170 | 2 | 3 | 16 | 3 | 17
+PIN | PORTA<1> | 536870976 | 0 | N/A | 173 | 2 | 6 | 17 | 6 | 16
+PIN | AD_E<10> | 536870976 | 0 | N/A | 10 | 8 | 5 | 7 | 11 | 11 | 2 | 4 | 11 | 12 | 11 | 3 | 8 | 17 | 8 | 13 | 8 | 1
+PIN | AD_E<11> | 536870976 | 0 | N/A | 9 | 8 | 5 | 8 | 11 | 13 | 2 | 2 | 11 | 9 | 11 | 2 | 6 | 12 | 8 | 14 | 8 | 16
+PIN | AD_E<12> | 536870976 | 0 | N/A | 8 | 8 | 5 | 10 | 11 | 8 | 2 | 1 | 11 | 6 | 11 | 1 | 6 | 9 | 8 | 10 | 8 | 13
+PIN | AD_E<13> | 536870976 | 0 | N/A | 7 | 8 | 5 | 11 | 11 | 10 | 6 | 15 | 10 | 17 | 6 | 13 | 6 | 6 | 8 | 11 | 0 | 16
+PIN | AD_E<14> | 536870976 | 0 | N/A | 6 | 8 | 11 | 5 | 0 | 12 | 0 | 15 | 8 | 2 | 0 | 6 | 0 | 0 | 8 | 7 | 8 | 10
+PIN | AD_E<15> | 536870976 | 0 | N/A | 5 | 8 | 10 | 16 | 7 | 5 | 11 | 7 | 0 | 14 | 8 | 4 | 7 | 12 | 8 | 8 | 8 | 7
+PIN | AD_E<6> | 536870976 | 0 | N/A | 18 | 10 | 5 | 1 | 9 | 1 | 5 | 15 | 10 | 8 | 5 | 17 | 3 | 8 | 10 | 0 | 10 | 2 | 2 | 16 | 10 | 10
+PIN | AD_E<7> | 536870976 | 0 | N/A | 17 | 10 | 5 | 2 | 9 | 2 | 5 | 14 | 10 | 5 | 5 | 13 | 5 | 3 | 7 | 3 | 10 | 4 | 2 | 14 | 10 | 7
+PIN | AD_E<8> | 536870976 | 0 | N/A | 16 | 8 | 5 | 4 | 11 | 14 | 2 | 13 | 5 | 12 | 5 | 6 | 6 | 5 | 8 | 16 | 8 | 4
+PIN | AD_E<9> | 536870976 | 0 | N/A | 15 | 8 | 5 | 5 | 11 | 16 | 10 | 3 | 5 | 9 | 6 | 3 | 10 | 14 | 10 | 1 | 2 | 5
+PIN | PORTB<0> | 536870976 | 0 | N/A | 166 | 1 | 0 | 5
+PIN | PORTB<2> | 536870976 | 0 | N/A | 162 | 1 | 5 | 17
+PIN | AQ<4> | 536870976 | 0 | N/A | 51 | 168 | 0 | 4 | 3 | 1 | 3 | 13 | 1 | 6 | 1 | 3 | 1 | 0 | 0 | 5 | 1 | 7 | 1 | 16 | 1 | 14 | 1 | 13 | 0 | 2 | 0 | 1 | 10 | 13 | 4 | 8 | 4 | 5 | 4 | 16 | 6 | 4 | 8 | 1 | 6 | 14 | 4 | 10 | 10 | 1 | 8 | 16 | 10 | 4 | 10 | 2 | 10 | 7 | 10 | 5 | 10 | 10 | 10 | 8 | 11 | 4 | 8 | 8 | 8 | 7 | 8 | 11 | 8 | 10 | 8 | 14 | 8 | 13 | 10 | 11 | 10 | 14 | 6 | 3 | 6 | 5 | 7 | 3 | 10 | 0 | 4 | 0 | 7 | 6 | 4 | 3 | 5 | 0 | 7 | 9 | 7 | 12 | 0 | 0 | 6 | 6 | 6 | 9 | 6 | 12 | 8 | 17 | 3 | 2 | 3 | 3 | 11 | 0 | 3 | 17 | 3 | 4 | 7 | 15 | 3 | 6 | 4 | 6 | 7 | 17 | 3 | 7 | 3 | 8 | 3 | 9 | 4 | 7 | 5 | 3 | 5 | 6 | 3 | 10 | 5 | 13 | 5 | 17 | 3 | 11 | 4 | 11 | 8 | 4 | 6 | 13 | 11 | 1 | 9 | 6 | 9 | 9 | 0 | 6 | 1 | 9 | 1 | 12 | 1 | 15 | 1 | 17 | 5 | 9 | 5 | 12 | 4 | 9 | 4 | 15 | 11 | 2 | 11 | 3 | 8 | 6 | 6 | 0 | 3 | 5 | 9 | 3 | 8 | 2 | 11 | 6 | 11 | 9 | 11 | 12 | 10 | 3 | 8 | 3 | 10 | 6 | 10 | 9 | 10 | 12 | 10 | 15 | 4 | 14 | 4 | 17 | 9 | 15 | 8 | 9 | 10 | 17 | 8 | 12 | 8 | 15 | 8 | 0 | 9 | 0 | 6 | 15 | 0 | 12 | 9 | 17 | 1 | 8 | 1 | 10 | 1 | 11 | 3 | 14 | 3 | 16 | 1 | 1 | 1 | 2 | 1 | 4 | 1 | 5 | 5 | 14 | 5 | 15 | 11 | 15 | 9 | 12 | 4 | 12 | 3 | 15 | 3 | 0 | 5 | 16 | 6 | 17 | 11 | 16 | 11 | 14 | 9 | 2 | 9 | 1 | 9 | 5 | 9 | 4 | 9 | 8 | 9 | 7 | 9 | 11 | 11 | 7 | 11 | 5 | 11 | 10 | 11 | 8 | 11 | 13 | 11 | 11 | 9 | 10 | 9 | 13 | 9 | 14 | 9 | 16 | 7 | 2 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 1 | 7 | 16 | 7 | 14 | 7 | 13 | 7 | 11 | 7 | 5 | 5 | 11 | 5 | 10 | 5 | 8 | 5 | 7 | 7 | 8 | 10 | 16
+PIN | AQ<5> | 536870976 | 0 | N/A | 58 | 75 | 0 | 4 | 8 | 8 | 8 | 2 | 11 | 6 | 11 | 9 | 11 | 12 | 11 | 1 | 8 | 3 | 6 | 13 | 8 | 4 | 2 | 12 | 5 | 3 | 5 | 17 | 6 | 4 | 0 | 6 | 11 | 4 | 8 | 9 | 5 | 6 | 8 | 15 | 8 | 0 | 6 | 3 | 8 | 10 | 0 | 12 | 2 | 17 | 2 | 3 | 11 | 3 | 0 | 5 | 11 | 0 | 2 | 0 | 8 | 1 | 8 | 6 | 2 | 6 | 6 | 16 | 11 | 17 | 5 | 14 | 5 | 15 | 11 | 15 | 5 | 12 | 8 | 11 | 5 | 13 | 5 | 16 | 6 | 17 | 11 | 16 | 11 | 14 | 5 | 9 | 8 | 7 | 8 | 17 | 6 | 12 | 6 | 9 | 6 | 6 | 0 | 0 | 11 | 7 | 11 | 5 | 11 | 10 | 11 | 8 | 11 | 13 | 11 | 11 | 6 | 5 | 8 | 12 | 5 | 0 | 6 | 15 | 6 | 0 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 1 | 11 | 2 | 8 | 16 | 8 | 13 | 8 | 14 | 6 | 14 | 5 | 11 | 5 | 10 | 5 | 8 | 5 | 7
+PIN | AQ<6> | 536870976 | 0 | N/A | 57 | 75 | 0 | 4 | 8 | 8 | 8 | 2 | 11 | 6 | 11 | 9 | 11 | 12 | 5 | 12 | 6 | 9 | 5 | 9 | 8 | 1 | 4 | 10 | 6 | 14 | 6 | 4 | 4 | 13 | 8 | 4 | 6 | 12 | 4 | 9 | 8 | 17 | 8 | 7 | 6 | 6 | 0 | 0 | 5 | 6 | 0 | 12 | 11 | 2 | 8 | 14 | 4 | 16 | 0 | 5 | 8 | 11 | 4 | 15 | 5 | 17 | 4 | 5 | 4 | 8 | 6 | 16 | 5 | 14 | 5 | 15 | 11 | 15 | 5 | 13 | 4 | 11 | 5 | 3 | 4 | 7 | 8 | 13 | 6 | 0 | 11 | 16 | 11 | 14 | 8 | 16 | 11 | 1 | 5 | 0 | 4 | 3 | 11 | 4 | 4 | 6 | 8 | 10 | 11 | 7 | 11 | 5 | 11 | 10 | 11 | 8 | 11 | 13 | 11 | 11 | 8 | 5 | 11 | 0 | 6 | 13 | 6 | 15 | 11 | 3 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 1 | 0 | 6 | 4 | 0 | 6 | 5 | 6 | 3 | 11 | 17 | 5 | 11 | 5 | 10 | 5 | 8 | 5 | 7
+PIN | AQ<3> | 536870976 | 0 | N/A | 50 | 140 | 0 | 3 | 11 | 4 | 8 | 8 | 8 | 7 | 8 | 11 | 8 | 10 | 8 | 14 | 8 | 13 | 10 | 11 | 10 | 14 | 6 | 3 | 6 | 5 | 0 | 5 | 10 | 0 | 4 | 0 | 4 | 16 | 4 | 3 | 5 | 0 | 8 | 1 | 10 | 13 | 1 | 1 | 0 | 0 | 6 | 6 | 6 | 9 | 6 | 12 | 8 | 17 | 3 | 2 | 3 | 3 | 11 | 0 | 10 | 5 | 3 | 4 | 10 | 10 | 4 | 6 | 6 | 4 | 3 | 7 | 3 | 8 | 3 | 9 | 4 | 7 | 5 | 3 | 5 | 6 | 3 | 10 | 5 | 13 | 5 | 17 | 3 | 11 | 6 | 16 | 8 | 4 | 6 | 13 | 11 | 1 | 9 | 6 | 9 | 9 | 0 | 6 | 1 | 9 | 1 | 12 | 1 | 15 | 1 | 17 | 5 | 9 | 5 | 12 | 4 | 9 | 4 | 15 | 11 | 2 | 11 | 3 | 8 | 5 | 10 | 7 | 3 | 5 | 9 | 3 | 8 | 2 | 11 | 6 | 11 | 9 | 11 | 12 | 10 | 3 | 10 | 1 | 10 | 6 | 10 | 9 | 10 | 12 | 10 | 15 | 4 | 13 | 4 | 11 | 9 | 15 | 8 | 16 | 10 | 17 | 10 | 4 | 10 | 2 | 6 | 14 | 9 | 0 | 6 | 15 | 0 | 12 | 9 | 17 | 1 | 8 | 1 | 7 | 1 | 6 | 3 | 13 | 3 | 14 | 1 | 0 | 1 | 2 | 1 | 4 | 1 | 5 | 5 | 14 | 5 | 15 | 11 | 15 | 9 | 12 | 4 | 12 | 3 | 15 | 3 | 0 | 5 | 16 | 6 | 17 | 11 | 16 | 11 | 14 | 9 | 2 | 9 | 1 | 9 | 5 | 9 | 4 | 9 | 8 | 9 | 7 | 9 | 11 | 11 | 7 | 11 | 5 | 11 | 10 | 11 | 8 | 11 | 13 | 11 | 11 | 9 | 10 | 9 | 13 | 9 | 14 | 9 | 16 | 3 | 6 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 1 | 1 | 3 | 10 | 8 | 3 | 1 | 3 | 16 | 3 | 17 | 5 | 11 | 5 | 10 | 5 | 8 | 5 | 7 | 6 | 0 | 10 | 16
+PIN | CPUCLK | 536870976 | 0 | N/A | 30 | 6 | 1 | 3 | 2 | 9 | 3 | 12 | 3 | 1 | 9 | 17 | 1 | 6
+PIN | AQ<1> | 536870976 | 0 | N/A | 47 | 144 | 0 | 3 | 3 | 17 | 3 | 16 | 3 | 1 | 4 | 11 | 10 | 8 | 11 | 4 | 8 | 8 | 8 | 7 | 8 | 11 | 8 | 10 | 8 | 14 | 8 | 13 | 10 | 11 | 10 | 14 | 6 | 3 | 6 | 5 | 7 | 3 | 10 | 0 | 4 | 0 | 7 | 6 | 4 | 3 | 5 | 0 | 7 | 9 | 7 | 12 | 0 | 0 | 6 | 6 | 6 | 9 | 6 | 12 | 8 | 17 | 3 | 2 | 3 | 3 | 11 | 0 | 6 | 0 | 7 | 15 | 3 | 6 | 4 | 6 | 7 | 17 | 3 | 7 | 3 | 8 | 3 | 9 | 4 | 7 | 5 | 3 | 5 | 6 | 3 | 10 | 5 | 13 | 5 | 17 | 3 | 11 | 8 | 1 | 8 | 4 | 6 | 13 | 11 | 1 | 9 | 6 | 9 | 9 | 0 | 6 | 10 | 7 | 10 | 5 | 10 | 10 | 3 | 4 | 10 | 2 | 5 | 9 | 5 | 12 | 4 | 9 | 4 | 15 | 11 | 2 | 11 | 3 | 8 | 6 | 9 | 17 | 9 | 3 | 8 | 2 | 11 | 6 | 11 | 9 | 11 | 12 | 10 | 3 | 8 | 3 | 10 | 6 | 10 | 9 | 10 | 12 | 10 | 15 | 4 | 14 | 4 | 17 | 9 | 15 | 8 | 9 | 10 | 17 | 8 | 12 | 8 | 15 | 8 | 0 | 9 | 0 | 6 | 15 | 0 | 12 | 10 | 13 | 3 | 5 | 10 | 4 | 0 | 5 | 11 | 17 | 3 | 14 | 3 | 13 | 8 | 16 | 10 | 1 | 6 | 16 | 5 | 14 | 5 | 15 | 11 | 15 | 9 | 12 | 4 | 12 | 3 | 15 | 3 | 0 | 5 | 16 | 6 | 17 | 11 | 16 | 11 | 14 | 9 | 2 | 9 | 1 | 9 | 5 | 9 | 4 | 9 | 8 | 9 | 7 | 9 | 11 | 11 | 7 | 11 | 5 | 11 | 10 | 11 | 8 | 11 | 13 | 11 | 11 | 9 | 10 | 9 | 13 | 9 | 14 | 9 | 16 | 7 | 2 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 1 | 7 | 16 | 7 | 14 | 7 | 13 | 7 | 11 | 7 | 5 | 5 | 11 | 5 | 10 | 5 | 8 | 5 | 7 | 7 | 8 | 10 | 16
+PIN | AQ<2> | 536870976 | 0 | N/A | 49 | 139 | 0 | 3 | 8 | 8 | 8 | 7 | 8 | 11 | 8 | 10 | 8 | 14 | 8 | 13 | 3 | 17 | 4 | 11 | 6 | 3 | 6 | 5 | 7 | 3 | 1 | 6 | 4 | 0 | 7 | 6 | 4 | 3 | 5 | 0 | 7 | 9 | 7 | 12 | 0 | 0 | 6 | 6 | 6 | 9 | 6 | 12 | 8 | 17 | 3 | 2 | 3 | 3 | 11 | 0 | 3 | 16 | 3 | 4 | 7 | 15 | 3 | 6 | 4 | 6 | 7 | 17 | 3 | 7 | 3 | 8 | 3 | 9 | 4 | 7 | 5 | 3 | 5 | 6 | 3 | 10 | 5 | 13 | 5 | 17 | 3 | 11 | 3 | 1 | 8 | 4 | 6 | 13 | 11 | 1 | 9 | 6 | 9 | 9 | 0 | 6 | 1 | 9 | 1 | 12 | 1 | 15 | 1 | 17 | 5 | 9 | 5 | 12 | 4 | 9 | 4 | 15 | 11 | 2 | 11 | 3 | 8 | 6 | 1 | 7 | 3 | 5 | 9 | 3 | 8 | 2 | 11 | 6 | 11 | 9 | 11 | 12 | 1 | 1 | 8 | 3 | 8 | 16 | 0 | 5 | 6 | 16 | 11 | 17 | 4 | 14 | 4 | 17 | 6 | 0 | 8 | 9 | 1 | 3 | 8 | 12 | 8 | 15 | 8 | 0 | 8 | 1 | 6 | 15 | 0 | 12 | 9 | 17 | 11 | 4 | 1 | 10 | 1 | 11 | 3 | 13 | 3 | 14 | 1 | 0 | 1 | 2 | 1 | 4 | 1 | 5 | 5 | 14 | 5 | 15 | 11 | 15 | 9 | 12 | 4 | 12 | 3 | 15 | 3 | 0 | 5 | 16 | 6 | 17 | 11 | 16 | 11 | 14 | 9 | 2 | 9 | 1 | 9 | 5 | 9 | 4 | 9 | 8 | 9 | 7 | 9 | 11 | 11 | 7 | 11 | 5 | 11 | 10 | 11 | 8 | 11 | 13 | 11 | 11 | 9 | 10 | 9 | 13 | 9 | 14 | 9 | 16 | 7 | 2 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 1 | 7 | 16 | 7 | 14 | 7 | 13 | 7 | 11 | 7 | 5 | 5 | 11 | 5 | 10 | 5 | 8 | 5 | 7 | 7 | 8 | 1 | 8
+PIN | AQ<19> | 536870976 | 0 | N/A | 32 | 2 | 8 | 5 | 4 | 4
+PIN | BHEQ | 536870976 | 0 | N/A | 31 | 2 | 4 | 5 | 4 | 8

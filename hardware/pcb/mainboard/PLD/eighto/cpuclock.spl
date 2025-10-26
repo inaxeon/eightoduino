@@ -1,0 +1,8 @@
+[Inputs]
+clkin
+cpu10
+[Outputs]
+timerclk
+cpuclk
+clkd2
+[BiDir]

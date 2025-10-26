@@ -1,0 +1,13 @@
+[Inputs]
+sync
+clk
+rdin
+wrin
+irdy
+[Outputs]
+rd_nosync
+wr_nosync
+rd_sync
+wr_sync
+rdy
+[BiDir]
